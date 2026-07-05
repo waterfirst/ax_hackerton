@@ -58,7 +58,7 @@ python -m kakaopay_kospi_regime_mcp.server
 | 초보 투자자 | 단순 상승/하락 예측보다 왜 그런 판단이 나왔는지 근거를 함께 봅니다. |
 | 카카오페이증권 콘텐츠 운영자 | 장전 브리핑, 장중 알림, 시장 요약 문구의 초안을 빠르게 만들 수 있습니다. |
 | 리서치/데이터 담당자 | 예측값, 근거, confidence, scoring을 JSON으로 받아 후속 분석에 연결할 수 있습니다. |
-| AI 심사자 | MCP tool, README, sample output, tests, circuit diagram이 있어 구조를 자동 평가하기 쉽습니다. |
+| 고객 응대/서비스 기획자 | 시장 급변 시 고객이 묻는 “왜?”에 대해 일관된 설명 프레임을 제공합니다. |
 
 ## 왜 MCP인가요?
 
