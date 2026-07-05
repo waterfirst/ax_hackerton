@@ -16,6 +16,10 @@ def clamp(x: float, lo: float, hi: float) -> float:
     return max(lo, min(hi, x))
 
 
+def nonzero_count(values: list[float]) -> int:
+    return sum(1 for v in values if abs(v) > 1e-12)
+
+
 def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     prev = f(snapshot.get("prev_close"), 8088.34)
     prev_prev = f(snapshot.get("prev_prev_close"), prev)
@@ -69,7 +73,8 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     if not reasons:
         reasons.append("mixed signals")
 
-    confidence = clamp(0.55 + 0.05 * (abs(ewy) > 1) + 0.04 * (abs(semi) > 1) - 0.05 * fresh_shock, 0.35, 0.72)
+    signal_count = nonzero_count([ewy, sox, mu, nvda, meta])
+    confidence = clamp(0.55 + 0.05 * (abs(ewy) > 1) + 0.04 * (abs(semi) > 1) - 0.05 * fresh_shock - 0.03 * (signal_count <= 2), 0.35, 0.72)
     return {
         "forecast_open": pred,
         "range": [round(pred - width), round(pred + width)],
@@ -100,11 +105,13 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     rise = f(snapshot.get("rise_count"))
     fall = f(snapshot.get("fall_count"))
     trading_value_accel = bool(snapshot.get("trading_value_acceleration", False))
+    fallback_mode = bool(snapshot.get("fallback_mode", False))
 
     breadth = (rise - fall) / max(rise + fall, 1)
     gap_fail = max(open_ - current, 0)
     low_recovery = max(current - low, 0)
     flow = 0.000004 * inst + 0.000003 * foreign + 0.000004 * program
+    signal_count = nonzero_count([foreign, inst, program, rise, fall])
     inst_absorption = inst >= 30000 and breadth >= 0.20 and current > open_ and current >= (high + low) / 2
     avalanche = foreign <= -30000 and program <= -20000 and not inst_absorption
 
@@ -129,16 +136,25 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         regime = "range_close"
         width = 80
 
+    if signal_count <= 1:
+        regime = "fallback_close_estimate"
+        width = 150
+        raw = current if current else prev
+
+    if fallback_mode:
+        width = max(width, 160)
+
     pred = round(raw)
     return {
         "forecast_close": pred,
         "range": [round(pred - width), round(pred + width)],
         "regime": regime,
-        "confidence": round(clamp(0.52 + 0.08 * inst_absorption + 0.06 * avalanche, 0.35, 0.72), 2),
+        "confidence": round(clamp(0.52 + 0.08 * inst_absorption + 0.06 * avalanche - 0.08 * (signal_count <= 1) - 0.05 * fallback_mode, 0.35, 0.72), 2),
         "flags": {
             "institution_absorption": inst_absorption,
             "avalanche_sell": avalanche,
             "trading_value_acceleration": trading_value_accel,
+            "fallback_mode": fallback_mode,
         },
         "inputs": {
             "current": current,
@@ -146,6 +162,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "institution": inst,
             "program": program,
             "breadth": round(breadth, 3),
+            "signal_count": signal_count,
         },
         "reason": close_reasons(inst_absorption, avalanche, breadth, trading_value_accel),
         "disclaimer": "Research and information only. Not investment advice.",
@@ -253,4 +270,3 @@ def daily_workflow_model() -> dict[str, Any]:
         "design_choice": "The MCP exposes the workflow and message payloads, while scheduling and KakaoTalk delivery should be handled by the host application.",
         "disclaimer": "Research and information only. Not investment advice.",
     }
-

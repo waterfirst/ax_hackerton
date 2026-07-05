@@ -39,3 +39,14 @@ def test_daily_workflow():
     out = daily_workflow_model()
     assert out["schedule_kst"][0]["time"] == "07:30"
     assert out["schedule_kst"][-1]["step"] == "score_and_postmortem"
+
+
+def test_close_fallback_never_missing():
+    out = forecast_close_model({
+        "current": 8088.34,
+        "prev_close": 8088.34,
+        "fallback_mode": True,
+    })
+    assert isinstance(out["forecast_close"], int)
+    assert out["regime"] == "fallback_close_estimate"
+    assert out["flags"]["fallback_mode"] is True
