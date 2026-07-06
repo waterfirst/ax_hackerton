@@ -52,6 +52,41 @@ def test_close_fallback_never_missing():
     assert out["flags"]["fallback_mode"] is True
 
 
+def test_open_follow_through_gap_support():
+    out = forecast_open_model({
+        "prev_close": 8088.34,
+        "prev_prev_close": 7648.09,
+        "ewy_pct": -2.0,
+        "sox_pct": -3.0,
+        "mu_pct": -2.5,
+        "nvda_pct": -1.2,
+        "meta_pct": 0.4,
+        "usdkrw": 1362,
+        "negative_news_count": 0,
+        "fresh_negative_news": False,
+    })
+    assert out["regime"] == "follow_through_gap_support"
+    assert out["forecast_open"] > 8088
+
+
+def test_close_gap_failed_but_supported_lifts_close():
+    out = forecast_close_model({
+        "current": 7969.6,
+        "open": 8186.82,
+        "high": 8327.26,
+        "low": 7815.53,
+        "prev_close": 8088.34,
+        "foreign": -1136900,
+        "institution": -924700,
+        "program": -1309900,
+        "rise_count": 365,
+        "fall_count": 520,
+        "trading_value_acceleration": True,
+    })
+    assert out["flags"]["gap_failed_but_supported"] is True
+    assert out["forecast_close"] >= 8000
+
+
 def test_close_panic_relief_offsets_overshoot():
     out = forecast_close_model({
         "current": 7969.6,

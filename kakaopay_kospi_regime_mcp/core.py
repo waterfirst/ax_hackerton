@@ -38,11 +38,17 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     semi_gap = clamp(semi / 240, -0.030, 0.030)
     fx_drag = clamp((usdkrw - 1350) / 10000, -0.004, 0.009)
     post_crash_relief = prior_ret <= -0.05 and ewy > -3.5 and not fresh_shock
+    follow_through_gap = prior_ret >= 0.04 and ewy > -3.5 and not fresh_shock
+    semi_floor = semi > -4.5
 
     if post_crash_relief:
         open_ret = 0.68 * ewy_gap + 0.22 * semi_gap - 0.45 * fx_drag
         open_ret = max(open_ret, -0.015)
         regime = "post_crash_relief_possible"
+    elif follow_through_gap and semi_floor:
+        open_ret = 0.40 * ewy_gap + 0.20 * semi_gap - 0.20 * fx_drag + 0.010
+        open_ret = max(open_ret, 0.004)
+        regime = "follow_through_gap_support"
     elif fresh_shock and (semi <= -2.5 or ewy <= -2.5):
         open_ret = 0.45 * ewy_gap + 0.45 * semi_gap - 0.75 * fx_drag - 0.006
         regime = "shock_gap_down"
@@ -66,6 +72,8 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         reasons.append("semi voltage positive")
     if post_crash_relief:
         reasons.append("prior crash exhaustion")
+    if follow_through_gap:
+        reasons.append("prior momentum carry")
     if fresh_shock:
         reasons.append("fresh negative news")
     if usdkrw > 1380:
@@ -115,6 +123,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     inst_absorption = inst >= 30000 and breadth >= 0.20 and current > open_ and current >= (high + low) / 2
     avalanche = foreign <= -30000 and program <= -20000 and not inst_absorption
     panic_relief = avalanche and low_recovery >= 140 and breadth > -0.20 and current >= low * 1.015
+    gap_failed_but_supported = gap_fail >= 160 and low_recovery >= 120 and breadth > -0.22 and current >= low * 1.018
 
     raw = current - 0.35 * gap_fail + 0.20 * low_recovery + flow + 45 * breadth
     if inst_absorption:
@@ -125,6 +134,8 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         raw -= 0.25 * low_recovery + 90
     if panic_relief:
         raw += 150
+    if gap_failed_but_supported:
+        raw += 85
 
     if avalanche:
         regime = "avalanche_sell"
@@ -146,6 +157,8 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
 
     if fallback_mode:
         width = max(width, 160)
+    if gap_failed_but_supported and regime == "avalanche_sell":
+        width = max(width, 120)
 
     pred = round(raw)
     return {
@@ -157,6 +170,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "institution_absorption": inst_absorption,
             "avalanche_sell": avalanche,
             "panic_relief": panic_relief,
+            "gap_failed_but_supported": gap_failed_but_supported,
             "trading_value_acceleration": trading_value_accel,
             "fallback_mode": fallback_mode,
         },
@@ -181,6 +195,8 @@ def close_reasons(inst_absorption: bool, avalanche: bool, breadth: float, tradin
         out.append("institution buying absorbed supply")
     if avalanche and breadth > -0.2:
         out.append("intraday panic low rebound active")
+    if breadth > -0.22 and breadth < 0.1:
+        out.append("selloff losing breadth dominance")
     if breadth > 0.2:
         out.append("market breadth positive")
     elif breadth < -0.2:
