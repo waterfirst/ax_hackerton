@@ -50,3 +50,22 @@ def test_close_fallback_never_missing():
     assert isinstance(out["forecast_close"], int)
     assert out["regime"] == "fallback_close_estimate"
     assert out["flags"]["fallback_mode"] is True
+
+
+def test_close_panic_relief_offsets_overshoot():
+    out = forecast_close_model({
+        "current": 7969.6,
+        "open": 8186.82,
+        "high": 8327.26,
+        "low": 7815.53,
+        "prev_close": 8088.34,
+        "foreign": -1136900,
+        "institution": -924700,
+        "program": -1309900,
+        "rise_count": 365,
+        "fall_count": 520,
+        "trading_value_acceleration": True,
+    })
+    assert out["flags"]["avalanche_sell"] is True
+    assert out["flags"]["panic_relief"] is True
+    assert out["forecast_close"] >= 7900

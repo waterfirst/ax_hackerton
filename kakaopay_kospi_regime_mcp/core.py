@@ -114,6 +114,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     signal_count = nonzero_count([foreign, inst, program, rise, fall])
     inst_absorption = inst >= 30000 and breadth >= 0.20 and current > open_ and current >= (high + low) / 2
     avalanche = foreign <= -30000 and program <= -20000 and not inst_absorption
+    panic_relief = avalanche and low_recovery >= 140 and breadth > -0.20 and current >= low * 1.015
 
     raw = current - 0.35 * gap_fail + 0.20 * low_recovery + flow + 45 * breadth
     if inst_absorption:
@@ -122,6 +123,8 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         raw += 35
     if avalanche:
         raw -= 0.25 * low_recovery + 90
+    if panic_relief:
+        raw += 150
 
     if avalanche:
         regime = "avalanche_sell"
@@ -153,6 +156,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         "flags": {
             "institution_absorption": inst_absorption,
             "avalanche_sell": avalanche,
+            "panic_relief": panic_relief,
             "trading_value_acceleration": trading_value_accel,
             "fallback_mode": fallback_mode,
         },
@@ -175,6 +179,8 @@ def close_reasons(inst_absorption: bool, avalanche: bool, breadth: float, tradin
         out.append("foreign and program selling crossed avalanche threshold")
     if inst_absorption:
         out.append("institution buying absorbed supply")
+    if avalanche and breadth > -0.2:
+        out.append("intraday panic low rebound active")
     if breadth > 0.2:
         out.append("market breadth positive")
     elif breadth < -0.2:
