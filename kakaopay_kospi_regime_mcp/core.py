@@ -124,6 +124,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     avalanche = foreign <= -30000 and program <= -20000 and not inst_absorption
     panic_relief = avalanche and low_recovery >= 140 and breadth > -0.20 and current >= low * 1.015
     gap_failed_but_supported = gap_fail >= 160 and low_recovery >= 120 and breadth > -0.22 and current >= low * 1.018
+    capitulation_bounce_floor = avalanche and current <= prev * 0.935 and gap_fail >= 300 and breadth <= -0.35 and low_recovery <= 30
 
     raw = current - 0.35 * gap_fail + 0.20 * low_recovery + flow + 45 * breadth
     if inst_absorption:
@@ -136,6 +137,8 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         raw += 150
     if gap_failed_but_supported:
         raw += 85
+    if capitulation_bounce_floor:
+        raw = max(raw, current + 80)
 
     if avalanche:
         regime = "avalanche_sell"
@@ -171,6 +174,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "avalanche_sell": avalanche,
             "panic_relief": panic_relief,
             "gap_failed_but_supported": gap_failed_but_supported,
+            "capitulation_bounce_floor": capitulation_bounce_floor,
             "trading_value_acceleration": trading_value_accel,
             "fallback_mode": fallback_mode,
         },

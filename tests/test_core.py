@@ -104,3 +104,21 @@ def test_close_panic_relief_offsets_overshoot():
     assert out["flags"]["avalanche_sell"] is True
     assert out["flags"]["panic_relief"] is True
     assert out["forecast_close"] >= 7900
+
+
+def test_close_capitulation_bounce_floor_avoids_midday_overshoot():
+    out = forecast_close_model({
+        "current": 7474.73,
+        "open": 7919.2,
+        "high": 7954.55,
+        "low": 7466.11,
+        "prev_close": 8051.33,
+        "foreign": -2517500,
+        "institution": -184200,
+        "program": -2258000,
+        "rise_count": 236,
+        "fall_count": 655,
+        "trading_value_acceleration": False,
+    })
+    assert out["flags"]["capitulation_bounce_floor"] is True
+    assert out["forecast_close"] >= 7550
