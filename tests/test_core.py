@@ -69,6 +69,24 @@ def test_open_follow_through_gap_support():
     assert out["forecast_open"] > 8088
 
 
+def test_open_sell_the_news_risk_haircuts_global_relief():
+    out = forecast_open_model({
+        "prev_close": 8051.33,
+        "prev_prev_close": 8088.34,
+        "ewy_pct": 5.39,
+        "sox_pct": 2.17,
+        "mu_pct": 0.66,
+        "nvda_pct": 0.33,
+        "meta_pct": 2.99,
+        "usdkrw": 1528.93,
+        "negative_news_count": 0,
+        "fresh_negative_news": False,
+    })
+    assert out["regime"] == "sell_the_news_risk"
+    assert out["forecast_open"] <= 8000
+    assert "local sell-the-news risk" in out["reason"]
+
+
 def test_close_gap_failed_but_supported_lifts_close():
     out = forecast_close_model({
         "current": 7969.6,

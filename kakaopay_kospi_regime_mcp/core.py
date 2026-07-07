@@ -40,6 +40,13 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     post_crash_relief = prior_ret <= -0.05 and ewy > -3.5 and not fresh_shock
     follow_through_gap = prior_ret >= 0.04 and ewy > -3.5 and not fresh_shock
     semi_floor = semi > -4.5
+    sell_the_news_risk = (
+        ewy >= 4.5
+        and -0.02 <= prior_ret <= 0.01
+        and semi <= 2.5
+        and usdkrw >= 1500
+        and not fresh_shock
+    )
 
     if post_crash_relief:
         open_ret = 0.68 * ewy_gap + 0.22 * semi_gap - 0.45 * fx_drag
@@ -49,6 +56,9 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         open_ret = 0.40 * ewy_gap + 0.20 * semi_gap - 0.20 * fx_drag + 0.010
         open_ret = max(open_ret, 0.004)
         regime = "follow_through_gap_support"
+    elif sell_the_news_risk:
+        open_ret = 0.15 * ewy_gap + 0.10 * semi_gap - 0.60 * fx_drag - 0.012
+        regime = "sell_the_news_risk"
     elif fresh_shock and (semi <= -2.5 or ewy <= -2.5):
         open_ret = 0.45 * ewy_gap + 0.45 * semi_gap - 0.75 * fx_drag - 0.006
         regime = "shock_gap_down"
@@ -74,6 +84,8 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         reasons.append("prior crash exhaustion")
     if follow_through_gap:
         reasons.append("prior momentum carry")
+    if sell_the_news_risk:
+        reasons.append("local sell-the-news risk")
     if fresh_shock:
         reasons.append("fresh negative news")
     if usdkrw > 1380:
@@ -82,7 +94,16 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         reasons.append("mixed signals")
 
     signal_count = nonzero_count([ewy, sox, mu, nvda, meta])
-    confidence = clamp(0.55 + 0.05 * (abs(ewy) > 1) + 0.04 * (abs(semi) > 1) - 0.05 * fresh_shock - 0.03 * (signal_count <= 2), 0.35, 0.72)
+    confidence = clamp(
+        0.55
+        + 0.05 * (abs(ewy) > 1)
+        + 0.04 * (abs(semi) > 1)
+        - 0.05 * fresh_shock
+        - 0.04 * sell_the_news_risk
+        - 0.03 * (signal_count <= 2),
+        0.35,
+        0.72,
+    )
     return {
         "forecast_open": pred,
         "range": [round(pred - width), round(pred + width)],
