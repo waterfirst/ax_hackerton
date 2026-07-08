@@ -140,3 +140,22 @@ def test_close_capitulation_bounce_floor_avoids_midday_overshoot():
     })
     assert out["flags"]["capitulation_bounce_floor"] is True
     assert out["forecast_close"] >= 7550
+
+
+def test_close_weak_rebound_trap_haircuts_noon_bounce():
+    out = forecast_close_model({
+        "current": 7589.87,
+        "open": 7452.48,
+        "high": 7791.66,
+        "low": 7352.89,
+        "prev_close": 7656.31,
+        "foreign": -572300,
+        "institution": 1246600,
+        "program": 30200,
+        "rise_count": 206,
+        "fall_count": 667,
+        "trading_value_acceleration": True,
+    })
+    assert out["flags"]["weak_rebound_trap"] is True
+    assert out["regime"] == "rebound_failure_risk"
+    assert out["forecast_close"] <= 7500

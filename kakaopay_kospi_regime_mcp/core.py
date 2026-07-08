@@ -146,6 +146,14 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     panic_relief = avalanche and low_recovery >= 140 and breadth > -0.20 and current >= low * 1.015
     gap_failed_but_supported = gap_fail >= 160 and low_recovery >= 120 and breadth > -0.22 and current >= low * 1.018
     capitulation_bounce_floor = avalanche and current <= prev * 0.935 and gap_fail >= 300 and breadth <= -0.35 and low_recovery <= 30
+    weak_rebound_trap = (
+        not avalanche
+        and foreign <= -300000
+        and breadth <= -0.45
+        and current < prev
+        and (high - current) >= 180
+        and low_recovery >= 180
+    )
 
     raw = current - 0.35 * gap_fail + 0.20 * low_recovery + flow + 45 * breadth
     if inst_absorption:
@@ -160,10 +168,15 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         raw += 85
     if capitulation_bounce_floor:
         raw = max(raw, current + 80)
+    if weak_rebound_trap:
+        raw -= 0.35 * low_recovery + 0.25 * max(high - current, 0)
 
     if avalanche:
         regime = "avalanche_sell"
         width = 130
+    elif weak_rebound_trap:
+        regime = "rebound_failure_risk"
+        width = 120
     elif inst_absorption:
         regime = "institution_absorption"
         width = 90
@@ -196,6 +209,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "panic_relief": panic_relief,
             "gap_failed_but_supported": gap_failed_but_supported,
             "capitulation_bounce_floor": capitulation_bounce_floor,
+            "weak_rebound_trap": weak_rebound_trap,
             "trading_value_acceleration": trading_value_accel,
             "fallback_mode": fallback_mode,
         },
@@ -220,6 +234,8 @@ def close_reasons(inst_absorption: bool, avalanche: bool, breadth: float, tradin
         out.append("institution buying absorbed supply")
     if avalanche and breadth > -0.2:
         out.append("intraday panic low rebound active")
+    if not avalanche and breadth <= -0.45:
+        out.append("rebound breadth too narrow")
     if breadth > -0.22 and breadth < 0.1:
         out.append("selloff losing breadth dominance")
     if breadth > 0.2:
