@@ -38,6 +38,7 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     semi_gap = clamp(semi / 240, -0.030, 0.030)
     fx_drag = clamp((usdkrw - 1350) / 10000, -0.004, 0.009)
     post_crash_relief = prior_ret <= -0.05 and ewy > -3.5 and not fresh_shock
+    post_crash_gap_reclaim = prior_ret <= -0.05 and ewy >= 0.5 and semi >= 1.0 and not fresh_shock
     follow_through_gap = prior_ret >= 0.04 and ewy > -3.5 and not fresh_shock
     semi_floor = semi > -4.5
     sell_the_news_risk = (
@@ -52,6 +53,9 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         open_ret = 0.68 * ewy_gap + 0.22 * semi_gap - 0.45 * fx_drag
         open_ret = max(open_ret, -0.015)
         regime = "post_crash_relief_possible"
+        if post_crash_gap_reclaim:
+            open_ret = 0.55 * ewy_gap + 0.25 * semi_gap - 0.15 * fx_drag + 0.029
+            regime = "post_crash_gap_reclaim"
     elif follow_through_gap and semi_floor:
         open_ret = 0.40 * ewy_gap + 0.20 * semi_gap - 0.20 * fx_drag + 0.010
         open_ret = max(open_ret, 0.004)
@@ -82,6 +86,8 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         reasons.append("semi voltage positive")
     if post_crash_relief:
         reasons.append("prior crash exhaustion")
+    if post_crash_gap_reclaim:
+        reasons.append("post-crash gap reclaim")
     if follow_through_gap:
         reasons.append("prior momentum carry")
     if sell_the_news_risk:
@@ -146,6 +152,13 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     panic_relief = avalanche and low_recovery >= 140 and breadth > -0.20 and current >= low * 1.015
     gap_failed_but_supported = gap_fail >= 160 and low_recovery >= 120 and breadth > -0.22 and current >= low * 1.018
     capitulation_bounce_floor = avalanche and current <= prev * 0.935 and gap_fail >= 300 and breadth <= -0.35 and low_recovery <= 30
+    broad_weak_but_flow_supported = (
+        foreign >= 1000
+        and inst >= 10000
+        and program >= 5000
+        and breadth <= -0.35
+        and current >= prev
+    )
     weak_rebound_trap = (
         not avalanche
         and foreign <= -300000
@@ -168,12 +181,17 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         raw += 85
     if capitulation_bounce_floor:
         raw = max(raw, current + 80)
+    if broad_weak_but_flow_supported:
+        raw += 110
     if weak_rebound_trap:
         raw -= 0.35 * low_recovery + 0.25 * max(high - current, 0)
 
     if avalanche:
         regime = "avalanche_sell"
         width = 130
+    elif broad_weak_but_flow_supported:
+        regime = "flow_supported_rebound"
+        width = 110
     elif weak_rebound_trap:
         regime = "rebound_failure_risk"
         width = 120
@@ -209,6 +227,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "panic_relief": panic_relief,
             "gap_failed_but_supported": gap_failed_but_supported,
             "capitulation_bounce_floor": capitulation_bounce_floor,
+            "broad_weak_but_flow_supported": broad_weak_but_flow_supported,
             "weak_rebound_trap": weak_rebound_trap,
             "trading_value_acceleration": trading_value_accel,
             "fallback_mode": fallback_mode,
@@ -221,12 +240,18 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "breadth": round(breadth, 3),
             "signal_count": signal_count,
         },
-        "reason": close_reasons(inst_absorption, avalanche, breadth, trading_value_accel),
+        "reason": close_reasons(inst_absorption, avalanche, breadth, trading_value_accel, broad_weak_but_flow_supported),
         "disclaimer": "Research and information only. Not investment advice.",
     }
 
 
-def close_reasons(inst_absorption: bool, avalanche: bool, breadth: float, trading_value_accel: bool) -> list[str]:
+def close_reasons(
+    inst_absorption: bool,
+    avalanche: bool,
+    breadth: float,
+    trading_value_accel: bool,
+    broad_weak_but_flow_supported: bool,
+) -> list[str]:
     out = []
     if avalanche:
         out.append("foreign and program selling crossed avalanche threshold")
@@ -234,8 +259,12 @@ def close_reasons(inst_absorption: bool, avalanche: bool, breadth: float, tradin
         out.append("institution buying absorbed supply")
     if avalanche and breadth > -0.2:
         out.append("intraday panic low rebound active")
-    if not avalanche and breadth <= -0.45:
+    if breadth <= -0.35:
+        out.append("breadth collapse")
+    if not avalanche and breadth <= -0.35 and not broad_weak_but_flow_supported:
         out.append("rebound breadth too narrow")
+    if broad_weak_but_flow_supported:
+        out.append("index held by concentrated flow")
     if breadth > -0.22 and breadth < 0.1:
         out.append("selloff losing breadth dominance")
     if breadth > 0.2:
@@ -324,7 +353,7 @@ def daily_workflow_model() -> dict[str, Any]:
                 "message": "종가 예측 고정, confidence, 리스크 플래그 발송",
             },
             {
-                "time": "15:40",
+                "time": "16:30",
                 "step": "score_and_postmortem",
                 "tool": "score_prediction",
                 "message": "실측 대비 오차, 점수, 틀린 원인, 다음 모델 수정 방향 발송",

@@ -13,6 +13,23 @@ def test_open_relief():
     assert out["regime"] == "post_crash_relief_possible"
 
 
+def test_open_post_crash_gap_reclaim_lifts_gap_more_aggressively():
+    out = forecast_open_model({
+        "prev_close": 7246.79,
+        "prev_prev_close": 7656.31,
+        "ewy_pct": 0.76,
+        "sox_pct": 2.23,
+        "mu_pct": 2.83,
+        "nvda_pct": 0.27,
+        "meta_pct": 1.3,
+        "usdkrw": 1512.85,
+        "negative_news_count": 1,
+        "fresh_negative_news": False,
+    })
+    assert out["regime"] == "post_crash_gap_reclaim"
+    assert out["forecast_open"] >= 7400
+
+
 def test_close_absorption():
     out = forecast_close_model({
         "current": 7953.86,
@@ -38,6 +55,7 @@ def test_score():
 def test_daily_workflow():
     out = daily_workflow_model()
     assert out["schedule_kst"][0]["time"] == "07:30"
+    assert out["schedule_kst"][-1]["time"] == "16:30"
     assert out["schedule_kst"][-1]["step"] == "score_and_postmortem"
 
 
@@ -159,3 +177,23 @@ def test_close_weak_rebound_trap_haircuts_noon_bounce():
     assert out["flags"]["weak_rebound_trap"] is True
     assert out["regime"] == "rebound_failure_risk"
     assert out["forecast_close"] <= 7500
+
+
+def test_close_flow_supported_rebound_handles_narrow_breadth_when_index_is_held():
+    out = forecast_close_model({
+        "current": 7254.32,
+        "open": 7486.64,
+        "high": 7543.86,
+        "low": 7063.76,
+        "prev_close": 7246.79,
+        "foreign": 1567,
+        "institution": 13617,
+        "program": 6348,
+        "rise_count": 196,
+        "fall_count": 692,
+        "trading_value_acceleration": True,
+    })
+    assert out["flags"]["broad_weak_but_flow_supported"] is True
+    assert out["regime"] == "flow_supported_rebound"
+    assert out["forecast_close"] >= 7280
+    assert "index held by concentrated flow" in out["reason"]
