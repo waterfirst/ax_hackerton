@@ -87,6 +87,24 @@ def test_open_follow_through_gap_support():
     assert out["forecast_open"] > 8088
 
 
+def test_open_semi_lead_gap_up_boosts_open_when_sox_outpaces_ewy():
+    out = forecast_open_model({
+        "prev_close": 7293.51,
+        "prev_prev_close": 7246.79,
+        "ewy_pct": 1.11,
+        "sox_pct": 3.06,
+        "mu_pct": 4.2,
+        "nvda_pct": 2.6,
+        "meta_pct": 0.8,
+        "usdkrw": 1372.0,
+        "negative_news_count": 0,
+        "fresh_negative_news": False,
+    })
+    assert out["regime"] == "semi_lead_gap_up"
+    assert out["forecast_open"] >= 7360
+    assert "SOX-led semi leadership" in out["reason"]
+
+
 def test_open_sell_the_news_risk_haircuts_global_relief():
     out = forecast_open_model({
         "prev_close": 8051.33,
@@ -197,3 +215,23 @@ def test_close_flow_supported_rebound_handles_narrow_breadth_when_index_is_held(
     assert out["regime"] == "flow_supported_rebound"
     assert out["forecast_close"] >= 7280
     assert "index held by concentrated flow" in out["reason"]
+
+
+def test_close_gap_up_exhaustion_risk_haircuts_noon_overconfidence():
+    out = forecast_close_model({
+        "current": 7604.77,
+        "open": 7548.40,
+        "high": 7643.33,
+        "low": 7429.51,
+        "prev_close": 7291.91,
+        "foreign": -4239,
+        "institution": 16688,
+        "program": 2499,
+        "rise_count": 835,
+        "fall_count": 71,
+        "trading_value_acceleration": False,
+    })
+    assert out["flags"]["gap_up_exhaustion_risk"] is True
+    assert out["regime"] == "gap_up_exhaustion_risk"
+    assert out["forecast_close"] <= 7580
+    assert "wide gap-up range but follow-through stalled" in out["reason"]

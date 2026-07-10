@@ -41,6 +41,7 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     post_crash_gap_reclaim = prior_ret <= -0.05 and ewy >= 0.5 and semi >= 1.0 and not fresh_shock
     follow_through_gap = prior_ret >= 0.04 and ewy > -3.5 and not fresh_shock
     semi_floor = semi > -4.5
+    semi_lead_gap_up = ewy >= 0 and sox >= 2.0 and (sox - ewy) >= 1.2 and semi >= 1.5 and not fresh_shock
     sell_the_news_risk = (
         ewy >= 4.5
         and -0.02 <= prior_ret <= 0.01
@@ -60,6 +61,9 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         open_ret = 0.40 * ewy_gap + 0.20 * semi_gap - 0.20 * fx_drag + 0.010
         open_ret = max(open_ret, 0.004)
         regime = "follow_through_gap_support"
+    elif semi_lead_gap_up:
+        open_ret = 0.45 * ewy_gap + 0.42 * semi_gap - 0.30 * fx_drag + 0.003
+        regime = "semi_lead_gap_up"
     elif sell_the_news_risk:
         open_ret = 0.15 * ewy_gap + 0.10 * semi_gap - 0.60 * fx_drag - 0.012
         regime = "sell_the_news_risk"
@@ -90,6 +94,8 @@ def forecast_open_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         reasons.append("post-crash gap reclaim")
     if follow_through_gap:
         reasons.append("prior momentum carry")
+    if semi_lead_gap_up:
+        reasons.append("SOX-led semi leadership")
     if sell_the_news_risk:
         reasons.append("local sell-the-news risk")
     if fresh_shock:
@@ -159,6 +165,15 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         and breadth <= -0.35
         and current >= prev
     )
+    gap_up_exhaustion_risk = (
+        open_ > prev
+        and (high - low) >= 180
+        and (current - open_) <= 70
+        and max(high - current, 0) >= 35
+        and foreign < 0
+        and inst >= 10000
+        and breadth >= 0.60
+    )
     weak_rebound_trap = (
         not avalanche
         and foreign <= -300000
@@ -183,6 +198,8 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
         raw = max(raw, current + 80)
     if broad_weak_but_flow_supported:
         raw += 110
+    if gap_up_exhaustion_risk:
+        raw -= 110
     if weak_rebound_trap:
         raw -= 0.35 * low_recovery + 0.25 * max(high - current, 0)
 
@@ -192,6 +209,9 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
     elif broad_weak_but_flow_supported:
         regime = "flow_supported_rebound"
         width = 110
+    elif gap_up_exhaustion_risk:
+        regime = "gap_up_exhaustion_risk"
+        width = 120
     elif weak_rebound_trap:
         regime = "rebound_failure_risk"
         width = 120
@@ -228,6 +248,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "gap_failed_but_supported": gap_failed_but_supported,
             "capitulation_bounce_floor": capitulation_bounce_floor,
             "broad_weak_but_flow_supported": broad_weak_but_flow_supported,
+            "gap_up_exhaustion_risk": gap_up_exhaustion_risk,
             "weak_rebound_trap": weak_rebound_trap,
             "trading_value_acceleration": trading_value_accel,
             "fallback_mode": fallback_mode,
@@ -240,7 +261,7 @@ def forecast_close_model(snapshot: dict[str, Any]) -> dict[str, Any]:
             "breadth": round(breadth, 3),
             "signal_count": signal_count,
         },
-        "reason": close_reasons(inst_absorption, avalanche, breadth, trading_value_accel, broad_weak_but_flow_supported),
+        "reason": close_reasons(inst_absorption, avalanche, breadth, trading_value_accel, broad_weak_but_flow_supported, gap_up_exhaustion_risk),
         "disclaimer": "Research and information only. Not investment advice.",
     }
 
@@ -251,6 +272,7 @@ def close_reasons(
     breadth: float,
     trading_value_accel: bool,
     broad_weak_but_flow_supported: bool,
+    gap_up_exhaustion_risk: bool,
 ) -> list[str]:
     out = []
     if avalanche:
@@ -265,6 +287,8 @@ def close_reasons(
         out.append("rebound breadth too narrow")
     if broad_weak_but_flow_supported:
         out.append("index held by concentrated flow")
+    if gap_up_exhaustion_risk:
+        out.append("wide gap-up range but follow-through stalled")
     if breadth > -0.22 and breadth < 0.1:
         out.append("selloff losing breadth dominance")
     if breadth > 0.2:
