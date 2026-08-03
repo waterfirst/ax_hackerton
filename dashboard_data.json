@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-03 12:30 KST",
+  "updated_at": "2026-08-03 12:40 KST",
   "status": "T3 report live-paper",
-  "regime": "상방추세 지속(고가밀착·매수, 연장 0.28)",
+  "regime": "고변동 드리프트(현재가 앵커 폐지)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98275391,
-    "cash": 98275391,
+    "total": 0,
+    "cash": 0,
     "invested": 0,
-    "day_pnl": 0,
-    "cum_pnl": -1724609,
-    "cum_return_pct": -1.7246,
+    "day_pnl": -98275391,
+    "cum_pnl": -100000000,
+    "cum_return_pct": -100.0,
     "vs_kospi_pct": 0.0
   },
   "metrics": {
@@ -36,7 +36,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 100.0,
+      "used_pct": 0.0,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -717,11 +717,11 @@
   ],
   "plan": {
     "date": "2026-08-03",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-07-31.json · etf_ref=fsc_auto_collector"
+    "text": "short/strong · dry_run=False · quote=10000 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector"
   },
   "report": {
     "date": "2026-08-03",
-    "text": "mode=report · trades=20 · signal=records/2026-07-31.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "text": "mode=report · trades=20 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -462.75,
@@ -733,15 +733,13 @@
   "selfcheck": {
     "ok": true,
     "badge": "OK",
-    "action": "allow_with_warnings",
-    "findings": [
-      "trix_bearish_conflict"
-    ]
+    "action": "allow",
+    "findings": []
   },
   "equity_curve": [
     {
       "date": "2026-08-03",
-      "value": 98275391
+      "value": 0
     }
   ],
   "experiment": {
@@ -772,12 +770,12 @@
     "contribution": {
       "long": 0,
       "short": 0,
-      "cash": 98275391.0
+      "cash": 0.0
     },
     "contribution_pct": {
       "long": 0.0,
       "short": 0.0,
-      "cash": 100.0
+      "cash": 0.0
     }
   }
 }
