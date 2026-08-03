@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-03 14:00 KST",
-  "status": "T3 report live-paper · snapshot-fallback",
+  "updated_at": "2026-08-03 14:10 KST",
+  "status": "T3 report live-paper",
   "regime": "고변동 드리프트(현재가 앵커 폐지)",
   "account": {
     "type": "모의(paper)",
@@ -721,7 +721,7 @@
   },
   "report": {
     "date": "2026-08-03",
-    "text": "mode=report · trades=20 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector · selfcheck=ok · snapshot_fallback"
+    "text": "mode=report · trades=20 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -462.75,
