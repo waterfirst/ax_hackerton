@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-03 16:40 KST",
-  "status": "T3 report live-paper",
-  "regime": "고변동 드리프트(현재가 앵커 폐지)",
+  "updated_at": "2026-08-04 08:40 KST",
+  "status": "T3 plan live-paper",
+  "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
@@ -716,29 +716,31 @@
     }
   ],
   "plan": {
-    "date": "2026-08-03",
-    "text": "short/strong · dry_run=False · quote=10000 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector"
+    "date": "2026-08-04",
+    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-08-04.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-08-03",
-    "text": "mode=report · trades=20 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-08-04",
+    "text": "mode=plan · trades=20 · signal=records/2026-08-04.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
-    "score": -462.75,
-    "arrow": "sell",
-    "rank_delta": -2,
+    "score": -112.07,
+    "arrow": "hold",
+    "rank_delta": 1,
     "preferred_long": "069500",
     "preferred_short": "114800"
   },
   "selfcheck": {
     "ok": true,
     "badge": "OK",
-    "action": "allow",
-    "findings": []
+    "action": "allow_with_warnings",
+    "findings": [
+      "trix_bearish_conflict"
+    ]
   },
   "equity_curve": [
     {
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "value": 98275391
     }
   ],
