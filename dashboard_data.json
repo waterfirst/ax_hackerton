@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-04 09:01 KST",
-  "status": "T3 trade dry-run",
-  "regime": "open_only",
+  "updated_at": "2026-08-04 09:09 KST",
+  "status": "T3 report live-paper",
+  "regime": "고변동 드리프트(현재가 앵커 폐지)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
@@ -119,6 +119,7 @@
       "reason_text": "KODEX200이 -5% 이상 급락하고 인버스가 +5% 이상 강세라 하락 추세 추종 추가매수",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-7.72",
       "inverse_change_pct": "7.82",
       "inverse_exposure_pct": "44.94",
@@ -153,6 +154,7 @@
       "reason_text": "인버스가 당일 고점권이고 목표 초과 비중이라 전술 슬리브 일부 차익실현",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-7.69",
       "inverse_change_pct": "7.82",
       "inverse_exposure_pct": "59.9",
@@ -187,6 +189,7 @@
       "reason_text": "인버스가 당일 고점권이고 목표 초과 비중이라 전술 슬리브 일부 차익실현",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-7.87",
       "inverse_change_pct": "8.0",
       "inverse_exposure_pct": "50.98",
@@ -221,6 +224,7 @@
       "reason_text": "인버스가 당일 고점권이고 목표 초과 비중이라 전술 슬리브 일부 차익실현",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-8.37",
       "inverse_change_pct": "8.63",
       "inverse_exposure_pct": "45.12",
@@ -255,6 +259,7 @@
       "reason_text": "인버스가 당일 고점권이고 목표 초과 비중이라 전술 슬리브 일부 차익실현",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-8.37",
       "inverse_change_pct": "8.63",
       "inverse_exposure_pct": "45.12",
@@ -289,6 +294,7 @@
       "reason_text": "인버스 수익률이 기준을 넘고 고점권이라 일부 이익 확정",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-9.87",
       "inverse_change_pct": "10.06",
       "inverse_exposure_pct": "45.21",
@@ -323,6 +329,7 @@
       "reason_text": "인버스 수익률이 기준을 넘고 고점권이라 일부 이익 확정",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-10.51",
       "inverse_change_pct": "10.78",
       "inverse_exposure_pct": "34.04",
@@ -389,6 +396,7 @@
       "reason_text": "KODEX200이 저점 대비 반등하고 시가 위 회복을 시도해 인버스 위험 축소",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "1.26",
       "inverse_change_pct": "-1.13",
       "inverse_exposure_pct": "32.37",
@@ -423,6 +431,7 @@
       "reason_text": "KODEX200이 -5% 이상 급락하고 인버스가 +5% 이상 강세라 하락 추세 추종 추가매수",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-11.84",
       "inverse_change_pct": "11.87",
       "inverse_exposure_pct": "17.96",
@@ -457,6 +466,7 @@
       "reason_text": "하락장은 유지되지만 인버스가 고점에서 눌려 재진입 가격이 생겨 재매수",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-12.53",
       "inverse_change_pct": "12.44",
       "inverse_exposure_pct": "33.07",
@@ -491,6 +501,7 @@
       "reason_text": "하락장은 유지되지만 인버스가 고점에서 눌려 재진입 가격이 생겨 재매수",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-9.54",
       "inverse_change_pct": "9.53",
       "inverse_exposure_pct": "42.35",
@@ -525,6 +536,7 @@
       "reason_text": "하락장은 유지되지만 인버스가 고점에서 눌려 재진입 가격이 생겨 재매수",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "-9.23",
       "inverse_change_pct": "9.21",
       "inverse_exposure_pct": "52.31",
@@ -559,6 +571,7 @@
       "reason_text": "KODEX200이 저점 대비 반등하고 시가 위 회복을 시도해 인버스 위험 축소",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "0.02",
       "inverse_change_pct": "0.23",
       "inverse_exposure_pct": "59.31",
@@ -593,6 +606,7 @@
       "reason_text": "KODEX200이 저점 대비 반등하고 시가 위 회복을 시도해 인버스 위험 축소",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "4.42",
       "inverse_change_pct": "-4.19",
       "inverse_exposure_pct": "28.37",
@@ -627,6 +641,7 @@
       "reason_text": "KODEX200이 저점 대비 반등하고 시가 위 회복을 시도해 인버스 위험 축소",
       "entry_reason": "",
       "exit_reason": "",
+      "risk_guard_tags": "",
       "index_change_pct": "4.01",
       "inverse_change_pct": "-3.81",
       "inverse_exposure_pct": "14.22",
@@ -693,6 +708,7 @@
       "reason_text": "KODEX200이 저점 대비 반등하고 시가 위 회복을 시도해 인버스 위험 축소",
       "entry_reason": "",
       "exit_reason": "cut_inverse_on_index_reversal",
+      "risk_guard_tags": "",
       "index_change_pct": "14.5",
       "inverse_change_pct": "-14.74",
       "inverse_exposure_pct": "12.78",
@@ -717,11 +733,11 @@
   ],
   "plan": {
     "date": "2026-08-04",
-    "text": "long/weak · dry_run=True · quote=live · signal=records/2026-08-04.json · etf_ref=fsc_auto_collector"
+    "text": "short/strong · dry_run=False · quote=10000 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector"
   },
   "report": {
     "date": "2026-08-04",
-    "text": "mode=trade · trades=20 · signal=records/2026-08-04.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "text": "mode=report · trades=20 · signal=records/2026-08-03.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -112.07,
@@ -733,10 +749,8 @@
   "selfcheck": {
     "ok": true,
     "badge": "OK",
-    "action": "allow_with_warnings",
-    "findings": [
-      "trix_bearish_conflict"
-    ]
+    "action": "allow",
+    "findings": []
   },
   "equity_curve": [
     {
