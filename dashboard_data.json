@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-05 12:20 KST",
+  "updated_at": "2026-08-05 12:40 KST",
   "status": "T3 report live-paper",
-  "regime": "open_only",
+  "regime": "고변동 드리프트(현재가 앵커 폐지)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
@@ -782,8 +782,10 @@
   "selfcheck": {
     "ok": true,
     "badge": "OK",
-    "action": "allow",
-    "findings": []
+    "action": "allow_with_warnings",
+    "findings": [
+      "direction_conflict_bearish_regime"
+    ]
   },
   "equity_curve": [
     {
