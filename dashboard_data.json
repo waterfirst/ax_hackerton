@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-05 11:20 KST",
+  "updated_at": "2026-08-05 11:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98275391,
-    "cash": 98275391,
-    "invested": 0,
-    "day_pnl": 0,
-    "cum_pnl": -1724609,
-    "cum_return_pct": -1.7246,
+    "total": 98270031,
+    "cash": 88373881,
+    "invested": 9896150,
+    "day_pnl": -5360,
+    "cum_pnl": -1729969,
+    "cum_return_pct": -1.73,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 1.7246,
+    "mdd_pct": 1.73,
     "win_rate": 0.45454545454545453,
     "profit_factor": 0.17345263459626561,
     "trades": 20,
@@ -26,7 +26,7 @@
     "gross_profit": 486951.76,
     "gross_loss": 2807404.83,
     "open_qty": {
-      "069500": 1,
+      "069500": 96,
       "114800": 5552
     },
     "unmatched_sell_qty": 0,
@@ -35,8 +35,8 @@
       "mismatches": [
         {
           "symbol": "069500",
-          "log_implied_qty": 1,
-          "account_qty": 0
+          "log_implied_qty": 96,
+          "account_qty": 95
         },
         {
           "symbol": "114800",
@@ -51,7 +51,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 0.0,
+      "used_pct": 10.07,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -63,44 +63,23 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 100.0,
+      "used_pct": 89.93,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
-  "positions": [],
-  "trades": [
+  "positions": [
     {
-      "ts": "2026-07-20T09:02:06",
-      "action": "buy",
-      "strategy_name": "",
-      "sleeve": "index_etf",
       "symbol": "069500",
-      "price": "104135",
-      "qty": "1",
-      "weight": "0.0010",
-      "entry_reason": "",
-      "exit_reason": "",
-      "issues": "plumbing_test",
-      "timestamp": "",
-      "side": "BUY",
-      "symbol_name": "",
-      "quantity": "",
-      "order_krw": "",
-      "experiment_id": "",
-      "market_regime": "",
-      "hypothesis": "",
-      "entry_trigger": "",
-      "exit_trigger": "",
-      "risk_reason": "",
-      "expected_scenario": "",
-      "invalidated_if": "",
-      "post_trade_review": "",
-      "source": "trade_log.csv",
-      "label": "매수",
       "name": "KODEX 200",
-      "reason": "plumbing_test",
-      "reason_text": "plumbing_test"
-    },
+      "qty": 95,
+      "avg_price": 104211,
+      "price": 104170,
+      "value": 9896150,
+      "pnl": -3900,
+      "pnl_pct": -0.04
+    }
+  ],
+  "trades": [
     {
       "ts": "2026-07-28T09:19:06",
       "action": "buy_limit",
@@ -756,6 +735,41 @@
       "source": "intraday_tactical_log.csv",
       "label": "매도",
       "name": "KODEX 인버스"
+    },
+    {
+      "ts": "2026-08-05T11:27:38",
+      "action": "buy_limit",
+      "strategy_name": "risk_guardrail",
+      "symbol": "069500",
+      "qty": "95",
+      "price": "104515",
+      "rt_cd": "0",
+      "msg_cd": "40600000",
+      "reason": "operator_direct_long_entry",
+      "reason_text": "operator_direct_long_entry",
+      "entry_reason": "operator_direct_long_entry",
+      "exit_reason": "",
+      "risk_guard_tags": "",
+      "index_change_pct": "3.86",
+      "inverse_change_pct": "-3.84",
+      "inverse_exposure_pct": "0.0",
+      "timestamp": "2026-08-05T11:27:38",
+      "side": "BUY",
+      "symbol_name": "KODEX 200",
+      "quantity": "95",
+      "order_krw": "9928925",
+      "experiment_id": "R5_CASH_DEFENSE_001",
+      "market_regime": "high_vol_sideways",
+      "hypothesis": "방향성이 흐릿하고 신호가 충돌할 때는 무거래와 현금 유지가 기대값을 지킨다.",
+      "entry_trigger": "신호 충돌 또는 주문 최소조건 미충족.",
+      "exit_trigger": "명확한 추세형 신호가 생길 때만 재진입한다.",
+      "risk_reason": "기회비용은 있지만 불필요한 손실을 방지하는 것이 우선이다.",
+      "expected_scenario": "큰 방향성 부재, 장중 상하단 반복, 롱·숏 신호 충돌",
+      "invalidated_if": "명확한 추세와 거래대금 확장이 동반되면 현금 방어 가설을 종료한다.",
+      "post_trade_review": "",
+      "source": "intraday_tactical_log.csv",
+      "label": "매수",
+      "name": "KODEX 200"
     }
   ],
   "plan": {
@@ -790,38 +804,34 @@
     },
     {
       "date": "2026-08-05",
-      "value": 98275391
+      "value": 98270031
     }
   ],
   "experiment": {
     "current_experiment": {
       "experiment_id": "R5_CASH_DEFENSE_001",
-      "strategy_name": "S1_whipsaw_reversal_cut",
+      "strategy_name": "risk_guardrail",
       "market_regime": "high_vol_sideways",
       "hypothesis": "방향성이 흐릿하고 신호가 충돌할 때는 무거래와 현금 유지가 기대값을 지킨다."
     },
     "today_reason_top3": [
       {
-        "reason": "etf_reference_short_max|short_1x_default",
-        "count": 1
-      },
-      {
-        "reason": "cut_inverse_on_index_reversal",
+        "reason": "신호 충돌 또는 주문 최소조건 미충족.",
         "count": 1
       }
     ],
     "strategy_pnl": [],
     "inverse_dependency": {
-      "trade_value_pct": 99.95,
+      "trade_value_pct": 95.82,
       "realized_pnl_pct": 0.0,
       "inverse_trade_value": 227441442.0,
-      "total_trade_value": 227545577.0
+      "total_trade_value": 237370367.0
     },
-    "inverse_dependency_pct": 99.95,
+    "inverse_dependency_pct": 95.82,
     "contribution": {
       "long": 0,
       "short": 0,
-      "cash": 98275391.0
+      "cash": 88373881.0
     },
     "contribution_pct": {
       "long": 0.0,
