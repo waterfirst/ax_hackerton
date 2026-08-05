@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-05 16:40 KST",
-  "status": "T3 report live-paper",
-  "regime": "고변동 드리프트(현재가 앵커 폐지)",
+  "updated_at": "2026-08-06 08:40 KST",
+  "status": "T3 plan live-paper",
+  "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
@@ -11,40 +11,29 @@
     "day_pnl": 0,
     "cum_pnl": -1764054,
     "cum_return_pct": -1.7641,
-    "vs_kospi_pct": null
+    "vs_kospi_pct": 1.4958
   },
   "metrics": {
     "mdd_pct": 1.7641,
-    "win_rate": 0.4166666666666667,
-    "profit_factor": 0.16712563623799107,
+    "mdd_confidence": "low",
+    "win_rate": 0.35714285714285715,
+    "profit_factor": 0.12193969565005468,
     "trades": 20,
-    "trading_days": 5,
-    "closed_trades": 12,
-    "realized_pnl": -2426735.06,
-    "expectancy_per_trade": -202227.92,
-    "average_win_loss_ratio": 0.234,
+    "trading_days": 6,
+    "closed_trades": 14,
+    "realized_pnl": -3506430.06,
+    "expectancy_per_trade": -250459.29,
+    "average_win_loss_ratio": 0.2195,
     "gross_profit": 486951.76,
-    "gross_loss": 2913686.82,
-    "open_qty": {
-      "069500": 1,
-      "114800": 5552
-    },
+    "gross_loss": 3993381.82,
+    "open_qty": {},
     "unmatched_sell_qty": 0,
+    "estimated_price_rows": 18,
+    "verified_fill_rows": 2,
     "reconciliation": {
-      "ok": false,
-      "mismatches": [
-        {
-          "symbol": "069500",
-          "log_implied_qty": 1,
-          "account_qty": 0
-        },
-        {
-          "symbol": "114800",
-          "log_implied_qty": 5552,
-          "account_qty": 0
-        }
-      ],
-      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
+      "ok": true,
+      "mismatches": [],
+      "note": ""
     }
   },
   "sleeves": [
@@ -69,76 +58,6 @@
   ],
   "positions": [],
   "trades": [
-    {
-      "ts": "2026-07-28T09:28:48",
-      "action": "buy_limit",
-      "strategy_name": "",
-      "symbol": "114800",
-      "qty": "12486",
-      "price": "1203",
-      "rt_cd": "0",
-      "msg_cd": "40600000",
-      "reason": "add_inverse_on_panic_downtrend",
-      "reason_text": "KODEX200이 -5% 이상 급락하고 인버스가 +5% 이상 강세라 하락 추세 추종 추가매수",
-      "entry_reason": "",
-      "exit_reason": "",
-      "risk_guard_tags": "",
-      "index_change_pct": "-7.72",
-      "inverse_change_pct": "7.82",
-      "inverse_exposure_pct": "44.94",
-      "timestamp": "",
-      "side": "BUY",
-      "symbol_name": "",
-      "quantity": "",
-      "order_krw": "",
-      "experiment_id": "",
-      "market_regime": "",
-      "hypothesis": "",
-      "entry_trigger": "",
-      "exit_trigger": "",
-      "risk_reason": "",
-      "expected_scenario": "",
-      "invalidated_if": "",
-      "post_trade_review": "",
-      "source": "intraday_tactical_log.csv",
-      "label": "매수",
-      "name": "KODEX 인버스"
-    },
-    {
-      "ts": "2026-07-28T09:36:33",
-      "action": "sell_limit",
-      "strategy_name": "",
-      "symbol": "114800",
-      "qty": "7497",
-      "price": "1197",
-      "rt_cd": "0",
-      "msg_cd": "40590000",
-      "reason": "tactical_trim_inverse_near_high",
-      "reason_text": "인버스가 당일 고점권이고 목표 초과 비중이라 전술 슬리브 일부 차익실현",
-      "entry_reason": "",
-      "exit_reason": "",
-      "risk_guard_tags": "",
-      "index_change_pct": "-7.69",
-      "inverse_change_pct": "7.82",
-      "inverse_exposure_pct": "59.9",
-      "timestamp": "",
-      "side": "SELL",
-      "symbol_name": "",
-      "quantity": "",
-      "order_krw": "",
-      "experiment_id": "",
-      "market_regime": "",
-      "hypothesis": "",
-      "entry_trigger": "",
-      "exit_trigger": "",
-      "risk_reason": "",
-      "expected_scenario": "",
-      "invalidated_if": "",
-      "post_trade_review": "",
-      "source": "intraday_tactical_log.csv",
-      "label": "매도",
-      "name": "KODEX 인버스"
-    },
     {
       "ts": "2026-07-28T09:40:03",
       "action": "sell_limit",
@@ -172,7 +91,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-28T10:20:09",
@@ -207,7 +128,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-28T10:40:07",
@@ -242,7 +165,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-28T11:40:13",
@@ -277,7 +202,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-28T12:00:08",
@@ -312,7 +239,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-29T09:01:04",
@@ -344,7 +273,9 @@
       "label": "매수",
       "name": "KODEX 인버스",
       "reason": "etf_reference_short_medium",
-      "reason_text": "etf_reference_short_medium"
+      "reason_text": "etf_reference_short_medium",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-29T09:40:06",
@@ -379,7 +310,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-29T13:20:15",
@@ -414,7 +347,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매수",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-29T13:40:17",
@@ -449,7 +384,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매수",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-29T14:00:19",
@@ -484,7 +421,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매수",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-29T14:20:11",
@@ -519,7 +458,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매수",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-30T10:20:04",
@@ -554,7 +495,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-30T10:40:07",
@@ -589,7 +532,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-30T11:00:12",
@@ -624,7 +569,9 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-31T09:01:04",
@@ -656,7 +603,9 @@
       "label": "매수",
       "name": "KODEX 인버스",
       "reason": "etf_reference_short_max|short_1x_default",
-      "reason_text": "etf_reference_short_max|short_1x_default"
+      "reason_text": "etf_reference_short_max|short_1x_default",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-07-31T09:15:23",
@@ -691,7 +640,45 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 인버스"
+      "name": "KODEX 인버스",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
+    },
+    {
+      "ts": "2026-08-03T09:07:37",
+      "action": "sell_limit",
+      "symbol": "114800",
+      "qty": "5552",
+      "price": "1137",
+      "rt_cd": "0",
+      "msg_cd": "20310000",
+      "source": "reconciliation_fills.csv",
+      "kis_order_no": "0000004160",
+      "reason": "short_disabled_liquidate_backfill",
+      "side": "SELL",
+      "label": "매도",
+      "name": "KODEX 인버스",
+      "reason_text": "short_disabled_liquidate_backfill",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
+    },
+    {
+      "ts": "2026-08-03T09:08:03",
+      "action": "sell_limit",
+      "symbol": "069500",
+      "qty": "1",
+      "price": "99905",
+      "rt_cd": "0",
+      "msg_cd": "20310000",
+      "source": "reconciliation_fills.csv",
+      "kis_order_no": "0000004276",
+      "reason": "plumbing_residual_liquidate_backfill",
+      "side": "SELL",
+      "label": "매도",
+      "name": "KODEX 200",
+      "reason_text": "plumbing_residual_liquidate_backfill",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     },
     {
       "ts": "2026-08-05T11:27:38",
@@ -726,7 +713,12 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매수",
-      "name": "KODEX 200"
+      "name": "KODEX 200",
+      "fill_qty": 95,
+      "fill_price": 104211,
+      "price_source": "kis_daily_ccld",
+      "fill_status": "filled",
+      "kis_order_no": "0000019437"
     },
     {
       "ts": "2026-08-05T11:40:23",
@@ -761,20 +753,25 @@
       "post_trade_review": "",
       "source": "intraday_tactical_log.csv",
       "label": "매도",
-      "name": "KODEX 200"
+      "name": "KODEX 200",
+      "fill_qty": 95,
+      "fill_price": 103826,
+      "price_source": "kis_daily_ccld",
+      "fill_status": "filled",
+      "kis_order_no": "0000020098"
     }
   ],
   "plan": {
-    "date": "2026-08-05",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-08-05.json · etf_ref=fsc_auto_collector"
+    "date": "2026-08-06",
+    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-08-06.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-08-05",
-    "text": "mode=report · trades=20 · signal=records/2026-08-05.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-08-06",
+    "text": "mode=plan · trades=20 · signal=records/2026-08-06.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
-    "score": -243.11,
-    "arrow": "sell",
+    "score": -270.41,
+    "arrow": "hold",
     "rank_delta": 0,
     "preferred_long": "069500",
     "preferred_short": "114800"
@@ -782,10 +779,8 @@
   "selfcheck": {
     "ok": true,
     "badge": "OK",
-    "action": "allow_with_warnings",
-    "findings": [
-      "direction_conflict_bearish_regime"
-    ]
+    "action": "allow",
+    "findings": []
   },
   "equity_curve": [
     {
@@ -798,6 +793,10 @@
     },
     {
       "date": "2026-08-05",
+      "value": 98235946
+    },
+    {
+      "date": "2026-08-06",
       "value": 98235946
     }
   ],
@@ -825,12 +824,12 @@
       }
     ],
     "inverse_dependency": {
-      "trade_value_pct": 90.22,
+      "trade_value_pct": 89.24,
       "realized_pnl_pct": -0.0,
-      "inverse_trade_value": 182441442.0,
-      "total_trade_value": 202213317.0
+      "inverse_trade_value": 164759499.0,
+      "total_trade_value": 184631279.0
     },
-    "inverse_dependency_pct": 90.22,
+    "inverse_dependency_pct": 89.24,
     "contribution": {
       "long": -85975.0,
       "short": 0,
