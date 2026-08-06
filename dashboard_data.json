@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-06 15:13 KST",
+  "updated_at": "2026-08-06 16:40 KST",
   "status": "T3 report live-paper",
   "regime": "하방추세 지속(저가밀착·매도, 연장 0.27)",
   "account": {
@@ -8,7 +8,7 @@
     "total": 98239171,
     "cash": 98239171,
     "invested": 0,
-    "day_pnl": 33105,
+    "day_pnl": 0,
     "cum_pnl": -1760829,
     "cum_return_pct": -1.7608,
     "vs_kospi_pct": 1.499
