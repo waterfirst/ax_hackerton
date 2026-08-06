@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>회생법원 전자기기 매물 보고서</title>
   <style>
-    :root{--bg:#0e1116;--panel:#171b22;--line:#2a313c;--txt:#e6edf3;--mut:#8b95a3;--acc:#4cc38a;--warn:#f5a623}
+    :root{--bg:#0e1116;--panel:#171b22;--panel-strong:#1d232c;--line:#2a313c;--txt:#e6edf3;--mut:#9ca7b5;--acc:#4cc38a;--warn:#f5a623;--risk:#ff7b72;--info:#79b8ff}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
-    main{max-width:960px;margin:auto;padding:24px 16px 60px}a{color:var(--acc)}.back{text-decoration:none;font-size:13px}.head{margin:22px 0 18px}
+    main{max-width:1040px;margin:auto;padding:24px 16px 60px}a{color:var(--acc)}a:focus-visible{outline:3px solid var(--info);outline-offset:3px;border-radius:4px}.back{text-decoration:none;font-size:13px;display:inline-flex;min-height:40px;align-items:center}.head{margin:22px 0 18px}
     h1{font-size:24px;margin:0 0 7px}.sub,.meta{color:var(--mut);font-size:13px;line-height:1.6}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}.num{font-size:25px;font-weight:700;margin-top:5px}.label{color:var(--mut);font-size:12px}
     article{margin-top:12px}h2{font-size:17px;margin:0 0 8px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{font-size:11px;padding:3px 7px;border:1px solid var(--line);border-radius:999px;color:#cdd6df}
     .details{font-size:13px;line-height:1.8}.notice{margin-top:20px;border-left:3px solid var(--warn);padding:10px 12px;background:rgba(245,166,35,.08);font-size:12.5px;line-height:1.6;color:#cdd6df}
-    @media(max-width:640px){.summary{grid-template-columns:1fr}h1{font-size:21px}}
+    .decision{margin-top:36px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}.decision-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}.decision h2{font-size:22px;margin:0 0 7px}.score{display:flex;align-items:baseline;gap:7px;white-space:nowrap}.score strong{font-size:46px;line-height:1;color:var(--acc);letter-spacing:-.03em}.score span{font-size:14px;color:var(--mut)}.verdict{margin-top:8px;font-weight:700;color:#b8f3d4}.score-layout{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(320px,1.28fr);gap:28px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}.meter{height:8px;background:#272f3a;border-radius:5px;overflow:hidden;margin:12px 0 9px}.meter>span{display:block;width:72%;height:100%;background:var(--acc)}.score-note{color:var(--mut);font-size:12px;line-height:1.6}.breakdown{display:grid;gap:10px}.break-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding-bottom:9px;border-bottom:1px solid rgba(139,149,163,.18);font-size:13px}.break-row b{font-size:14px}.break-row small{display:block;color:var(--mut);margin-top:3px;line-height:1.45}.comparison-title{font-size:16px;margin:28px 0 10px}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;min-width:760px;border-collapse:collapse;background:var(--panel-strong);font-size:13px}th,td{padding:12px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{color:#c9d4df;font-size:11px;letter-spacing:.02em;background:#202731}tr:last-child td{border-bottom:0}.amount{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}.confidence{color:var(--warn)}.bid-bands{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:14px}.bid-band{background:var(--panel-strong);padding:13px}.bid-band b{display:block;margin-bottom:3px;font-size:13px}.bid-band span{font-size:12px;color:var(--mut)}.final-call{margin-top:18px;padding:17px 18px;border:1px solid rgba(76,195,138,.55);background:rgba(76,195,138,.08);border-radius:12px}.final-call strong{display:block;font-size:17px;margin-bottom:6px}.final-call p{margin:0;color:#cdd6df;font-size:13px;line-height:1.65}.risk-list{margin:14px 0 0;padding-left:20px;color:#cdd6df;font-size:12.5px;line-height:1.7}.sources{margin-top:12px;color:var(--mut);font-size:11.5px;line-height:1.65}
+    @media(max-width:720px){.summary{grid-template-columns:1fr}.decision{padding:18px}.decision-head{display:block}.score{margin-top:16px}.score-layout{grid-template-columns:1fr;gap:22px}.bid-bands{grid-template-columns:1fr 1fr}h1{font-size:21px}.decision h2{font-size:20px}}
+    @media(max-width:420px){.bid-bands{grid-template-columns:1fr}.score strong{font-size:40px}}
   </style>
 </head>
 <body><main>
@@ -23,10 +25,51 @@
     <div class="card"><div class="label">활성 전자기기 후보</div><div class="num">5건</div></div>
     <div class="card"><div class="label">기준일</div><div class="num">2026-08-06</div></div>
   </section>
-  <article class="card"><h2>지식재산권(노트북) 일괄매각공고</h2><div class="meta">서울회생법원 · 게시 2026.08.05 · 마감 2026.08.31</div><div class="tags"><span class="tag">노트북</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34763" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
+  <article class="card"><h2>유형자산(노트북) 일괄매각공고</h2><div class="meta">서울회생법원 · 게시 2026.08.05 · 마감 2026.08.31</div><div class="tags"><span class="tag">노트북</span><span class="tag">매력도 72점</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34763" target="_blank" rel="noopener">법원 공식 공고 확인 →</a> · <a href="#final-comparison">최종 비교 보기 ↓</a></div></article>
   <article class="card"><h2>파산재단 자산 매각공고(비품)</h2><div class="meta">대전회생법원 · 게시 2026.08.05 · 마감 2026.09.11</div><div class="tags"><span class="tag">PC</span><span class="tag">모니터</span><span class="tag">네트워크 장비</span><span class="tag">프린터·스캐너</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=3&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34741" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
   <article class="card"><h2>집기·비품 매각 및 환가포기 공고</h2><div class="meta">서울회생법원 · 게시 2026.08.03 · 마감 2026.08.24</div><div class="tags"><span class="tag">모니터</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34716" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
   <article class="card"><h2>자산(비품) 매각 공고</h2><div class="meta">서울회생법원 · 게시 2026.07.28 · 마감 2026.09.07</div><div class="tags"><span class="tag">노트북</span><span class="tag">PC</span><span class="tag">모니터</span><span class="tag">서버·스토리지</span><span class="tag">프린터·스캐너</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=6&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34666" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
   <article class="card"><h2>비품(일괄매각) 공매 공고</h2><div class="meta">수원회생법원 · 게시 2026.07.27 · 마감 2026.08.21</div><div class="tags"><span class="tag">PC</span><span class="tag">모니터</span><span class="tag">프린터·스캐너</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=7&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34655" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
+  <section class="decision" id="final-comparison" aria-labelledby="decision-title">
+    <div class="decision-head">
+      <div><h2 id="decision-title">노트북 일괄매각 최종 비교</h2><div class="meta">평가기준: 권장 입찰가 600,000원 · 당근 MCP 동일 사양 상세검증 · 2026-08-06</div><div class="verdict">조건부 매력 — 현장검수 통과 때만 입찰</div></div>
+      <div class="score" aria-label="매물 매력도 100점 만점에 72점"><strong>72</strong><span>/ 100점</span></div>
+    </div>
+    <div class="score-layout">
+      <div>
+        <div class="label">매력도 구간</div>
+        <div class="meter" role="img" aria-label="매력도 72퍼센트"><span></span></div>
+        <div class="score-note">80점 이상 적극 검토 · 65~79점 조건부 매력 · 50~64점 중립 · 49점 이하 회피</div>
+      </div>
+      <div class="breakdown" aria-label="매력도 점수 구성">
+        <div class="break-row"><div><b>가격 우위</b><small>최저가 40만원 대비 보수적 회수가 110만원</small></div><strong>27 / 30</strong></div>
+        <div class="break-row"><div><b>재판매 유동성</b><small>Surface 수요는 있으나 구형·고가 제품</small></div><strong>15 / 20</strong></div>
+        <div class="break-row"><div><b>상태 확실성</b><small>배터리·충전기·GPU·MDM 미확인</small></div><strong>7 / 15</strong></div>
+        <div class="break-row"><div><b>계약 안전성</b><small>현 상태 인수, 하자 주장 제한, 세금계산서 불가</small></div><strong>8 / 15</strong></div>
+        <div class="break-row"><div><b>실행 편의</b><small>짧은 계약·잔금·반출 기한</small></div><strong>7 / 10</strong></div>
+        <div class="break-row"><div><b>근거 품질</b><small>사양은 명확하지만 동일 사양 비교표본 각 1건</small></div><strong>8 / 10</strong></div>
+      </div>
+    </div>
+    <h3 class="comparison-title">법원 매각가와 당근 동일 사양 비교</h3>
+    <div class="table-wrap" tabindex="0" aria-label="가격 비교표, 작은 화면에서는 좌우로 스크롤">
+      <table>
+        <thead><tr><th>대상</th><th>법원 공고 사양</th><th>당근 MCP 검증 등록가</th><th>보수적 빠른 판매가</th><th>근거 신뢰도</th></tr></thead>
+        <tbody>
+          <tr><td><b>Surface Laptop Studio 1</b></td><td>i7-11370H · 16GB · 512GB · RTX 3050 Ti 4GB</td><td class="amount">750,000원</td><td class="amount">650,000원</td><td class="confidence">낮음 · 표본 1건</td></tr>
+          <tr><td><b>Surface Laptop 4</b></td><td>i7-1185G7 · 16GB · 512GB · 15인치 추정</td><td class="amount">700,000원</td><td class="amount">450,000원</td><td class="confidence">낮음 · 오래된 표본 1건</td></tr>
+          <tr><td><b>2대 일괄</b></td><td>개별매각 불가</td><td class="amount">등록가 합계 1,450,000원</td><td class="amount">회수 가정 1,100,000원</td><td>비용·위험 차감 전</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="bid-bands" aria-label="입찰가별 판단">
+      <div class="bid-band"><b>400,000원</b><span>82점 · 매우 매력적</span></div>
+      <div class="bid-band"><b>600,000원</b><span>72점 · 권장 입찰안</span></div>
+      <div class="bid-band"><b>625,000원</b><span>69점 · 엄격한 상한</span></div>
+      <div class="bid-band"><b>700,000원 이상</b><span>58점 이하 · 재판매 목적 중단</span></div>
+    </div>
+    <div class="final-call"><strong>최종 판단: 600,000원 입찰, 625,000원 초과 금지</strong><p>빠른 판매가 1,100,000원에서 비용 50,000원, 고장·배터리 위험준비금 150,000원, 목표이익 275,000원을 차감한 상한입니다. 충전기 미포함, 배터리 효율 75% 미만, RTX 3050 Ti 오류, MDM·Autopilot 잠금 중 하나라도 확인되면 상한을 550,000원 이하로 낮추거나 입찰을 포기합니다.</p></div>
+    <ul class="risk-list"><li>당근 가격은 실거래가가 아니라 등록가입니다.</li><li>현 상태 인수이며 하자·권리하자 주장 제한 조건이 있습니다.</li><li>세금계산서가 발행되지 않고 법원 허가가 계약 효력의 조건입니다.</li><li>낙찰 후 계약 미체결 시 입찰보증금이 파산재단에 귀속됩니다.</li></ul>
+    <div class="sources">비교 근거: <a href="https://www.daangn.com/kr/buy-sell/%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%91-%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4-i7-16gb-rtx-3050-ti-xdrxgw2firb4/" target="_blank" rel="noopener">Laptop Studio 동일 사양</a> · <a href="https://www.daangn.com/kr/buy-sell/%EC%9C%88%EB%8F%84%EC%9A%B0-%EB%85%B8%ED%8A%B8%EB%B6%81-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%86%8C%ED%94%84%ED%8A%B8-%EC%84%9C%ED%94%BC%EC%8A%A4-%EB%9E%A9%ED%83%914-i7-11%EC%84%B8%EB%8C%80-512gb-16gb-win11-ca9zopphbpka/" target="_blank" rel="noopener">Laptop 4 동일 사양</a> · 통합 court_danggn MCP 상세검증</div>
+  </section>
   <div class="notice">이 페이지는 공개 공고의 탐색 편의를 위한 요약이며 매수 권유나 법률 자문이 아닙니다. 개인정보는 공개하지 않으며, 입찰 전 법원 원문·첨부파일·물품 상태·권리관계·비용을 직접 확인해야 합니다.</div>
 </main></body></html>
