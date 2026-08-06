@@ -1,52 +1,46 @@
 {
-  "updated_at": "2026-08-06 11:23 KST",
+  "updated_at": "2026-08-06 15:13 KST",
   "status": "T3 report live-paper",
-  "regime": "open_only",
+  "regime": "하방추세 지속(저가밀착·매도, 연장 0.27)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98206066,
-    "cash": 92750596,
-    "invested": 5455470,
-    "day_pnl": -19380,
-    "cum_pnl": -1793934,
-    "cum_return_pct": -1.7939,
-    "vs_kospi_pct": 1.4659
+    "total": 98239171,
+    "cash": 98239171,
+    "invested": 0,
+    "day_pnl": 33105,
+    "cum_pnl": -1760829,
+    "cum_return_pct": -1.7608,
+    "vs_kospi_pct": 1.499
   },
   "metrics": {
-    "mdd_pct": 1.7939,
+    "mdd_pct": 1.7641,
     "mdd_confidence": "low",
-    "win_rate": 0.35714285714285715,
-    "profit_factor": 0.12193969565005468,
+    "win_rate": 0.3333333333333333,
+    "profit_factor": 0.12173599919380461,
     "trades": 20,
-    "trading_days": 6,
-    "closed_trades": 14,
-    "realized_pnl": -3506430.06,
-    "expectancy_per_trade": -250459.29,
-    "average_win_loss_ratio": 0.2195,
+    "trading_days": 7,
+    "closed_trades": 15,
+    "realized_pnl": -3513112.04,
+    "expectancy_per_trade": -234207.47,
+    "average_win_loss_ratio": 0.2435,
     "gross_profit": 486951.76,
-    "gross_loss": 3993381.82,
+    "gross_loss": 4000063.8,
     "open_qty": {},
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 18,
     "verified_fill_rows": 2,
     "reconciliation": {
-      "ok": false,
-      "mismatches": [
-        {
-          "symbol": "114800",
-          "log_implied_qty": 0,
-          "account_qty": 4845
-        }
-      ],
-      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
+      "ok": true,
+      "mismatches": [],
+      "note": ""
     }
   },
   "sleeves": [
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 5.56,
+      "used_pct": 0.0,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -58,97 +52,12 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 94.44,
+      "used_pct": 100.0,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
-  "positions": [
-    {
-      "symbol": "114800",
-      "name": "KODEX 인버스",
-      "qty": 4845,
-      "avg_price": 1132,
-      "price": 1126,
-      "value": 5455470,
-      "pnl": -29070,
-      "pnl_pct": -0.53
-    }
-  ],
+  "positions": [],
   "trades": [
-    {
-      "ts": "2026-07-28T09:40:03",
-      "action": "sell_limit",
-      "strategy_name": "",
-      "symbol": "114800",
-      "qty": "4985",
-      "price": "1199",
-      "rt_cd": "0",
-      "msg_cd": "40590000",
-      "reason": "tactical_trim_inverse_near_high",
-      "reason_text": "인버스가 당일 고점권이고 목표 초과 비중이라 전술 슬리브 일부 차익실현",
-      "entry_reason": "",
-      "exit_reason": "",
-      "risk_guard_tags": "",
-      "index_change_pct": "-7.87",
-      "inverse_change_pct": "8.0",
-      "inverse_exposure_pct": "50.98",
-      "timestamp": "",
-      "side": "SELL",
-      "symbol_name": "",
-      "quantity": "",
-      "order_krw": "",
-      "experiment_id": "",
-      "market_regime": "",
-      "hypothesis": "",
-      "entry_trigger": "",
-      "exit_trigger": "",
-      "risk_reason": "",
-      "expected_scenario": "",
-      "invalidated_if": "",
-      "post_trade_review": "",
-      "source": "intraday_tactical_log.csv",
-      "label": "매도",
-      "name": "KODEX 인버스",
-      "price_source": "limit_estimate",
-      "fill_status": "estimated"
-    },
-    {
-      "ts": "2026-07-28T10:20:09",
-      "action": "sell_limit",
-      "strategy_name": "",
-      "symbol": "114800",
-      "qty": "99",
-      "price": "1206",
-      "rt_cd": "0",
-      "msg_cd": "40590000",
-      "reason": "tactical_trim_inverse_near_high",
-      "reason_text": "인버스가 당일 고점권이고 목표 초과 비중이라 전술 슬리브 일부 차익실현",
-      "entry_reason": "",
-      "exit_reason": "",
-      "risk_guard_tags": "",
-      "index_change_pct": "-8.37",
-      "inverse_change_pct": "8.63",
-      "inverse_exposure_pct": "45.12",
-      "timestamp": "",
-      "side": "SELL",
-      "symbol_name": "",
-      "quantity": "",
-      "order_krw": "",
-      "experiment_id": "",
-      "market_regime": "",
-      "hypothesis": "",
-      "entry_trigger": "",
-      "exit_trigger": "",
-      "risk_reason": "",
-      "expected_scenario": "",
-      "invalidated_if": "",
-      "post_trade_review": "",
-      "source": "intraday_tactical_log.csv",
-      "label": "매도",
-      "name": "KODEX 인버스",
-      "price_source": "limit_estimate",
-      "fill_status": "estimated"
-    },
     {
       "ts": "2026-07-28T10:40:07",
       "action": "sell_limit",
@@ -776,11 +685,47 @@
       "price_source": "kis_daily_ccld",
       "fill_status": "filled",
       "kis_order_no": "0000020098"
+    },
+    {
+      "ts": "2026-08-06T11:01:42",
+      "action": "buy_limit",
+      "symbol": "114800",
+      "qty": "4845",
+      "price": "1132",
+      "rt_cd": "0",
+      "msg_cd": "40600000",
+      "source": "reconciliation_fills.csv",
+      "kis_order_no": "0000022127",
+      "reason": "C1_claude_discretionary_entry",
+      "side": "BUY",
+      "label": "매수",
+      "name": "KODEX 인버스",
+      "reason_text": "C1_claude_discretionary_entry",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
+    },
+    {
+      "ts": "2026-08-06T15:11:16",
+      "action": "sell_limit",
+      "symbol": "114800",
+      "qty": "4845",
+      "price": "1133",
+      "rt_cd": "0",
+      "msg_cd": "40590000",
+      "source": "reconciliation_fills.csv",
+      "kis_order_no": "0000040584",
+      "reason": "C1_claude_discretionary_forced_exit",
+      "side": "SELL",
+      "label": "매도",
+      "name": "KODEX 인버스",
+      "reason_text": "C1_claude_discretionary_forced_exit",
+      "price_source": "limit_estimate",
+      "fill_status": "estimated"
     }
   ],
   "plan": {
     "date": "2026-08-06",
-    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-08-06.json · etf_ref=fsc_auto_collector"
+    "text": "short/strong · dry_run=False · quote=10000 · signal=records/2026-08-06.json · etf_ref=fsc_auto_collector"
   },
   "report": {
     "date": "2026-08-06",
@@ -814,43 +759,47 @@
     },
     {
       "date": "2026-08-06",
-      "value": 98206066
+      "value": 98239171
     }
   ],
   "experiment": {
     "current_experiment": {
-      "experiment_id": "R4_GAP_DOWN_RECOVERY_001",
-      "strategy_name": "V1_volatility_long_exit",
-      "market_regime": "gap_down_recovery",
-      "hypothesis": "갭하락 출발 후 저점 재시험 실패와 기관·외국인 매도 둔화가 겹치면 롱 반전이 유효하다."
+      "experiment_id": "R5_CASH_DEFENSE_001",
+      "strategy_name": "R5_cash_defense",
+      "market_regime": "high_vol_sideways",
+      "hypothesis": "방향성이 흐릿하고 신호가 충돌할 때는 무거래와 현금 유지가 기대값을 지킨다."
     },
     "today_reason_top3": [
       {
-        "reason": "신호 충돌 또는 주문 최소조건 미충족.",
+        "reason": "C1_claude_discretionary_entry",
         "count": 1
       },
       {
-        "reason": "갭하락 이후 저점 반등 확인과 대형주 회복 동행.",
+        "reason": "C1_claude_discretionary_forced_exit",
         "count": 1
       }
     ],
     "strategy_pnl": [
+      {
+        "strategy_name": "unknown_strategy",
+        "realized_pnl": 4845.0
+      },
       {
         "strategy_name": "risk_guardrail",
         "realized_pnl": -85975.0
       }
     ],
     "inverse_dependency": {
-      "trade_value_pct": 89.24,
-      "realized_pnl_pct": -0.0,
-      "inverse_trade_value": 164759499.0,
-      "total_trade_value": 184631279.0
+      "trade_value_pct": 89.51,
+      "realized_pnl_pct": -5.97,
+      "inverse_trade_value": 169637015.0,
+      "total_trade_value": 189508795.0
     },
-    "inverse_dependency_pct": 89.24,
+    "inverse_dependency_pct": 89.51,
     "contribution": {
       "long": -85975.0,
-      "short": 0,
-      "cash": 92750596.0
+      "short": 4845.0,
+      "cash": 98239171.0
     },
     "contribution_pct": {
       "long": -0.09,
