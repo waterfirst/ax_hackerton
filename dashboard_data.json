@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-07 11:00 KST",
-  "status": "T3 report live-paper",
+  "updated_at": "2026-08-07 11:10 KST",
+  "status": "T3 report live-paper · snapshot-fallback",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
@@ -729,7 +729,7 @@
   },
   "report": {
     "date": "2026-08-07",
-    "text": "mode=report · trades=20 · signal=records/2026-08-07.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "text": "mode=report · trades=20 · signal=records/2026-08-07.json · etf_ref=fsc_auto_collector · selfcheck=ok · snapshot_fallback"
   },
   "etf_overlay": {
     "score": -214.55,
