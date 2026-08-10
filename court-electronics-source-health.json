@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-11T07:16:35+09:00",
+  "sources": [
+    {
+      "source": "court_notice",
+      "status": "ok",
+      "checked_at": "2026-08-11T07:16:35+09:00",
+      "scanned": 10
+    },
+    {
+      "source": "onbid_movable",
+      "status": "coverage_gap",
+      "checked_at": "2026-08-11T07:16:35+09:00",
+      "scanned": 0,
+      "reason": "차세대 온비드 동산 API 활용승인·서버 키 설정 필요"
+    }
+  ]
+}
