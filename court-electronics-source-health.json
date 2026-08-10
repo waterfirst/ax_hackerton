@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-11T07:16:35+09:00",
+  "updated_at": "2026-08-11T08:30:42+09:00",
   "sources": [
     {
-      "source": "court_notice",
+      "checked_at": "2026-08-11T08:30:42+09:00",
       "status": "ok",
-      "checked_at": "2026-08-11T07:16:35+09:00",
-      "scanned": 10
+      "scanned": 60,
+      "source": "court_notice"
     },
     {
-      "source": "onbid_movable",
+      "checked_at": "2026-08-11T08:30:42+09:00",
       "status": "coverage_gap",
-      "checked_at": "2026-08-11T07:16:35+09:00",
       "scanned": 0,
-      "reason": "차세대 온비드 동산 API 활용승인·서버 키 설정 필요"
+      "source": "onbid_movable",
+      "reason": "ONBID_SERVICE_KEY 미설정 또는 동산 API 활용 미승인"
     }
   ]
 }
