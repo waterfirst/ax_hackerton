@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-10 16:40 KST",
-  "status": "T3 report live-paper",
-  "regime": "고변동 드리프트(현재가 앵커 폐지)",
+  "updated_at": "2026-08-11 08:40 KST",
+  "status": "T3 plan live-paper",
+  "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
     "total": 98086696,
     "cash": 78661916,
     "invested": 19424780,
-    "day_pnl": 63130,
+    "day_pnl": 0,
     "cum_pnl": -1913304,
     "cum_return_pct": -1.9133,
     "vs_kospi_pct": null
@@ -741,17 +741,17 @@
     }
   ],
   "plan": {
-    "date": "2026-08-10",
-    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-08-10.json · etf_ref=fsc_auto_collector"
+    "date": "2026-08-11",
+    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-08-11.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-08-10",
-    "text": "mode=report · trades=20 · signal=records/2026-08-10.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-08-11",
+    "text": "mode=plan · trades=20 · signal=records/2026-08-11.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
-    "score": -238.84,
-    "arrow": "hold",
-    "rank_delta": 0,
+    "score": -193.1,
+    "arrow": "sell",
+    "rank_delta": -1,
     "preferred_long": "069500",
     "preferred_short": "114800"
   },
@@ -808,6 +808,10 @@
     },
     {
       "date": "2026-08-10",
+      "value": 98086696
+    },
+    {
+      "date": "2026-08-11",
       "value": 98086696
     }
   ],
