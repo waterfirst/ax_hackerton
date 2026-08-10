@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-10 14:50 KST",
+  "updated_at": "2026-08-10 16:40 KST",
   "status": "T3 report live-paper",
   "regime": "고변동 드리프트(현재가 앵커 폐지)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98023566,
+    "total": 98086696,
     "cash": 78661916,
-    "invested": 19361650,
-    "day_pnl": -17120,
-    "cum_pnl": -1976434,
-    "cum_return_pct": -1.9764,
+    "invested": 19424780,
+    "day_pnl": 63130,
+    "cum_pnl": -1913304,
+    "cum_return_pct": -1.9133,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -46,7 +46,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 19.75,
+      "used_pct": 19.8,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -58,7 +58,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 80.25,
+      "used_pct": 80.2,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -68,10 +68,10 @@
       "name": "KODEX 레버리지",
       "qty": 214,
       "avg_price": 91468,
-      "price": 90475,
-      "value": 19361650,
-      "pnl": -212715,
-      "pnl_pct": -1.09
+      "price": 90770,
+      "value": 19424780,
+      "pnl": -149585,
+      "pnl_pct": -0.76
     }
   ],
   "trades": [
@@ -808,7 +808,7 @@
     },
     {
       "date": "2026-08-10",
-      "value": 98023566
+      "value": 98086696
     }
   ],
   "experiment": {
