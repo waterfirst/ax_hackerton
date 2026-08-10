@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
   <title>회생법원 전자기기 매물 보고서</title>
   <style>
     :root{--bg:#0e1116;--panel:#171b22;--panel-strong:#1d232c;--line:#2a313c;--txt:#e6edf3;--mut:#9ca7b5;--acc:#4cc38a;--warn:#f5a623;--risk:#ff7b72;--info:#79b8ff}
@@ -10,6 +11,7 @@
     main{max-width:1040px;margin:auto;padding:38px 16px 60px}a{color:var(--acc)}a:focus-visible,button:focus-visible{outline:3px solid var(--info);outline-offset:3px;border-radius:4px}.head{margin:0 0 24px;padding-bottom:22px;border-bottom:1px solid var(--line)}
     .eyebrow{color:var(--acc);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}h1{font-size:30px;letter-spacing:-.03em;margin:0 0 9px}.sub,.meta{color:var(--mut);font-size:13px;line-height:1.6}.sub{max-width:720px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}.num{font-size:25px;font-weight:700;margin-top:5px}.label{color:var(--mut);font-size:12px}
+    .tabs{position:sticky;top:0;z-index:20;display:flex;gap:6px;margin:0 -4px 24px;padding:10px 4px;background:rgba(14,17,22,.96);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;min-height:44px;padding:0 15px;border:1px solid transparent;border-radius:10px;background:transparent;color:var(--mut);font:inherit;font-size:13px;font-weight:750;cursor:pointer}.tab:hover{color:var(--txt);background:var(--panel)}.tab[aria-selected="true"]{color:#07130d;background:var(--acc)}.tab-count{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:6px;padding:0 6px;border-radius:999px;background:rgba(255,255,255,.14);font-size:11px}.view[hidden]{display:none}.view-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:6px 0 18px}.view-head h2{font-size:23px;letter-spacing:-.025em;margin:0 0 7px}.view-head p{max-width:680px;margin:0;color:var(--mut);font-size:13px;line-height:1.65}.sort-note{flex:0 0 auto;color:var(--mut);font-size:11px}.listing-stack{display:grid;gap:10px}.listing{display:grid;grid-template-columns:90px minmax(0,1fr) minmax(150px,auto);gap:18px;align-items:center;margin:0;padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px}.listing:hover{border-color:#3b4655;background:var(--panel-strong)}.listing-score{display:grid;place-items:center;align-content:center;width:76px;height:76px;border-radius:50%;background:#12171e;border:7px solid var(--acc);font-variant-numeric:tabular-nums}.listing-score b{font-size:25px;line-height:1}.listing-score span{margin-top:3px;color:var(--mut);font-size:10px}.listing-score.pending{border-color:#394451}.listing-score.pending b{font-size:13px;color:var(--mut)}.listing h3{margin:0 0 6px;font-size:17px;letter-spacing:-.015em}.listing-meta{color:var(--mut);font-size:12px;line-height:1.55}.listing-facts{display:flex;gap:12px 20px;flex-wrap:wrap;margin-top:10px;font-size:12px;color:#cdd6df}.listing-facts b{color:var(--txt)}.listing-action{text-align:right}.deadline{display:block;margin-bottom:8px;color:#ffd38a;font-size:12px;font-weight:700}.listing .button{width:100%}.empty-state{padding:42px 20px;border:1px dashed #394451;border-radius:14px;color:var(--mut);text-align:center;font-size:13px;line-height:1.7}.priority-case>.section-label{margin-top:0}.archive-group+.archive-group{margin-top:28px}.archive-group h3{font-size:15px;margin:0 0 10px}.archive-item{opacity:.78}.archive-item .deadline{color:var(--mut)}
     article{margin-top:12px}h2{font-size:17px;margin:0 0 8px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.tag{font-size:11px;padding:3px 7px;border:1px solid var(--line);border-radius:999px;color:#cdd6df}
     .details{font-size:13px;line-height:1.8}.notice{margin-top:20px;border:1px solid rgba(245,166,35,.38);border-radius:12px;padding:10px 12px;background:rgba(245,166,35,.08);font-size:12.5px;line-height:1.6;color:#cdd6df}
     .section-label{font-size:12px;color:var(--acc);font-weight:700;letter-spacing:.06em;margin:34px 0 10px}.featured{background:linear-gradient(145deg,#191f27 0%,#151a21 72%);border:1px solid rgba(76,195,138,.48);border-radius:18px;padding:24px;box-shadow:0 18px 50px rgba(0,0,0,.18)}.featured-head{display:grid;grid-template-columns:1fr 300px;align-items:center;gap:28px}.featured h2{font-size:24px;letter-spacing:-.02em}.gauge{width:300px;max-width:100%;justify-self:end}.gauge svg{display:block;width:100%;height:auto;overflow:visible}.gauge-track{fill:none;stroke:#2a313c;stroke-width:18;stroke-linecap:round}.gauge-segment{fill:none;stroke-width:14;stroke-linecap:butt}.gauge-red{stroke:#ff7b72;stroke-dasharray:49 51}.gauge-amber{stroke:#f5a623;stroke-dasharray:15 85;stroke-dashoffset:-49}.gauge-green{stroke:#4cc38a;stroke-dasharray:15 85;stroke-dashoffset:-64}.gauge-bright{stroke:#8ce7b9;stroke-dasharray:21 79;stroke-dashoffset:-79}.gauge-ticks{fill:none;stroke:rgba(230,237,243,.75);stroke-width:3;stroke-dasharray:.7 4.3}.gauge-needle{stroke:#f4f7fa;stroke-width:4;stroke-linecap:round;filter:drop-shadow(0 2px 4px rgba(0,0,0,.45))}.gauge-hub{fill:#f4f7fa;stroke:#202731;stroke-width:6}.gauge-value{fill:var(--txt);font-size:38px;font-weight:800;text-anchor:middle}.gauge-unit{fill:var(--mut);font-size:11px;text-anchor:middle}.gauge-label{fill:var(--mut);font-size:10px}.gauge-verdict{fill:#b8f3d4;font-size:11px;font-weight:700;text-anchor:middle}.fact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:20px}.fact{background:var(--panel-strong);padding:13px}.fact b{display:block;margin-top:5px;font-size:14px;line-height:1.45}.fact small{color:var(--mut);font-size:11px}.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.spec{background:#12171e;border:1px solid var(--line);border-radius:12px;padding:16px}.spec h3{margin:0 0 10px;font-size:15px}.spec dl{display:grid;grid-template-columns:74px 1fr;gap:7px 12px;margin:0;font-size:12.5px;line-height:1.45}.spec dt{color:var(--mut)}.spec dd{margin:0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border:0;border-radius:8px;text-decoration:none;font:inherit;font-size:13px;font-weight:700;background:var(--acc);color:#07130d;cursor:pointer}.button.secondary{background:transparent;color:var(--acc);border:1px solid rgba(76,195,138,.55)}
@@ -17,18 +19,44 @@
     .guide{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}.guide h2{font-size:22px}.guide-intro{color:var(--mut);font-size:13px;line-height:1.65;max-width:760px}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.step{background:var(--panel-strong);border:1px solid var(--line);border-radius:12px;padding:14px}.step strong{display:block;color:var(--acc);font-size:12px;margin-bottom:7px}.step b{display:block;font-size:14px;margin-bottom:5px}.step span{color:var(--mut);font-size:12px;line-height:1.55}.prep-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.prep{border:1px solid var(--line);border-radius:12px;padding:17px}.prep h3{margin:0 0 10px;font-size:15px}.checklist{list-style:none;margin:0;padding:0}.checklist li{position:relative;padding:7px 0 7px 25px;font-size:13px;line-height:1.5;border-bottom:1px solid rgba(139,149,163,.16)}.checklist li:last-child{border-bottom:0}.checklist li:before{content:"□";position:absolute;left:0;color:var(--acc);font-size:17px;line-height:1}.form-example{margin-top:20px;background:#12171e;border:1px solid var(--line);border-radius:12px;padding:17px}.form-example h3{margin:0 0 12px;font-size:15px}.form-lines{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.form-line{padding:11px 12px;background:var(--panel-strong);border-radius:8px;font-size:12px;color:var(--mut)}.form-line b{display:block;color:var(--txt);margin-top:4px;font-size:13px}.guide-warning{margin-top:14px;color:#ffd38a;font-size:12px;line-height:1.6}
     .model{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}.model h2{font-size:22px}.model-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:18px}.formula{background:#12171e;border:1px solid var(--line);border-radius:12px;padding:18px}.formula-code{display:block;margin:12px 0;padding:14px;border-radius:8px;background:#0b0f14;color:#b8f3d4;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.65;overflow-x:auto}.evidence-list{margin:0;padding-left:20px;color:#cdd6df;font-size:13px;line-height:1.7}.model-result{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:14px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}.model-result div{background:var(--panel-strong);padding:14px}.model-result span{display:block;color:var(--mut);font-size:11px}.model-result b{display:block;margin-top:5px;font-size:16px}.gate{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:20px;background:radial-gradient(circle at 50% 20%,#1d2935 0,#0e1116 52%)}.gate[hidden]{display:none}.gate-card{width:min(420px,100%);padding:28px;background:rgba(23,27,34,.97);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 80px rgba(0,0,0,.45)}.gate-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(76,195,138,.12);color:var(--acc);font-weight:900}.gate h1{font-size:23px;margin:18px 0 8px}.gate p{color:var(--mut);font-size:13px;line-height:1.6}.gate-form{display:flex;gap:8px;margin-top:18px}.gate input{min-width:0;flex:1;height:46px;padding:0 13px;border:1px solid #3a4553;border-radius:9px;background:#0f141a;color:var(--txt);font:inherit;font-size:16px}.gate button{height:46px;padding:0 17px;border:0;border-radius:9px;background:var(--acc);color:#07130d;font-weight:800;cursor:pointer}.gate-error{min-height:20px;margin-top:8px;color:var(--risk);font-size:12px}.gate-note{margin-top:14px!important;font-size:11px!important}
     @media(max-width:860px){.featured-head{grid-template-columns:1fr 250px}.gauge{width:250px}.fact-grid{grid-template-columns:repeat(2,1fr)}.breakdown{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:1fr 1fr}.model-grid{grid-template-columns:1fr}}
-    @media(max-width:720px){main{padding-top:24px}.summary{grid-template-columns:1fr}.featured{padding:18px}.featured-head{grid-template-columns:1fr}.gauge{justify-self:center;width:280px}.spec-grid,.prep-grid{grid-template-columns:1fr}.decision,.guide,.model{padding:18px}.breakdown{grid-template-columns:1fr}.bid-bands{grid-template-columns:1fr 1fr}h1{font-size:25px}.featured h2{font-size:21px}.decision h2,.guide h2,.model h2{font-size:20px}.form-lines{grid-template-columns:1fr}.model-result{grid-template-columns:1fr}}
+    @media(max-width:720px){main{padding-top:24px}.summary{grid-template-columns:1fr}.view-head{display:block}.sort-note{display:block;margin-top:8px}.listing{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:15px}.listing-score{width:58px;height:58px;border-width:5px}.listing-score b{font-size:20px}.listing-action{grid-column:1/-1;text-align:left}.listing .button{width:auto}.featured{padding:18px}.featured-head{grid-template-columns:1fr}.gauge{justify-self:center;width:280px}.spec-grid,.prep-grid{grid-template-columns:1fr}.decision,.guide,.model{padding:18px}.breakdown{grid-template-columns:1fr}.bid-bands{grid-template-columns:1fr 1fr}h1{font-size:25px}.featured h2{font-size:21px}.decision h2,.guide h2,.model h2{font-size:20px}.form-lines{grid-template-columns:1fr}.model-result{grid-template-columns:1fr}}
     @media(max-width:420px){.fact-grid,.bid-bands{grid-template-columns:1fr}.gauge{width:260px}}
-    @media print{body{background:#fff;color:#111}main{max-width:none}.gate,.actions,.summary,.section-label~article.card{display:none}.featured,.decision,.guide,.model,.formula,.spec,.step,.prep,.form-example,.fact{background:#fff;border-color:#bbb;color:#111;box-shadow:none}.meta,.label,.score-note,.step span,.guide-intro,.form-line{color:#444}a{color:#111;text-decoration:none}}
+    @media print{body{background:#fff;color:#111}main{max-width:none}.gate,.tabs,.actions,.summary,.section-label~article.card{display:none}.featured,.decision,.guide,.model,.formula,.spec,.step,.prep,.form-example,.fact{background:#fff;border-color:#bbb;color:#111;box-shadow:none}.meta,.label,.score-note,.step span,.guide-intro,.form-line{color:#444}a{color:#111;text-decoration:none}}
   </style>
 </head>
 <body class="locked"><section class="gate" id="access-gate" aria-labelledby="gate-title"><div class="gate-card"><div class="gate-mark" aria-hidden="true">SB</div><h1 id="gate-title">전자기기 공매 분석실</h1><p>보고서를 보려면 접근 비밀번호를 입력하세요.</p><form class="gate-form" id="gate-form"><label for="gate-password" class="label" style="position:absolute;left:-9999px">비밀번호</label><input id="gate-password" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" required><button type="submit">입장</button></form><div class="gate-error" id="gate-error" role="alert" aria-live="polite"></div><p class="gate-note">정적 GitHub Pages의 간이 접근 잠금입니다. 민감정보 보호 수단으로 사용할 수 없습니다.</p></div></section><main>
   <header class="head"><div class="eyebrow">법원 공고 × 중고시세 비교</div><h1>회생법원 전자기기 매물 보고서</h1><div class="sub">대한민국 법원 공개 공고에서 노트북·PC·모니터·서버·Apple 제품을 선별하고, 시세·위험·입찰 상한을 함께 비교합니다.</div></header>
   <section class="summary">
     <div class="card"><div class="label">오늘 확인 공고</div><div class="num">43건</div></div>
-    <div class="card"><div class="label">활성 전자기기 후보 · 신규 0건</div><div class="num">7건</div></div>
+    <div class="card"><div class="label">활성 전자기기 후보 · 신규 0건</div><div class="num" id="active-summary-count">7건</div></div>
     <div class="card"><div class="label">기준일</div><div class="num">2026-08-10</div></div>
   </section>
+  <nav class="tabs" aria-label="전자기기 공매 보고서 메뉴" role="tablist">
+    <button class="tab" id="tab-rankings" type="button" role="tab" aria-selected="true" aria-controls="view-rankings" data-tab="rankings">매물 순위 <span class="tab-count" id="active-tab-count">7</span></button>
+    <button class="tab" id="tab-priority" type="button" role="tab" aria-selected="false" aria-controls="view-priority" data-tab="priority">입찰 우선 <span class="tab-count" id="priority-tab-count">1</span></button>
+    <button class="tab" id="tab-archive" type="button" role="tab" aria-selected="false" aria-controls="view-archive" data-tab="archive">아카이브 <span class="tab-count" id="archive-tab-count">0</span></button>
+  </nav>
+  <section class="view" id="view-rankings" role="tabpanel" aria-labelledby="tab-rankings">
+    <div class="view-head"><div><h2>활성 매물 매력도 순위</h2><p>입찰·공고 마감 전 매물만 표시합니다. 점수가 확인된 매물을 먼저, 미평가 매물은 가까운 마감일 순서로 배치합니다.</p></div><span class="sort-note">매력도 높은 순 ↓</span></div>
+    <div class="listing-stack" id="active-list">
+      <article class="listing" data-score="72" data-deadline="2026-08-20T17:00:00+09:00" data-priority="true">
+        <div class="listing-score" aria-label="매력도 72점"><b>72</b><span>/ 100</span></div>
+        <div><h3>Surface 노트북 2대 일괄매각</h3><div class="listing-meta">서울회생법원 · 2026하합1530 · 서울 영등포구 여의도동</div><div class="listing-facts"><span>수량 <b>2대</b></span><span>최저가 <b>400,000원</b></span><span>권장가 <b>612,700원</b></span><span>시세 <b>1,100,000원</b></span></div></div>
+        <div class="listing-action"><span class="deadline">입찰 8월 20일 17:00 마감</span><a class="button" href="#priority" data-open-tab="priority">상세·입찰 안내</a></div>
+      </article>
+      <article class="listing" data-score="0" data-deadline="2026-08-21T23:59:59+09:00"><div class="listing-score pending"><b>미평가</b></div><div><h3>비품(일괄매각) 공매 공고</h3><div class="listing-meta">수원회생법원 · 지역·수량·최저가 원문 확인 필요</div><div class="listing-facts"><span>품목 <b>PC·모니터·프린터</b></span><span>가격 <b>미산정</b></span></div></div><div class="listing-action"><span class="deadline">공고 마감 8월 21일</span><a class="button secondary" href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=7&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34655" target="_blank" rel="noopener">법원 공고</a></div></article>
+      <article class="listing" data-score="0" data-deadline="2026-08-24T23:59:59+09:00"><div class="listing-score pending"><b>미평가</b></div><div><h3>집기·비품 매각 및 환가포기 공고</h3><div class="listing-meta">서울회생법원 · 지역·수량·최저가 원문 확인 필요</div><div class="listing-facts"><span>품목 <b>모니터</b></span><span>가격 <b>미산정</b></span></div></div><div class="listing-action"><span class="deadline">공고 마감 8월 24일</span><a class="button secondary" href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34716" target="_blank" rel="noopener">법원 공고</a></div></article>
+      <article class="listing" data-score="0" data-deadline="2026-08-31T23:59:59+09:00"><div class="listing-score pending"><b>미평가</b></div><div><h3>자산 매각 및 유찰조건부 포기 공고</h3><div class="listing-meta">서울회생법원 · 모델·수량·최저가 원문 확인 필요</div><div class="listing-facts"><span>품목 <b>휴대폰</b></span><span>후보 모델 <b>DS-202R 외</b></span></div></div><div class="listing-action"><span class="deadline">공고 마감 8월 31일</span><a class="button secondary" href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34781" target="_blank" rel="noopener">법원 공고</a></div></article>
+      <article class="listing" data-score="0" data-deadline="2026-09-07T23:59:59+09:00"><div class="listing-score pending"><b>미평가</b></div><div><h3>자산(비품) 매각 공고</h3><div class="listing-meta">서울회생법원 · 지역·수량·최저가 원문 확인 필요</div><div class="listing-facts"><span>품목 <b>노트북·PC·서버</b></span><span>가격 <b>미산정</b></span></div></div><div class="listing-action"><span class="deadline">공고 마감 9월 7일</span><a class="button secondary" href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=6&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34666" target="_blank" rel="noopener">법원 공고</a></div></article>
+      <article class="listing" data-score="0" data-deadline="2026-09-08T23:59:59+09:00"><div class="listing-score pending"><b>미평가</b></div><div><h3>자산(비품) 매각 및 포기 공고</h3><div class="listing-meta">서울회생법원 · 대량 장비·반출비 원문 확인 필요</div><div class="listing-facts"><span>품목 <b>서버·스토리지</b></span><span>가격 <b>미산정</b></span></div></div><div class="listing-action"><span class="deadline">공고 마감 9월 8일</span><a class="button secondary" href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34776" target="_blank" rel="noopener">법원 공고</a></div></article>
+      <article class="listing" data-score="0" data-deadline="2026-09-11T23:59:59+09:00"><div class="listing-score pending"><b>미평가</b></div><div><h3>파산재단 자산 매각공고(비품)</h3><div class="listing-meta">대전회생법원 · 지역·수량·최저가 원문 확인 필요</div><div class="listing-facts"><span>품목 <b>PC·모니터·네트워크</b></span><span>가격 <b>미산정</b></span></div></div><div class="listing-action"><span class="deadline">공고 마감 9월 11일</span><a class="button secondary" href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=3&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34741" target="_blank" rel="noopener">법원 공고</a></div></article>
+    </div>
+    <div class="empty-state" id="active-empty" hidden>현재 입찰 가능한 전자기기 매물이 없습니다.<br>마감된 매물은 아카이브에서 확인할 수 있습니다.</div>
+  </section>
+  <section class="view" id="view-priority" role="tabpanel" aria-labelledby="tab-priority" hidden>
+    <div class="view-head"><div><h2>입찰 우선 매물 상세</h2><p>매력도 65점 이상이며 입찰기한이 남은 매물의 가격 근거, 현장검수 조건, 제출 순서를 모았습니다.</p></div></div>
+    <div id="priority-content">
+    <div class="priority-case" data-deadline="2026-08-20T17:00:00+09:00" data-score="72">
   <div class="section-label">우선 검토 매물</div>
   <section class="featured" aria-labelledby="featured-title">
     <div class="featured-head"><div><h2 id="featured-title">Surface 노트북 2대 일괄매각</h2><div class="meta">서울회생법원 · 2026하합1530 · 온비드 최고가 전자입찰</div><div class="tags"><span class="tag">노트북 2대</span><span class="tag">개별매각 불가</span><span class="tag">세금계산서 불가</span></div></div><div class="gauge" role="img" aria-label="매물 매력도 100점 만점에 72점, 조건부 매력"><svg viewBox="0 0 300 188" aria-hidden="true"><path class="gauge-track" d="M30 150 A120 120 0 0 1 270 150" pathLength="100"/><path class="gauge-segment gauge-red" d="M30 150 A120 120 0 0 1 270 150" pathLength="100"/><path class="gauge-segment gauge-amber" d="M30 150 A120 120 0 0 1 270 150" pathLength="100"/><path class="gauge-segment gauge-green" d="M30 150 A120 120 0 0 1 270 150" pathLength="100"/><path class="gauge-segment gauge-bright" d="M30 150 A120 120 0 0 1 270 150" pathLength="100"/><path class="gauge-ticks" d="M30 150 A120 120 0 0 1 270 150" pathLength="100"/><line class="gauge-needle" x1="150" y1="150" x2="150" y2="57" transform="rotate(39.6 150 150)"/><circle class="gauge-hub" cx="150" cy="150" r="9"/><text class="gauge-label" x="20" y="174">0</text><text class="gauge-label" x="145" y="28">50</text><text class="gauge-label" x="270" y="174">100</text><text class="gauge-value" x="150" y="128">72</text><text class="gauge-unit" x="150" y="143">매력도 / 100</text><text class="gauge-verdict" x="150" y="181">조건부 매력</text></svg></div></div>
@@ -48,13 +76,6 @@
     </div>
     <div class="actions"><a class="button" href="#bid-guide">입찰 준비 가이드 ↓</a><a class="button secondary" href="#final-comparison">가격·매력도 비교</a><a class="button secondary" href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34763" target="_blank" rel="noopener">법원 공식 공고</a><a class="button secondary" href="https://www.onbid.co.kr/" target="_blank" rel="noopener">온비드 열기</a></div>
   </section>
-  <div class="section-label">기타 전자기기 후보</div>
-  <article class="card"><h2>자산(비품 등) 매각 및 유찰조건부 포기 공고</h2><div class="meta">서울회생법원 · 게시 2026.08.06 · 마감 2026.08.31</div><div class="tags"><span class="tag">휴대폰</span><span class="tag">모델 자동추출 후보</span><span class="tag">가격 미산정</span></div><div class="details">DS-202R·AC-M5·HW-13P는 첨부에서 자동 추출된 후보이며 현물과 원문 재확인이 필요합니다. 모델·수량·상태 확인 전에는 입찰가를 제안하지 않습니다. <a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34781" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
-  <article class="card"><h2>자산(비품) 매각 및 포기 공고</h2><div class="meta">서울회생법원 · 게시 2026.08.06 · 마감 2026.09.08</div><div class="tags"><span class="tag">서버·스토리지</span><span class="tag">전산장비</span><span class="tag">가격 미산정</span></div><div class="details">세부 모델·가격은 자동 확인되지 않았습니다. 대량 장비 여부와 반출비를 원문에서 먼저 확인해야 하며, 확인 전에는 입찰 보류입니다. <a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34776" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
-  <article class="card"><h2>파산재단 자산 매각공고(비품)</h2><div class="meta">대전회생법원 · 게시 2026.08.05 · 마감 2026.09.11</div><div class="tags"><span class="tag">PC</span><span class="tag">모니터</span><span class="tag">네트워크 장비</span><span class="tag">프린터·스캐너</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=3&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34741" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
-  <article class="card"><h2>집기·비품 매각 및 환가포기 공고</h2><div class="meta">서울회생법원 · 게시 2026.08.03 · 마감 2026.08.24</div><div class="tags"><span class="tag">모니터</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=1&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34716" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
-  <article class="card"><h2>자산(비품) 매각 공고</h2><div class="meta">서울회생법원 · 게시 2026.07.28 · 마감 2026.09.07</div><div class="tags"><span class="tag">노트북</span><span class="tag">PC</span><span class="tag">모니터</span><span class="tag">서버·스토리지</span><span class="tag">프린터·스캐너</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=6&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34666" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
-  <article class="card"><h2>비품(일괄매각) 공매 공고</h2><div class="meta">수원회생법원 · 게시 2026.07.27 · 마감 2026.08.21</div><div class="tags"><span class="tag">PC</span><span class="tag">모니터</span><span class="tag">프린터·스캐너</span></div><div class="details"><a href="https://www.scourt.go.kr/portal/notice/realestate/RealNoticeView.work?pageIndex=7&amp;bub_cd=&amp;searchWord=&amp;searchOption=&amp;seq_id=34655" target="_blank" rel="noopener">법원 공식 공고 확인 →</a></div></article>
   <section class="decision" id="final-comparison" aria-labelledby="decision-title">
     <div class="decision-head"><h2 id="decision-title">노트북 일괄매각 최종 비교</h2><div class="meta">평가기준: 권장 입찰가 612,700원 · court_danggn 4개 지역 현재 판매중 완전일치 0건 · 판매완료 상세 재검증 · 공개 공매 경쟁도 저가중 보정 · 2026-08-10</div><div class="verdict">72점 · 조건부 매력 — 현장검수 통과 때만 입찰</div><div class="score-note">80점 이상 적극 검토 · 65~79점 조건부 매력 · 50~64점 중립 · 49점 이하 회피</div></div>
     <div class="score-layout">
@@ -115,6 +136,15 @@
     <div class="form-example"><h3>입찰 화면 입력 예시 · 권장안</h3><div class="form-lines"><div class="form-line">물건 확인<b>Surface 노트북 2대 일괄</b></div><div class="form-line">입찰 방식<b>본인 직접 · 인터넷 전자입찰</b></div><div class="form-line">입찰금액<b>612,700원</b></div><div class="form-line">입찰보증금<b>61,270원 이상</b></div><div class="form-line">절대 상한<b>625,000원 · 초과 입력 금지</b></div><div class="form-line">낙찰 후 준비자금<b>잔금 90% + 반출비용</b></div></div><div class="guide-warning">입력 예시는 투자 권유가 아니라 현재 비교모형의 권장안입니다. 충전기 미포함 또는 배터리 효율 75% 미만이면 547,300원 이하, GPU 오류나 계정 잠금이면 입찰하지 마십시오. 숫자를 제출하기 전 공고문·온비드 화면·보증금 계좌를 직접 대조하십시오.</div></div>
     <div class="actions"><a class="button" href="https://www.onbid.co.kr/" target="_blank" rel="noopener">온비드에서 준비 시작</a><button class="button secondary" type="button" onclick="window.print()">체크리스트 인쇄</button></div>
   </section>
+    </div>
+    </div>
+    <div class="empty-state" id="priority-empty" hidden>현재 입찰 우선 기준을 충족하는 활성 매물이 없습니다.<br>마감된 상세 보고서는 아카이브로 자동 이동합니다.</div>
+  </section>
+  <section class="view" id="view-archive" role="tabpanel" aria-labelledby="tab-archive" hidden>
+    <div class="view-head"><div><h2>마감 매물 아카이브</h2><p>표시된 입찰·공고 마감시각이 지나면 매물이 이곳으로 자동 이동합니다. 과거 가격과 판단 근거는 다음 입찰 분석에 재사용합니다.</p></div></div>
+    <div class="archive-group"><h3>마감 매물 목록</h3><div class="listing-stack" id="archive-list"></div><div class="empty-state" id="archive-empty">아직 마감된 매물이 없습니다.</div></div>
+    <div class="archive-group" id="archive-detail-group" hidden><h3>과거 입찰 상세 보고서</h3><div id="archive-detail"></div></div>
+  </section>
   <div class="notice">이 페이지는 공개 공고의 탐색 편의를 위한 요약이며 매수 권유나 법률 자문이 아닙니다. 개인정보는 공개하지 않으며, 입찰 전 법원 원문·첨부파일·물품 상태·권리관계·비용을 직접 확인해야 합니다.</div>
 </main><script>
   (()=>{
@@ -134,5 +164,67 @@
       error.textContent='비밀번호가 일치하지 않습니다.';
       input.value='';input.focus();
     });
+
+    const tabs=[...document.querySelectorAll('[data-tab]')];
+    const views=[...document.querySelectorAll('.view')];
+    const showTab=(name,{updateHash=true}={})=>{
+      const selected=tabs.some(tab=>tab.dataset.tab===name)?name:'rankings';
+      tabs.forEach(tab=>{
+        const active=tab.dataset.tab===selected;
+        tab.setAttribute('aria-selected',String(active));
+        tab.tabIndex=active?0:-1;
+      });
+      views.forEach(view=>{view.hidden=view.id!==`view-${selected}`});
+      if(updateHash)history.replaceState(null,'',`#${selected}`);
+    };
+    tabs.forEach((tab,index)=>{
+      tab.addEventListener('click',()=>showTab(tab.dataset.tab));
+      tab.addEventListener('keydown',event=>{
+        if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
+        event.preventDefault();
+        let target=index;
+        if(event.key==='ArrowLeft')target=(index-1+tabs.length)%tabs.length;
+        if(event.key==='ArrowRight')target=(index+1)%tabs.length;
+        if(event.key==='Home')target=0;
+        if(event.key==='End')target=tabs.length-1;
+        tabs[target].focus();showTab(tabs[target].dataset.tab);
+      });
+    });
+    document.querySelectorAll('[data-open-tab]').forEach(link=>link.addEventListener('click',event=>{
+      event.preventDefault();showTab(link.dataset.openTab);window.scrollTo({top:0,behavior:'smooth'});
+    }));
+
+    const activeList=document.getElementById('active-list');
+    const archiveList=document.getElementById('archive-list');
+    const archiveDetail=document.getElementById('archive-detail');
+    const now=Date.now();
+    const listings=[...activeList.querySelectorAll('.listing')];
+    listings.sort((a,b)=>{
+      const scoreDiff=Number(b.dataset.score)-Number(a.dataset.score);
+      return scoreDiff||new Date(a.dataset.deadline)-new Date(b.dataset.deadline);
+    });
+    listings.forEach(item=>{
+      const expired=now>new Date(item.dataset.deadline).getTime();
+      item.classList.toggle('archive-item',expired);
+      (expired?archiveList:activeList).appendChild(item);
+    });
+    const priorityCases=[...document.querySelectorAll('.priority-case')];
+    priorityCases.forEach(item=>{
+      if(now>new Date(item.dataset.deadline).getTime())archiveDetail.appendChild(item);
+    });
+    const activeCount=activeList.querySelectorAll('.listing').length;
+    const archiveCount=archiveList.querySelectorAll('.listing').length;
+    const priorityCount=document.getElementById('priority-content').querySelectorAll('.priority-case').length;
+    document.getElementById('active-summary-count').textContent=`${activeCount}건`;
+    document.getElementById('active-tab-count').textContent=activeCount;
+    document.getElementById('priority-tab-count').textContent=priorityCount;
+    document.getElementById('archive-tab-count').textContent=archiveCount;
+    document.getElementById('active-empty').hidden=activeCount>0;
+    document.getElementById('priority-empty').hidden=priorityCount>0;
+    document.getElementById('archive-empty').hidden=archiveCount>0;
+    document.getElementById('archive-detail-group').hidden=archiveDetail.children.length===0;
+
+    const requested=location.hash.slice(1);
+    showTab(['rankings','priority','archive'].includes(requested)?requested:'rankings',{updateHash:false});
   })();
 </script></body></html>
