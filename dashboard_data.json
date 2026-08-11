@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-11 11:10 KST",
+  "updated_at": "2026-08-11 11:15 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97769369,
-    "cash": 74788444,
-    "invested": 22980925,
-    "day_pnl": -34965,
-    "cum_pnl": -2230631,
-    "cum_return_pct": -2.2306,
-    "vs_kospi_pct": 4.9409
+    "total": 97823505,
+    "cash": 94699599,
+    "invested": 3123906,
+    "day_pnl": 54136,
+    "cum_pnl": -2176495,
+    "cum_return_pct": -2.1765,
+    "vs_kospi_pct": 4.995
   },
   "metrics": {
-    "mdd_pct": 3.5867,
+    "mdd_pct": 3.5816,
     "mdd_confidence": "high",
     "win_rate": 0.4,
     "profit_factor": 0.14500619290990072,
@@ -34,11 +34,6 @@
       "ok": false,
       "mismatches": [
         {
-          "symbol": "069500",
-          "log_implied_qty": 0,
-          "account_qty": 201
-        },
-        {
           "symbol": "133690",
           "log_implied_qty": 0,
           "account_qty": 8
@@ -56,7 +51,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 23.51,
+      "used_pct": 3.19,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -68,40 +63,30 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 76.49,
+      "used_pct": 96.81,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
   "positions": [
     {
-      "symbol": "069500",
-      "name": "KODEX 200",
-      "qty": 201,
-      "avg_price": 98878,
-      "price": 98795,
-      "value": 19857795,
-      "pnl": -16862,
-      "pnl_pct": -0.08
-    },
-    {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 8,
       "avg_price": 186143,
-      "price": 186050,
-      "value": 1488400,
-      "pnl": -751,
-      "pnl_pct": -0.05
+      "price": 186002,
+      "value": 1488016,
+      "pnl": -1135,
+      "pnl_pct": -0.08
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 58,
       "avg_price": 28189,
-      "price": 28185,
-      "value": 1634730,
-      "pnl": -279,
-      "pnl_pct": -0.02
+      "price": 28205,
+      "value": 1635890,
+      "pnl": 881,
+      "pnl_pct": 0.05
     }
   ],
   "trades": [
@@ -842,7 +827,7 @@
     },
     {
       "date": "2026-08-11",
-      "value": 97769369
+      "value": 97823505
     }
   ],
   "experiment": {
@@ -882,12 +867,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 74788444.0
+      "cash": 94699599.0
     },
     "contribution_pct": {
-      "long": -0.11,
+      "long": -0.09,
       "short": 0.01,
-      "cash": 99.88
+      "cash": 99.9
     }
   }
 }
