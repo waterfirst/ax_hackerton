@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-08-11 11:17 KST",
+  "updated_at": "2026-08-11 12:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97823079,
-    "cash": 94649949,
-    "invested": 3173130,
-    "day_pnl": 170,
-    "cum_pnl": -2176921,
-    "cum_return_pct": -2.1769,
-    "vs_kospi_pct": 4.9946
+    "total": 97819275,
+    "cash": 94484419,
+    "invested": 3334856,
+    "day_pnl": -3804,
+    "cum_pnl": -2180725,
+    "cum_return_pct": -2.1807,
+    "vs_kospi_pct": 4.9908
   },
   "metrics": {
     "mdd_pct": 3.5816,
@@ -41,7 +41,7 @@
         {
           "symbol": "138230",
           "log_implied_qty": 0,
-          "account_qty": 3
+          "account_qty": 13
         },
         {
           "symbol": "411060",
@@ -56,7 +56,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 3.24,
+      "used_pct": 3.41,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -68,7 +68,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 96.76,
+      "used_pct": 96.59,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -78,18 +78,18 @@
       "name": "TIGER 미국나스닥100",
       "qty": 8,
       "avg_price": 186143,
-      "price": 185985,
-      "value": 1487880,
-      "pnl": -1271,
-      "pnl_pct": -0.09
+      "price": 186057,
+      "value": 1488456,
+      "pnl": -695,
+      "pnl_pct": -0.05
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
-      "qty": 3,
+      "qty": 13,
       "avg_price": 16550,
       "price": 16550,
-      "value": 49650,
+      "value": 215150,
       "pnl": 0,
       "pnl_pct": 0.0
     },
@@ -98,10 +98,10 @@
       "name": "ACE KRX금현물",
       "qty": 58,
       "avg_price": 28189,
-      "price": 28200,
-      "value": 1635600,
-      "pnl": 591,
-      "pnl_pct": 0.04
+      "price": 28125,
+      "value": 1631250,
+      "pnl": -3759,
+      "pnl_pct": -0.23
     }
   ],
   "trades": [
@@ -772,7 +772,7 @@
   ],
   "plan": {
     "date": "2026-08-11",
-    "text": "short/weak · dry_run=False · quote=99015 · signal=records/2026-08-11.json · etf_ref=fsc_auto_collector"
+    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-08-11.json · etf_ref=fsc_auto_collector"
   },
   "report": {
     "date": "2026-08-11",
@@ -842,7 +842,7 @@
     },
     {
       "date": "2026-08-11",
-      "value": 97823079
+      "value": 97819275
     }
   ],
   "experiment": {
@@ -882,7 +882,7 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 94649949.0
+      "cash": 94484419.0
     },
     "contribution_pct": {
       "long": -0.09,
