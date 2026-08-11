@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-11 10:10 KST",
+  "updated_at": "2026-08-11 10:20 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97790661,
-    "cash": 97790661,
-    "invested": 0,
-    "day_pnl": 0,
-    "cum_pnl": -2209339,
-    "cum_return_pct": -2.2093,
+    "total": 97801266,
+    "cash": 87831556,
+    "invested": 9969710,
+    "day_pnl": 10605,
+    "cum_pnl": -2198734,
+    "cum_return_pct": -2.1987,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -31,16 +31,22 @@
     "estimated_price_rows": 18,
     "verified_fill_rows": 2,
     "reconciliation": {
-      "ok": true,
-      "mismatches": [],
-      "note": ""
+      "ok": false,
+      "mismatches": [
+        {
+          "symbol": "069500",
+          "log_implied_qty": 0,
+          "account_qty": 101
+        }
+      ],
+      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
   "sleeves": [
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 0.0,
+      "used_pct": 10.19,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -52,11 +58,22 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 100.0,
+      "used_pct": 89.81,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "069500",
+      "name": "KODEX 200",
+      "qty": 101,
+      "avg_price": 98590,
+      "price": 98710,
+      "value": 9969710,
+      "pnl": 12075,
+      "pnl_pct": 0.12
+    }
+  ],
   "trades": [
     {
       "ts": "2026-07-28T10:40:07",
@@ -795,7 +812,7 @@
     },
     {
       "date": "2026-08-11",
-      "value": 97790661
+      "value": 97801266
     }
   ],
   "experiment": {
@@ -835,12 +852,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 97790661.0
+      "cash": 87831556.0
     },
     "contribution_pct": {
-      "long": -0.09,
-      "short": 0.0,
-      "cash": 99.91
+      "long": -0.1,
+      "short": 0.01,
+      "cash": 99.9
     }
   }
 }
