@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-11 11:08 KST",
+  "updated_at": "2026-08-11 11:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97804334,
+    "total": 97769369,
     "cash": 74788444,
-    "invested": 23015890,
-    "day_pnl": -16775,
-    "cum_pnl": -2195666,
-    "cum_return_pct": -2.1957,
-    "vs_kospi_pct": 4.9758
+    "invested": 22980925,
+    "day_pnl": -34965,
+    "cum_pnl": -2230631,
+    "cum_return_pct": -2.2306,
+    "vs_kospi_pct": 4.9409
   },
   "metrics": {
-    "mdd_pct": 3.5816,
+    "mdd_pct": 3.5867,
     "mdd_confidence": "high",
     "win_rate": 0.4,
     "profit_factor": 0.14500619290990072,
@@ -56,7 +56,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 23.53,
+      "used_pct": 23.51,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -68,7 +68,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 76.47,
+      "used_pct": 76.49,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -78,19 +78,19 @@
       "name": "KODEX 200",
       "qty": 201,
       "avg_price": 98878,
-      "price": 98970,
-      "value": 19892970,
-      "pnl": 18313,
-      "pnl_pct": 0.09
+      "price": 98795,
+      "value": 19857795,
+      "pnl": -16862,
+      "pnl_pct": -0.08
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 8,
       "avg_price": 186143,
-      "price": 186060,
-      "value": 1488480,
-      "pnl": -671,
+      "price": 186050,
+      "value": 1488400,
+      "pnl": -751,
       "pnl_pct": -0.05
     },
     {
@@ -98,10 +98,10 @@
       "name": "ACE KRX금현물",
       "qty": 58,
       "avg_price": 28189,
-      "price": 28180,
-      "value": 1634440,
-      "pnl": -569,
-      "pnl_pct": -0.03
+      "price": 28185,
+      "value": 1634730,
+      "pnl": -279,
+      "pnl_pct": -0.02
     }
   ],
   "trades": [
@@ -842,7 +842,7 @@
     },
     {
       "date": "2026-08-11",
-      "value": 97804334
+      "value": 97769369
     }
   ],
   "experiment": {
