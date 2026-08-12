@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-12T08:30:43+09:00",
+  "updated_at": "2026-08-12T19:30:28+09:00",
   "sources": [
     {
-      "checked_at": "2026-08-12T08:30:43+09:00",
-      "scanned": 60,
       "source": "court_notice",
-      "status": "ok"
+      "scanned": 60,
+      "status": "ok",
+      "checked_at": "2026-08-12T19:30:28+09:00"
     },
     {
-      "reason": "ONBID_SERVICE_KEY 미설정 또는 동산 API 활용 미승인",
-      "checked_at": "2026-08-12T08:30:43+09:00",
-      "scanned": 0,
       "source": "onbid_movable",
-      "status": "coverage_gap"
+      "scanned": 0,
+      "status": "coverage_gap",
+      "checked_at": "2026-08-12T19:30:28+09:00",
+      "reason": "ONBID_SERVICE_KEY 미설정 또는 동산 API 활용 미승인"
     }
   ]
 }
