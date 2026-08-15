@@ -61,11 +61,11 @@
     <div class="interest-call"><p>FX707ZE-12725T는 2022년형 i7-12700H·RTX 3050 Ti 계열이나 터치패드 고장이 명시됐습니다. 현장에서 정상부팅·GPU·화면·키보드·배터리·200W 충전기를 확인하면 197,300원을 우선 검토하고 232,000원을 넘지 않습니다.</p><a class="button secondary" href="https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&amp;cltrScrnGrpCd=0&amp;onbidPbancNo=901053&amp;pbctNo=10090986" target="_blank" rel="noopener">공식 공고</a></div>
   </section>
   <section class="api-candidates police-candidates" aria-labelledby="police-candidates-title" data-auction-category="lost">
-    <div class="api-candidates-head"><div><h2 id="police-candidates-title">분실·습득물 매력도 순위</h2><div class="api-candidates-note">검증 점수 높은 순, 동점이면 입찰 마감이 가까운 순입니다. 전자기기는 진품·잠금·배터리, 귀금속은 각인·중량·감정과 금은방 매입가를 확인합니다.</div></div><span class="source-badge gap" id="police-candidate-count">불러오는 중</span></div>
+    <div class="api-candidates-head"><div><h2 id="police-candidates-title">분실·습득물 추천 매물</h2><div class="api-candidates-note">HBA-2 65점 이상이면서 경제성 검증을 통과한 매물만 표시합니다. 나머지 후보는 계속 수집하되 시세·진품·상태 검증 전에는 공개 추천하지 않습니다.</div></div><span class="source-badge gap" id="police-candidate-count">불러오는 중</span></div>
     <div class="api-candidate-list" id="police-candidate-list"><div class="api-candidates-note">경찰 관련 후보를 확인하고 있습니다.</div></div>
   </section>
   <section class="api-candidates" aria-labelledby="api-candidates-title" data-auction-category="electronics">
-    <div class="api-candidates-head"><div><h2 id="api-candidates-title">전자기기 매력도 순위</h2><div class="api-candidates-note">차세대 동산 API와 공고목록을 합친 후보입니다. 검증 점수 높은 순, 동점이면 입찰 마감이 가까운 순이며 정확한 시세 근거가 없으면 점수를 보류합니다.</div></div><span class="source-badge gap" id="api-candidate-count">불러오는 중</span></div>
+    <div class="api-candidates-head"><div><h2 id="api-candidates-title">전자기기 추천 매물</h2><div class="api-candidates-note">차세대 동산 API와 공고목록에서 HBA-2 65점 이상이면서 경제성 검증을 통과한 매물만 표시합니다. 전체 후보와 점수 미검증 물건은 수집 데이터에만 보존합니다.</div></div><span class="source-badge gap" id="api-candidate-count">불러오는 중</span></div>
     <div class="api-candidate-list" id="api-candidate-list"><div class="api-candidates-note">후보 파일을 확인하고 있습니다.</div></div>
   </section>
   <nav class="tabs" aria-label="전자기기 공매 보고서 메뉴" role="tablist" data-auction-category="electronics">
@@ -330,6 +330,12 @@
       if(aScore!==null||bScore!==null)return (bScore??-1)-(aScore??-1)||deadlineOf(a)-deadlineOf(b);
       return deadlineOf(a)-deadlineOf(b);
     });
+    const isHighAttractiveness=item=>{
+      const fallback=verifiedScoring[item.seq_id];
+      const score=scoreOf(item);
+      const status=item.score_status||fallback?.status||'pending';
+      return score!==null&&score>=65&&status==='scored';
+    };
     fetch(`court-electronics-onbid-candidates.json?v=${Date.now()}`,{cache:'no-store'}).then(response=>{
       if(!response.ok)throw new Error('candidate feed unavailable');
       return response.json();
@@ -362,18 +368,19 @@
       };
       list.replaceChildren();
       policeList.replaceChildren();
-      const policeItems=sortCandidates(items.filter(item=>String(item.source_type||'').startsWith('police_')));
-      const electronicsItems=sortCandidates(items.filter(item=>!String(item.source_type||'').startsWith('police_')));
+      const recommendedItems=items.filter(isHighAttractiveness);
+      const policeItems=sortCandidates(recommendedItems.filter(item=>String(item.source_type||'').startsWith('police_')));
+      const electronicsItems=sortCandidates(recommendedItems.filter(item=>!String(item.source_type||'').startsWith('police_')));
       count.textContent=`${electronicsItems.length}건`;
       count.className='source-badge ok';
       if(!electronicsItems.length){
-        const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 마감 전 자동 탐지 후보가 없습니다.';list.append(empty);
+        const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 65점 이상 검증 통과 전자기기 매물이 없습니다.';list.append(empty);
       }
       electronicsItems.slice(0,16).forEach(item=>appendCandidate(list,item));
       policeCount.textContent=`${policeItems.length}건`;
       policeCount.className=`source-badge ${policeItems.length?'ok':'gap'}`;
       if(policeItems.length)policeItems.slice(0,16).forEach(item=>appendCandidate(policeList,item));
-      else {const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 마감 전 경찰 습득·압수 전자기기 후보가 없습니다.';policeList.append(empty)}
+      else {const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 65점 이상 검증 통과 분실·습득물 매물이 없습니다.';policeList.append(empty)}
     }).catch(()=>{
       const count=document.getElementById('api-candidate-count');count.textContent='확인 불가';count.className='source-badge gap';
       document.getElementById('api-candidate-list').textContent='후보 데이터 파일을 읽지 못했습니다.';
