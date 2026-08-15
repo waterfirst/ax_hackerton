@@ -3,29 +3,29 @@
   "updated_at": "2026-08-15T22:44:20+09:00",
   "sources": [
     {
+      "checked_at": "2026-08-15T21:47:46+09:00",
       "status": "ok",
       "source": "court_notice",
-      "checked_at": "2026-08-15T21:47:46+09:00",
       "scanned": 60
     },
     {
+      "checked_at": "2026-08-15T21:47:46+09:00",
       "status": "ok",
       "source": "onbid_code",
-      "checked_at": "2026-08-15T21:47:46+09:00",
-      "scanned": 0,
-      "available_codes": 420
+      "available_codes": 420,
+      "scanned": 0
     },
     {
+      "checked_at": "2026-08-15T22:44:20+09:00",
       "status": "ok",
       "source": "onbid_announcement",
-      "checked_at": "2026-08-15T22:44:20+09:00",
       "candidates": 68,
       "scanned": 1032
     },
     {
+      "checked_at": "2026-08-15T22:44:20+09:00",
       "status": "ok",
       "source": "onbid_movable",
-      "checked_at": "2026-08-15T22:44:20+09:00",
       "candidates": 138,
       "scanned": 1893
     }
