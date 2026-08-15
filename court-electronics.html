@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="icon" href="data:,">
-  <title>회생법원 전자기기 매물 보고서</title>
+  <title>온비드 경매 매물 분석실</title>
   <style>
     :root{--bg:#0e1116;--panel:#171b22;--panel-strong:#1d232c;--line:#2a313c;--txt:#e6edf3;--mut:#9ca7b5;--acc:#4cc38a;--warn:#f5a623;--risk:#ff7b72;--info:#79b8ff}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}body.locked{overflow:hidden}body.locked main{visibility:hidden}
@@ -22,14 +22,15 @@
     @media(max-width:720px){main{padding-top:24px}.summary,.source-health,.dual-score{grid-template-columns:1fr}.api-candidates-head{display:block}.api-candidate{grid-template-columns:1fr}.view-head{display:block}.sort-note{display:block;margin-top:8px}.listing{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:15px}.listing-score{width:58px;height:58px;border-width:5px}.listing-score b{font-size:20px}.listing-action{grid-column:1/-1;text-align:left}.listing .button{width:auto}.featured{padding:18px}.featured-head{grid-template-columns:1fr}.gauge{justify-self:center;width:280px}.spec-grid,.prep-grid{grid-template-columns:1fr}.decision,.guide,.model{padding:18px}.breakdown{grid-template-columns:1fr}.bid-bands{grid-template-columns:1fr 1fr}h1{font-size:25px}.featured h2{font-size:21px}.decision h2,.guide h2,.model h2{font-size:20px}.form-lines{grid-template-columns:1fr}.model-result{grid-template-columns:1fr}}
     @media(max-width:420px){.fact-grid,.bid-bands{grid-template-columns:1fr}.gauge{width:260px}}
     @media print{body{background:#fff;color:#111}main{max-width:none}.gate,.tabs,.actions,.summary,.section-label~article.card{display:none}.featured,.decision,.guide,.model,.formula,.spec,.step,.prep,.form-example,.fact{background:#fff;border-color:#bbb;color:#111;box-shadow:none}.meta,.label,.score-note,.step span,.guide-intro,.form-line{color:#444}a{color:#111;text-decoration:none}}
-    .interest-panel{margin:0 0 20px;padding:20px;border:1px solid rgba(121,184,255,.55);border-radius:16px;background:#151b23}.interest-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start}.interest-kicker{display:inline-block;margin-bottom:7px;color:var(--info);font-size:11px;font-weight:800}.interest-panel h2{margin:0 0 7px;font-size:20px}.interest-status{padding:7px 10px;border-radius:999px;background:rgba(121,184,255,.13);color:#b8d9ff;font-size:11px;font-weight:800}.interest-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:13px;color:#cdd6df;font-size:12px}.interest-facts b{color:var(--txt)}.round-strip{display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:6px;margin-top:16px}.round{padding:9px 7px;border:1px solid var(--line);border-radius:9px;background:#10151c;text-align:center}.round span,.round small{display:block;color:var(--mut);font-size:10px}.round b{display:block;margin:3px 0;font-size:12px}.round.focus{border-color:rgba(121,184,255,.65);background:rgba(121,184,255,.08)}.interest-call{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}.interest-call p{margin:0;color:var(--mut);font-size:12px;line-height:1.6}.police-candidates{border-color:rgba(245,166,35,.42)}@media(max-width:860px){.round-strip{grid-template-columns:repeat(4,1fr)}}@media(max-width:560px){.interest-head{grid-template-columns:1fr}.interest-status{justify-self:start}.round-strip{grid-template-columns:repeat(2,1fr)}.interest-call{align-items:flex-start;flex-direction:column}}
+    .category-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:4px 0 20px}.category-tab{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:68px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--txt);font:inherit;text-align:left;cursor:pointer}.category-tab strong{display:block;font-size:14px}.category-tab small{display:block;margin-top:4px;color:var(--mut);font-size:11px}.category-tab[aria-selected="true"]{border-color:rgba(76,195,138,.75);background:rgba(76,195,138,.09)}.category-score{flex:0 0 auto;padding:6px 9px;border-radius:999px;background:#10151c;color:#b8f3d4;font-size:11px;font-weight:800}body[data-auction-category="electronics"] [data-auction-category="lost"],body[data-auction-category="lost"] [data-auction-category="electronics"]{display:none!important}.score-chip{display:inline-flex;align-items:center;margin-bottom:6px;padding:4px 7px;border-radius:999px;background:rgba(76,195,138,.12);color:#b8f3d4;font-size:10px;font-weight:800}.score-chip.pending{background:rgba(156,167,181,.1);color:var(--mut)}
+    .interest-panel{margin:0 0 20px;padding:20px;border:1px solid rgba(121,184,255,.55);border-radius:16px;background:#151b23}.interest-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start}.interest-kicker{display:inline-block;margin-bottom:7px;color:var(--info);font-size:11px;font-weight:800}.interest-panel h2{margin:0 0 7px;font-size:20px}.interest-status{padding:7px 10px;border-radius:999px;background:rgba(121,184,255,.13);color:#b8d9ff;font-size:11px;font-weight:800}.interest-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:13px;color:#cdd6df;font-size:12px}.interest-facts b{color:var(--txt)}.round-strip{display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:6px;margin-top:16px}.round{padding:9px 7px;border:1px solid var(--line);border-radius:9px;background:#10151c;text-align:center}.round span,.round small{display:block;color:var(--mut);font-size:10px}.round b{display:block;margin:3px 0;font-size:12px}.round.focus{border-color:rgba(121,184,255,.65);background:rgba(121,184,255,.08)}.interest-call{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}.interest-call p{margin:0;color:var(--mut);font-size:12px;line-height:1.6}.police-candidates{border-color:rgba(245,166,35,.42)}@media(max-width:860px){.round-strip{grid-template-columns:repeat(4,1fr)}}@media(max-width:620px){.category-tabs{grid-template-columns:1fr}}@media(max-width:560px){.interest-head{grid-template-columns:1fr}.interest-status{justify-self:start}.round-strip{grid-template-columns:repeat(2,1fr)}.interest-call{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
-<body class="locked"><section class="gate" id="access-gate" aria-labelledby="gate-title"><div class="gate-card"><div class="gate-mark" aria-hidden="true">SB</div><h1 id="gate-title">전자기기 공매 분석실</h1><p>보고서를 보려면 접근 비밀번호를 입력하세요.</p><form class="gate-form" id="gate-form"><label for="gate-password" class="label" style="position:absolute;left:-9999px">비밀번호</label><input id="gate-password" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" required><button type="submit">입장</button></form><div class="gate-error" id="gate-error" role="alert" aria-live="polite"></div><p class="gate-note">정적 GitHub Pages의 간이 접근 잠금입니다. 민감정보 보호 수단으로 사용할 수 없습니다.</p></div></section><main>
-  <header class="head"><div class="eyebrow">법원 공고 × 온비드 API × 중고시세</div><h1>회생법원 전자기기 매물 보고서</h1><div class="sub">법원 게시판과 차세대 온비드 공고목록 API를 교차 감시합니다. 모델이 확인된 노트북·PC·스마트폰·Mac·RAM·SSD·고가 GPU·서버는 평가 대상으로, 모델 미확인 전자기기는 검토대기 후보로 보존합니다.</div></header>
+<body class="locked" data-auction-category="electronics"><section class="gate" id="access-gate" aria-labelledby="gate-title"><div class="gate-card"><div class="gate-mark" aria-hidden="true">SB</div><h1 id="gate-title">경매 매물 분석실</h1><p>보고서를 보려면 접근 비밀번호를 입력하세요.</p><form class="gate-form" id="gate-form"><label for="gate-password" class="label" style="position:absolute;left:-9999px">비밀번호</label><input id="gate-password" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" required><button type="submit">입장</button></form><div class="gate-error" id="gate-error" role="alert" aria-live="polite"></div><p class="gate-note">정적 GitHub Pages의 간이 접근 잠금입니다. 민감정보 보호 수단으로 사용할 수 없습니다.</p></div></section><main>
+  <header class="head"><div class="eyebrow">법원 공고 × 온비드 API × 당근·중고시세</div><h1>온비드 경매 매물 분석실</h1><div class="sub">전자기기와 분실·습득물을 카테고리별로 감시합니다. 정확한 모델과 중고 시세가 확인된 매물만 점수화하고, 근거가 부족한 물건은 검증 대기 후보로 보존합니다.</div></header>
   <section class="summary">
     <div class="card"><div class="label">최근 실행 확인 공고</div><div class="num" id="scanned-summary-count">확인 중</div></div>
-    <div class="card"><div class="label">검증 기준 통과 후보 · 신규 0건</div><div class="num" id="active-summary-count">1건</div></div>
+    <div class="card"><div class="label">상세 검증·점수화 매물</div><div class="num" id="active-summary-count">확인 중</div></div>
     <div class="card"><div class="label">수집 상태 기준시각</div><div class="num" id="source-updated" style="font-size:17px">확인 중</div></div>
   </section>
   <section class="source-health" aria-label="수집원 상태">
@@ -39,36 +40,40 @@
     <div class="source-card" data-source-card="onbid_movable"><div><strong>차세대 온비드 동산 API</strong><div class="source-meta">상태 파일 확인 중</div></div><span class="source-badge gap">확인 중</span></div>
     <p class="source-alert" id="source-alert">수집원 상태를 확인하고 있습니다. 한쪽이 실패하면 신규 0건이 아니라 수집 공백으로 표시합니다.</p>
   </section>
-  <section class="interest-panel" aria-labelledby="odins-interest-title">
-    <div class="interest-head"><div><span class="interest-kicker">관심 물품</span><h2 id="odins-interest-title">오딘스 Apple 기기 일괄매각</h2><div class="meta">물건관리번호 2026-0800-044014 · iMac·MacBook·노트북·태블릿 · 서울 강남구</div></div><span class="interest-status">관심·실사 대기</span></div>
+  <nav class="category-tabs" aria-label="경매 물건 카테고리" role="tablist">
+    <button class="category-tab" type="button" role="tab" aria-selected="true" data-category-tab="electronics"><span><strong>노트북·Mac 등 전자기기</strong><small>노트북·PC·스마트폰·GPU·서버</small></span><span class="category-score" id="electronics-category-score">최고 84점</span></button>
+    <button class="category-tab" type="button" role="tab" aria-selected="false" data-category-tab="lost"><span><strong>분실·습득물 경매</strong><small>경찰 습득·압수품과 귀금속</small></span><span class="category-score" id="lost-category-score">최고 48점</span></button>
+  </nav>
+  <section class="interest-panel" aria-labelledby="odins-interest-title" data-auction-category="electronics" data-score="0" data-deadline="2026-09-01T17:00:00+09:00">
+    <div class="interest-head"><div><span class="interest-kicker">관심 물품</span><h2 id="odins-interest-title">오딘스 Apple 기기 일괄매각</h2><div class="meta">물건관리번호 2026-0800-044014 · iMac·MacBook·노트북·태블릿 · 서울 강남구</div></div><span class="interest-status">점수 미산정·실사 대기</span></div>
     <div class="interest-facts"><span>현장공개 <b>8월 20일 11:00</b></span><span>상태 <b>정확한 모델·수량·잠금 미확인</b></span><span>판단 <b>7·8회차 우선 분석</b></span></div>
     <div class="round-strip" aria-label="회차별 최저입찰가격"><div class="round"><span>1회 · 8/21</span><b>2,500만원</b><small>관망</small></div><div class="round"><span>2회 · 8/24</span><b>2,100만원</b><small>관망</small></div><div class="round"><span>3회 · 8/25</span><b>1,700만원</b><small>관망</small></div><div class="round"><span>4회 · 8/26</span><b>1,300만원</b><small>관망</small></div><div class="round"><span>5회 · 8/27</span><b>900만원</b><small>사양 대조</small></div><div class="round"><span>6회 · 8/28</span><b>500만원</b><small>사양 대조</small></div><div class="round focus"><span>7회 · 8/31</span><b>100만원</b><small>우선 분석</small></div><div class="round focus"><span>8회 · 9/1</span><b>50만원</b><small>우선 분석</small></div></div>
     <div class="interest-call"><p>가격만 보고 입찰하지 않습니다. 현장에서 모델·연식·수량·Activation Lock·MDM·배터리·화면 상태를 확인한 뒤 당근 시세와 비교합니다.</p><a class="button secondary" href="https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&amp;cltrScrnGrpCd=0&amp;onbidPbancNo=900613&amp;pbctNo=10090011" target="_blank" rel="noopener">공식 공고</a></div>
   </section>
-  <section class="interest-panel" aria-labelledby="anklet-interest-title">
-    <div class="interest-head"><div><span class="interest-kicker">관심 물품 · 귀금속</span><h2 id="anklet-interest-title">김천경찰서 2줄 체인형 발찌</h2><div class="meta">물건관리번호 2026-0800-044307 · 첨부표기 K14·1.1g · 경북 김천시</div></div><span class="interest-status">관심·감정 대기</span></div>
+  <section class="interest-panel" aria-labelledby="anklet-interest-title" data-auction-category="lost" data-score="48" data-deadline="2026-08-20T16:00:00+09:00">
+    <div class="interest-head"><div><span class="interest-kicker">관심 물품 · 귀금속</span><h2 id="anklet-interest-title">김천경찰서 2줄 체인형 발찌</h2><div class="meta">물건관리번호 2026-0800-044307 · 첨부표기 K14·1.1g · 경북 김천시</div></div><span class="interest-status">48점 · 관망</span></div>
     <div class="interest-facts"><span>감정가 <b>112,000원</b></span><span>최저가 <b>89,600원</b></span><span>입찰마감 <b>8월 20일 16:00</b></span><span>감정가 대비 <b>22,400원 낮음</b></span></div>
     <div class="interest-call"><p>사진만으로 재질을 확정할 수 없습니다. 현장에서 14K 각인·실중량·잠금장치 상태를 확인하고 금은방 매입가를 회수 하한으로 계산합니다. 현재 할인폭은 작으므로 최저가 단독 응찰만 검토하고 경쟁이 붙으면 보류합니다.</p><a class="button secondary" href="https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&amp;cltrScrnGrpCd=0&amp;onbidPbancNo=900891&amp;pbctNo=10090619" target="_blank" rel="noopener">공식 공고</a></div>
   </section>
-  <section class="interest-panel" aria-labelledby="daeyoung-interest-title">
-    <div class="interest-head"><div><span class="interest-kicker">우선 검토 · 노트북 3대 일괄</span><h2 id="daeyoung-interest-title">대영씨엠에스 노트북 일괄매각</h2><div class="meta">물건관리번호 2026-0800-044457 · ASUS FX707ZE·FX505GD·HP 15-da · 서울 영등포구</div></div><span class="interest-status">고매력·실사 필수</span></div>
+  <section class="interest-panel" aria-labelledby="daeyoung-interest-title" data-auction-category="electronics" data-score="84" data-deadline="2026-09-02T17:00:00+09:00">
+    <div class="interest-head"><div><span class="interest-kicker">우선 검토 · 노트북 3대 일괄</span><h2 id="daeyoung-interest-title">대영씨엠에스 노트북 일괄매각</h2><div class="meta">물건관리번호 2026-0800-044457 · ASUS FX707ZE·FX505GD·HP 15-da · 서울 영등포구</div></div><span class="interest-status">84점 · 고매력</span></div>
     <div class="interest-facts"><span>최저가 <b>100,000원</b></span><span>현장공개 <b>8월 27일 10:00</b></span><span>입찰마감 <b>9월 2일 17:00</b></span><span>보수적 입찰상한 <b>227,000원</b></span></div>
     <div class="interest-call"><p>FX707ZE-12725T는 2022년형 i7-12700H·RTX 3050 Ti 계열이나 터치패드 고장이 명시됐습니다. FX505GD는 부팅 불가, HP 15-da는 상세 사양 미상입니다. 현장에서 FX707ZE 정상부팅·GPU·화면·키보드·배터리·200W 충전기를 확인하면 197,300원 우선 검토, 핵심 검수 실패 시 110,000원 이하로 제한합니다.</p><a class="button secondary" href="https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&amp;cltrScrnGrpCd=0&amp;onbidPbancNo=901053&amp;pbctNo=10090986" target="_blank" rel="noopener">공식 공고</a></div>
   </section>
-  <section class="api-candidates police-candidates" aria-labelledby="police-candidates-title">
-    <div class="api-candidates-head"><div><h2 id="police-candidates-title">새 아이템 · 경찰 습득·압수 재판매 후보</h2><div class="api-candidates-note">에어팟·스마트워치·카메라·게임기·드론·전동 모빌리티와 귀금속을 감시합니다. 전자기기는 진품·잠금·배터리, 귀금속은 각인·중량·감정과 금은방 매입가를 확인한 뒤 판단합니다.</div></div><span class="source-badge gap" id="police-candidate-count">불러오는 중</span></div>
+  <section class="api-candidates police-candidates" aria-labelledby="police-candidates-title" data-auction-category="lost">
+    <div class="api-candidates-head"><div><h2 id="police-candidates-title">분실·습득물 매력도 순위</h2><div class="api-candidates-note">검증 점수 높은 순, 동점이면 입찰 마감이 가까운 순입니다. 전자기기는 진품·잠금·배터리, 귀금속은 각인·중량·감정과 금은방 매입가를 확인합니다.</div></div><span class="source-badge gap" id="police-candidate-count">불러오는 중</span></div>
     <div class="api-candidate-list" id="police-candidate-list"><div class="api-candidates-note">경찰 관련 후보를 확인하고 있습니다.</div></div>
   </section>
-  <section class="api-candidates" aria-labelledby="api-candidates-title">
-    <div class="api-candidates-head"><div><h2 id="api-candidates-title">온비드 신규 전자기기 탐지 후보</h2><div class="api-candidates-note">공고명 자동 탐지 결과입니다. 상세 사양·수량·상태 검증 전에는 매력도 점수를 부여하지 않습니다.</div></div><span class="source-badge gap" id="api-candidate-count">불러오는 중</span></div>
+  <section class="api-candidates" aria-labelledby="api-candidates-title" data-auction-category="electronics">
+    <div class="api-candidates-head"><div><h2 id="api-candidates-title">전자기기 매력도 순위</h2><div class="api-candidates-note">차세대 동산 API와 공고목록을 합친 후보입니다. 검증 점수 높은 순, 동점이면 입찰 마감이 가까운 순이며 정확한 시세 근거가 없으면 점수를 보류합니다.</div></div><span class="source-badge gap" id="api-candidate-count">불러오는 중</span></div>
     <div class="api-candidate-list" id="api-candidate-list"><div class="api-candidates-note">후보 파일을 확인하고 있습니다.</div></div>
   </section>
-  <nav class="tabs" aria-label="전자기기 공매 보고서 메뉴" role="tablist">
+  <nav class="tabs" aria-label="전자기기 공매 보고서 메뉴" role="tablist" data-auction-category="electronics">
     <button class="tab" id="tab-rankings" type="button" role="tab" aria-selected="true" aria-controls="view-rankings" data-tab="rankings">매물 순위 <span class="tab-count" id="active-tab-count">1</span></button>
     <button class="tab" id="tab-priority" type="button" role="tab" aria-selected="false" aria-controls="view-priority" data-tab="priority">입찰 우선 <span class="tab-count" id="priority-tab-count">1</span></button>
     <button class="tab" id="tab-archive" type="button" role="tab" aria-selected="false" aria-controls="view-archive" data-tab="archive">아카이브 <span class="tab-count" id="archive-tab-count">0</span></button>
   </nav>
-  <section class="view" id="view-rankings" role="tabpanel" aria-labelledby="tab-rankings">
+  <section class="view" id="view-rankings" role="tabpanel" aria-labelledby="tab-rankings" data-auction-category="electronics">
     <div class="view-head"><div><h2>검증 통과 매물 순위</h2><p>입찰기한이 남고 모델·수량·주요 사양을 확인할 수 있는 고가 재판매 후보만 표시합니다.</p></div><span class="sort-note">매력도 높은 순 ↓</span></div>
     <div class="listing-stack" id="active-list">
       <article class="listing" data-score="72" data-deadline="2026-08-20T17:00:00+09:00" data-priority="true">
@@ -106,7 +111,7 @@
       <div class="sources">근거: 공고 첨부 원문 · court_danggn MCP 검증 기록 · <a href="https://support.apple.com/en-us/108052" target="_blank" rel="noopener">Apple MacBook Pro 모델 식별</a> · <a href="https://support.apple.com/en-us/102869" target="_blank" rel="noopener">Apple MacBook Air 모델 식별</a> · <a href="https://support.apple.com/en-us/122867" target="_blank" rel="noopener">macOS Tahoe 26 호환 목록</a></div>
     </section>
   </section>
-  <section class="view" id="view-priority" role="tabpanel" aria-labelledby="tab-priority" hidden>
+  <section class="view" id="view-priority" role="tabpanel" aria-labelledby="tab-priority" data-auction-category="electronics" hidden>
     <div class="view-head"><div><h2>입찰 우선 매물 상세</h2><p>매력도 65점 이상이며 입찰기한이 남은 매물의 가격 근거, 현장검수 조건, 제출 순서를 모았습니다.</p></div></div>
     <div id="priority-content">
     <div class="priority-case" data-deadline="2026-08-20T17:00:00+09:00" data-score="72">
@@ -193,7 +198,7 @@
     </div>
     <div class="empty-state" id="priority-empty" hidden>현재 입찰 우선 기준을 충족하는 활성 매물이 없습니다.<br>마감된 상세 보고서는 아카이브로 자동 이동합니다.</div>
   </section>
-  <section class="view" id="view-archive" role="tabpanel" aria-labelledby="tab-archive" hidden>
+  <section class="view" id="view-archive" role="tabpanel" aria-labelledby="tab-archive" data-auction-category="electronics" hidden>
     <div class="view-head"><div><h2>마감 매물 아카이브</h2><p>표시된 입찰·공고 마감시각이 지나면 매물이 이곳으로 자동 이동합니다. 과거 가격과 판단 근거는 다음 입찰 분석에 재사용합니다.</p></div></div>
     <div class="archive-group"><h3>마감 매물 목록</h3><div class="listing-stack" id="archive-list"></div><div class="empty-state" id="archive-empty">아직 마감된 매물이 없습니다.</div></div>
     <div class="archive-group" id="archive-detail-group" hidden><h3>과거 입찰 상세 보고서</h3><div id="archive-detail"></div></div>
@@ -217,6 +222,39 @@
       error.textContent='비밀번호가 일치하지 않습니다.';
       input.value='';input.focus();
     });
+
+    const categoryTabs=[...document.querySelectorAll('[data-category-tab]')];
+    const showCategory=name=>{
+      const selected=categoryTabs.some(tab=>tab.dataset.categoryTab===name)?name:'electronics';
+      document.body.dataset.auctionCategory=selected;
+      categoryTabs.forEach(tab=>{
+        const active=tab.dataset.categoryTab===selected;
+        tab.setAttribute('aria-selected',String(active));
+        tab.tabIndex=active?0:-1;
+      });
+    };
+    categoryTabs.forEach((tab,index)=>{
+      tab.addEventListener('click',()=>showCategory(tab.dataset.categoryTab));
+      tab.addEventListener('keydown',event=>{
+        if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
+        event.preventDefault();
+        let target=index;
+        if(event.key==='ArrowLeft')target=(index-1+categoryTabs.length)%categoryTabs.length;
+        if(event.key==='ArrowRight')target=(index+1)%categoryTabs.length;
+        if(event.key==='Home')target=0;
+        if(event.key==='End')target=categoryTabs.length-1;
+        categoryTabs[target].focus();showCategory(categoryTabs[target].dataset.categoryTab);
+      });
+    });
+    const interestPanels=[...document.querySelectorAll('.interest-panel')];
+    if(interestPanels.length){
+      const marker=interestPanels[0];
+      interestPanels.sort((a,b)=>{
+        const scoreDiff=Number(b.dataset.score||-1)-Number(a.dataset.score||-1);
+        return scoreDiff||new Date(a.dataset.deadline||'2999-12-31')-new Date(b.dataset.deadline||'2999-12-31');
+      }).forEach(panel=>marker.parentNode.insertBefore(panel,marker));
+    }
+    showCategory('electronics');
 
     const sourceNames={court_notice:'대한민국 법원 공고',onbid_code:'온비드 코드·주소 API',onbid_announcement:'온비드 공고목록 API',onbid_movable:'차세대 온비드 동산 API'};
     const healthUrl=`court-electronics-source-health.json?v=${Date.now()}`;
@@ -259,6 +297,25 @@
       const time=digits.length>=12?` ${digits.slice(8,10)}:${digits.slice(10,12)}`:'';
       return `${year}.${month}.${day}${time}`;
     };
+    const verifiedScoring={
+      'onbid-pbanc:202608-27341-00:10090986':{score:84,evidence:'공고 원문·중고 등록가 65만~75만원 비교'},
+      'onbid:2026-0800-044457:6147934':{score:84,evidence:'공고 원문·중고 등록가 65만~75만원 비교'},
+      'onbid-pbanc:202608-27179-00:10090619':{score:48,evidence:'감정가 11.2만원·최저가 8.96만원 비교'},
+      'onbid:2026-0800-044307:6147397':{score:48,evidence:'감정가 11.2만원·최저가 8.96만원 비교'}
+    };
+    const scoreOf=item=>verifiedScoring[item.seq_id]?.score??null;
+    const deadlineOf=item=>{
+      const digits=String(item.expires_at||'').replace(/\D/g,'');
+      if(digits.length<8)return Number.MAX_SAFE_INTEGER;
+      const iso=`${digits.slice(0,4)}-${digits.slice(4,6)}-${digits.slice(6,8)}T${digits.slice(8,10)||'23'}:${digits.slice(10,12)||'59'}:00+09:00`;
+      const value=new Date(iso).getTime();
+      return Number.isFinite(value)?value:Number.MAX_SAFE_INTEGER;
+    };
+    const sortCandidates=values=>[...values].sort((a,b)=>{
+      const aScore=scoreOf(a),bScore=scoreOf(b);
+      if(aScore!==null||bScore!==null)return (bScore??-1)-(aScore??-1)||deadlineOf(a)-deadlineOf(b);
+      return deadlineOf(a)-deadlineOf(b);
+    });
     fetch(`court-electronics-onbid-candidates.json?v=${Date.now()}`,{cache:'no-store'}).then(response=>{
       if(!response.ok)throw new Error('candidate feed unavailable');
       return response.json();
@@ -272,27 +329,32 @@
       const appendCandidate=(target,item)=>{
         const article=document.createElement('article');article.className='api-candidate';
         const body=document.createElement('div');
+        const scoring=verifiedScoring[item.seq_id];
+        const score=document.createElement('span');score.className=`score-chip${scoring?'':' pending'}`;score.textContent=scoring?`${scoring.score}점 · 시세 검증`:'점수 검증 대기';
         const title=document.createElement('h3');title.textContent=item.title||'제목 미상';
         const meta=document.createElement('div');meta.className='api-candidate-meta';
         const categories=Array.isArray(item.categories)&&item.categories.length?` · ${item.categories.join(', ')}`:'';
         const source=sourceLabels[item.source_type]?`${sourceLabels[item.source_type]} · `:'';
-        meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${categories} · 시세검증 필요`;
-        body.append(title,meta);article.append(body);
+        const price=Array.isArray(item.price_candidates_krw)&&item.price_candidates_krw.length?` · 최저가 후보 ${Math.min(...item.price_candidates_krw).toLocaleString('ko-KR')}원`:'';
+        const evidence=scoring?` · ${scoring.evidence}`:' · 정확한 모델과 당근·중고 시세 비교 필요';
+        meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${price}${categories}${evidence}`;
+        body.append(score,title,meta);article.append(body);
         if(item.detail_url){const link=document.createElement('a');link.href=item.detail_url;link.target='_blank';link.rel='noopener';link.textContent='공식 공고 열기';article.append(link)}
         target.append(article);
       };
       list.replaceChildren();
       policeList.replaceChildren();
-      count.textContent=`${items.length}건`;
+      const policeItems=sortCandidates(items.filter(item=>String(item.source_type||'').startsWith('police_')));
+      const electronicsItems=sortCandidates(items.filter(item=>!String(item.source_type||'').startsWith('police_')));
+      count.textContent=`${electronicsItems.length}건`;
       count.className='source-badge ok';
-      if(!items.length){
+      if(!electronicsItems.length){
         const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 마감 전 자동 탐지 후보가 없습니다.';list.append(empty);
       }
-      items.slice(0,12).forEach(item=>appendCandidate(list,item));
-      const policeItems=items.filter(item=>String(item.source_type||'').startsWith('police_'));
+      electronicsItems.slice(0,16).forEach(item=>appendCandidate(list,item));
       policeCount.textContent=`${policeItems.length}건`;
       policeCount.className=`source-badge ${policeItems.length?'ok':'gap'}`;
-      if(policeItems.length)policeItems.slice(0,8).forEach(item=>appendCandidate(policeList,item));
+      if(policeItems.length)policeItems.slice(0,16).forEach(item=>appendCandidate(policeList,item));
       else {const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 마감 전 경찰 습득·압수 전자기기 후보가 없습니다.';policeList.append(empty)}
     }).catch(()=>{
       const count=document.getElementById('api-candidate-count');count.textContent='확인 불가';count.className='source-badge gap';
@@ -351,7 +413,8 @@
     const activeCount=activeList.querySelectorAll('.listing').length;
     const archiveCount=archiveList.querySelectorAll('.listing').length;
     const priorityCount=document.getElementById('priority-content').querySelectorAll('.priority-case').length;
-    document.getElementById('active-summary-count').textContent=`${activeCount}건`;
+    const verifiedInterestCount=interestPanels.filter(panel=>Number(panel.dataset.score)>0&&now<=new Date(panel.dataset.deadline).getTime()).length;
+    document.getElementById('active-summary-count').textContent=`${activeCount+verifiedInterestCount}건`;
     document.getElementById('active-tab-count').textContent=activeCount;
     document.getElementById('priority-tab-count').textContent=priorityCount;
     document.getElementById('archive-tab-count').textContent=archiveCount;
