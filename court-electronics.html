@@ -27,7 +27,7 @@
   </style>
 </head>
 <body class="locked" data-auction-category="electronics"><section class="gate" id="access-gate" aria-labelledby="gate-title"><div class="gate-card"><div class="gate-mark" aria-hidden="true">SB</div><h1 id="gate-title">경매 매물 분석실</h1><p>보고서를 보려면 접근 비밀번호를 입력하세요.</p><form class="gate-form" id="gate-form"><label for="gate-password" class="label" style="position:absolute;left:-9999px">비밀번호</label><input id="gate-password" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" required><button type="submit">입장</button></form><div class="gate-error" id="gate-error" role="alert" aria-live="polite"></div><p class="gate-note">정적 GitHub Pages의 간이 접근 잠금입니다. 민감정보 보호 수단으로 사용할 수 없습니다.</p></div></section><main>
-  <header class="head"><div class="eyebrow">법원 공고 × 온비드 API × 당근·중고시세</div><h1>온비드 경매 매물 분석실</h1><div class="sub">시세·상태·위험을 검증해 매력도가 높은 매물만 먼저 추천합니다. 기준 미달 물건도 버리지 않고 회차와 가격 하락을 계속 추적해, 유찰 뒤 경제성이 생기는 시점에 다시 평가합니다.</div></header>
+  <header class="head"><div class="eyebrow">법원 공고 × 온비드 API × 당근·번개 중고시세</div><h1>온비드 경매 매물 분석실</h1><div class="sub">시세·상태·위험을 검증해 매력도가 높은 매물만 먼저 추천합니다. 기준 미달 물건도 버리지 않고 회차와 가격 하락을 계속 추적해, 유찰 뒤 경제성이 생기는 시점에 다시 평가합니다.</div></header>
   <section class="summary">
     <div class="card"><div class="label">최근 실행 확인 공고</div><div class="num" id="scanned-summary-count">확인 중</div></div>
     <div class="card"><div class="label">추천·추적 검증 매물</div><div class="num" id="active-summary-count">확인 중</div></div>
@@ -38,6 +38,7 @@
     <div class="source-card" data-source-card="onbid_code"><div><strong>온비드 코드·주소 API</strong><div class="source-meta">상태 파일 확인 중</div></div><span class="source-badge gap">확인 중</span></div>
     <div class="source-card" data-source-card="onbid_announcement"><div><strong>온비드 공고목록 API</strong><div class="source-meta">상태 파일 확인 중</div></div><span class="source-badge gap">확인 중</span></div>
     <div class="source-card" data-source-card="onbid_movable"><div><strong>차세대 온비드 동산 API</strong><div class="source-meta">상태 파일 확인 중</div></div><span class="source-badge gap">확인 중</span></div>
+    <div class="source-card"><div><strong>번개장터 Apify Actor</strong><div class="source-meta">비교 어댑터 설치 완료 · APIFY_TOKEN 등록 후 실데이터 활성</div></div><span class="source-badge gap">토큰 대기</span></div>
     <p class="source-alert" id="source-alert">수집원 상태를 확인하고 있습니다. 한쪽이 실패하면 신규 0건이 아니라 수집 공백으로 표시합니다.</p>
   </section>
   <nav class="category-tabs" aria-label="경매 물건 카테고리" role="tablist">
@@ -379,8 +380,10 @@
         const prices=Array.isArray(item.price_history_krw)?item.price_history_krw:[];
         const rounds=Array.isArray(item.auction_rounds_seen)?item.auction_rounds_seen:[];
         const trackingMeta=` · ${observations||1}일 관찰${rounds.length?` · 확인 회차 ${rounds.join('→')}`:''}${prices.length>1?` · 가격 ${prices[0].toLocaleString('ko-KR')}→${prices[prices.length-1].toLocaleString('ko-KR')}원`:''}`;
+        const marketPlatforms=Array.isArray(item.market_platforms)?item.market_platforms:[];
+        const marketMeta=marketPlatforms.length?` · ${marketPlatforms.map(value=>value==='daangn'?'당근':value==='bunjang'?'번개':value).join('+')} ${Number(item.market_sample_count)||0}건 · 시세신뢰 ${Math.round((Number(item.market_confidence)||0)*100)}%`:'';
         const evidence=scoring?` · ${scoring.evidence||item.score_reason||'시세 근거 확인'}`:' · 정확한 모델과 당근·중고 시세 비교 필요';
-        meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${price}${categories}${scoreMeta}${trackingMeta}${evidence}`;
+        meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${price}${categories}${scoreMeta}${trackingMeta}${marketMeta}${evidence}`;
         body.append(score,title,meta);article.append(body);
         if(item.detail_url){const link=document.createElement('a');link.href=item.detail_url;link.target='_blank';link.rel='noopener';link.textContent='공식 공고 열기';article.append(link)}
         target.append(article);
