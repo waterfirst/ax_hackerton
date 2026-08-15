@@ -1,33 +1,33 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-15T22:44:20+09:00",
+  "updated_at": "2026-08-16T08:30:40+09:00",
   "sources": [
     {
+      "source": "court_notice",
+      "checked_at": "2026-08-16T08:30:40+09:00",
       "scanned": 60,
-      "status": "ok",
-      "checked_at": "2026-08-15T21:47:46+09:00",
-      "source": "court_notice"
+      "status": "ok"
     },
     {
+      "source": "onbid_code",
+      "reason": "공공데이터포털 서비스키 미설정",
+      "checked_at": "2026-08-16T08:30:40+09:00",
       "scanned": 0,
-      "status": "ok",
-      "checked_at": "2026-08-15T21:47:46+09:00",
-      "available_codes": 420,
-      "source": "onbid_code"
+      "status": "coverage_gap"
     },
     {
-      "candidates": 68,
-      "scanned": 1032,
-      "status": "ok",
-      "checked_at": "2026-08-15T22:44:20+09:00",
-      "source": "onbid_announcement"
+      "source": "onbid_announcement",
+      "reason": "공공데이터포털 서비스키 미설정 또는 공고목록 API 활용 미승인",
+      "checked_at": "2026-08-16T08:30:40+09:00",
+      "scanned": 0,
+      "status": "coverage_gap"
     },
     {
-      "candidates": 138,
-      "scanned": 1893,
-      "status": "ok",
-      "checked_at": "2026-08-15T22:44:20+09:00",
-      "source": "onbid_movable"
+      "source": "onbid_movable",
+      "reason": "ONBID_SERVICE_KEY 미설정 또는 동산 API 활용 미승인",
+      "checked_at": "2026-08-16T08:30:40+09:00",
+      "scanned": 0,
+      "status": "coverage_gap"
     }
   ]
 }
