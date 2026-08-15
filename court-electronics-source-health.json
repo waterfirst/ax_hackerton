@@ -1,33 +1,33 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-15T21:47:46+09:00",
+  "updated_at": "2026-08-15T22:09:38+09:00",
   "sources": [
     {
       "source": "court_notice",
-      "status": "ok",
       "checked_at": "2026-08-15T21:47:46+09:00",
-      "scanned": 60
+      "scanned": 60,
+      "status": "ok"
     },
     {
       "source": "onbid_code",
-      "status": "ok",
       "checked_at": "2026-08-15T21:47:46+09:00",
       "scanned": 0,
-      "available_codes": 420
+      "available_codes": 420,
+      "status": "ok"
     },
     {
       "source": "onbid_announcement",
-      "status": "ok",
-      "checked_at": "2026-08-15T21:47:46+09:00",
+      "checked_at": "2026-08-15T22:08:09+09:00",
       "scanned": 1032,
-      "candidates": 61
+      "candidates": 63,
+      "status": "ok"
     },
     {
       "source": "onbid_movable",
-      "status": "coverage_gap",
       "checked_at": "2026-08-15T21:47:46+09:00",
       "scanned": 0,
-      "reason": "동산 물건목록 API 활용 미승인"
+      "reason": "동산 물건목록 API 활용 미승인",
+      "status": "coverage_gap"
     }
   ]
 }

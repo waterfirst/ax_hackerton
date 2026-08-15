@@ -22,6 +22,7 @@
     @media(max-width:720px){main{padding-top:24px}.summary,.source-health,.dual-score{grid-template-columns:1fr}.api-candidates-head{display:block}.api-candidate{grid-template-columns:1fr}.view-head{display:block}.sort-note{display:block;margin-top:8px}.listing{grid-template-columns:64px minmax(0,1fr);gap:12px;padding:15px}.listing-score{width:58px;height:58px;border-width:5px}.listing-score b{font-size:20px}.listing-action{grid-column:1/-1;text-align:left}.listing .button{width:auto}.featured{padding:18px}.featured-head{grid-template-columns:1fr}.gauge{justify-self:center;width:280px}.spec-grid,.prep-grid{grid-template-columns:1fr}.decision,.guide,.model{padding:18px}.breakdown{grid-template-columns:1fr}.bid-bands{grid-template-columns:1fr 1fr}h1{font-size:25px}.featured h2{font-size:21px}.decision h2,.guide h2,.model h2{font-size:20px}.form-lines{grid-template-columns:1fr}.model-result{grid-template-columns:1fr}}
     @media(max-width:420px){.fact-grid,.bid-bands{grid-template-columns:1fr}.gauge{width:260px}}
     @media print{body{background:#fff;color:#111}main{max-width:none}.gate,.tabs,.actions,.summary,.section-label~article.card{display:none}.featured,.decision,.guide,.model,.formula,.spec,.step,.prep,.form-example,.fact{background:#fff;border-color:#bbb;color:#111;box-shadow:none}.meta,.label,.score-note,.step span,.guide-intro,.form-line{color:#444}a{color:#111;text-decoration:none}}
+    .interest-panel{margin:0 0 20px;padding:20px;border:1px solid rgba(121,184,255,.55);border-radius:16px;background:#151b23}.interest-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start}.interest-kicker{display:inline-block;margin-bottom:7px;color:var(--info);font-size:11px;font-weight:800}.interest-panel h2{margin:0 0 7px;font-size:20px}.interest-status{padding:7px 10px;border-radius:999px;background:rgba(121,184,255,.13);color:#b8d9ff;font-size:11px;font-weight:800}.interest-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:13px;color:#cdd6df;font-size:12px}.interest-facts b{color:var(--txt)}.round-strip{display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:6px;margin-top:16px}.round{padding:9px 7px;border:1px solid var(--line);border-radius:9px;background:#10151c;text-align:center}.round span,.round small{display:block;color:var(--mut);font-size:10px}.round b{display:block;margin:3px 0;font-size:12px}.round.focus{border-color:rgba(121,184,255,.65);background:rgba(121,184,255,.08)}.interest-call{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}.interest-call p{margin:0;color:var(--mut);font-size:12px;line-height:1.6}.police-candidates{border-color:rgba(245,166,35,.42)}@media(max-width:860px){.round-strip{grid-template-columns:repeat(4,1fr)}}@media(max-width:560px){.interest-head{grid-template-columns:1fr}.interest-status{justify-self:start}.round-strip{grid-template-columns:repeat(2,1fr)}.interest-call{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body class="locked"><section class="gate" id="access-gate" aria-labelledby="gate-title"><div class="gate-card"><div class="gate-mark" aria-hidden="true">SB</div><h1 id="gate-title">전자기기 공매 분석실</h1><p>보고서를 보려면 접근 비밀번호를 입력하세요.</p><form class="gate-form" id="gate-form"><label for="gate-password" class="label" style="position:absolute;left:-9999px">비밀번호</label><input id="gate-password" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" required><button type="submit">입장</button></form><div class="gate-error" id="gate-error" role="alert" aria-live="polite"></div><p class="gate-note">정적 GitHub Pages의 간이 접근 잠금입니다. 민감정보 보호 수단으로 사용할 수 없습니다.</p></div></section><main>
@@ -37,6 +38,16 @@
     <div class="source-card" data-source-card="onbid_announcement"><div><strong>온비드 공고목록 API</strong><div class="source-meta">상태 파일 확인 중</div></div><span class="source-badge gap">확인 중</span></div>
     <div class="source-card" data-source-card="onbid_movable"><div><strong>차세대 온비드 동산 API</strong><div class="source-meta">상태 파일 확인 중</div></div><span class="source-badge gap">확인 중</span></div>
     <p class="source-alert" id="source-alert">수집원 상태를 확인하고 있습니다. 한쪽이 실패하면 신규 0건이 아니라 수집 공백으로 표시합니다.</p>
+  </section>
+  <section class="interest-panel" aria-labelledby="odins-interest-title">
+    <div class="interest-head"><div><span class="interest-kicker">관심 물품</span><h2 id="odins-interest-title">오딘스 Apple 기기 일괄매각</h2><div class="meta">물건관리번호 2026-0800-044014 · iMac·MacBook·노트북·태블릿 · 서울 강남구</div></div><span class="interest-status">관심·실사 대기</span></div>
+    <div class="interest-facts"><span>현장공개 <b>8월 20일 11:00</b></span><span>상태 <b>정확한 모델·수량·잠금 미확인</b></span><span>판단 <b>7·8회차 우선 분석</b></span></div>
+    <div class="round-strip" aria-label="회차별 최저입찰가격"><div class="round"><span>1회 · 8/21</span><b>2,500만원</b><small>관망</small></div><div class="round"><span>2회 · 8/24</span><b>2,100만원</b><small>관망</small></div><div class="round"><span>3회 · 8/25</span><b>1,700만원</b><small>관망</small></div><div class="round"><span>4회 · 8/26</span><b>1,300만원</b><small>관망</small></div><div class="round"><span>5회 · 8/27</span><b>900만원</b><small>사양 대조</small></div><div class="round"><span>6회 · 8/28</span><b>500만원</b><small>사양 대조</small></div><div class="round focus"><span>7회 · 8/31</span><b>100만원</b><small>우선 분석</small></div><div class="round focus"><span>8회 · 9/1</span><b>50만원</b><small>우선 분석</small></div></div>
+    <div class="interest-call"><p>가격만 보고 입찰하지 않습니다. 현장에서 모델·연식·수량·Activation Lock·MDM·배터리·화면 상태를 확인한 뒤 당근 시세와 비교합니다.</p><a class="button secondary" href="https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&amp;cltrScrnGrpCd=0&amp;onbidPbancNo=900613&amp;pbctNo=10090011" target="_blank" rel="noopener">공식 공고</a></div>
+  </section>
+  <section class="api-candidates police-candidates" aria-labelledby="police-candidates-title">
+    <div class="api-candidates-head"><div><h2 id="police-candidates-title">새 아이템 · 경찰 습득·압수 전자기기</h2><div class="api-candidates-note">에어팟·스마트워치·카메라·게임기·드론·전동 모빌리티를 추가 감시합니다. 진품·잠금·배터리 검증 전에는 추천하지 않습니다.</div></div><span class="source-badge gap" id="police-candidate-count">불러오는 중</span></div>
+    <div class="api-candidate-list" id="police-candidate-list"><div class="api-candidates-note">경찰 관련 후보를 확인하고 있습니다.</div></div>
   </section>
   <section class="api-candidates" aria-labelledby="api-candidates-title">
     <div class="api-candidates-head"><div><h2 id="api-candidates-title">온비드 신규 전자기기 탐지 후보</h2><div class="api-candidates-note">공고명 자동 탐지 결과입니다. 상세 사양·수량·상태 검증 전에는 매력도 점수를 부여하지 않습니다.</div></div><span class="source-badge gap" id="api-candidate-count">불러오는 중</span></div>
@@ -245,26 +256,39 @@
       const items=Array.isArray(payload.items)?payload.items:[];
       const list=document.getElementById('api-candidate-list');
       const count=document.getElementById('api-candidate-count');
-      list.replaceChildren();
-      count.textContent=`${items.length}건`;
-      count.className='source-badge ok';
-      if(!items.length){
-        const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 마감 전 자동 탐지 후보가 없습니다.';list.append(empty);return;
-      }
-      items.slice(0,12).forEach(item=>{
+      const policeList=document.getElementById('police-candidate-list');
+      const policeCount=document.getElementById('police-candidate-count');
+      const sourceLabels={police_lost_property:'경찰 습득·유실물',police_seized_property:'경찰 압수물',police_surplus:'경찰 불용품',bankruptcy:'파산자산',public_surplus:'공공 불용품'};
+      const appendCandidate=(target,item)=>{
         const article=document.createElement('article');article.className='api-candidate';
         const body=document.createElement('div');
         const title=document.createElement('h3');title.textContent=item.title||'제목 미상';
         const meta=document.createElement('div');meta.className='api-candidate-meta';
         const categories=Array.isArray(item.categories)&&item.categories.length?` · ${item.categories.join(', ')}`:'';
-        meta.textContent=`입찰 마감 ${compactDate(item.expires_at)}${categories} · 상세 검토 필요`;
+        const source=sourceLabels[item.source_type]?`${sourceLabels[item.source_type]} · `:'';
+        meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${categories} · 시세검증 필요`;
         body.append(title,meta);article.append(body);
         if(item.detail_url){const link=document.createElement('a');link.href=item.detail_url;link.target='_blank';link.rel='noopener';link.textContent='공식 공고 열기';article.append(link)}
-        list.append(article);
-      });
+        target.append(article);
+      };
+      list.replaceChildren();
+      policeList.replaceChildren();
+      count.textContent=`${items.length}건`;
+      count.className='source-badge ok';
+      if(!items.length){
+        const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 마감 전 자동 탐지 후보가 없습니다.';list.append(empty);
+      }
+      items.slice(0,12).forEach(item=>appendCandidate(list,item));
+      const policeItems=items.filter(item=>String(item.source_type||'').startsWith('police_'));
+      policeCount.textContent=`${policeItems.length}건`;
+      policeCount.className=`source-badge ${policeItems.length?'ok':'gap'}`;
+      if(policeItems.length)policeItems.slice(0,8).forEach(item=>appendCandidate(policeList,item));
+      else {const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 마감 전 경찰 습득·압수 전자기기 후보가 없습니다.';policeList.append(empty)}
     }).catch(()=>{
       const count=document.getElementById('api-candidate-count');count.textContent='확인 불가';count.className='source-badge gap';
       document.getElementById('api-candidate-list').textContent='후보 데이터 파일을 읽지 못했습니다.';
+      const policeCount=document.getElementById('police-candidate-count');policeCount.textContent='확인 불가';policeCount.className='source-badge gap';
+      document.getElementById('police-candidate-list').textContent='경찰 관련 후보 데이터를 읽지 못했습니다.';
     });
 
     const tabs=[...document.querySelectorAll('[data-tab]')];
