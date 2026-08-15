@@ -1,776 +1,830 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-15T22:09:38+09:00",
+  "updated_at": "2026-08-15T22:22:26+09:00",
   "notice": "온비드 공고명 기반 자동 탐지 후보이며, 상세 사양·수량·상태 확인 전에는 입찰 판단에 사용하지 않습니다.",
   "items": [
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608190900",
-      "property_type": "불용품",
+      "title": "서귀포경찰서 습득물품 매각(귀금속)",
+      "property_type": "기타일반재산",
       "created_at": "20260811",
-      "title": "불용 컴퓨터 모니터 노트북 프린터 복사기 등 2376점",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900623&pbctNo=10089979",
-      "expires_at": "202608181630",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26891-00:10089979",
-      "publisher": "컴인상사",
-      "bid_start_candidate": "202608111900",
-      "categories": [
-        "desktop_pc",
-        "laptop"
-      ],
-      "source_type": "public_surplus"
-    },
-    {
+      "bid_start_candidate": "202608121000",
       "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608190900",
-      "property_type": "파산자산",
-      "created_at": "20260811",
-      "title": "파산재단 자산(LG그램노트북, LG모니터, 데스크탑컴퓨터 등 5대) 일괄매각 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900490&pbctNo=10089718",
-      "expires_at": "202608181700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26778-00:10089718",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608181000",
-      "categories": [
-        "desktop_pc",
-        "laptop"
-      ],
-      "source_type": "bankruptcy"
-    },
-    {
-      "verification_status": "needs_detail_review",
+      "publisher": "서귀포경찰서",
       "open_date_candidate": "202608191000",
-      "property_type": "불용품",
-      "created_at": "20260810",
-      "title": "2026년 시흥도시공사 불용물품 매각(데스크톱컴퓨터)",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900316&pbctNo=10089374",
-      "expires_at": "202608181800",
-      "price_candidates_krw": [],
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900217&pbctNo=10089194",
       "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26637-00:10089374",
-      "publisher": "시흥도시공사",
-      "bid_start_candidate": "202608110900",
+      "source_type": "police_lost_property",
+      "expires_at": "202608181600",
+      "seq_id": "onbid-pbanc:202608-26525-00:10089194",
+      "price_candidates_krw": [],
       "categories": [
-        "desktop_pc"
-      ],
-      "source_type": "public_surplus"
+        "jewelry"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608201000",
+      "title": "불용 컴퓨터 모니터 노트북 프린터 복사기 등 2376점",
       "property_type": "불용품",
-      "created_at": "20260812",
-      "title": "이호초등학교 불용물품(데스크톱 외 2종) 매각 전자입찰 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900643&pbctNo=10090077",
-      "expires_at": "202608191400",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26944-00:10090077",
-      "publisher": "경기도안산교육청 이호초등학교",
-      "bid_start_candidate": "202608121300",
-      "categories": [
-        "desktop_pc"
-      ],
-      "source_type": "public_surplus"
-    },
-    {
+      "created_at": "20260811",
+      "bid_start_candidate": "202608111900",
       "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608201000",
-      "property_type": "불용품",
-      "created_at": "20260812",
-      "title": "동대전고등학교 불용물품(노트북컴퓨터 외 1종) 매각 전자입찰 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900555&pbctNo=10089911",
-      "expires_at": "202608191600",
-      "price_candidates_krw": [],
+      "publisher": "컴인상사",
+      "open_date_candidate": "202608190900",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900623&pbctNo=10089979",
       "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26863-00:10089911",
-      "publisher": "동대전고등학교",
-      "bid_start_candidate": "202608121400",
+      "source_type": "public_surplus",
+      "expires_at": "202608181630",
+      "seq_id": "onbid-pbanc:202608-26891-00:10089979",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc",
         "laptop"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608200900",
+      "title": "파산재단 자산(LG그램노트북, LG모니터, 데스크탑컴퓨터 등 5대) 일괄매각 공고",
       "property_type": "파산자산",
       "created_at": "20260811",
-      "title": "파산재단 자산(LG그램노트북, LG모니터, 데스크탑컴퓨터 등 5대) 일괄매각 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900490&pbctNo=10089719",
-      "expires_at": "202608191700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26778-00:10089719",
+      "bid_start_candidate": "202608181000",
+      "verification_status": "needs_detail_review",
       "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608191000",
+      "open_date_candidate": "202608190900",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900490&pbctNo=10089718",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608181700",
+      "seq_id": "onbid-pbanc:202608-26778-00:10089718",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608201000",
+      "title": "2026년 시흥도시공사 불용물품 매각(데스크톱컴퓨터)",
       "property_type": "불용품",
       "created_at": "20260810",
-      "title": "정보통신 불용물품(데스크톱 등)",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900085&pbctNo=10088985",
-      "expires_at": "202608191800",
-      "price_candidates_krw": [],
+      "bid_start_candidate": "202608110900",
+      "verification_status": "needs_detail_review",
+      "publisher": "시흥도시공사",
+      "open_date_candidate": "202608191000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900316&pbctNo=10089374",
       "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26396-00:10088985",
-      "publisher": "대구성서경찰서",
-      "bid_start_candidate": "202608101000",
+      "source_type": "public_surplus",
+      "expires_at": "202608181800",
+      "seq_id": "onbid-pbanc:202608-26637-00:10089374",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "police_surplus"
+      ]
     },
     {
+      "title": "이호초등학교 불용물품(데스크톱 외 2종) 매각 전자입찰 공고",
+      "property_type": "불용품",
+      "created_at": "20260812",
+      "bid_start_candidate": "202608121300",
       "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608210900",
+      "publisher": "경기도안산교육청 이호초등학교",
+      "open_date_candidate": "202608201000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900643&pbctNo=10090077",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608191400",
+      "seq_id": "onbid-pbanc:202608-26944-00:10090077",
+      "price_candidates_krw": [],
+      "categories": [
+        "desktop_pc"
+      ]
+    },
+    {
+      "title": "동대전고등학교 불용물품(노트북컴퓨터 외 1종) 매각 전자입찰 공고",
+      "property_type": "불용품",
+      "created_at": "20260812",
+      "bid_start_candidate": "202608121400",
+      "verification_status": "needs_detail_review",
+      "publisher": "동대전고등학교",
+      "open_date_candidate": "202608201000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900555&pbctNo=10089911",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608191600",
+      "seq_id": "onbid-pbanc:202608-26863-00:10089911",
+      "price_candidates_krw": [],
+      "categories": [
+        "desktop_pc",
+        "laptop"
+      ]
+    },
+    {
+      "title": "파산재단 자산(LG그램노트북, LG모니터, 데스크탑컴퓨터 등 5대) 일괄매각 공고",
+      "property_type": "파산자산",
+      "created_at": "20260811",
+      "bid_start_candidate": "202608191000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608200900",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900490&pbctNo=10089719",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608191700",
+      "seq_id": "onbid-pbanc:202608-26778-00:10089719",
+      "price_candidates_krw": [],
+      "categories": [
+        "desktop_pc",
+        "laptop"
+      ]
+    },
+    {
+      "title": "정보통신 불용물품(데스크톱 등)",
+      "property_type": "불용품",
+      "created_at": "20260810",
+      "bid_start_candidate": "202608101000",
+      "verification_status": "needs_detail_review",
+      "publisher": "대구성서경찰서",
+      "open_date_candidate": "202608201000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900085&pbctNo=10088985",
+      "model_candidates": [],
+      "source_type": "police_surplus",
+      "expires_at": "202608191800",
+      "seq_id": "onbid-pbanc:202608-26396-00:10088985",
+      "price_candidates_krw": [],
+      "categories": [
+        "desktop_pc"
+      ]
+    },
+    {
+      "title": "성안고등학교 불용물품(텔레비전,데스크톱,노트북) 매각 전자입찰 공고",
       "property_type": "불용품",
       "created_at": "20260813",
-      "title": "성안고등학교 불용물품(텔레비전,데스크톱,노트북) 매각 전자입찰 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900910&pbctNo=10090665",
-      "expires_at": "202608201500",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27211-00:10090665",
-      "publisher": "성안고등학교",
       "bid_start_candidate": "202608131500",
+      "verification_status": "needs_detail_review",
+      "publisher": "성안고등학교",
+      "open_date_candidate": "202608210900",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900910&pbctNo=10090665",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608201500",
+      "seq_id": "onbid-pbanc:202608-27211-00:10090665",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc",
         "laptop"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
+      "title": "김천경찰서 습득물 공매공고(2026-3, 2줄 체인형 발찌 1점)",
+      "property_type": "기타일반재산",
+      "created_at": "20260813",
+      "bid_start_candidate": "202608131100",
       "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608211000",
+      "publisher": "경찰청 경상북도지방경찰청 김천경찰서",
+      "open_date_candidate": "202608211100",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900891&pbctNo=10090619",
+      "model_candidates": [],
+      "source_type": "police_lost_property",
+      "expires_at": "202608201600",
+      "seq_id": "onbid-pbanc:202608-27179-00:10090619",
+      "price_candidates_krw": [],
+      "categories": [
+        "jewelry"
+      ]
+    },
+    {
+      "title": "김천경찰서 습득물 공매공고(2026-3, 2줄 체인형 팔찌 1점)",
+      "property_type": "기타일반재산",
+      "created_at": "20260813",
+      "bid_start_candidate": "202608131000",
+      "verification_status": "needs_detail_review",
+      "publisher": "경찰청 경상북도지방경찰청 김천경찰서",
+      "open_date_candidate": "202608211100",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900845&pbctNo=10090478",
+      "model_candidates": [],
+      "source_type": "police_lost_property",
+      "expires_at": "202608201600",
+      "seq_id": "onbid-pbanc:202608-27113-01:10090478",
+      "price_candidates_krw": [],
+      "categories": [
+        "jewelry"
+      ]
+    },
+    {
+      "title": "(주)콘파파 유형자산(노트북)",
       "property_type": "파산자산",
       "created_at": "20260805",
-      "title": "(주)콘파파 유형자산(노트북)",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=899430&pbctNo=10087471",
-      "expires_at": "202608201700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-25761-00:10087471",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608201000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608211000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=899430&pbctNo=10087471",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608201700",
+      "seq_id": "onbid-pbanc:202608-25761-00:10087471",
+      "price_candidates_krw": [],
       "categories": [
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608211000",
+      "title": "불용물품 볼링장비(특수목적컴퓨터외 8종)매각 전자입찰 공고",
       "property_type": "불용품",
       "created_at": "20260814",
-      "title": "불용물품 볼링장비(특수목적컴퓨터외 8종)매각 전자입찰 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=901047&pbctNo=10090980",
-      "expires_at": "202608201700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27335-00:10090980",
-      "publisher": "전라남도목포교육청 목포제일중학교",
       "bid_start_candidate": "202608141100",
+      "verification_status": "needs_detail_review",
+      "publisher": "전라남도목포교육청 목포제일중학교",
+      "open_date_candidate": "202608211000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=901047&pbctNo=10090980",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608201700",
+      "seq_id": "onbid-pbanc:202608-27335-00:10090980",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608210900",
+      "title": "파산재단 자산(LG그램노트북, LG모니터, 데스크탑컴퓨터 등 5대) 일괄매각 공고",
       "property_type": "파산자산",
       "created_at": "20260811",
-      "title": "파산재단 자산(LG그램노트북, LG모니터, 데스크탑컴퓨터 등 5대) 일괄매각 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900490&pbctNo=10089720",
-      "expires_at": "202608201700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26778-00:10089720",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608201000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608210900",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900490&pbctNo=10089720",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608201700",
+      "seq_id": "onbid-pbanc:202608-26778-00:10089720",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608211300",
+      "title": "불용 전산장비(서버,UPS,컴퓨터 본체 등) 매각 공고-한국건강관리협회경남지부",
       "property_type": "불용품",
       "created_at": "20260813",
-      "title": "불용 전산장비(서버,UPS,컴퓨터 본체 등) 매각 공고-한국건강관리협회경남지부",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900975&pbctNo=10090849",
-      "expires_at": "202608202000",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27263-00:10090849",
-      "publisher": "(사)한국건강관리협회경상남도지부",
       "bid_start_candidate": "202608131510",
+      "verification_status": "needs_detail_review",
+      "publisher": "(사)한국건강관리협회경상남도지부",
+      "open_date_candidate": "202608211300",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900975&pbctNo=10090849",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608202000",
+      "seq_id": "onbid-pbanc:202608-27263-00:10090849",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc",
         "server_storage"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608241000",
+      "title": "대구수성경찰서 정보통신(컴퓨터, 모니터 등) 불용 물품 공매",
       "property_type": "불용품",
       "created_at": "20260813",
-      "title": "대구수성경찰서 정보통신(컴퓨터, 모니터 등) 불용 물품 공매",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900778&pbctNo=10090378",
-      "expires_at": "202608211600",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27079-00:10090378",
-      "publisher": "대구수성경찰서",
       "bid_start_candidate": "202608130900",
+      "verification_status": "needs_detail_review",
+      "publisher": "대구수성경찰서",
+      "open_date_candidate": "202608241000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900778&pbctNo=10090378",
+      "model_candidates": [],
+      "source_type": "police_surplus",
+      "expires_at": "202608211600",
+      "seq_id": "onbid-pbanc:202608-27079-00:10090378",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "police_surplus"
+      ]
     },
     {
-      "verification_status": "model_verified",
-      "open_date_candidate": "202608241000",
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
       "property_type": "파산자산",
       "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
+      "bid_start_candidate": "202608211100",
+      "verification_status": "model_verified",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608241000",
       "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090011",
-      "expires_at": "202608212300",
-      "price_candidates_krw": [],
       "model_candidates": [
         "iMac"
       ],
+      "source_type": "bankruptcy",
+      "expires_at": "202608212300",
       "seq_id": "onbid-pbanc:202608-26934-01:10090011",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608211100",
+      "price_candidates_krw": [],
       "categories": [
         "apple",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608251400",
+      "title": "서울동부혈액원 불용자산(컴퓨터, 혈액장비 등) 매각",
       "property_type": "불용품",
       "created_at": "20260813",
-      "title": "서울동부혈액원 불용자산(컴퓨터, 혈액장비 등) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900765&pbctNo=10090349",
-      "expires_at": "202608241500",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27046-00:10090349",
-      "publisher": "대한적십자사서울동부혈액원",
       "bid_start_candidate": "202608140900",
+      "verification_status": "needs_detail_review",
+      "publisher": "대한적십자사서울동부혈액원",
+      "open_date_candidate": "202608251400",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900765&pbctNo=10090349",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608241500",
+      "seq_id": "onbid-pbanc:202608-27046-00:10090349",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608251000",
+      "title": "원삼초등학교 불용물품 매각 전자 입찰 공고[데스크톱컴퓨터 외 2종]",
       "property_type": "불용품",
       "created_at": "20260814",
-      "title": "원삼초등학교 불용물품 매각 전자 입찰 공고[데스크톱컴퓨터 외 2종]",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900668&pbctNo=10090171",
-      "expires_at": "202608241500",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26976-00:10090171",
-      "publisher": "경기도용인교육청 원삼초등학교",
       "bid_start_candidate": "202608141500",
+      "verification_status": "needs_detail_review",
+      "publisher": "경기도용인교육청 원삼초등학교",
+      "open_date_candidate": "202608251000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900668&pbctNo=10090171",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608241500",
+      "seq_id": "onbid-pbanc:202608-26976-00:10090171",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608251700",
+      "title": "에어팟",
       "property_type": "불용품",
       "created_at": "20260813",
-      "title": "에어팟",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900830&pbctNo=10090501",
-      "expires_at": "202608241600",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27131-00:10090501",
-      "publisher": "철원경찰서",
       "bid_start_candidate": "202608131530",
+      "verification_status": "needs_detail_review",
+      "publisher": "철원경찰서",
+      "open_date_candidate": "202608251700",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900830&pbctNo=10090501",
+      "model_candidates": [],
+      "source_type": "police_surplus",
+      "expires_at": "202608241600",
+      "seq_id": "onbid-pbanc:202608-27131-00:10090501",
+      "price_candidates_krw": [],
       "categories": [
         "audio"
-      ],
-      "source_type": "police_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608251000",
+      "title": "대구남부경찰서 정보통신컴퓨터, 모니터 등) 불용물품 매각",
       "property_type": "불용품",
       "created_at": "20260812",
-      "title": "대구남부경찰서 정보통신컴퓨터, 모니터 등) 불용물품 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900505&pbctNo=10089767",
-      "expires_at": "202608241700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26793-00:10089767",
-      "publisher": "경찰청 대구광역시지방경찰청 대구남부경찰서",
       "bid_start_candidate": "202608121000",
+      "verification_status": "needs_detail_review",
+      "publisher": "경찰청 대구광역시지방경찰청 대구남부경찰서",
+      "open_date_candidate": "202608251000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900505&pbctNo=10089767",
+      "model_candidates": [],
+      "source_type": "police_surplus",
+      "expires_at": "202608241700",
+      "seq_id": "onbid-pbanc:202608-26793-00:10089767",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "police_surplus"
+      ]
     },
     {
-      "verification_status": "model_verified",
-      "open_date_candidate": "202608251000",
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
       "property_type": "파산자산",
       "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
+      "bid_start_candidate": "202608241100",
+      "verification_status": "model_verified",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608251000",
       "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090012",
-      "expires_at": "202608242300",
-      "price_candidates_krw": [],
       "model_candidates": [
         "iMac"
       ],
+      "source_type": "bankruptcy",
+      "expires_at": "202608242300",
       "seq_id": "onbid-pbanc:202608-26934-01:10090012",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608241100",
+      "price_candidates_krw": [],
       "categories": [
         "apple",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608261000",
+      "title": "채무자 (주)코보 파산재단 자산(노트북 등) 공매 공고",
       "property_type": "파산자산",
       "created_at": "20260814",
-      "title": "채무자 (주)코보 파산재단 자산(노트북 등) 공매 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=901066&pbctNo=10091022",
-      "expires_at": "202608251600",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27374-00:10091022",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608251000",
-      "categories": [
-        "laptop"
-      ],
-      "source_type": "bankruptcy"
-    },
-    {
-      "verification_status": "model_verified",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
       "open_date_candidate": "202608261000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=901066&pbctNo=10091022",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608251600",
+      "seq_id": "onbid-pbanc:202608-27374-00:10091022",
+      "price_candidates_krw": [],
+      "categories": [
+        "laptop"
+      ]
+    },
+    {
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
       "property_type": "파산자산",
       "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090013",
-      "expires_at": "202608252300",
-      "price_candidates_krw": [],
-      "model_candidates": [
-        "iMac"
-      ],
-      "seq_id": "onbid-pbanc:202608-26934-01:10090013",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608251100",
+      "verification_status": "model_verified",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608261000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090013",
+      "model_candidates": [
+        "iMac"
+      ],
+      "source_type": "bankruptcy",
+      "expires_at": "202608252300",
+      "seq_id": "onbid-pbanc:202608-26934-01:10090013",
+      "price_candidates_krw": [],
       "categories": [
         "apple",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608271000",
+      "title": "서울북성초등학교 불용물품(태블릿컴퓨터) 매각 입찰 공고",
       "property_type": "불용품",
       "created_at": "20260706",
-      "title": "서울북성초등학교 불용물품(태블릿컴퓨터) 매각 입찰 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=894849&pbctNo=10077862",
-      "expires_at": "202608261600",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202607-21177-00:10077862",
-      "publisher": "서울특별시서부교육청 서울북성초등학교",
       "bid_start_candidate": "202608190900",
-      "categories": [
-        "desktop_pc"
-      ],
-      "source_type": "public_surplus"
-    },
-    {
-      "verification_status": "model_verified",
+      "verification_status": "needs_detail_review",
+      "publisher": "서울특별시서부교육청 서울북성초등학교",
       "open_date_candidate": "202608271000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=894849&pbctNo=10077862",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202608261600",
+      "seq_id": "onbid-pbanc:202607-21177-00:10077862",
+      "price_candidates_krw": [],
+      "categories": [
+        "desktop_pc"
+      ]
+    },
+    {
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
       "property_type": "파산자산",
       "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090014",
-      "expires_at": "202608262300",
-      "price_candidates_krw": [],
-      "model_candidates": [
-        "iMac"
-      ],
-      "seq_id": "onbid-pbanc:202608-26934-01:10090014",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608261100",
+      "verification_status": "model_verified",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608271000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090014",
+      "model_candidates": [
+        "iMac"
+      ],
+      "source_type": "bankruptcy",
+      "expires_at": "202608262300",
+      "seq_id": "onbid-pbanc:202608-26934-01:10090014",
+      "price_candidates_krw": [],
       "categories": [
         "apple",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608281400",
+      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
       "property_type": "파산자산",
       "created_at": "20260728",
-      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
+      "bid_start_candidate": "202608261000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608281400",
       "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=898262&pbctNo=10085274",
-      "expires_at": "202608271700",
-      "price_candidates_krw": [],
       "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608271700",
       "seq_id": "onbid-pbanc:202607-24587-00:10085274",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608261000",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608281400",
+      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
       "property_type": "파산자산",
       "created_at": "20260728",
-      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
+      "bid_start_candidate": "202608261000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608281400",
       "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=898262&pbctNo=10085273",
-      "expires_at": "202608271700",
-      "price_candidates_krw": [],
       "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608271700",
       "seq_id": "onbid-pbanc:202607-24587-00:10085273",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608261000",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608281400",
+      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
       "property_type": "파산자산",
       "created_at": "20260728",
-      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
+      "bid_start_candidate": "202608261000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608281400",
       "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=898262&pbctNo=10085272",
-      "expires_at": "202608271700",
-      "price_candidates_krw": [],
       "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608271700",
       "seq_id": "onbid-pbanc:202607-24587-00:10085272",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608261000",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608281400",
+      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
       "property_type": "파산자산",
       "created_at": "20260728",
-      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
+      "bid_start_candidate": "202608261000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608281400",
       "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=898262&pbctNo=10085271",
-      "expires_at": "202608271700",
-      "price_candidates_krw": [],
       "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608271700",
       "seq_id": "onbid-pbanc:202607-24587-00:10085271",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608261000",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608281400",
+      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
       "property_type": "파산자산",
       "created_at": "20260728",
-      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
+      "bid_start_candidate": "202608261000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608281400",
       "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=898262&pbctNo=10085270",
-      "expires_at": "202608271700",
-      "price_candidates_krw": [],
       "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608271700",
       "seq_id": "onbid-pbanc:202607-24587-00:10085270",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608261000",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202608281400",
+      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
       "property_type": "파산자산",
       "created_at": "20260728",
-      "title": "[어메이징브루잉컴퍼니] 비품(컴퓨터, 모니터, 냉장고, 생맥주전용 냉장고, 저온배양기 등)",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=898262&pbctNo=10085269",
-      "expires_at": "202608271700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202607-24587-00:10085269",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608261000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608281400",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=898262&pbctNo=10085269",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608271700",
+      "seq_id": "onbid-pbanc:202607-24587-00:10085269",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "model_verified",
-      "open_date_candidate": "202608281000",
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
       "property_type": "파산자산",
       "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090015",
-      "expires_at": "202608272300",
-      "price_candidates_krw": [],
-      "model_candidates": [
-        "iMac"
-      ],
-      "seq_id": "onbid-pbanc:202608-26934-01:10090015",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608271100",
+      "verification_status": "model_verified",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608281000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090015",
+      "model_candidates": [
+        "iMac"
+      ],
+      "source_type": "bankruptcy",
+      "expires_at": "202608272300",
+      "seq_id": "onbid-pbanc:202608-26934-01:10090015",
+      "price_candidates_krw": [],
       "categories": [
         "apple",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609011000",
+      "title": "(주)텔라 유형자산(노트북) 일괄",
       "property_type": "파산자산",
       "created_at": "20260807",
-      "title": "(주)텔라 유형자산(노트북) 일괄",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089025",
-      "expires_at": "202608281700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26401-00:10089025",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202608281000",
-      "categories": [
-        "laptop"
-      ],
-      "source_type": "bankruptcy"
-    },
-    {
-      "verification_status": "model_verified",
-      "open_date_candidate": "202608311000",
-      "property_type": "파산자산",
-      "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090016",
-      "expires_at": "202608282300",
-      "price_candidates_krw": [],
-      "model_candidates": [
-        "iMac"
-      ],
-      "seq_id": "onbid-pbanc:202608-26934-01:10090016",
+      "verification_status": "needs_detail_review",
       "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608281100",
-      "categories": [
-        "apple",
-        "laptop"
-      ],
-      "source_type": "bankruptcy"
-    },
-    {
-      "verification_status": "model_verified",
       "open_date_candidate": "202609011000",
-      "property_type": "파산자산",
-      "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090017",
-      "expires_at": "202608312300",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089025",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202608281700",
+      "seq_id": "onbid-pbanc:202608-26401-00:10089025",
       "price_candidates_krw": [],
-      "model_candidates": [
-        "iMac"
-      ],
-      "seq_id": "onbid-pbanc:202608-26934-01:10090017",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202608311100",
       "categories": [
-        "apple",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
+      "property_type": "파산자산",
+      "created_at": "20260812",
+      "bid_start_candidate": "202608281100",
       "verification_status": "model_verified",
-      "open_date_candidate": "202609021000",
-      "property_type": "파산자산",
-      "created_at": "20260812",
-      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090018",
-      "expires_at": "202609012300",
-      "price_candidates_krw": [],
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202608311000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090016",
       "model_candidates": [
         "iMac"
       ],
-      "seq_id": "onbid-pbanc:202608-26934-01:10090018",
-      "publisher": "파산재단(서울회생법원관할)",
-      "bid_start_candidate": "202609011100",
+      "source_type": "bankruptcy",
+      "expires_at": "202608282300",
+      "seq_id": "onbid-pbanc:202608-26934-01:10090016",
+      "price_candidates_krw": [],
       "categories": [
         "apple",
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609031000",
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
       "property_type": "파산자산",
-      "created_at": "20260813",
+      "created_at": "20260812",
+      "bid_start_candidate": "202608311100",
+      "verification_status": "model_verified",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202609011000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090017",
+      "model_candidates": [
+        "iMac"
+      ],
+      "source_type": "bankruptcy",
+      "expires_at": "202608312300",
+      "seq_id": "onbid-pbanc:202608-26934-01:10090017",
+      "price_candidates_krw": [],
+      "categories": [
+        "apple",
+        "laptop"
+      ]
+    },
+    {
+      "title": "[오딘스] 비품(iMac, 노트북, 태블릿) 매각",
+      "property_type": "파산자산",
+      "created_at": "20260812",
+      "bid_start_candidate": "202609011100",
+      "verification_status": "model_verified",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202609021000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900613&pbctNo=10090018",
+      "model_candidates": [
+        "iMac"
+      ],
+      "source_type": "bankruptcy",
+      "expires_at": "202609012300",
+      "seq_id": "onbid-pbanc:202608-26934-01:10090018",
+      "price_candidates_krw": [],
+      "categories": [
+        "apple",
+        "laptop"
+      ]
+    },
+    {
       "title": "(주)대영씨엠에스 유형자산(노트북)",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=901053&pbctNo=10090986",
-      "expires_at": "202609021700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27341-00:10090986",
-      "publisher": "파산재단(서울회생법원관할)",
+      "property_type": "파산자산",
+      "created_at": "20260813",
       "bid_start_candidate": "202609021000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202609031000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=901053&pbctNo=10090986",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202609021700",
+      "seq_id": "onbid-pbanc:202608-27341-00:10090986",
+      "price_candidates_krw": [],
       "categories": [
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609031000",
+      "title": "(주)텔라 유형자산(노트북) 일괄",
       "property_type": "파산자산",
       "created_at": "20260807",
-      "title": "(주)텔라 유형자산(노트북) 일괄",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089026",
-      "expires_at": "202609021700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26401-00:10089026",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202609021000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202609031000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089026",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202609021700",
+      "seq_id": "onbid-pbanc:202608-26401-00:10089026",
+      "price_candidates_krw": [],
       "categories": [
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609071000",
+      "title": "서울북성초등학교 불용물품(태블릿컴퓨터) 매각 입찰 공고",
       "property_type": "불용품",
       "created_at": "20260706",
-      "title": "서울북성초등학교 불용물품(태블릿컴퓨터) 매각 입찰 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=894849&pbctNo=10077863",
-      "expires_at": "202609041600",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202607-21177-00:10077863",
-      "publisher": "서울특별시서부교육청 서울북성초등학교",
       "bid_start_candidate": "202608280900",
+      "verification_status": "needs_detail_review",
+      "publisher": "서울특별시서부교육청 서울북성초등학교",
+      "open_date_candidate": "202609071000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=894849&pbctNo=10077863",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202609041600",
+      "seq_id": "onbid-pbanc:202607-21177-00:10077863",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609071000",
+      "title": "(주)텔라 유형자산(노트북) 일괄",
       "property_type": "파산자산",
       "created_at": "20260807",
-      "title": "(주)텔라 유형자산(노트북) 일괄",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089027",
-      "expires_at": "202609041700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26401-00:10089027",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202609041000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202609071000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089027",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202609041700",
+      "seq_id": "onbid-pbanc:202608-26401-00:10089027",
+      "price_candidates_krw": [],
       "categories": [
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609091000",
+      "title": "(주)텔라 유형자산(노트북) 일괄",
       "property_type": "파산자산",
       "created_at": "20260807",
-      "title": "(주)텔라 유형자산(노트북) 일괄",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089028",
-      "expires_at": "202609081700",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-26401-00:10089028",
-      "publisher": "파산재단(서울회생법원관할)",
       "bid_start_candidate": "202609081000",
+      "verification_status": "needs_detail_review",
+      "publisher": "파산재단(서울회생법원관할)",
+      "open_date_candidate": "202609091000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900090&pbctNo=10089028",
+      "model_candidates": [],
+      "source_type": "bankruptcy",
+      "expires_at": "202609081700",
+      "seq_id": "onbid-pbanc:202608-26401-00:10089028",
+      "price_candidates_krw": [],
       "categories": [
         "laptop"
-      ],
-      "source_type": "bankruptcy"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609111000",
+      "title": "주학초등학교 전산실 불용품(컴퓨터외 8종) 매각",
       "property_type": "불용품",
       "created_at": "20260813",
-      "title": "주학초등학교 전산실 불용품(컴퓨터외 8종) 매각",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900974&pbctNo=10090844",
-      "expires_at": "202609102300",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202608-27262-00:10090844",
-      "publisher": "주학초등학교",
       "bid_start_candidate": "202608131600",
+      "verification_status": "needs_detail_review",
+      "publisher": "주학초등학교",
+      "open_date_candidate": "202609111000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=900974&pbctNo=10090844",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202609102300",
+      "seq_id": "onbid-pbanc:202608-27262-00:10090844",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "public_surplus"
+      ]
     },
     {
-      "verification_status": "needs_detail_review",
-      "open_date_candidate": "202609161000",
+      "title": "서울북성초등학교 불용물품(태블릿컴퓨터) 매각 입찰 공고",
       "property_type": "불용품",
       "created_at": "20260706",
-      "title": "서울북성초등학교 불용물품(태블릿컴퓨터) 매각 입찰 공고",
-      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=894849&pbctNo=10077864",
-      "expires_at": "202609151600",
-      "price_candidates_krw": [],
-      "model_candidates": [],
-      "seq_id": "onbid-pbanc:202607-21177-00:10077864",
-      "publisher": "서울특별시서부교육청 서울북성초등학교",
       "bid_start_candidate": "202609080900",
+      "verification_status": "needs_detail_review",
+      "publisher": "서울특별시서부교육청 서울북성초등학교",
+      "open_date_candidate": "202609161000",
+      "detail_url": "https://www.onbid.co.kr/op/cltrpbancinf/pbanc/pbancdtlinf/PbancDtlInqController/mvmnPbancDtl.do?cltrPrptDivCd=5&cltrScrnGrpCd=0&onbidPbancNo=894849&pbctNo=10077864",
+      "model_candidates": [],
+      "source_type": "public_surplus",
+      "expires_at": "202609151600",
+      "seq_id": "onbid-pbanc:202607-21177-00:10077864",
+      "price_candidates_krw": [],
       "categories": [
         "desktop_pc"
-      ],
-      "source_type": "public_surplus"
+      ]
     }
   ]
 }
