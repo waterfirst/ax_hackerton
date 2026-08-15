@@ -1,24 +1,31 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-15T21:19:29+09:00",
+  "updated_at": "2026-08-15T21:47:46+09:00",
   "sources": [
     {
-      "status": "ok",
       "source": "court_notice",
-      "checked_at": "2026-08-15T19:30:47+09:00",
+      "status": "ok",
+      "checked_at": "2026-08-15T21:47:46+09:00",
       "scanned": 60
     },
     {
-      "status": "ok",
       "source": "onbid_code",
-      "checked_at": "2026-08-15T21:19:29+09:00",
+      "status": "ok",
+      "checked_at": "2026-08-15T21:47:46+09:00",
       "scanned": 0,
       "available_codes": 420
     },
     {
-      "status": "coverage_gap",
+      "source": "onbid_announcement",
+      "status": "ok",
+      "checked_at": "2026-08-15T21:47:46+09:00",
+      "scanned": 1032,
+      "candidates": 61
+    },
+    {
       "source": "onbid_movable",
-      "checked_at": "2026-08-15T21:19:29+09:00",
+      "status": "coverage_gap",
+      "checked_at": "2026-08-15T21:47:46+09:00",
       "scanned": 0,
       "reason": "동산 물건목록 API 활용 미승인"
     }
