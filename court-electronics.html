@@ -127,7 +127,7 @@
   <section class="view" id="view-watch" role="tabpanel" aria-labelledby="tab-watch" data-auction-category="electronics" hidden>
     <div class="view-head"><div><h2>유찰·가격변화 추적관찰</h2><p>현재는 65점 미만이거나 입찰상한보다 비싸지만, 다음 회차의 최저가가 내려가면 HBA-2를 다시 계산할 매물입니다. 추천 목록과 분리해 과대평가를 막습니다.</p></div><span class="sort-note">재평가 가격 → 다음 일정</span></div>
     <section class="api-candidates" aria-labelledby="reauction-candidates-title">
-      <div class="api-candidates-head"><div><h2 id="reauction-candidates-title">유찰 우선 검증</h2><div class="api-candidates-note">유찰 2회 이상이며 정확한 모델과 현재 최저가가 확인된 개인 취급 규모 매물입니다. 아래 점수는 조사 우선순위이며 HBA-2 매력도나 입찰 추천이 아닙니다. 당근·번개 시세 검증을 통과해야 추천으로 승격됩니다.</div></div><span class="source-badge gap" id="reauction-candidate-count">불러오는 중</span></div>
+      <div class="api-candidates-head"><div><h2 id="reauction-candidates-title">반복 유찰 가치발굴</h2><div class="api-candidates-note">온비드가 실제 유찰횟수를 2회 이상으로 명시하고, 정확한 모델과 현재 최저가가 확인된 소규모 매물만 표시합니다. 예정 회차를 유찰로 간주하지 않습니다. 실제 중고시세와 상태까지 검증해야 최종 추천으로 승격됩니다.</div></div><span class="source-badge gap" id="reauction-candidate-count">불러오는 중</span></div>
       <div class="api-candidate-list" id="reauction-candidate-list"><div class="api-candidates-note">반복 유찰 후보를 확인하고 있습니다.</div></div>
     </section>
     <div class="listing-stack" id="watch-list"></div>
@@ -391,15 +391,18 @@
         const meta=document.createElement('div');meta.className='api-candidate-meta';
         const categories=Array.isArray(item.categories)&&item.categories.length?` · ${item.categories.join(', ')}`:'';
         const source=sourceLabels[item.source_type]?`${sourceLabels[item.source_type]} · `:'';
-        const price=Array.isArray(item.price_candidates_krw)&&item.price_candidates_krw.length?` · 최저가 후보 ${Math.min(...item.price_candidates_krw).toLocaleString('ko-KR')}원`:'';
+        const currentBid=Number(item.current_minimum_bid_krw)||(Array.isArray(item.price_candidates_krw)&&item.price_candidates_krw.length?Math.min(...item.price_candidates_krw):0);
+        const price=currentBid?` · 현재 최저가 ${currentBid.toLocaleString('ko-KR')}원`:'';
         const scoreMeta=scored?` · 긴급도 ${Number(item.urgency_score)||0} · 우선순위 ${Number(item.priority_index)||0}`:'';
         const observations=Number(item.observation_count)||0;
         const prices=Array.isArray(item.price_history_krw)?item.price_history_krw:[];
         const rounds=Array.isArray(item.auction_rounds_seen)?item.auction_rounds_seen:[];
-        const trackingMeta=` · ${observations||1}일 관찰${rounds.length?` · 확인 회차 ${rounds.join('→')}`:''}${prices.length>1?` · 가격 ${prices[0].toLocaleString('ko-KR')}→${prices[prices.length-1].toLocaleString('ko-KR')}원`:''}`;
+        const scheduled=Array.isArray(item.scheduled_price_options_krw)?item.scheduled_price_options_krw:prices;
+        const trackingMeta=` · ${observations||1}일 관찰${rounds.length?` · 예정 회차 ${rounds.join('·')}`:''}${scheduled.length>1?` · 예정가격 범위 ${Math.min(...scheduled).toLocaleString('ko-KR')}~${Math.max(...scheduled).toLocaleString('ko-KR')}원`:''}`;
         const marketPlatforms=Array.isArray(item.market_platforms)?item.market_platforms:[];
         const marketMeta=marketPlatforms.length?` · ${marketPlatforms.map(value=>value==='daangn'?'당근':value==='bunjang'?'번개':value).join('+')} ${Number(item.market_sample_count)||0}건 · 시세신뢰 ${Math.round((Number(item.market_confidence)||0)*100)}%`:'';
-        const failedMeta=reauction?` · 유찰 신호 ${Number(item.effective_failed_rounds)||0}회`:'';
+        const verifiedDrop=Math.round((Number(item.verified_price_drop_ratio)||0)*100);
+        const failedMeta=reauction?` · 실제 유찰 ${Number(item.effective_failed_rounds)||0}회${verifiedDrop?` · 확인 하락률 ${verifiedDrop}%`:''}`:'';
         const evidence=reauction?' · 당근·번개 시세 검증 대기':scoring?` · ${scoring.evidence||item.score_reason||'시세 근거 확인'}`:' · 정확한 모델과 당근·중고 시세 비교 필요';
         meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${price}${categories}${scoreMeta}${trackingMeta}${failedMeta}${marketMeta}${evidence}`;
         if(highRecommendation){body.append(title,meta);article.append(score,body)}
@@ -439,7 +442,7 @@
       reauctionCount.textContent=`${reauctionItems.length}건`;
       reauctionCount.className=`source-badge ${reauctionItems.length?'ok':'gap'}`;
       if(reauctionItems.length)reauctionItems.slice(0,16).forEach(item=>appendCandidate(reauctionList,item,{reauction:true}));
-      else {const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 모델·최저가까지 확인된 반복 유찰 후보는 없습니다. 정보가 부족한 물건은 추천하지 않고 계속 관찰합니다.';reauctionList.append(empty)}
+      else {const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 실제 유찰횟수·모델·최저가가 모두 확인된 후보는 없습니다. 예정 회차만 많은 물건은 추천하지 않습니다.';reauctionList.append(empty)}
       const watchTabCount=document.getElementById('watch-tab-count');
       watchTabCount.textContent=(Number(watchTabCount.dataset.manualCount)||0)+reauctionItems.length;
       document.getElementById('watch-empty').hidden=reauctionItems.length>0||(Number(watchTabCount.dataset.manualCount)||0)>0||document.getElementById('watch-detail').children.length>0;
