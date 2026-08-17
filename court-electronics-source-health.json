@@ -1,33 +1,33 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-17T08:30:24+09:00",
+  "updated_at": "2026-08-17T19:30:25+09:00",
   "sources": [
     {
-      "status": "ok",
       "source": "court_notice",
-      "checked_at": "2026-08-17T08:30:24+09:00",
-      "scanned": 60
+      "scanned": 60,
+      "checked_at": "2026-08-17T19:30:25+09:00",
+      "status": "ok"
     },
     {
-      "reason": "공공데이터포털 서비스키 미설정",
-      "status": "coverage_gap",
       "source": "onbid_code",
-      "checked_at": "2026-08-17T08:30:24+09:00",
-      "scanned": 0
+      "reason": "공공데이터포털 서비스키 미설정",
+      "scanned": 0,
+      "checked_at": "2026-08-17T19:30:25+09:00",
+      "status": "coverage_gap"
     },
     {
-      "reason": "공공데이터포털 서비스키 미설정 또는 공고목록 API 활용 미승인",
-      "status": "coverage_gap",
       "source": "onbid_announcement",
-      "checked_at": "2026-08-17T08:30:24+09:00",
-      "scanned": 0
+      "reason": "공공데이터포털 서비스키 미설정 또는 공고목록 API 활용 미승인",
+      "scanned": 0,
+      "checked_at": "2026-08-17T19:30:25+09:00",
+      "status": "coverage_gap"
     },
     {
-      "reason": "ONBID_SERVICE_KEY 미설정 또는 동산 API 활용 미승인",
-      "status": "coverage_gap",
       "source": "onbid_movable",
-      "checked_at": "2026-08-17T08:30:24+09:00",
-      "scanned": 0
+      "reason": "ONBID_SERVICE_KEY 미설정 또는 동산 API 활용 미승인",
+      "scanned": 0,
+      "checked_at": "2026-08-17T19:30:25+09:00",
+      "status": "coverage_gap"
     }
   ]
 }
