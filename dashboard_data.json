@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-18 12:40 KST",
+  "updated_at": "2026-08-18 12:50 KST",
   "status": "T3 report live-paper",
   "regime": "고변동 드리프트(현재가 앵커 폐지)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97862867,
+    "total": 97853347,
     "cash": 27882267,
-    "invested": 69980600,
-    "day_pnl": 55350,
-    "cum_pnl": -2137133,
-    "cum_return_pct": -2.1371,
+    "invested": 69971080,
+    "day_pnl": -9520,
+    "cum_pnl": -2146653,
+    "cum_return_pct": -2.1467,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -2137133.0,
+          "account_cum_pnl": -2146653.0,
           "ledger_realized_pnl": -2176733.29,
-          "unrealized_pnl": 48928.0,
+          "unrealized_pnl": 39408.0,
           "gap_krw": -9327.71,
           "tolerance_krw": 1000.0
         }
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 226,
       "avg_price": 107760,
-      "price": 109245,
-      "value": 24689370,
-      "pnl": 335555,
-      "pnl_pct": 1.38
+      "price": 109135,
+      "value": 24664510,
+      "pnl": 310695,
+      "pnl_pct": 1.28
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 107,
       "avg_price": 187269,
-      "price": 186070,
-      "value": 19909490,
-      "pnl": -128336,
-      "pnl_pct": -0.64
+      "price": 186090,
+      "value": 19911630,
+      "pnl": -126196,
+      "pnl_pct": -0.63
     },
     {
       "symbol": "138230",
@@ -107,10 +107,10 @@
       "name": "ACE KRX금현물",
       "qty": 660,
       "avg_price": 28100,
-      "price": 27895,
-      "value": 18410700,
-      "pnl": -135949,
-      "pnl_pct": -0.73
+      "price": 27915,
+      "value": 18423900,
+      "pnl": -122749,
+      "pnl_pct": -0.66
     }
   ],
   "trades": [
@@ -871,7 +871,7 @@
     },
     {
       "date": "2026-08-18",
-      "value": 97862867
+      "value": 97853347
     }
   ],
   "experiment": {
