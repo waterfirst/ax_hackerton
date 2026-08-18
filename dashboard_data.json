@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-18 12:00 KST",
+  "updated_at": "2026-08-18 12:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97936717,
+    "total": 97875107,
     "cash": 27882267,
-    "invested": 70054450,
-    "day_pnl": 35845,
-    "cum_pnl": -2063283,
-    "cum_return_pct": -2.0633,
+    "invested": 69992840,
+    "day_pnl": -61610,
+    "cum_pnl": -2124893,
+    "cum_return_pct": -2.1249,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -2063283.0,
+          "account_cum_pnl": -2124893.0,
           "ledger_realized_pnl": -2176733.29,
-          "unrealized_pnl": 122778.0,
+          "unrealized_pnl": 61168.0,
           "gap_krw": -9327.71,
           "tolerance_krw": 1000.0
         }
@@ -55,7 +55,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 71.53,
+      "used_pct": 71.51,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -67,7 +67,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 28.47,
+      "used_pct": 28.49,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 226,
       "avg_price": 107760,
-      "price": 109685,
-      "value": 24788810,
-      "pnl": 434995,
-      "pnl_pct": 1.79
+      "price": 109455,
+      "value": 24736830,
+      "pnl": 383015,
+      "pnl_pct": 1.57
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 107,
       "avg_price": 187269,
-      "price": 185800,
-      "value": 19880600,
-      "pnl": -157226,
-      "pnl_pct": -0.78
+      "price": 185710,
+      "value": 19870970,
+      "pnl": -166856,
+      "pnl_pct": -0.83
     },
     {
       "symbol": "138230",
@@ -871,7 +871,7 @@
     },
     {
       "date": "2026-08-18",
-      "value": 97936717
+      "value": 97875107
     }
   ],
   "experiment": {
