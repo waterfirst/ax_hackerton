@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-19 09:00 KST",
+  "updated_at": "2026-08-19 09:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97721222,
+    "total": 95771092,
     "cash": 29630347,
-    "invested": 68090875,
-    "day_pnl": 0,
-    "cum_pnl": -2278778,
-    "cum_return_pct": -2.2788,
+    "invested": 66140745,
+    "day_pnl": -1950130,
+    "cum_pnl": -4228908,
+    "cum_return_pct": -4.2289,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 3.6342,
+    "mdd_pct": 5.5572,
     "mdd_confidence": "high",
     "win_rate": 0.5,
     "profit_factor": 0.29057855710857705,
@@ -40,14 +40,14 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -2278778.0,
+          "account_cum_pnl": -4228908.0,
           "ledger_realized_pnl": -2153677.71,
-          "unrealized_pnl": -116634.0,
-          "gap_krw": -8466.29,
+          "unrealized_pnl": -2066763.0,
+          "gap_krw": -8467.29,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -8466.29,
+      "pnl_gap_krw": -8467.29,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -55,7 +55,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 69.68,
+      "used_pct": 69.06,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -67,7 +67,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 30.32,
+      "used_pct": 30.94,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -77,40 +77,40 @@
       "name": "KODEX 200",
       "qty": 210,
       "avg_price": 107760,
-      "price": 108550,
-      "value": 22795500,
-      "pnl": 165848,
-      "pnl_pct": 0.73
+      "price": 101555,
+      "value": 21326550,
+      "pnl": -1303101,
+      "pnl_pct": -5.76
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 107,
       "avg_price": 187269,
-      "price": 185900,
-      "value": 19891300,
-      "pnl": -146526,
-      "pnl_pct": -0.73
+      "price": 183705,
+      "value": 19656435,
+      "pnl": -381391,
+      "pnl_pct": -1.9
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 423,
       "avg_price": 16532,
-      "price": 16525,
-      "value": 6990075,
-      "pnl": -3307,
-      "pnl_pct": -0.05
+      "price": 16520,
+      "value": 6987960,
+      "pnl": -5422,
+      "pnl_pct": -0.08
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 660,
       "avg_price": 28100,
-      "price": 27900,
-      "value": 18414000,
-      "pnl": -132649,
-      "pnl_pct": -0.72
+      "price": 27530,
+      "value": 18169800,
+      "pnl": -376849,
+      "pnl_pct": -2.03
     }
   ],
   "trades": [
@@ -875,7 +875,7 @@
     },
     {
       "date": "2026-08-19",
-      "value": 97721222
+      "value": 95771092
     }
   ],
   "experiment": {
