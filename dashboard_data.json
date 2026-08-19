@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-19 09:40 KST",
+  "updated_at": "2026-08-19 09:50 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95836967,
+    "total": 95824527,
     "cash": 29630347,
-    "invested": 66206620,
-    "day_pnl": 232580,
-    "cum_pnl": -4163033,
-    "cum_return_pct": -4.163,
+    "invested": 66194180,
+    "day_pnl": -12440,
+    "cum_pnl": -4175473,
+    "cum_return_pct": -4.1755,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 5.4923,
+    "mdd_pct": 5.5045,
     "mdd_confidence": "high",
     "win_rate": 0.5,
     "profit_factor": 0.29057855710857705,
@@ -40,14 +40,14 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -4163033.0,
+          "account_cum_pnl": -4175473.0,
           "ledger_realized_pnl": -2153677.71,
-          "unrealized_pnl": -1999838.0,
-          "gap_krw": -9517.29,
+          "unrealized_pnl": -2013328.0,
+          "gap_krw": -8467.29,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -9517.29,
+      "pnl_gap_krw": -8467.29,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 210,
       "avg_price": 107760,
-      "price": 101980,
-      "value": 21415800,
-      "pnl": -1213851,
-      "pnl_pct": -5.36
+      "price": 102030,
+      "value": 21426300,
+      "pnl": -1203351,
+      "pnl_pct": -5.32
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 107,
       "avg_price": 187269,
-      "price": 183800,
-      "value": 19666600,
-      "pnl": -371226,
-      "pnl_pct": -1.85
+      "price": 183730,
+      "value": 19659110,
+      "pnl": -378716,
+      "pnl_pct": -1.89
     },
     {
       "symbol": "138230",
@@ -107,10 +107,10 @@
       "name": "ACE KRX금현물",
       "qty": 660,
       "avg_price": 28100,
-      "price": 27500,
-      "value": 18150000,
-      "pnl": -396649,
-      "pnl_pct": -2.14
+      "price": 27475,
+      "value": 18133500,
+      "pnl": -413149,
+      "pnl_pct": -2.23
     }
   ],
   "trades": [
@@ -875,7 +875,7 @@
     },
     {
       "date": "2026-08-19",
-      "value": 95836967
+      "value": 95824527
     }
   ],
   "experiment": {
