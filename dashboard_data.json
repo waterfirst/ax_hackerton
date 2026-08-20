@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-20 14:40 KST",
+  "updated_at": "2026-08-20 14:50 KST",
   "status": "T3 report live-paper",
   "regime": "상방추세 지속(고가밀착·매수, 연장 0.23)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96484038,
+    "total": 96484328,
     "cash": 43677518,
-    "invested": 52806520,
-    "day_pnl": 42430,
-    "cum_pnl": -3515962,
-    "cum_return_pct": -3.516,
+    "invested": 52806810,
+    "day_pnl": 290,
+    "cum_pnl": -3515672,
+    "cum_return_pct": -3.5157,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -39,9 +39,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3515962.0,
+          "account_cum_pnl": -3515672.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -612806.0,
+          "unrealized_pnl": -612516.0,
           "gap_krw": -6158.78,
           "tolerance_krw": 1000.0
         }
@@ -76,10 +76,10 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 182430,
-      "value": 22074030,
-      "pnl": -526240,
-      "pnl_pct": -2.33
+      "price": 182370,
+      "value": 22066770,
+      "pnl": -533500,
+      "pnl_pct": -2.36
     },
     {
       "symbol": "138230",
@@ -96,10 +96,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28070,
-      "value": 21192850,
-      "pnl": 5111,
-      "pnl_pct": 0.02
+      "price": 28080,
+      "value": 21200400,
+      "pnl": 12661,
+      "pnl_pct": 0.06
     }
   ],
   "trades": [
@@ -868,7 +868,7 @@
     },
     {
       "date": "2026-08-20",
-      "value": 96484038
+      "value": 96484328
     }
   ],
   "experiment": {
