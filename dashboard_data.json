@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-20 11:40 KST",
+  "updated_at": "2026-08-20 11:50 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96457718,
+    "total": 96429308,
     "cash": 43791818,
-    "invested": 52665900,
-    "day_pnl": -52167,
-    "cum_pnl": -3542282,
-    "cum_return_pct": -3.5423,
+    "invested": 52637490,
+    "day_pnl": -28410,
+    "cum_pnl": -3570692,
+    "cum_return_pct": -3.5707,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -39,9 +39,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3542282.0,
+          "account_cum_pnl": -3570692.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -639146.0,
+          "unrealized_pnl": -667556.0,
           "gap_krw": -6138.78,
           "tolerance_krw": 1000.0
         }
@@ -54,7 +54,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 54.6,
+      "used_pct": 54.59,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -66,7 +66,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 45.4,
+      "used_pct": 45.41,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -76,10 +76,10 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 182310,
-      "value": 22059510,
-      "pnl": -540760,
-      "pnl_pct": -2.39
+      "price": 182200,
+      "value": 22046200,
+      "pnl": -554070,
+      "pnl_pct": -2.45
     },
     {
       "symbol": "138230",
@@ -96,10 +96,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28085,
-      "value": 21204175,
-      "pnl": 16436,
-      "pnl_pct": 0.08
+      "price": 28065,
+      "value": 21189075,
+      "pnl": 1336,
+      "pnl_pct": 0.01
     }
   ],
   "trades": [
@@ -868,7 +868,7 @@
     },
     {
       "date": "2026-08-20",
-      "value": 96457718
+      "value": 96429308
     }
   ],
   "experiment": {
