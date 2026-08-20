@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-20 12:30 KST",
+  "updated_at": "2026-08-20 12:40 KST",
   "status": "T3 report live-paper",
-  "regime": "open_only",
+  "regime": "상방추세 지속(고가밀착·매수, 연장 0.23)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96468638,
+    "total": 96503170,
     "cash": 43677518,
-    "invested": 52791120,
-    "day_pnl": -18755,
-    "cum_pnl": -3531362,
-    "cum_return_pct": -3.5314,
+    "invested": 52825652,
+    "day_pnl": 34532,
+    "cum_pnl": -3496830,
+    "cum_return_pct": -3.4968,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -39,9 +39,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3531362.0,
+          "account_cum_pnl": -3496830.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -628206.0,
+          "unrealized_pnl": -593674.0,
           "gap_krw": -6158.78,
           "tolerance_krw": 1000.0
         }
@@ -54,7 +54,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 54.72,
+      "used_pct": 54.74,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -66,7 +66,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 45.28,
+      "used_pct": 45.26,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -76,10 +76,10 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 182195,
-      "value": 22045595,
-      "pnl": -554675,
-      "pnl_pct": -2.45
+      "price": 182262,
+      "value": 22053702,
+      "pnl": -546568,
+      "pnl_pct": -2.42
     },
     {
       "symbol": "138230",
@@ -96,10 +96,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28095,
-      "value": 21211725,
-      "pnl": 23986,
-      "pnl_pct": 0.11
+      "price": 28130,
+      "value": 21238150,
+      "pnl": 50411,
+      "pnl_pct": 0.24
     }
   ],
   "trades": [
@@ -770,7 +770,7 @@
   ],
   "plan": {
     "date": "2026-08-20",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-08-20.json · etf_ref=fsc_auto_collector"
+    "text": "long/medium · dry_run=False · quote=10000 · signal=records/2026-08-20.json · etf_ref=fsc_auto_collector"
   },
   "report": {
     "date": "2026-08-20",
@@ -868,7 +868,7 @@
     },
     {
       "date": "2026-08-20",
-      "value": 96468638
+      "value": 96503170
     }
   ],
   "experiment": {
