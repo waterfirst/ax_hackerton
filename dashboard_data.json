@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-08-20 15:30 KST",
+  "updated_at": "2026-08-20 16:00 KST",
   "status": "T3 report live-paper",
   "regime": "상방추세 지속(고가밀착·매수, 연장 0.23)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96493603,
+    "total": 96497273,
     "cash": 43677518,
-    "invested": 52816085,
-    "day_pnl": -56595,
-    "cum_pnl": -3506397,
-    "cum_return_pct": -3.5064,
-    "vs_kospi_pct": null
+    "invested": 52819755,
+    "day_pnl": 3670,
+    "cum_pnl": -3502727,
+    "cum_return_pct": -3.5027,
+    "vs_kospi_pct": -3.9716
   },
   "metrics": {
     "mdd_pct": 5.9714,
@@ -39,9 +39,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3506397.0,
+          "account_cum_pnl": -3502727.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -603241.0,
+          "unrealized_pnl": -599571.0,
           "gap_krw": -6158.78,
           "tolerance_krw": 1000.0
         }
@@ -76,30 +76,30 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 182210,
-      "value": 22047410,
-      "pnl": -552860,
-      "pnl_pct": -2.45
+      "price": 182185,
+      "value": 22044385,
+      "pnl": -555885,
+      "pnl_pct": -2.46
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16300,
-      "value": 9519200,
-      "pnl": -112117,
-      "pnl_pct": -1.16
+      "price": 16305,
+      "value": 9522120,
+      "pnl": -109197,
+      "pnl_pct": -1.13
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28145,
-      "value": 21249475,
-      "pnl": 61736,
-      "pnl_pct": 0.29
+      "price": 28150,
+      "value": 21253250,
+      "pnl": 65511,
+      "pnl_pct": 0.31
     }
   ],
   "trades": [
@@ -868,7 +868,7 @@
     },
     {
       "date": "2026-08-20",
-      "value": 96493603
+      "value": 96497273
     }
   ],
   "experiment": {
