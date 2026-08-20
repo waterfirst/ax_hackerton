@@ -1,67 +1,53 @@
 {
-  "updated_at": "2026-08-20 13:50 KST",
+  "updated_at": "2026-08-20 14:00 KST",
   "status": "T3 report live-paper",
   "regime": "상방추세 지속(고가밀착·매수, 연장 0.23)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96463823,
+    "total": 96461693,
     "cash": 43677518,
-    "invested": 52786305,
-    "day_pnl": -6727,
-    "cum_pnl": -3536177,
-    "cum_return_pct": -3.5362,
+    "invested": 52784175,
+    "day_pnl": -2130,
+    "cum_pnl": -3538307,
+    "cum_return_pct": -3.5383,
     "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 5.9714,
     "mdd_confidence": "high",
-    "win_rate": 0.4,
-    "profit_factor": 0.14500619290990072,
-    "trades": 20,
+    "win_rate": 0.4782608695652174,
+    "profit_factor": 0.23342465866468026,
+    "trades": 67,
     "trading_days": 7,
-    "closed_trades": 15,
-    "realized_pnl": -3277800.33,
-    "expectancy_per_trade": -218520.02,
-    "average_win_loss_ratio": 0.2175,
-    "gross_profit": 555912.04,
-    "gross_loss": 3833712.37,
-    "open_qty": {},
+    "closed_trades": 23,
+    "realized_pnl": -2896997.22,
+    "expectancy_per_trade": -125956.4,
+    "average_win_loss_ratio": 0.2546,
+    "gross_profit": 882144.98,
+    "gross_loss": 3779142.2,
+    "open_qty": {
+      "133690": 121,
+      "411060": 755,
+      "138230": 584
+    },
     "unmatched_sell_qty": 0,
-    "estimated_price_rows": 18,
-    "verified_fill_rows": 2,
+    "estimated_price_rows": 0,
+    "verified_fill_rows": 67,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
-          "symbol": "133690",
-          "log_implied_qty": 0,
-          "account_qty": 121
-        },
-        {
-          "symbol": "138230",
-          "log_implied_qty": 0,
-          "account_qty": 584
-        },
-        {
-          "symbol": "411060",
-          "log_implied_qty": 0,
-          "account_qty": 755
-        },
-        {
           "type": "pnl_gap",
-          "account_cum_pnl": -3536177.0,
-          "ledger_realized_pnl": -3277800.33,
-          "unrealized_pnl": -633021.0,
-          "gap_krw": 374644.33,
+          "account_cum_pnl": -3538307.0,
+          "ledger_realized_pnl": -2896997.22,
+          "unrealized_pnl": -635151.0,
+          "gap_krw": -6158.78,
           "tolerance_krw": 1000.0
-        },
-        {
-          "type": "canonical_ledger_unavailable"
         }
       ],
-      "pnl_gap_krw": 374644.33,
-      "note": "KIS 체결원장이 완전조회되지 않아 손익을 확정할 수 없다."
+      "pnl_gap_krw": -6158.78,
+      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
   "sleeves": [
@@ -90,10 +76,10 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 182280,
-      "value": 22055880,
-      "pnl": -544390,
-      "pnl_pct": -2.41
+      "price": 182200,
+      "value": 22046200,
+      "pnl": -554070,
+      "pnl_pct": -2.45
     },
     {
       "symbol": "138230",
@@ -110,10 +96,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28075,
-      "value": 21196625,
-      "pnl": 8886,
-      "pnl_pct": 0.04
+      "price": 28085,
+      "value": 21204175,
+      "pnl": 16436,
+      "pnl_pct": 0.08
     }
   ],
   "trades": [
@@ -882,7 +868,7 @@
     },
     {
       "date": "2026-08-20",
-      "value": 96463823
+      "value": 96461693
     }
   ],
   "experiment": {
