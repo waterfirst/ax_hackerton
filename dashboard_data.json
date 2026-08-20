@@ -1,53 +1,52 @@
 {
-  "updated_at": "2026-08-20 09:10 KST",
+  "updated_at": "2026-08-20 09:20 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96370135,
-    "cash": 25707590,
-    "invested": 70662545,
-    "day_pnl": 1019050,
-    "cum_pnl": -3629865,
-    "cum_return_pct": -3.6299,
+    "total": 96345300,
+    "cash": 47597360,
+    "invested": 48747940,
+    "day_pnl": -24835,
+    "cum_pnl": -3654700,
+    "cum_return_pct": -3.6547,
     "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 5.9714,
     "mdd_confidence": "high",
-    "win_rate": 0.5,
-    "profit_factor": 0.29057855710857705,
-    "trades": 63,
+    "win_rate": 0.4782608695652174,
+    "profit_factor": 0.23342465866468026,
+    "trades": 64,
     "trading_days": 7,
-    "closed_trades": 22,
-    "realized_pnl": -2153677.71,
-    "expectancy_per_trade": -97894.44,
-    "average_win_loss_ratio": 0.2906,
+    "closed_trades": 23,
+    "realized_pnl": -2896997.22,
+    "expectancy_per_trade": -125956.4,
+    "average_win_loss_ratio": 0.2546,
     "gross_profit": 882144.98,
-    "gross_loss": 3035822.69,
+    "gross_loss": 3779142.2,
     "open_qty": {
-      "069500": 210,
       "133690": 114,
       "411060": 708,
       "138230": 503
     },
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 0,
-    "verified_fill_rows": 63,
+    "verified_fill_rows": 64,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3629865.0,
-          "ledger_realized_pnl": -2153677.71,
-          "unrealized_pnl": -1467150.0,
-          "gap_krw": -9037.29,
+          "account_cum_pnl": -3654700.0,
+          "ledger_realized_pnl": -2896997.22,
+          "unrealized_pnl": -752104.0,
+          "gap_krw": -5598.78,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -9037.29,
+      "pnl_gap_krw": -5598.78,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -55,7 +54,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 73.32,
+      "used_pct": 50.6,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -67,50 +66,40 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 26.68,
+      "used_pct": 49.4,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
   "positions": [
     {
-      "symbol": "069500",
-      "name": "KODEX 200",
-      "qty": 210,
-      "avg_price": 107760,
-      "price": 104165,
-      "value": 21874650,
-      "pnl": -755001,
-      "pnl_pct": -3.34
-    },
-    {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 114,
       "avg_price": 187062,
-      "price": 181300,
-      "value": 20668200,
-      "pnl": -656868,
-      "pnl_pct": -3.08
+      "price": 181220,
+      "value": 20659080,
+      "pnl": -665988,
+      "pnl_pct": -3.12
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 503,
       "avg_price": 16519,
-      "price": 16225,
-      "value": 8161175,
-      "pnl": -148352,
-      "pnl_pct": -1.79
+      "price": 16220,
+      "value": 8158660,
+      "pnl": -150867,
+      "pnl_pct": -1.82
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 708,
       "avg_price": 28058,
-      "price": 28190,
-      "value": 19958520,
-      "pnl": 93071,
-      "pnl_pct": 0.47
+      "price": 28150,
+      "value": 19930200,
+      "pnl": 64751,
+      "pnl_pct": 0.33
     }
   ],
   "trades": [
@@ -879,7 +868,7 @@
     },
     {
       "date": "2026-08-20",
-      "value": 96370135
+      "value": 96345300
     }
   ],
   "experiment": {
@@ -919,12 +908,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 25707590.0
+      "cash": 47597360.0
     },
     "contribution_pct": {
-      "long": -0.33,
-      "short": 0.02,
-      "cash": 99.65
+      "long": -0.18,
+      "short": 0.01,
+      "cash": 99.81
     }
   }
 }
