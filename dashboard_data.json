@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-20 13:10 KST",
+  "updated_at": "2026-08-20 13:20 KST",
   "status": "T3 report live-paper",
   "regime": "상방추세 지속(고가밀착·매수, 연장 0.23)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96507123,
+    "total": 96499968,
     "cash": 43677518,
-    "invested": 52829605,
-    "day_pnl": 23385,
-    "cum_pnl": -3492877,
-    "cum_return_pct": -3.4929,
+    "invested": 52822450,
+    "day_pnl": -7155,
+    "cum_pnl": -3500032,
+    "cum_return_pct": -3.5,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -39,9 +39,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3492877.0,
+          "account_cum_pnl": -3500032.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -589721.0,
+          "unrealized_pnl": -596876.0,
           "gap_krw": -6158.78,
           "tolerance_krw": 1000.0
         }
@@ -76,20 +76,20 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 182350,
-      "value": 22064350,
-      "pnl": -535920,
-      "pnl_pct": -2.37
+      "price": 182315,
+      "value": 22060115,
+      "pnl": -540155,
+      "pnl_pct": -2.39
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16320,
-      "value": 9530880,
-      "pnl": -100437,
-      "pnl_pct": -1.04
+      "price": 16315,
+      "value": 9527960,
+      "pnl": -103357,
+      "pnl_pct": -1.07
     },
     {
       "symbol": "411060",
@@ -868,7 +868,7 @@
     },
     {
       "date": "2026-08-20",
-      "value": 96507123
+      "value": 96499968
     }
   ],
   "experiment": {
