@@ -311,7 +311,9 @@
         const checked=source.checked_at?new Date(source.checked_at).toLocaleString('ko-KR'):'시각 미상';
         const codeMeta=source.source==='onbid_code'&&source.available_codes!=null?` · 코드 ${Number(source.available_codes)}개 확인`:'';
         meta.textContent=`${checked}${source.source==='onbid_code'?'':` · ${Number(source.scanned)||0}건 확인`}${codeMeta}${source.candidates!=null?` · 후보 ${source.candidates}건`:''}`;
-        if(!ok)gaps.push(`${sourceNames[source.source]||source.source}: ${source.reason||'연결 실패'}`);
+        const reason=String(source.reason||'');
+        const privateConfigGap=/서비스키|SERVICE_KEY|ONBID_SERVICE_KEY|활용 미승인|인증 설정/.test(reason);
+        if(!ok&&!privateConfigGap)gaps.push(`${sourceNames[source.source]||source.source}: ${reason||'연결 실패'}`);
       });
       document.getElementById('scanned-summary-count').textContent=`${scanned}건`;
       document.getElementById('source-updated').textContent=health.updated_at?new Date(health.updated_at).toLocaleString('ko-KR'):'시각 미상';
