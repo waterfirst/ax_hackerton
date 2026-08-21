@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-17T19:30:41+09:00",
+  "updated_at": "2026-08-21T11:20:19+09:00",
   "notice": "온비드 공고목록·동산 API 자동 탐지 후보입니다. 유찰 검증 점수는 조사 우선순위일 뿐 매력도 점수가 아니며, 상세 사양·수량·상태와 당근·번개 시세 확인 전에는 입찰 판단에 사용하지 않습니다.",
   "items": [
     {
@@ -21,15 +21,34 @@
       "publisher": "파산재단(서울회생법원관할)",
       "title": "(주)대영씨엠에스 유형자산(노트북)",
       "verification_status": "needs_detail_review",
-      "model_candidates": [],
-      "attractiveness_score": 79,
-      "urgency_score": 40,
-      "priority_index": 73,
-      "maximum_bid": 232000,
-      "expected_recovery": 332000,
-      "score_version": "HBA-2",
+      "quantity_candidate": "3",
+      "model_candidates": [
+        "FX707ZE-12725T",
+        "FX505GD-BQ062",
+        "15-da0077TU"
+      ],
+      "attractiveness_score": 78,
+      "urgency_score": 60,
+      "priority_index": 75,
+      "recommended_bid": 395300,
+      "maximum_bid": 395500,
+      "expected_recovery": 475500,
+      "bid_objective": "ceiling_priority",
+      "bid_tiers": {
+        "conservative": 187300,
+        "balanced": 267300,
+        "win_priority": 317300,
+        "ceiling_priority": 395300,
+        "absolute_ceiling": 395500
+      },
+      "competition_heat_level": "very_high",
+      "competition_heat_confidence": 25,
+      "median_comparable_valid_bidders": 47,
+      "competition_model_status": "insufficient_awarded_comparables",
+      "score_confidence": 54,
+      "score_version": "HBA-4",
       "score_status": "scored",
-      "score_evidence": "공고 원문 + FX707ZE 중고 등록가 65만~75만원 + 하자 감가",
+      "score_evidence": "공고 원문·사진: FX707ZE·HP 부팅, FX505GD 부팅 불가, FX707ZE 터치패드 고장. 3대 일괄 총액과 경쟁과열 반영",
       "score_reason": null,
       "observation_count": 1,
       "price_history_krw": [
