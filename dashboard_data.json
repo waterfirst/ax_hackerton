@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-24 14:50 KST",
+  "updated_at": "2026-08-24 15:00 KST",
   "status": "T3 report live-paper",
   "regime": "하방추세 지속(저가밀착·매도, 연장 0.29)",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96054933,
+    "total": 96060933,
     "cash": 19694788,
-    "invested": 76360145,
-    "day_pnl": 48670,
-    "cum_pnl": -3945067,
-    "cum_return_pct": -3.9451,
+    "invested": 76366145,
+    "day_pnl": 6000,
+    "cum_pnl": -3939067,
+    "cum_return_pct": -3.9391,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3945067.0,
+          "account_cum_pnl": -3939067.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -1038371.0,
+          "unrealized_pnl": -1032371.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 105725,
-      "value": 23576675,
-      "pnl": -402515,
-      "pnl_pct": -1.68
+      "price": 105790,
+      "value": 23591170,
+      "pnl": -388020,
+      "pnl_pct": -1.62
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 178050,
-      "value": 21544050,
-      "pnl": -1056220,
-      "pnl_pct": -4.67
+      "price": 177855,
+      "value": 21520455,
+      "pnl": -1079815,
+      "pnl_pct": -4.78
     },
     {
       "symbol": "138230",
@@ -107,10 +107,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28900,
-      "value": 21819500,
-      "pnl": 631761,
-      "pnl_pct": 2.98
+      "price": 28920,
+      "value": 21834600,
+      "pnl": 646861,
+      "pnl_pct": 3.05
     }
   ],
   "trades": [
@@ -887,7 +887,7 @@
     },
     {
       "date": "2026-08-24",
-      "value": 96054933
+      "value": 96060933
     }
   ],
   "experiment": {
