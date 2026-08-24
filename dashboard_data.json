@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-21 16:05 KST",
+  "updated_at": "2026-08-24 09:00 KST",
   "status": "T3 report live-paper",
-  "regime": "상방추세 지속(고가밀착·매수, 연장 0.21)",
+  "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
@@ -11,7 +11,7 @@
     "day_pnl": 0,
     "cum_pnl": -3093607,
     "cum_return_pct": -3.0936,
-    "vs_kospi_pct": -4.4476
+    "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 5.9714,
@@ -780,12 +780,12 @@
     }
   ],
   "plan": {
-    "date": "2026-08-21",
-    "text": "long/medium · dry_run=False · quote=10000 · signal=records/2026-08-21.json · etf_ref=fsc_auto_collector"
+    "date": "2026-08-24",
+    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-08-24.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-08-21",
-    "text": "mode=report · trades=20 · signal=records/2026-08-21.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-08-24",
+    "text": "mode=report · trades=20 · signal=records/2026-08-24.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -883,6 +883,10 @@
     },
     {
       "date": "2026-08-21",
+      "value": 96906393
+    },
+    {
+      "date": "2026-08-24",
       "value": 96906393
     }
   ],
