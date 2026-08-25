@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25 16:00 KST",
+  "updated_at": "2026-08-25 16:05 KST",
   "status": "T3 report live-paper",
   "regime": "고변동 드리프트(현재가 앵커 폐지)",
   "account": {
@@ -8,7 +8,7 @@
     "total": 96643318,
     "cash": 19694788,
     "invested": 76948530,
-    "day_pnl": 50540,
+    "day_pnl": 0,
     "cum_pnl": -3356682,
     "cum_return_pct": -3.3567,
     "vs_kospi_pct": -2.2151
