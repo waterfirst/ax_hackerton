@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-25 10:20 KST",
+  "updated_at": "2026-08-25 10:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95651853,
+    "total": 95634723,
     "cash": 19694788,
-    "invested": 75957065,
-    "day_pnl": -102945,
-    "cum_pnl": -4348147,
-    "cum_return_pct": -4.3481,
+    "invested": 75939935,
+    "day_pnl": -17130,
+    "cum_pnl": -4365277,
+    "cum_return_pct": -4.3653,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -4348147.0,
+          "account_cum_pnl": -4365277.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -1441451.0,
+          "unrealized_pnl": -1458581.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -77,40 +77,40 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 102645,
-      "value": 22889835,
-      "pnl": -1089355,
-      "pnl_pct": -4.54
+      "price": 102695,
+      "value": 22900985,
+      "pnl": -1078205,
+      "pnl_pct": -4.5
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 177665,
-      "value": 21497465,
-      "pnl": -1102805,
-      "pnl_pct": -4.88
+      "price": 177695,
+      "value": 21501095,
+      "pnl": -1099175,
+      "pnl_pct": -4.86
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16185,
-      "value": 9452040,
-      "pnl": -179277,
-      "pnl_pct": -1.86
+      "price": 16195,
+      "value": 9457880,
+      "pnl": -173437,
+      "pnl_pct": -1.8
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 29295,
-      "value": 22117725,
-      "pnl": 929986,
-      "pnl_pct": 4.39
+      "price": 29245,
+      "value": 22079975,
+      "pnl": 892236,
+      "pnl_pct": 4.21
     }
   ],
   "trades": [
@@ -891,7 +891,7 @@
     },
     {
       "date": "2026-08-25",
-      "value": 95651853
+      "value": 95634723
     }
   ],
   "experiment": {
