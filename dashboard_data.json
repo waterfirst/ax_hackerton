@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-26 11:00 KST",
+  "updated_at": "2026-08-26 11:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96506293,
+    "total": 96482675,
     "cash": 19694788,
-    "invested": 76811505,
-    "day_pnl": 228655,
-    "cum_pnl": -3493707,
-    "cum_return_pct": -3.4937,
+    "invested": 76787887,
+    "day_pnl": -23618,
+    "cum_pnl": -3517325,
+    "cum_return_pct": -3.5173,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3493707.0,
+          "account_cum_pnl": -3517325.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -587011.0,
+          "unrealized_pnl": -610629.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -77,30 +77,30 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 106825,
-      "value": 23821975,
-      "pnl": -157215,
-      "pnl_pct": -0.66
+      "price": 106850,
+      "value": 23827550,
+      "pnl": -151640,
+      "pnl_pct": -0.63
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 177990,
-      "value": 21536790,
-      "pnl": -1063480,
-      "pnl_pct": -4.71
+      "price": 177797,
+      "value": 21513437,
+      "pnl": -1086833,
+      "pnl_pct": -4.81
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16185,
-      "value": 9452040,
-      "pnl": -179277,
-      "pnl_pct": -1.86
+      "price": 16175,
+      "value": 9446200,
+      "pnl": -185117,
+      "pnl_pct": -1.92
     },
     {
       "symbol": "411060",
@@ -895,7 +895,7 @@
     },
     {
       "date": "2026-08-26",
-      "value": 96506293
+      "value": 96482675
     }
   ],
   "experiment": {
