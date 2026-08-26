@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-26 09:20 KST",
+  "updated_at": "2026-08-26 09:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96691978,
+    "total": 96532113,
     "cash": 19694788,
-    "invested": 76997190,
-    "day_pnl": 48500,
-    "cum_pnl": -3308022,
-    "cum_return_pct": -3.308,
+    "invested": 76837325,
+    "day_pnl": -159865,
+    "cum_pnl": -3467887,
+    "cum_return_pct": -3.4679,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3308022.0,
+          "account_cum_pnl": -3467887.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -401326.0,
+          "unrealized_pnl": -561191.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -55,7 +55,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 79.63,
+      "used_pct": 79.6,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -67,7 +67,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 20.37,
+      "used_pct": 20.4,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -77,40 +77,40 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 107750,
-      "value": 24028250,
-      "pnl": 49060,
-      "pnl_pct": 0.2
+      "price": 107035,
+      "value": 23868805,
+      "pnl": -110385,
+      "pnl_pct": -0.46
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 178465,
-      "value": 21594265,
-      "pnl": -1006005,
-      "pnl_pct": -4.45
+      "price": 178375,
+      "value": 21583375,
+      "pnl": -1016895,
+      "pnl_pct": -4.5
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16200,
-      "value": 9460800,
-      "pnl": -170517,
-      "pnl_pct": -1.77
+      "price": 16205,
+      "value": 9463720,
+      "pnl": -167597,
+      "pnl_pct": -1.74
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 29025,
-      "value": 21913875,
-      "pnl": 726136,
-      "pnl_pct": 3.43
+      "price": 29035,
+      "value": 21921425,
+      "pnl": 733686,
+      "pnl_pct": 3.46
     }
   ],
   "trades": [
@@ -895,7 +895,7 @@
     },
     {
       "date": "2026-08-26",
-      "value": 96691978
+      "value": 96532113
     }
   ],
   "experiment": {
