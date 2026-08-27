@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-27 13:40 KST",
+  "updated_at": "2026-08-27 13:50 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96960310,
+    "total": 96981458,
     "cash": 19694788,
-    "invested": 77265522,
-    "day_pnl": -47613,
-    "cum_pnl": -3039690,
-    "cum_return_pct": -3.0397,
+    "invested": 77286670,
+    "day_pnl": 21148,
+    "cum_pnl": -3018542,
+    "cum_return_pct": -3.0185,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3039690.0,
+          "account_cum_pnl": -3018542.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -132994.0,
+          "unrealized_pnl": -111846.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 109160,
-      "value": 24342680,
-      "pnl": 363490,
-      "pnl_pct": 1.52
+      "price": 109220,
+      "value": 24356060,
+      "pnl": 376870,
+      "pnl_pct": 1.57
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 179837,
-      "value": 21760277,
-      "pnl": -839993,
-      "pnl_pct": -3.72
+      "price": 179870,
+      "value": 21764270,
+      "pnl": -836000,
+      "pnl_pct": -3.7
     },
     {
       "symbol": "138230",
@@ -107,10 +107,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28775,
-      "value": 21725125,
-      "pnl": 537386,
-      "pnl_pct": 2.54
+      "price": 28780,
+      "value": 21728900,
+      "pnl": 541161,
+      "pnl_pct": 2.55
     }
   ],
   "trades": [
@@ -899,7 +899,7 @@
     },
     {
       "date": "2026-08-27",
-      "value": 96960310
+      "value": 96981458
     }
   ],
   "experiment": {
