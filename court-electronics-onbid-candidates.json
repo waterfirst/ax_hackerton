@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-21T11:20:19+09:00",
+  "updated_at": "2026-08-27T19:10:00+09:00",
   "notice": "온비드 공고목록·동산 API 자동 탐지 후보입니다. 유찰 검증 점수는 조사 우선순위일 뿐 매력도 점수가 아니며, 상세 사양·수량·상태와 당근·번개 시세 확인 전에는 입찰 판단에 사용하지 않습니다.",
   "items": [
     {
@@ -30,21 +30,20 @@
       "attractiveness_score": 78,
       "urgency_score": 60,
       "priority_index": 75,
-      "recommended_bid": 395300,
-      "maximum_bid": 395500,
-      "expected_recovery": 475500,
-      "bid_objective": "ceiling_priority",
+      "recommended_bid": 382000,
+      "maximum_bid": 407000,
+      "expected_recovery": 407000,
+      "bid_objective": "max_bid_with_positive_ev_no_inspection",
       "bid_tiers": {
-        "conservative": 187300,
-        "balanced": 267300,
-        "win_priority": 317300,
-        "ceiling_priority": 395300,
-        "absolute_ceiling": 395500
+        "conservative": 287000,
+        "balanced": 347000,
+        "win_priority": 382000,
+        "absolute_ceiling": 407000
       },
       "competition_heat_level": "very_high",
-      "competition_heat_confidence": 25,
+      "competition_heat_confidence": 45,
       "median_comparable_valid_bidders": 47,
-      "competition_model_status": "insufficient_awarded_comparables",
+      "competition_model_status": "calibrated_from_one_award",
       "score_confidence": 54,
       "score_version": "HBA-4",
       "score_status": "scored",
@@ -60,7 +59,24 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live",
+      "breakeven_bid": 407000,
+      "revision_note": "현장검증 생략 확정(2026-08-27). 최악 시나리오 가중 0.10→0.30으로 상향해 기대순회수 475,500→407,000원. 손익분기가 모델B 예상낙찰가(512,900원)보다 낮으므로 '수익을 지키면서 낙찰'은 성립하지 않는다. 382,000원은 기대이익이 양수인 최대 입찰가이며, 낙찰 실패 가능성을 감수한 값이다.",
+      "blocking_risk": "2026-08-27 10:00~10:30 현장공개 결과 미반영. 부팅불가 ASUS 상태 미확인.",
+      "inspection_status": "skipped_by_owner_2026-08-27",
+      "inspection_skip_cost_krw": 72160,
+      "recovery_scenarios_krw": {
+        "good": 598400,
+        "mid": 413600,
+        "worst": 237600
+      },
+      "recovery_weights_no_inspection": {
+        "good": 0.25,
+        "mid": 0.45,
+        "worst": 0.3
+      },
+      "conflict_disclosure": "사용자 요구는 '이번엔 반드시 낙찰'이나, 검증 생략 조건에서 낙찰확률을 높이려면 407,000원을 넘겨야 하고 그 순간 기대손실이 확정된다. 상한을 넘기지 않았다."
     },
     {
       "created_at": "20260813102711",
@@ -97,7 +113,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812",
@@ -136,7 +154,9 @@
       "tracking_status": "round_changed",
       "effective_failed_rounds": 7,
       "reauction_screening_score": 60,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260810185008",
@@ -167,7 +187,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 50,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812101424",
@@ -199,7 +221,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 50,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812105001",
@@ -240,7 +264,9 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 50,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260807182119",
@@ -280,7 +306,8 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 3,
       "reauction_screening_score": 43,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260813074532",
@@ -313,7 +340,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 2,
       "reauction_screening_score": 37,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260706",
@@ -344,7 +373,9 @@
       "tracking_status": "round_changed",
       "effective_failed_rounds": 6,
       "reauction_screening_score": 35,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260728",
@@ -378,7 +409,9 @@
       "tracking_status": "round_changed",
       "effective_failed_rounds": 5,
       "reauction_screening_score": 35,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260811141737",
@@ -410,7 +443,9 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 1,
       "reauction_screening_score": 31,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260810153706",
@@ -439,7 +474,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 30,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260811",
@@ -471,7 +508,9 @@
       "tracking_status": "round_changed",
       "effective_failed_rounds": 4,
       "reauction_screening_score": 29,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260810163903",
@@ -500,7 +539,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260810173000",
@@ -529,7 +570,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812090533",
@@ -558,7 +601,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260805100427",
@@ -590,7 +635,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260814094317",
@@ -619,7 +666,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813083422",
@@ -649,7 +698,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813103330",
@@ -678,7 +729,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813105457",
@@ -707,7 +760,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260810164704",
@@ -737,7 +792,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260814103427",
@@ -767,7 +824,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260805154732",
@@ -801,7 +860,8 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260805154732",
@@ -833,7 +893,8 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260805154728",
@@ -871,7 +932,8 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260805154728",
@@ -909,7 +971,8 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260805170848",
@@ -945,7 +1008,8 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260805170852",
@@ -980,7 +1044,8 @@
       "tracking_status": "price_changed",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 25,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260812132401",
@@ -1005,7 +1070,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 1,
       "reauction_screening_score": 11,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260811",
@@ -1034,7 +1101,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260810",
@@ -1063,7 +1132,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812",
@@ -1092,7 +1163,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260811163129",
@@ -1118,7 +1191,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812",
@@ -1148,7 +1223,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260810",
@@ -1177,7 +1254,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812143731",
@@ -1202,7 +1281,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813",
@@ -1232,7 +1313,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813",
@@ -1261,7 +1344,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813",
@@ -1290,7 +1375,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260814",
@@ -1319,7 +1406,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813150908",
@@ -1344,7 +1433,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813",
@@ -1374,7 +1465,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813",
@@ -1403,7 +1496,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813",
@@ -1432,7 +1527,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260814",
@@ -1461,7 +1558,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260812",
@@ -1490,7 +1589,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260811161059",
@@ -1515,7 +1616,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260814",
@@ -1544,7 +1647,9 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "expired",
+      "expired_as_of": "2026-08-27T18:57:00+09:00"
     },
     {
       "created_at": "20260813150458",
@@ -1569,7 +1674,8 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     },
     {
       "created_at": "20260813",
@@ -1598,7 +1704,26 @@
       "tracking_status": "watching",
       "effective_failed_rounds": 0,
       "reauction_screening_score": 5,
-      "reauction_screening_status": "insufficient_evidence"
+      "reauction_screening_status": "insufficient_evidence",
+      "lifecycle_status": "live"
     }
-  ]
+  ],
+  "competition_calibration": {
+    "source": "실측 낙찰 1건 (2026-08-20 개찰)",
+    "item": "Surface 노트북 2대 일괄",
+    "floor_krw": 400000,
+    "hammer_krw": 910000,
+    "valid_bidders": 47,
+    "invalid_bidders": 2,
+    "our_bid_krw": 527300,
+    "hammer_over_floor": 2.275,
+    "hammer_over_resale": 0.827,
+    "lesson": "현장 방문자 0명이어도 온라인 47명이 붙었다. 현장 한산=경쟁 약함은 틀린 추론.",
+    "model_note": "낙찰가는 최저가의 배수가 아니라 재판매가치의 비율에 수렴한다. 최저가는 하한일 뿐이다."
+  },
+  "lifecycle_summary": {
+    "live": 10,
+    "expired": 41,
+    "total": 51
+  }
 }
