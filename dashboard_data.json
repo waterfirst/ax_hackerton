@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-27 13:00 KST",
+  "updated_at": "2026-08-27 13:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97149638,
+    "total": 97079020,
     "cash": 19694788,
-    "invested": 77454850,
-    "day_pnl": -25840,
-    "cum_pnl": -2850362,
-    "cum_return_pct": -2.8504,
+    "invested": 77384232,
+    "day_pnl": -70618,
+    "cum_pnl": -2920980,
+    "cum_return_pct": -2.921,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -2850362.0,
+          "account_cum_pnl": -2920980.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": 56334.0,
+          "unrealized_pnl": -14284.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -55,7 +55,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 79.73,
+      "used_pct": 79.71,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -67,7 +67,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 20.27,
+      "used_pct": 20.29,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 109735,
-      "value": 24470905,
-      "pnl": 491715,
-      "pnl_pct": 2.05
+      "price": 109525,
+      "value": 24424075,
+      "pnl": 444885,
+      "pnl_pct": 1.86
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 180030,
-      "value": 21783630,
-      "pnl": -816640,
-      "pnl_pct": -3.61
+      "price": 179927,
+      "value": 21771167,
+      "pnl": -829103,
+      "pnl_pct": -3.67
     },
     {
       "symbol": "138230",
@@ -107,10 +107,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28825,
-      "value": 21762875,
-      "pnl": 575136,
-      "pnl_pct": 2.71
+      "price": 28810,
+      "value": 21751550,
+      "pnl": 563811,
+      "pnl_pct": 2.66
     }
   ],
   "trades": [
@@ -899,7 +899,7 @@
     },
     {
       "date": "2026-08-27",
-      "value": 97149638
+      "value": 97079020
     }
   ],
   "experiment": {
