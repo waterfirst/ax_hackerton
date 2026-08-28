@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-28 14:50 KST",
+  "updated_at": "2026-08-28 15:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96198064,
+    "total": 96206073,
     "cash": 19694788,
-    "invested": 76503276,
-    "day_pnl": -41074,
-    "cum_pnl": -3801936,
-    "cum_return_pct": -3.8019,
+    "invested": 76511285,
+    "day_pnl": 8009,
+    "cum_pnl": -3793927,
+    "cum_return_pct": -3.7939,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3801936.0,
+          "account_cum_pnl": -3793927.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -895240.0,
+          "unrealized_pnl": -887231.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -77,30 +77,30 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 107152,
-      "value": 23894896,
-      "pnl": -84294,
-      "pnl_pct": -0.35
+      "price": 107220,
+      "value": 23910060,
+      "pnl": -69130,
+      "pnl_pct": -0.29
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 179920,
-      "value": 21770320,
-      "pnl": -829950,
-      "pnl_pct": -3.67
+      "price": 179885,
+      "value": 21766085,
+      "pnl": -834185,
+      "pnl_pct": -3.69
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16115,
-      "value": 9411160,
-      "pnl": -220157,
-      "pnl_pct": -2.29
+      "price": 16110,
+      "value": 9408240,
+      "pnl": -223077,
+      "pnl_pct": -2.32
     },
     {
       "symbol": "411060",
@@ -903,7 +903,7 @@
     },
     {
       "date": "2026-08-28",
-      "value": 96198064
+      "value": 96206073
     }
   ],
   "experiment": {
