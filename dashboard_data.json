@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-28 11:50 KST",
+  "updated_at": "2026-08-28 12:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96591253,
+    "total": 96598318,
     "cash": 19694788,
-    "invested": 76896465,
-    "day_pnl": -19075,
-    "cum_pnl": -3408747,
-    "cum_return_pct": -3.4087,
+    "invested": 76903530,
+    "day_pnl": 7065,
+    "cum_pnl": -3401682,
+    "cum_return_pct": -3.4017,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3408747.0,
+          "account_cum_pnl": -3401682.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -502051.0,
+          "unrealized_pnl": -494986.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 107945,
-      "value": 24071735,
-      "pnl": 92545,
-      "pnl_pct": 0.39
+      "price": 108075,
+      "value": 24100725,
+      "pnl": 121535,
+      "pnl_pct": 0.51
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 180745,
-      "value": 21870145,
-      "pnl": -730125,
-      "pnl_pct": -3.23
+      "price": 180595,
+      "value": 21851995,
+      "pnl": -748275,
+      "pnl_pct": -3.31
     },
     {
       "symbol": "138230",
@@ -107,10 +107,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 28515,
-      "value": 21528825,
-      "pnl": 341086,
-      "pnl_pct": 1.61
+      "price": 28510,
+      "value": 21525050,
+      "pnl": 337311,
+      "pnl_pct": 1.59
     }
   ],
   "trades": [
@@ -903,7 +903,7 @@
     },
     {
       "date": "2026-08-28",
-      "value": 96591253
+      "value": 96598318
     }
   ],
   "experiment": {
