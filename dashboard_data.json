@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-08-28 15:30 KST",
+  "updated_at": "2026-08-28 16:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96140098,
+    "total": 96136468,
     "cash": 19694788,
-    "invested": 76445310,
-    "day_pnl": -65785,
-    "cum_pnl": -3859902,
-    "cum_return_pct": -3.8599,
-    "vs_kospi_pct": null
+    "invested": 76441680,
+    "day_pnl": -3630,
+    "cum_pnl": -3863532,
+    "cum_return_pct": -3.8635,
+    "vs_kospi_pct": -3.3985
   },
   "metrics": {
     "mdd_pct": 5.9714,
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3859902.0,
+          "account_cum_pnl": -3863532.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -953206.0,
+          "unrealized_pnl": -956836.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -87,10 +87,10 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 179520,
-      "value": 21721920,
-      "pnl": -878350,
-      "pnl_pct": -3.89
+      "price": 179490,
+      "value": 21718290,
+      "pnl": -881980,
+      "pnl_pct": -3.9
     },
     {
       "symbol": "138230",
@@ -903,7 +903,7 @@
     },
     {
       "date": "2026-08-28",
-      "value": 96140098
+      "value": 96136468
     }
   ],
   "experiment": {
