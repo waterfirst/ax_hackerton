@@ -1,33 +1,39 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-17T19:30:25+09:00",
+  "updated_at": "2026-08-29T10:04:50+09:00",
   "sources": [
     {
-      "source": "court_notice",
-      "scanned": 60,
-      "checked_at": "2026-08-17T19:30:25+09:00",
-      "status": "ok"
+      "status": "ok",
+      "checked_at": "2026-08-29T10:04:50+09:00",
+      "scanned": 200,
+      "source": "court_notice_seoul"
     },
     {
-      "source": "onbid_code",
-      "reason": "공공데이터포털 서비스키 미설정",
-      "scanned": 0,
-      "checked_at": "2026-08-17T19:30:25+09:00",
-      "status": "coverage_gap"
+      "status": "ok",
+      "checked_at": "2026-08-29T10:04:50+09:00",
+      "scanned": 30,
+      "source": "court_notice_national_secondary"
     },
     {
-      "source": "onbid_announcement",
-      "reason": "공공데이터포털 서비스키 미설정 또는 공고목록 API 활용 미승인",
+      "available_codes": 420,
+      "status": "ok",
+      "checked_at": "2026-08-29T10:04:50+09:00",
       "scanned": 0,
-      "checked_at": "2026-08-17T19:30:25+09:00",
-      "status": "coverage_gap"
+      "source": "onbid_code"
     },
     {
-      "source": "onbid_movable",
-      "reason": "ONBID_SERVICE_KEY 미설정 또는 동산 API 활용 미승인",
-      "scanned": 0,
-      "checked_at": "2026-08-17T19:30:25+09:00",
-      "status": "coverage_gap"
+      "status": "ok",
+      "checked_at": "2026-08-29T10:04:50+09:00",
+      "candidates": 75,
+      "scanned": 876,
+      "source": "onbid_announcement"
+    },
+    {
+      "status": "ok",
+      "checked_at": "2026-08-29T10:04:50+09:00",
+      "candidates": 32,
+      "scanned": 429,
+      "source": "onbid_movable"
     }
   ]
 }
