@@ -28,7 +28,30 @@
 </head>
 <body class="locked" data-auction-category="electronics"><section class="gate" id="access-gate" aria-labelledby="gate-title"><div class="gate-card"><div class="gate-mark" aria-hidden="true">SB</div><h1 id="gate-title">경매 매물 분석실</h1><p>보고서를 보려면 접근 비밀번호를 입력하세요.</p><form class="gate-form" id="gate-form"><label for="gate-password" class="label" style="position:absolute;left:-9999px">비밀번호</label><input id="gate-password" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" required><button type="submit">입장</button></form><div class="gate-error" id="gate-error" role="alert" aria-live="polite"></div><p class="gate-note">정적 GitHub Pages의 간이 접근 잠금입니다. 민감정보 보호 수단으로 사용할 수 없습니다.</p></div></section><main>
   <header class="head"><div class="eyebrow">법원 공고 × 온비드 API × 당근·번개 중고시세</div><h1>온비드 경매 매물 분석실</h1><div class="sub">시세·상태·위험을 검증해 매력도가 높은 매물만 먼저 추천합니다. 기준 미달 물건도 버리지 않고 회차와 가격 하락을 계속 추적해, 유찰 뒤 경제성이 생기는 시점에 다시 평가합니다.</div></header>
-  <section class="summary">
+  <section class="model" id="watch" aria-labelledby="watch-title">
+<h2 id="watch-title">입찰 감시 — 놓치면 안 되는 물건</h2>
+<p class="score-note">다회차 하향식 경매는 회차가 하루 만에 열리고 닫힌다. 일일 갱신만으로는 놓치므로 여기에 고정 표시한다. 아래 금액은 재판매 회수 추정에 근거한 상한이며, 초과 입찰하지 않는다.</p>
+
+<div class="formula"><b>1 · [오딘스] iMac 2대 + MacBook + 삼성노트북 + 와콤 &nbsp;5대 일괄</b>
+<code class="formula-code">다음 입찰 &nbsp;<b>2026-08-31(월) 11:00~23:00</b> &nbsp;7회차 최저 1,000,000원<br>
+개찰 &nbsp;2026-09-01 10:00 &nbsp;/ &nbsp;최종 8회차 &nbsp;09-01 11:00~23:00 최저 500,000원<br><br>
+<b>권장 입찰 1,050,000원 &nbsp;· &nbsp;절대상한 1,200,000원</b><br>
+순회수 추정 &nbsp;보수 833,000 / 중간 1,385,500 / 양호 1,912,500원<br>
+손익분기(중간) 1,385,500원 &nbsp;· &nbsp;VAT 별도 표기 없음</code>
+<div class="score-note">iMac A2439(24″ M1 2021.09) · iMac A2115(21.5″ Intel) · MacBook A1534(12″ Retina) · Samsung NT950XDX(2022.02) · Wacom PTH-660. <b>활성화 잠금 해제 확인(2026-08-29).</b> 최저가 동가 시 무작위 추첨이라 5만원 상향. 현장공개 08-20 종료·미참석으로 하자 이의제기 불가. 관재인 황인석 02-6080-5369.</div></div>
+
+<div class="formula"><b>2 · 파산재단 iPad 일괄 &nbsp;— iPad Air 5세대 + iPad Pro 11 4세대</b>
+<code class="formula-code">다음 입찰 &nbsp;<b>2026-09-04(금) 10:00~17:00</b> &nbsp;5차 최저 400,000원<br>
+회차 &nbsp;1차 2,000,000 → 2차 1,600,000 → 3차 1,200,000 → 4차 800,000 → <b>5차 400,000</b><br><br>
+<b>권장 입찰 400,000원 &nbsp;· &nbsp;절대상한 500,000원</b><br>
+순회수 추정 &nbsp;보수 722,500 / 중간 994,500 / 양호 1,207,000원<br>
+<b>VAT 별도 — 실지출은 낙찰가 × 1.1</b></code>
+<div class="score-note">iPad Air 5세대 A2588/64GB(<b>액정 스크래치</b>·부속품 없음) · iPad Pro 11 4세대 A2759/256GB(M2·부속품 없음). 1~3차는 전 시나리오 손실, 4차 800,000원(실 880,000)은 마진 11.5만원으로 얇다. <b>활성화 잠금 미확인</b> — 오딘스와 별개 재단이라 따로 확인해야 한다. 현장공개 08-28 15:00 종료·미참석. 차순위 미적용.</div></div>
+
+<p class="score-note"><b>공통 원칙.</b> 표시된 절대상한을 넘기면 낙찰돼도 손실이다. 경쟁가가 상한을 넘으면 추격하지 않는다.</p>
+</section>
+
+<section class="summary">
     <div class="card"><div class="label">최근 실행 확인 공고</div><div class="num" id="scanned-summary-count">확인 중</div></div>
     <div class="card"><div class="label">추천·추적 검증 매물</div><div class="num" id="active-summary-count">확인 중</div></div>
     <div class="card"><div class="label">수집 상태 기준시각</div><div class="num" id="source-updated" style="font-size:17px">확인 중</div></div>
