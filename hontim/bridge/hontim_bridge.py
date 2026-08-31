@@ -42,7 +42,7 @@ _api_probe_cache: dict[str, tuple[float, bool, str]] = {}
 
 class OrchestrationRequest(BaseModel):
     task: str = Field(min_length=3, max_length=MAX_PROMPT)
-    main: Literal["codex", "claude"] = "codex"
+    main: Literal["codex", "claude"] = "claude"
     mode: Literal["plan", "execute"] = "plan"
     auxiliaries: list[Literal["gemini", "deepseek", "zai", "grok"]] = Field(default_factory=list, max_length=4)
     workspace: Literal["default"] = "default"
@@ -59,7 +59,7 @@ class PlanRequest(BaseModel):
     deadline: str = Field(default="", max_length=40)
     canonical: str = Field(default="", max_length=200)
     constraints: str = Field(default="", max_length=4_000)
-    main: Literal["codex", "claude"] = "codex"
+    main: Literal["codex", "claude"] = "claude"
     workspace: Literal["default"] = "default"
 
 

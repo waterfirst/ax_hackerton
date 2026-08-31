@@ -4,7 +4,7 @@ const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const storeKey = 'hontim-os-v1';
 const defaultBridgeUrl = location.hostname.endsWith('waterfirst.pro') ? `${location.origin}/hontim-api` : 'https://waterfirst.pro/hontim-api';
-let bridge = { url: defaultBridgeUrl, token: '', main: 'codex', auxiliaries: [], connected: false, providers: {} };
+let bridge = { url: defaultBridgeUrl, token: '', main: 'claude', auxiliaries: [], connected: false, providers: {} };
 let state = load();
 let currentView = 'control', taskFilter = 'all', openTaskId = null;
 
@@ -184,7 +184,7 @@ $('#projectForm').addEventListener('submit', async e => {
 
 $('#aiForm').addEventListener('submit', async e => {
   e.preventDefault(); const f = new FormData(e.currentTarget);
-  bridge.url = String(f.get('bridgeUrl') || '').trim().replace(/\/$/, ''); bridge.token = String(f.get('bridgeToken') || '').trim(); bridge.main = String(f.get('main') || 'codex'); bridge.auxiliaries = f.getAll('auxiliary').map(String);
+  bridge.url = String(f.get('bridgeUrl') || '').trim().replace(/\/$/, ''); bridge.token = String(f.get('bridgeToken') || '').trim(); bridge.main = String(f.get('main') || 'claude'); bridge.auxiliaries = f.getAll('auxiliary').map(String);
   const ok = await checkProviders(); if (ok) { closePanels(); render(); }
 });
 $('#refreshProviders').onclick=()=>checkProviders(false);

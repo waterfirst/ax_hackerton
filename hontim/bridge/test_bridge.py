@@ -42,7 +42,11 @@ class BridgeTests(unittest.IsolatedAsyncioTestCase):
             return "ok"
         with patch.object(bridge, "invoke_cli", side_effect=fake_cli):
             await bridge.orchestrate(bridge.OrchestrationRequest(task="파일을 수정하고 검증하라", mode="execute"))
-        self.assertEqual(calls, [("codex", "execute"), ("claude", "plan"), ("codex", "plan")])
+        self.assertEqual(calls, [("claude", "execute"), ("codex", "plan"), ("claude", "plan")])
+
+    def test_claude_is_default_main(self):
+        self.assertEqual(bridge.OrchestrationRequest(task="기본 역할을 확인하라").main, "claude")
+        self.assertEqual(bridge.PlanRequest(name="테스트", goal="기본 역할을 확인하라").main, "claude")
 
 
 if __name__ == "__main__":
