@@ -44,7 +44,7 @@ class OrchestrationRequest(BaseModel):
     task: str = Field(min_length=3, max_length=MAX_PROMPT)
     main: Literal["codex", "claude"] = "codex"
     mode: Literal["plan", "execute"] = "plan"
-    auxiliaries: list[Literal["gemini", "deepseek", "zai"]] = Field(default_factory=list, max_length=3)
+    auxiliaries: list[Literal["gemini", "deepseek", "zai", "grok"]] = Field(default_factory=list, max_length=4)
     workspace: Literal["default"] = "default"
 
     @field_validator("auxiliaries")
@@ -179,6 +179,10 @@ async def invoke_api(provider: str, prompt: str) -> str:
             "ZAI_API_KEY", os.getenv("ZAI_BASE_URL", "https://api.z.ai/api/paas/v4"),
             os.getenv("ZAI_MODEL", "glm-5.1"),
         ),
+        "grok": (
+            "XAI_API_KEY", os.getenv("XAI_BASE_URL", "https://api.x.ai/v1"),
+            os.getenv("XAI_MODEL", "grok-4.6"),
+        ),
     }
     key_name, base_url, model = settings[provider]
     key = os.getenv(key_name)
@@ -219,6 +223,7 @@ async def provider_status() -> dict:
         "gemini": ("GEMINI_API_KEY", "GOOGLE_API_KEY"),
         "deepseek": ("DEEPSEEK_API_KEY",),
         "zai": ("ZAI_API_KEY",),
+        "grok": ("XAI_API_KEY", "GROK_API_KEY"),
     }
 
     async def probe(provider: str, key_names: tuple[str, ...]) -> tuple[str, bool, str]:
@@ -253,6 +258,7 @@ def _aux_prompt(task: str, provider: str) -> str:
         "gemini": "공식 근거와 대안 조사",
         "deepseek": "기술적 반론과 실패 가능성 검토",
         "zai": "핵심 쟁점과 실행 체크리스트 압축",
+        "grok": "최신 이슈·시장·커뮤니티 관점의 교차검증",
     }
     return f"너는 혼팀 OS의 보조 분석자다. 역할: {roles[provider]}. 직접 파일을 수정하지 말고, 다음 과업에 필요한 사실·위험·권고만 짧게 보고하라.\n\n과업:\n{task}"
 

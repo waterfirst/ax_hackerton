@@ -10,8 +10,8 @@ from bridge import hontim_bridge as bridge
 
 class BridgeTests(unittest.IsolatedAsyncioTestCase):
     def test_request_rejects_duplicate_auxiliaries(self):
-        row = bridge.OrchestrationRequest(task="충분히 긴 테스트", auxiliaries=["gemini", "gemini", "zai"])
-        self.assertEqual(row.auxiliaries, ["gemini", "zai"])
+        row = bridge.OrchestrationRequest(task="충분히 긴 테스트", auxiliaries=["gemini", "gemini", "zai", "grok"])
+        self.assertEqual(row.auxiliaries, ["gemini", "zai", "grok"])
 
     async def test_status_redacts_account_identity(self):
         async def fake_run(args, cwd, timeout=300, combine_output=False):

@@ -139,7 +139,7 @@ async function bridgeFetch(path, body = null) {
 }
 
 function renderProviders() {
-  const names = { codex:'Codex CLI', claude:'Claude Code', gemini:'Gemini', deepseek:'DeepSeek', zai:'Z.AI' };
+  const names = { codex:'Codex CLI', claude:'Claude Code', gemini:'Gemini', deepseek:'DeepSeek', zai:'Z.AI', grok:'Grok' };
   const rows = Object.entries(bridge.providers);
   $('#providerList').innerHTML = rows.length ? rows.map(([key, value]) => `<div class="provider-row"><i class="${value.connected ? 'online' : 'offline'}"></i><span><strong>${names[key] || key}</strong><small>${esc(value.detail || '상태 미확인')}</small></span><b>${value.connected ? '연결' : '대기'}</b></div>`).join('') : '<p class="provider-empty">브리지에 연결하면 로그인 상태를 확인해.</p>';
 }
