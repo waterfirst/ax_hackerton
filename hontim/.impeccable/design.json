@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-31T23:43:18+09:00",
+  "title": "Design System: 혼팀 OS",
+  "extensions": {
+    "colorMeta": {
+      "void": { "role": "neutral", "displayName": "야간 공백", "canonical": "#07151d" },
+      "deep": { "role": "neutral", "displayName": "심층 청흑", "canonical": "#0b202a" },
+      "panel": { "role": "neutral", "displayName": "관제 패널", "canonical": "#102b35" },
+      "panel-raised": { "role": "neutral", "displayName": "상승 패널", "canonical": "#153641" },
+      "ink": { "role": "neutral", "displayName": "상아 잉크", "canonical": "#eef4ef" },
+      "muted": { "role": "neutral", "displayName": "감쇠 청회색", "canonical": "#9fb2b4" },
+      "faint": { "role": "neutral", "displayName": "희미한 청회색", "canonical": "#789098" },
+      "track": { "role": "primary", "displayName": "선로 청록", "canonical": "#3bb7c7" },
+      "running": { "role": "secondary", "displayName": "운행 녹색", "canonical": "#72c68a" },
+      "caution": { "role": "secondary", "displayName": "주의 호박", "canonical": "#f2ad49" },
+      "conflict": { "role": "secondary", "displayName": "충돌 적색", "canonical": "#ef6468" },
+      "line": { "role": "neutral", "displayName": "구획선", "canonical": "#264852" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "프로젝트 디스플레이", "purpose": "현재 프로젝트명." },
+      "headline": { "displayName": "관제 헤드라인", "purpose": "운행표와 주요 섹션 제목." },
+      "body": { "displayName": "운영 본문", "purpose": "본문과 폼 컨트롤." },
+      "label": { "displayName": "시스템 식별자", "purpose": "작업 ID와 프로젝트 경로." }
+    },
+    "shadows": [
+      { "name": "panel-float", "value": "0 18px 44px rgba(0,0,0,.28)", "purpose": "우측 패널과 토스트." },
+      { "name": "handoff-low", "value": "0 14px 34px rgba(0,0,0,.15)", "purpose": "바톤 기록." },
+      { "name": "conflict-low", "value": "0 12px 30px rgba(0,0,0,.16)", "purpose": "충돌 배너." }
+    ],
+    "motion": [
+      { "name": "drawer-enter", "value": "clip-path .28s cubic-bezier(.16,1,.3,1), opacity .18s ease-out", "purpose": "우측 패널 진입과 퇴장." },
+      { "name": "meter-fill", "value": "transform .6s cubic-bezier(.16,1,.3,1)", "purpose": "문맥 압축 계기 갱신." },
+      { "name": "signal-pulse", "value": "opacity 1.4s infinite", "purpose": "충돌 신호의 두 번째 점 점멸." },
+      { "name": "row-state", "value": "background .16s", "purpose": "운행표 행 호버와 포커스." },
+      { "name": "toast-enter", "value": ".22s", "purpose": "토스트의 불투명도와 수직 이동." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "스크롤, 애니메이션, 전환 전체 제거." }
+    ],
+    "breakpoints": [
+      { "name": "mission-stack", "value": "1450px" },
+      { "name": "compact-control", "value": "1050px" },
+      { "name": "mobile", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "새 프로젝트와 연결 같은 확정 동작.",
+      "html": "<button class=\"ds-btn-primary\">새 프로젝트</button>",
+      "css": ".ds-btn-primary{min-height:42px;border:0;border-radius:12px;padding:10px 15px;background:var(--ink,#eef4ef);color:var(--void,#07151d);font:700 16px/1.5 'SUIT Variable','Noto Sans KR',sans-serif;cursor:pointer}.ds-btn-primary:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}.ds-btn-primary:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Signal Button",
+      "kind": "button",
+      "refersTo": "button-signal",
+      "description": "현재의 최우선 다음 행동.",
+      "html": "<button class=\"ds-btn-signal\">다음 작업 열기</button>",
+      "css": ".ds-btn-signal{min-height:42px;border:0;border-radius:12px;padding:10px 15px;background:var(--amber,#f2ad49);color:#211500;font:700 16px/1.5 'SUIT Variable','Noto Sans KR',sans-serif;cursor:pointer}.ds-btn-signal:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}.ds-btn-signal:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "복원, 취소, 작업 상태 변경 같은 보조 동작.",
+      "html": "<button class=\"ds-btn-ghost\">데모 복원</button>",
+      "css": ".ds-btn-ghost{min-height:42px;border:0;border-radius:12px;padding:10px 15px;background:var(--deep,#0b202a);color:var(--ink,#eef4ef);font:700 16px/1.5 'SUIT Variable','Noto Sans KR',sans-serif;cursor:pointer}.ds-btn-ghost:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}.ds-btn-ghost:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Project Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "프로젝트 정보와 AI 결과를 입력하는 어두운 필드.",
+      "html": "<label class=\"ds-field-label\">프로젝트 이름<input class=\"ds-field\" placeholder=\"예: 전자책 출판\"></label>",
+      "css": ".ds-field-label{display:block;color:var(--muted,#9fb2b4);font:400 12px/1.5 'SUIT Variable','Noto Sans KR',sans-serif}.ds-field{display:block;width:100%;margin-top:7px;padding:12px;border:1px solid var(--line,#264852);border-radius:10px;background:var(--void,#07151d);color:var(--ink,#eef4ef);font:400 16px/1.5 'SUIT Variable','Noto Sans KR',sans-serif}.ds-field:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}"
+    },
+    {
+      "name": "View Tabs",
+      "kind": "nav",
+      "description": "관제실, 바톤, 결정·근거 사이를 전환하는 밑줄 탭.",
+      "html": "<nav class=\"ds-tabs\"><button class=\"ds-tab ds-active\">관제실 <span>6</span></button><button class=\"ds-tab\">바톤 <span>2</span></button></nav>",
+      "css": ".ds-tabs{display:flex;gap:26px;border-bottom:1px solid var(--line,#264852)}.ds-tab{position:relative;border:0;padding:13px 0;background:transparent;color:var(--muted,#9fb2b4);font:700 16px/1.5 'SUIT Variable','Noto Sans KR',sans-serif;cursor:pointer}.ds-tab span{display:inline-grid;place-items:center;min-width:21px;height:21px;margin-left:5px;padding:0 6px;border-radius:11px;background:var(--deep,#0b202a);font-size:11px}.ds-tab.ds-active{color:var(--ink,#eef4ef)}.ds-tab.ds-active:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:3px;background:var(--track,#3bb7c7)}.ds-tab:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}"
+    },
+    {
+      "name": "Task Timetable Row",
+      "kind": "custom",
+      "description": "신호, 작업 ID, 작업명과 상태를 한 행으로 읽는 핵심 운행표 패턴.",
+      "html": "<article class=\"ds-task-row\" tabindex=\"0\"><div class=\"ds-task-signal\"><i></i><span>TASK-003</span></div><div><strong>EPUB 변환 및 검사</strong><p>검증 가능한 전자책 파일</p></div><div class=\"ds-task-state\"><span>상태</span><strong>실행 중</strong></div><button>열기</button></article>",
+      "css": ".ds-task-row{display:grid;grid-template-columns:110px minmax(220px,1fr) 100px 54px;gap:16px;align-items:center;padding:17px 4px;border-top:1px solid var(--line,#264852);border-bottom:1px solid var(--line,#264852);color:var(--ink,#eef4ef);font-family:'SUIT Variable','Noto Sans KR',sans-serif;transition:background .16s}.ds-task-row:hover,.ds-task-row:focus{background:var(--deep,#0b202a)}.ds-task-signal{display:flex;align-items:center;gap:10px}.ds-task-signal i{width:11px;height:11px;border-radius:50%;background:var(--green,#72c68a);box-shadow:0 0 0 4px rgba(114,198,138,.11)}.ds-task-signal span{color:var(--muted,#9fb2b4);font:700 11px/1 ui-monospace,monospace}.ds-task-row strong{font-size:15px}.ds-task-row p,.ds-task-state span{margin:3px 0 0;color:var(--muted,#9fb2b4);font-size:12px}.ds-task-state strong{display:block;color:var(--green,#72c68a);font-size:12px}.ds-task-row button{border:0;background:transparent;color:var(--track,#3bb7c7);font-weight:800;cursor:pointer}.ds-task-row:focus-visible,.ds-task-row button:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}"
+    },
+    {
+      "name": "Work Route Stop",
+      "kind": "custom",
+      "description": "세로 선로 위에 순서, 원형 상태 신호, 담당 작업을 배치하는 노선 정류장.",
+      "html": "<button class=\"ds-route-stop\"><span class=\"ds-route-code\">03</span><i class=\"ds-route-signal\"></i><span><strong>EPUB 변환 및 검사</strong><small>제작 AI</small></span></button>",
+      "css": ".ds-route-stop{width:100%;display:grid;grid-template-columns:25px 18px 1fr;gap:10px;align-items:center;border:0;border-radius:8px;padding:8px 4px;background:transparent;color:var(--ink,#eef4ef);text-align:left;cursor:pointer;font-family:'SUIT Variable','Noto Sans KR',sans-serif}.ds-route-stop:hover{background:var(--deep,#0b202a)}.ds-route-stop:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}.ds-route-code{color:var(--faint,#789098);font:700 10px/1 ui-monospace,monospace}.ds-route-signal{width:11px;height:11px;border-radius:50%;background:var(--amber,#f2ad49);box-shadow:0 0 0 4px rgba(242,173,73,.11)}.ds-route-stop strong,.ds-route-stop small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ds-route-stop strong{font-size:13px}.ds-route-stop small{color:var(--muted,#9fb2b4);font-size:11px}"
+    },
+    {
+      "name": "Conflict Notice",
+      "kind": "custom",
+      "description": "충돌 신호와 역할 분리 동작을 한 구획에 묶는 개입 알림.",
+      "html": "<section class=\"ds-conflict\"><span class=\"ds-conflict-signal\"><i></i><i></i></span><div><strong>작업 충돌 91%</strong><p>출판 절차 작성 ↔ POD 가이드 작성</p></div><button>역할 분리</button></section>",
+      "css": ".ds-conflict{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:16px;padding:15px 18px;border-radius:14px;background:#321b20;box-shadow:0 12px 30px rgba(0,0,0,.16);font-family:'SUIT Variable','Noto Sans KR',sans-serif}.ds-conflict strong{color:#ffd8d9}.ds-conflict p{margin:2px 0 0;color:#d7a9ab;font-size:13px}.ds-conflict-signal{display:flex;gap:5px}.ds-conflict-signal i{width:12px;height:12px;border-radius:50%;background:var(--red,#ef6468)}.ds-conflict button{border:0;border-radius:9px;padding:9px 12px;background:#f3d7d8;color:#301418;font-weight:800;cursor:pointer}.ds-conflict button:focus-visible{outline:3px solid var(--amber,#f2ad49);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "야간 철도 신호 연동실",
+    "overview": "혼팀 OS는 청흑색 관제실 위에 선로, 신호등, 운행표, 원장을 배치한다. 화면은 채팅이나 카드형 SaaS 대시보드처럼 보이지 않는다. 프로젝트의 흐름을 좌측 작업 노선으로, 개별 작업의 책임과 상태를 우측 운행표로 읽게 한다. 표현은 어둡고 밀도 높지만 장식적이지 않다. 상아색 활자와 얇은 청회색 경계가 정보 구조를 만들고, 청록·녹색·호박색·적색은 작업 상태와 다음 행동에만 집중된다. 패널은 별도 페이지가 아니라 우측에서 진입하는 제어 구획으로 동작한다.",
+    "keyCharacteristics": [
+      "야간 철도 신호 연동실을 닮은 청흑색 작업 환경",
+      "선로와 원형 신호를 이용한 작업 흐름 표현",
+      "카드 묶음보다 행, 구획선, 운행표를 우선하는 고밀도 구성",
+      "짧고 구체적인 한국어 상태 문구와 모노스페이스 식별자",
+      "색상과 함께 상태명, 위치, 형태를 중복 제공하는 판독 방식"
+    ],
+    "rules": [
+      { "name": "The Signal-Only Color Rule", "body": "녹색, 호박색, 적색은 상태와 행동을 전달할 때만 사용한다. 넓은 장식 면으로 확장하지 않는다.", "section": "colors" },
+      { "name": "The Red Means Intervention Rule", "body": "적색은 충돌, 차단, 실패처럼 사용자의 개입이 필요한 상황에만 배정한다.", "section": "colors" },
+      { "name": "The Identifier Split Rule", "body": "작업 코드와 시스템 경로만 모노스페이스로 표시하고, 제목과 설명은 SUIT로 유지한다.", "section": "typography" },
+      { "name": "The Route-and-Timetable Rule", "body": "넓은 화면에서는 노선과 운행표를 동시에 유지한다. 작은 화면에서 노선을 숨길 때는 각 작업 행 안에 텍스트 상태를 반드시 남긴다.", "section": "layout" },
+      { "name": "The Flat Track Rule", "body": "운행표, 원장, 제어 레일은 평평하게 유지한다. 문서 흐름을 떠나는 요소에만 그림자를 허용한다.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do 상태를 신호색만이 아니라 상태명, 작업 ID, 위치와 함께 표시한다.",
+      "Do 작업 흐름을 노선으로, 작업 책임과 검증 상태를 운행표 행으로 표현한다.",
+      "Do 모든 버튼, 링크, 입력에 동일한 호박색 :focus-visible 처리를 유지한다.",
+      "Do 760px 이하에서 보조 열을 숨긴 뒤 작업 본문 안에 텍스트 상태를 다시 노출한다.",
+      "Do 움직임을 패널 진입, 경고 신호, 진행 계기, 토스트처럼 상태 변화가 있는 요소에만 사용한다."
+    ],
+    "donts": [
+      "Don't 작업 운행표를 독립적인 SaaS 카드 그리드로 바꾸지 않는다.",
+      "Don't 녹색·호박색·적색을 의미 없는 장식이나 넓은 배경 면에 사용하지 않는다.",
+      "Don't 모노스페이스를 긴 설명이나 제목 전체에 적용하지 않는다.",
+      "Don't 그림자로 모든 표면을 띄우지 않는다. 기본 깊이는 청흑색 층위와 구획선으로 만든다.",
+      "Don't 작은 화면에서 가로 스크롤로 데스크톱 운행표를 그대로 보존하지 않는다."
+    ]
+  }
+}

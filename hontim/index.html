@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07151d">
+  <meta name="description" content="여러 AI의 업무 중복과 맥락 유실을 막는 AI 협업 지휘소, 혼팀 OS">
+  <title>혼팀 OS — AI 협업 지휘소</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307151d'/%3E%3Cpath d='M12 18h40M12 32h28M12 46h40' stroke='%233bb7c7' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='32' r='6' fill='%23f2ad49'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <!--
+  THESIS: AI 채팅을 더 늘리지 않고, 작업·점유·검증·인계를 하나의 신호 체계로 통제한다. 카드형 SaaS 대시보드를 거부한다.
+  OWN-WORLD: 야간 철도 신호 연동실. 청흑색 바탕, 상아색 활자, 청록 선로, 호박색 주의, 적색 충돌. 상태는 선과 신호로 읽힌다.
+  STORY: 사용자는 프로젝트 병목을 보고, 한 작업을 선택해 AI에 전달하고, 결과를 검증 가능한 바톤으로 인계한다.
+  FIRST VIEWPORT: 좌측 노선도와 우측 작업 운행표가 한 화면을 양분하며, 최우선 다음 행동은 우측 상단 신호 제어부에 있다.
+  FORM: 지하철 신호 연동 제어반, grounded direction 3, seed 6ef17049.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="혼팀 OS 홈">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>혼팀 OS</strong><small>AI 협업 지휘소</small></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="system-state"><i></i> 로컬 운행 중</span>
+      <button class="button ghost" id="exportButton">내보내기</button>
+      <button class="button primary" id="newProjectButton">새 프로젝트</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="control-rail" aria-label="프로젝트 제어반">
+      <div class="project-switcher">
+        <label for="projectSelect">운행 프로젝트</label>
+        <select id="projectSelect"></select>
+      </div>
+
+      <section class="route-panel" aria-labelledby="routeTitle">
+        <div class="section-heading">
+          <h2 id="routeTitle">작업 노선</h2>
+          <span id="routeProgress">0/0 통과</span>
+        </div>
+        <div id="routeMap" class="route-map" aria-label="작업 진행 노선도"></div>
+      </section>
+
+      <section class="project-facts" aria-labelledby="factsTitle">
+        <h2 id="factsTitle">관제 정보</h2>
+        <dl>
+          <div><dt>기준본</dt><dd id="canonicalRoot">—</dd></div>
+          <div><dt>다음 마감</dt><dd id="deadline">—</dd></div>
+          <div><dt>활성 실행권</dt><dd id="activeLeases">0</dd></div>
+          <div><dt>사람 승인</dt><dd id="approvalCount">0</dd></div>
+        </dl>
+      </section>
+
+      <button class="ai-link" id="aiSettingsButton">
+        <span><strong>AI 연결</strong><small id="aiStatus">수동 전달 모드</small></span>
+        <span aria-hidden="true">설정</span>
+      </button>
+    </aside>
+
+    <main id="main" class="workspace">
+      <section class="mission" aria-labelledby="missionTitle">
+        <div>
+          <p class="mission-path" id="missionPath">PROJECT / CONTROL</p>
+          <h1 id="missionTitle">프로젝트를 불러오는 중</h1>
+          <p id="missionGoal"></p>
+        </div>
+        <div class="mission-actions">
+          <button class="button ghost" id="demoResetButton">데모 복원</button>
+          <button class="button signal" id="nextActionButton">다음 작업 열기</button>
+        </div>
+      </section>
+
+      <nav class="view-tabs" aria-label="프로젝트 화면">
+        <button data-view="control" class="active" aria-selected="true">관제실 <span id="taskCountBadge">0</span></button>
+        <button data-view="handoff" aria-selected="false">바톤 <span id="handoffCountBadge">0</span></button>
+        <button data-view="evidence" aria-selected="false">결정·근거 <span id="evidenceCountBadge">0</span></button>
+      </nav>
+
+      <section id="controlView" class="view active">
+        <div id="conflictBanner" class="conflict-banner" hidden></div>
+        <div class="board-head">
+          <div>
+            <h2>작업 운행표</h2>
+            <p>한 작업에는 한 실행자만 진입할 수 있어.</p>
+          </div>
+          <div class="board-filters" role="group" aria-label="작업 필터">
+            <button class="filter active" data-filter="all">전체</button>
+            <button class="filter" data-filter="attention">주의 필요</button>
+            <button class="filter" data-filter="mine">실행 중</button>
+          </div>
+        </div>
+        <div id="taskBoard" class="task-board"></div>
+      </section>
+
+      <section id="handoffView" class="view" hidden>
+        <div class="split-view">
+          <div>
+            <div class="board-head"><div><h2>바톤 기록</h2><p>다음 AI가 전체 대화 없이 이어서 일할 수 있는 문맥이야.</p></div></div>
+            <div id="handoffList" class="handoff-list"></div>
+          </div>
+          <aside class="compression-meter" aria-label="문맥 압축 효과">
+            <h3>문맥 압축</h3>
+            <strong id="compressionValue">0%</strong>
+            <div class="meter"><i id="compressionBar"></i></div>
+            <p id="compressionCopy">바톤을 만들면 예상 절감량을 계산해.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="evidenceView" class="view" hidden>
+        <div class="evidence-layout">
+          <div><div class="board-head"><div><h2>확정 결정</h2><p>누가, 언제, 무엇을 확정했는지 남긴다.</p></div></div><div id="decisionList" class="ledger"></div></div>
+          <div><div class="board-head"><div><h2>근거 원장</h2><p>검증된 사실과 아직 확인할 주장을 분리한다.</p></div></div><div id="evidenceList" class="ledger"></div></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <aside id="taskDrawer" class="drawer" aria-labelledby="drawerTitle" aria-hidden="true">
+    <div class="drawer-head"><div><span id="drawerTaskId"></span><h2 id="drawerTitle">작업</h2></div><button class="icon-button" id="closeDrawer" aria-label="작업 패널 닫기">×</button></div>
+    <div id="drawerContent"></div>
+  </aside>
+  <div id="drawerScrim" class="scrim" hidden></div>
+
+  <aside id="projectPanel" class="drawer form-drawer" aria-labelledby="projectPanelTitle" aria-hidden="true">
+    <div class="drawer-head"><div><span>NEW SERVICE</span><h2 id="projectPanelTitle">프로젝트 투입</h2></div><button class="icon-button close-panel" aria-label="프로젝트 패널 닫기">×</button></div>
+    <form id="projectForm">
+      <label>프로젝트 이름<input name="name" required maxlength="60" placeholder="예: 전자책 출판"></label>
+      <label>해결할 목표<textarea name="goal" required rows="4" placeholder="무엇을 언제까지 완성해야 하는지 적어줘."></textarea></label>
+      <div class="form-row"><label>마감일<input name="deadline" type="date"></label><label>기준본 이름<input name="canonical" placeholder="예: manuscript/main"></label></div>
+      <label>제약조건<textarea name="constraints" rows="3" placeholder="개인정보 금지, 외부 게시 전 승인 등"></textarea></label>
+      <div class="form-actions"><button type="button" class="button ghost close-panel">취소</button><button class="button primary" type="submit" id="planButton">업무 분해하기</button></div>
+    </form>
+  </aside>
+
+  <aside id="aiPanel" class="drawer form-drawer" aria-labelledby="aiPanelTitle" aria-hidden="true">
+    <div class="drawer-head"><div><span>OPTIONAL CONNECTION</span><h2 id="aiPanelTitle">AI 연결</h2></div><button class="icon-button close-panel" aria-label="AI 설정 닫기">×</button></div>
+    <div class="privacy-note"><strong>키는 저장하지 않아.</strong><p>입력한 OpenRouter 키는 현재 탭의 메모리에서만 사용되고 새로고침하면 사라진다. 공용 기기에서는 사용하지 마.</p></div>
+    <form id="aiForm">
+      <label>OpenRouter API 키<input name="apiKey" type="password" autocomplete="off" placeholder="sk-or-v1-…"></label>
+      <label>계획 모델<select name="model"><option value="openai/gpt-4.1-mini">GPT-4.1 mini</option><option value="anthropic/claude-3.7-sonnet">Claude 3.7 Sonnet</option><option value="google/gemini-2.5-flash">Gemini 2.5 Flash</option></select></label>
+      <div class="form-actions"><button type="button" class="button ghost" id="disconnectAi">연결 해제</button><button class="button primary" type="submit">현재 탭에 연결</button></div>
+    </form>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="importFile" type="file" accept="application/json" hidden>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
