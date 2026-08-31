@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-08-31 15:30 KST",
+  "updated_at": "2026-08-31 16:05 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95368718,
+    "total": 95372428,
     "cash": 19694788,
-    "invested": 75673930,
-    "day_pnl": 92545,
-    "cum_pnl": -4631282,
-    "cum_return_pct": -4.6313,
-    "vs_kospi_pct": null
+    "invested": 75677640,
+    "day_pnl": 3710,
+    "cum_pnl": -4627572,
+    "cum_return_pct": -4.6276,
+    "vs_kospi_pct": -4.6191
   },
   "metrics": {
     "mdd_pct": 5.9714,
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -4631282.0,
+          "account_cum_pnl": -4627572.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -1724586.0,
+          "unrealized_pnl": -1720876.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -87,30 +87,30 @@
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 178610,
-      "value": 21611810,
-      "pnl": -988460,
-      "pnl_pct": -4.37
+      "price": 178540,
+      "value": 21603340,
+      "pnl": -996930,
+      "pnl_pct": -4.41
     },
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16050,
-      "value": 9373200,
-      "pnl": -258117,
-      "pnl_pct": -2.68
+      "price": 16045,
+      "value": 9370280,
+      "pnl": -261037,
+      "pnl_pct": -2.71
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 27405,
-      "value": 20690775,
-      "pnl": -496964,
-      "pnl_pct": -2.35
+      "price": 27425,
+      "value": 20705875,
+      "pnl": -481864,
+      "pnl_pct": -2.27
     }
   ],
   "trades": [
@@ -907,7 +907,7 @@
     },
     {
       "date": "2026-08-31",
-      "value": 95368718
+      "value": 95372428
     }
   ],
   "experiment": {
