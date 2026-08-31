@@ -27,7 +27,7 @@
       <span><strong>혼팀 OS</strong><small>AI 협업 지휘소</small></span>
     </a>
     <div class="topbar-actions">
-      <span class="system-state"><i></i> 로컬 운행 중</span>
+      <span class="system-state"><i></i> 협업 관제 중</span>
       <button class="button ghost" id="exportButton">내보내기</button>
       <button class="button primary" id="newProjectButton">새 프로젝트</button>
     </div>
@@ -141,12 +141,28 @@
   </aside>
 
   <aside id="aiPanel" class="drawer form-drawer" aria-labelledby="aiPanelTitle" aria-hidden="true">
-    <div class="drawer-head"><div><span>OPTIONAL CONNECTION</span><h2 id="aiPanelTitle">AI 연결</h2></div><button class="icon-button close-panel" aria-label="AI 설정 닫기">×</button></div>
-    <div class="privacy-note"><strong>키는 저장하지 않아.</strong><p>입력한 OpenRouter 키는 현재 탭의 메모리에서만 사용되고 새로고침하면 사라진다. 공용 기기에서는 사용하지 마.</p></div>
+    <div class="drawer-head"><div><span>ORCHESTRATION BRIDGE</span><h2 id="aiPanelTitle">AI 운행 편성</h2></div><button class="icon-button close-panel" aria-label="AI 설정 닫기">×</button></div>
+    <div class="privacy-note"><strong>구독 로그인은 CLI가 관리해.</strong><p>Codex·Claude 인증정보와 Gemini·DeepSeek·Z.AI 키는 서버에만 둔다. 여기에는 브리지 접속 토큰만 입력하며 새로고침하면 사라져.</p></div>
     <form id="aiForm">
-      <label>OpenRouter API 키<input name="apiKey" type="password" autocomplete="off" placeholder="sk-or-v1-…"></label>
-      <label>계획 모델<select name="model"><option value="openai/gpt-4.1-mini">GPT-4.1 mini</option><option value="anthropic/claude-3.7-sonnet">Claude 3.7 Sonnet</option><option value="google/gemini-2.5-flash">Gemini 2.5 Flash</option></select></label>
-      <div class="form-actions"><button type="button" class="button ghost" id="disconnectAi">연결 해제</button><button class="button primary" type="submit">현재 탭에 연결</button></div>
+      <label>브리지 주소<input name="bridgeUrl" type="url" inputmode="url" required autocomplete="url" placeholder="https://waterfirst.pro/hontim-api"></label>
+      <label>접속 토큰<input name="bridgeToken" type="password" required autocomplete="off" placeholder="ht_live_…"></label>
+      <fieldset class="role-fieldset">
+        <legend>메인 지휘자</legend>
+        <label class="role-choice"><input type="radio" name="main" value="codex" checked><span><strong>Codex 메인</strong><small>구현·통합, Claude가 독립 검토</small></span></label>
+        <label class="role-choice"><input type="radio" name="main" value="claude"><span><strong>Claude 메인</strong><small>기획·지휘, Codex가 독립 검토</small></span></label>
+      </fieldset>
+      <fieldset class="role-fieldset">
+        <legend>API 보조 편성</legend>
+        <label class="role-choice"><input type="checkbox" name="auxiliary" value="gemini"><span><strong>Gemini</strong><small>공식 근거·대안 조사</small></span></label>
+        <label class="role-choice"><input type="checkbox" name="auxiliary" value="deepseek"><span><strong>DeepSeek</strong><small>기술 반론·실패 가능성</small></span></label>
+        <label class="role-choice"><input type="checkbox" name="auxiliary" value="zai"><span><strong>Z.AI</strong><small>쟁점·체크리스트 압축</small></span></label>
+      </fieldset>
+      <section class="provider-board" aria-labelledby="providerBoardTitle">
+        <div class="drawer-section-head"><h3 id="providerBoardTitle">연결 상태</h3><button class="text-button" type="button" id="refreshProviders">다시 확인</button></div>
+        <div id="providerList"><p class="provider-empty">브리지에 연결하면 로그인 상태를 확인해.</p></div>
+      </section>
+      <p id="aiFormError" class="form-error" role="alert" hidden></p>
+      <div class="form-actions"><button type="button" class="button ghost" id="disconnectAi">연결 해제</button><button class="button primary" type="submit" id="connectAi">상태 확인·연결</button></div>
     </form>
   </aside>
 

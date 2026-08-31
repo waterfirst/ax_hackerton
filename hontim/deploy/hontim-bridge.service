@@ -1,0 +1,21 @@
+[Unit]
+Description=HonTeam OS subscription and API bridge
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/waterfirst/.cokacdir/workspace/syctizfu/ax_hackerton_public/hontim
+EnvironmentFile=/home/waterfirst/.config/hontim/bridge.env
+EnvironmentFile=-/home/waterfirst/.env
+Environment=PATH=/home/waterfirst/.local/bin:/home/waterfirst/.npm-global/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/usr/bin/python3 -m uvicorn bridge.hontim_bridge:app --host 127.0.0.1 --port 8791
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/waterfirst/.cokacdir/workspace/d3nczn7h /home/waterfirst/.codex /home/waterfirst/.claude
+
+[Install]
+WantedBy=default.target

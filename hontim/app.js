@@ -3,7 +3,8 @@ import { STATUS, buildPlan, demoProject, detectConflicts, parseResult, nextTask,
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const storeKey = 'hontim-os-v1';
-let api = { key: '', model: 'openai/gpt-4.1-mini' };
+const defaultBridgeUrl = location.hostname.endsWith('waterfirst.pro') ? `${location.origin}/hontim-api` : 'https://waterfirst.pro/hontim-api';
+let bridge = { url: defaultBridgeUrl, token: '', main: 'codex', auxiliaries: [], connected: false, providers: {} };
 let state = load();
 let currentView = 'control', taskFilter = 'all', openTaskId = null;
 
@@ -26,7 +27,7 @@ function render() {
   $('#canonicalRoot').textContent = p.canonical; $('#deadline').textContent = date(p.deadline); $('#activeLeases').textContent = `${m.active}개`; $('#approvalCount').textContent = `${m.approvals}건`;
   $('#routeProgress').textContent = `${m.done}/${m.total} 통과`; $('#taskCountBadge').textContent = p.tasks.length; $('#handoffCountBadge').textContent = p.handoffs.length; $('#evidenceCountBadge').textContent = p.evidence.length + p.decisions.length;
   renderRoute(p); renderConflicts(p); renderTasks(p); renderHandoffs(p, m); renderEvidence(p);
-  $('#aiStatus').textContent = api.key ? `${api.model.split('/').pop()} 연결됨` : '수동 전달 모드';
+  $('#aiStatus').textContent = bridge.connected ? `${bridge.main === 'codex' ? 'Codex' : 'Claude'} 메인 · 구독 연결` : '수동 전달 모드';
 }
 
 function renderRoute(p) {
@@ -77,10 +78,12 @@ function openTask(id) {
   const prompt = `TASK_ID: ${t.id}\nPROJECT: ${p.name}\nGOAL: ${p.goal}\nTASK: ${t.title}\nOUTPUT: ${t.output}\nWRITE_SET: ${(t.writeSet||[]).join(', ')}\nACCEPTANCE:\n${(t.criteria||[]).map(x=>'- '+x).join('\n')}\nCONSTRAINTS: ${p.constraints || '없음'}\nREPORT: 완료내용, 근거, 미해결, 다음 행동만 보고하라.`;
   $('#drawerContent').innerHTML = `<section class="drawer-section"><h3>운행 권한</h3><dl class="task-details"><div><dt>실행자</dt><dd>${esc(t.executor)}</dd></div><div><dt>검증자</dt><dd>${esc(t.reviewer)}</dd></div><div><dt>수정범위</dt><dd>${esc((t.writeSet||[]).join(', '))}</dd></div></dl></section>
   <section class="drawer-section"><div class="drawer-section-head"><h3>AI 작업지시서</h3><button class="text-button" id="copyPrompt">복사</button></div><pre id="workOrder">${esc(prompt)}</pre></section>
-  <section class="drawer-section"><h3>AI 결과 인계</h3><label class="result-label">결과를 붙여 넣어줘<textarea id="resultInput" rows="7" placeholder="AI가 보고한 완료내용, 근거, 미해결사항을 붙여 넣어."></textarea></label><button class="button signal full" id="submitResult">검증 바톤 만들기</button></section>
+  <section class="drawer-section ai-run-section"><div class="drawer-section-head"><h3>AI 협업 실행</h3><span class="run-role">${bridge.connected ? `${bridge.main === 'codex' ? 'Codex' : 'Claude'} → ${bridge.main === 'codex' ? 'Claude' : 'Codex'} 검증` : '브리지 연결 필요'}</span></div><p>메인이 수행하고 서브가 독립 검토한 뒤 메인이 최종 정리해.</p><label>실행 권한<select id="runMode"><option value="plan">분석 전용 · 파일 수정 없음</option><option value="execute">허용 폴더 파일 수정</option></select></label><button class="button primary full" id="runWithAi" ${bridge.connected ? '' : 'disabled'}>협업 실행</button><p class="inline-error" id="runError" hidden></p></section>
+  <section class="drawer-section"><h3>AI 결과 인계</h3><label class="result-label">결과를 확인해<textarea id="resultInput" rows="9" placeholder="협업 실행 결과가 여기에 들어와. 수동으로 붙여 넣어도 돼."></textarea></label><button class="button signal full" id="submitResult">검증 바톤 만들기</button></section>
   <section class="drawer-section task-controls"><button class="button ghost" data-status="active" ${t.lease?'disabled':''}>실행권 획득</button><button class="button ghost" data-status="review">검증 대기</button><button class="button ghost" data-status="done">통과 처리</button></section>`;
   showPanel($('#taskDrawer'));
   $('#copyPrompt').onclick = () => navigator.clipboard.writeText(prompt).then(()=>toast('작업지시서를 복사했어.'));
+  $('#runWithAi').onclick = () => runTaskWithBridge(t, prompt);
   $('#submitResult').onclick = () => submitResult(t);
   $$('#drawerContent [data-status]').forEach(b => b.onclick = () => updateStatus(t, b.dataset.status));
 }
@@ -108,14 +111,68 @@ function closePanels() { $$('.drawer.open').forEach(x=>{x.classList.remove('open
 function setView(view) { currentView = view; $$('.view-tabs button').forEach(b=>{const on=b.dataset.view===view;b.classList.toggle('active',on);b.setAttribute('aria-selected',String(on))}); $$('.view').forEach(v=>{const on=v.id===`${view}View`;v.hidden=!on;v.classList.toggle('active',on)}); }
 
 async function aiPlan(input) {
-  if (!api.key) return buildPlan(input);
-  const system = '너는 AI 협업 관제사다. 목표를 5~8개 검증 가능한 작업으로 분해하라. JSON만 반환하라. 각 작업: title, output, writeSet(string array), executor, reviewer, humanApproval(boolean), criteria(string array).';
-  const response = await fetch('https://openrouter.ai/api/v1/chat/completions', { method:'POST', headers:{'Content-Type':'application/json','Authorization':`Bearer ${api.key}`,'HTTP-Referer':location.href,'X-Title':'HonTeam OS'}, body:JSON.stringify({ model:api.model, messages:[{role:'system',content:system},{role:'user',content:JSON.stringify(input)}], response_format:{type:'json_object'} }) });
-  if (!response.ok) throw new Error(`AI 연결 오류 ${response.status}`);
-  const data = await response.json(); const content = data.choices?.[0]?.message?.content || '{}'; const parsed = JSON.parse(content); const rows = parsed.tasks || parsed.work || [];
+  if (!bridge.connected) return buildPlan(input);
+  const parsed = await bridgeFetch('/v1/plan', { ...input, main:bridge.main, workspace:'default' });
+  const rows = parsed.tasks || [];
   if (!rows.length) throw new Error('AI가 작업 목록을 반환하지 않았어.');
   const tasks = rows.map((r,i)=>({ id:`TASK-${String(i+1).padStart(3,'0')}`, title:r.title, output:r.output||'결과물', writeSet:r.writeSet||[`work/${i+1}/*`], executor:r.executor||'제작 AI', reviewer:r.reviewer||'검증 AI', humanApproval:!!r.humanApproval, criteria:r.criteria||['결과물이 존재한다'], status:i===0?'active':'queued', lease:i===0, priority:i<2?'high':'normal', dependencies:i?[`TASK-${String(i).padStart(3,'0')}`]:[], notes:'' }));
   return makeProject({...input,tasks});
+}
+
+async function bridgeFetch(path, body = null) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 360000);
+  try {
+    const response = await fetch(`${bridge.url.replace(/\/$/, '')}${path}`, {
+      method: body ? 'POST' : 'GET',
+      headers: { 'Authorization':`Bearer ${bridge.token}`, ...(body ? {'Content-Type':'application/json'} : {}) },
+      body: body ? JSON.stringify(body) : undefined,
+      signal: controller.signal,
+    });
+    let data = {}; try { data = await response.json(); } catch {}
+    if (!response.ok) throw new Error(data.detail || `브리지 오류 ${response.status}`);
+    return data;
+  } catch (error) {
+    if (error.name === 'AbortError') throw new Error('AI 실행이 6분을 넘겨 중단됐어.');
+    throw error;
+  } finally { clearTimeout(timer); }
+}
+
+function renderProviders() {
+  const names = { codex:'Codex CLI', claude:'Claude Code', gemini:'Gemini', deepseek:'DeepSeek', zai:'Z.AI' };
+  const rows = Object.entries(bridge.providers);
+  $('#providerList').innerHTML = rows.length ? rows.map(([key, value]) => `<div class="provider-row"><i class="${value.connected ? 'online' : 'offline'}"></i><span><strong>${names[key] || key}</strong><small>${esc(value.detail || '상태 미확인')}</small></span><b>${value.connected ? '연결' : '대기'}</b></div>`).join('') : '<p class="provider-empty">브리지에 연결하면 로그인 상태를 확인해.</p>';
+}
+
+async function checkProviders(showMessage = true) {
+  const button = $('#connectAi'); button.disabled = true; button.textContent = '확인 중…';
+  $('#aiFormError').hidden = true;
+  try {
+    const data = await bridgeFetch('/v1/providers');
+    bridge.providers = data.providers || {}; bridge.connected = !!(bridge.providers.codex?.connected && bridge.providers.claude?.connected);
+    renderProviders(); render();
+    if (!bridge.connected) throw new Error('Codex와 Claude 구독 로그인을 모두 확인해야 해.');
+    if (showMessage) toast('구독 CLI 두 개를 연결했어.');
+    return true;
+  } catch (error) {
+    bridge.connected = false; render();
+    const box = $('#aiFormError'); box.textContent = error.message || '브리지 연결에 실패했어.'; box.hidden = false;
+    return false;
+  } finally { button.disabled = false; button.textContent = '상태 확인·연결'; }
+}
+
+async function runTaskWithBridge(task, prompt) {
+  const button = $('#runWithAi'), errorBox = $('#runError'), mode = $('#runMode').value;
+  if (mode === 'execute' && !confirm('허용된 작업폴더 안에서 메인 AI의 파일 수정을 허용할까?')) return;
+  button.disabled = true; button.textContent = mode === 'execute' ? '수행·검증 중…' : '분석·검증 중…'; errorBox.hidden = true;
+  try {
+    const result = await bridgeFetch('/v1/orchestrate', { task:prompt, main:bridge.main, mode, auxiliaries:bridge.auxiliaries, workspace:'default' });
+    $('#resultInput').value = result.final || result.draft || '';
+    task.notes = `메인 ${result.main}, 검증 ${result.secondary}, 모드 ${result.mode}`;
+    save(); toast('메인 수행·독립 검토·최종 정리가 끝났어.');
+  } catch (error) {
+    errorBox.textContent = error.message || '협업 실행에 실패했어.'; errorBox.hidden = false; toast(errorBox.textContent, true);
+  } finally { button.disabled = false; button.textContent = '협업 실행'; }
 }
 
 $('#projectForm').addEventListener('submit', async e => {
@@ -125,9 +182,14 @@ $('#projectForm').addEventListener('submit', async e => {
   finally { button.disabled=false; button.textContent='업무 분해하기'; }
 });
 
-$('#aiForm').addEventListener('submit', e => { e.preventDefault(); const f=new FormData(e.currentTarget); api={key:String(f.get('apiKey')||'').trim(),model:String(f.get('model'))}; closePanels(); render(); toast(api.key?'현재 탭에 AI를 연결했어.':'키가 없어 수동 모드를 유지해.'); });
-$('#disconnectAi').onclick=()=>{api.key='';$('#aiForm').reset();closePanels();render();toast('AI 연결을 해제했어.')};
-$('#newProjectButton').onclick=()=>showPanel($('#projectPanel')); $('#aiSettingsButton').onclick=()=>showPanel($('#aiPanel')); $('#closeDrawer').onclick=closePanels; $('#drawerScrim').onclick=closePanels; $$('.close-panel').forEach(b=>b.onclick=closePanels);
+$('#aiForm').addEventListener('submit', async e => {
+  e.preventDefault(); const f = new FormData(e.currentTarget);
+  bridge.url = String(f.get('bridgeUrl') || '').trim().replace(/\/$/, ''); bridge.token = String(f.get('bridgeToken') || '').trim(); bridge.main = String(f.get('main') || 'codex'); bridge.auxiliaries = f.getAll('auxiliary').map(String);
+  const ok = await checkProviders(); if (ok) { closePanels(); render(); }
+});
+$('#refreshProviders').onclick=()=>checkProviders(false);
+$('#disconnectAi').onclick=()=>{bridge.token='';bridge.connected=false;bridge.providers={};$('#aiForm').reset();$('#aiForm [name="bridgeUrl"]').value=defaultBridgeUrl;renderProviders();closePanels();render();toast('AI 브리지 연결을 해제했어.')};
+$('#newProjectButton').onclick=()=>showPanel($('#projectPanel')); $('#aiSettingsButton').onclick=()=>{showPanel($('#aiPanel'));$('#aiForm [name="bridgeUrl"]').value=bridge.url;$('#aiForm [name="bridgeToken"]').value=bridge.token;$('#aiForm [name="main"][value="'+bridge.main+'"]').checked=true;$$('#aiForm [name="auxiliary"]').forEach(x=>x.checked=bridge.auxiliaries.includes(x.value));renderProviders()}; $('#closeDrawer').onclick=closePanels; $('#drawerScrim').onclick=closePanels; $$('.close-panel').forEach(b=>b.onclick=closePanels);
 $('#projectSelect').onchange=e=>{state.currentId=e.target.value;save();render()};
 $('#nextActionButton').onclick=()=>{const t=nextTask(project());if(t)openTask(t.id)};
 $('#demoResetButton').onclick=()=>{const index=state.projects.findIndex(p=>p.id==='PROJECT-DEMO');const demo=demoProject();if(index>=0)state.projects[index]=demo;else state.projects.unshift(demo);state.currentId=demo.id;save();render();toast('데모 프로젝트를 복원했어.')};
