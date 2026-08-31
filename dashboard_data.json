@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-08-31 11:40 KST",
+  "updated_at": "2026-08-31 11:50 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 94594588,
+    "total": 94583118,
     "cash": 19694788,
-    "invested": 74899800,
-    "day_pnl": -107700,
-    "cum_pnl": -5405412,
-    "cum_return_pct": -5.4054,
+    "invested": 74888330,
+    "day_pnl": -11470,
+    "cum_pnl": -5416882,
+    "cum_return_pct": -5.4169,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 6.7174,
+    "mdd_pct": 6.7287,
     "mdd_confidence": "high",
     "win_rate": 0.4782608695652174,
     "profit_factor": 0.23342465866468026,
@@ -40,9 +40,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -5405412.0,
+          "account_cum_pnl": -5416882.0,
           "ledger_realized_pnl": -2896997.22,
-          "unrealized_pnl": -2498716.0,
+          "unrealized_pnl": -2510186.0,
           "gap_krw": -9698.78,
           "tolerance_krw": 1000.0
         }
@@ -77,20 +77,20 @@
       "name": "KODEX 200",
       "qty": 223,
       "avg_price": 107530,
-      "price": 104640,
-      "value": 23334720,
-      "pnl": -644470,
-      "pnl_pct": -2.69
+      "price": 104770,
+      "value": 23363710,
+      "pnl": -615480,
+      "pnl_pct": -2.57
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 121,
       "avg_price": 186779,
-      "price": 177960,
-      "value": 21533160,
-      "pnl": -1067110,
-      "pnl_pct": -4.72
+      "price": 178000,
+      "value": 21538000,
+      "pnl": -1062270,
+      "pnl_pct": -4.7
     },
     {
       "symbol": "138230",
@@ -107,10 +107,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 27320,
-      "value": 20626600,
-      "pnl": -561139,
-      "pnl_pct": -2.65
+      "price": 27260,
+      "value": 20581300,
+      "pnl": -606439,
+      "pnl_pct": -2.86
     }
   ],
   "trades": [
@@ -907,7 +907,7 @@
     },
     {
       "date": "2026-08-31",
-      "value": 94594588
+      "value": 94583118
     }
   ],
   "experiment": {
