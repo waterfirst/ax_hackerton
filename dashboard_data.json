@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01 11:40 KST",
+  "updated_at": "2026-09-01 11:50 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
@@ -16,27 +16,42 @@
   "metrics": {
     "mdd_pct": 6.118,
     "mdd_confidence": "high",
-    "win_rate": 0.36666666666666664,
-    "profit_factor": 0.1619304780813148,
-    "trades": 75,
+    "win_rate": 0.4,
+    "profit_factor": 0.14500619290990072,
+    "trades": 20,
     "trading_days": 7,
-    "closed_trades": 30,
-    "realized_pnl": -4565532.25,
-    "expectancy_per_trade": -152184.41,
-    "average_win_loss_ratio": 0.2797,
-    "gross_profit": 882144.98,
-    "gross_loss": 5447677.22,
-    "open_qty": {
-      "138230": 515
-    },
+    "closed_trades": 15,
+    "realized_pnl": -3277800.33,
+    "expectancy_per_trade": -218520.02,
+    "average_win_loss_ratio": 0.2175,
+    "gross_profit": 555912.04,
+    "gross_loss": 3833712.37,
+    "open_qty": {},
     "unmatched_sell_qty": 0,
-    "estimated_price_rows": 0,
-    "verified_fill_rows": 75,
+    "estimated_price_rows": 18,
+    "verified_fill_rows": 2,
     "reconciliation": {
-      "ok": true,
-      "mismatches": [],
-      "pnl_gap_krw": 795.25,
-      "note": ""
+      "ok": false,
+      "mismatches": [
+        {
+          "symbol": "138230",
+          "log_implied_qty": 0,
+          "account_qty": 515
+        },
+        {
+          "type": "pnl_gap",
+          "account_cum_pnl": -4797507.0,
+          "ledger_realized_pnl": -3277800.33,
+          "unrealized_pnl": -232770.0,
+          "gap_krw": -1286936.67,
+          "tolerance_krw": 1000.0
+        },
+        {
+          "type": "canonical_ledger_unavailable"
+        }
+      ],
+      "pnl_gap_krw": -1286936.67,
+      "note": "KIS 체결원장이 완전조회되지 않아 손익을 확정할 수 없다."
     }
   },
   "sleeves": [
