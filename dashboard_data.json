@@ -1,64 +1,58 @@
 {
-  "updated_at": "2026-09-01 15:00 KST",
+  "updated_at": "2026-09-01 15:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95201468,
-    "cash": 88338488,
-    "invested": 6862980,
-    "day_pnl": 0,
-    "cum_pnl": -4798532,
-    "cum_return_pct": -4.7985,
+    "total": 95201113,
+    "cash": 90486823,
+    "invested": 4714290,
+    "day_pnl": -355,
+    "cum_pnl": -4798887,
+    "cum_return_pct": -4.7989,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 6.119,
+    "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.4,
-    "profit_factor": 0.14500619290990072,
-    "trades": 20,
+    "win_rate": 0.36666666666666664,
+    "profit_factor": 0.1590013764920149,
+    "trades": 75,
     "trading_days": 7,
-    "closed_trades": 15,
-    "realized_pnl": -3277800.33,
-    "expectancy_per_trade": -218520.02,
-    "average_win_loss_ratio": 0.2175,
-    "gross_profit": 555912.04,
-    "gross_loss": 3833712.37,
-    "open_qty": {},
+    "closed_trades": 30,
+    "realized_pnl": -4665888.61,
+    "expectancy_per_trade": -155529.62,
+    "average_win_loss_ratio": 0.2746,
+    "gross_profit": 882144.98,
+    "gross_loss": 5548033.59,
+    "open_qty": {
+      "138230": 294
+    },
     "unmatched_sell_qty": 0,
-    "estimated_price_rows": 18,
-    "verified_fill_rows": 2,
+    "estimated_price_rows": 0,
+    "verified_fill_rows": 75,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
-          "symbol": "138230",
-          "log_implied_qty": 0,
-          "account_qty": 428
-        },
-        {
           "type": "pnl_gap",
-          "account_cum_pnl": -4798532.0,
-          "ledger_realized_pnl": -3277800.33,
-          "unrealized_pnl": -195587.0,
-          "gap_krw": -1325144.67,
+          "account_cum_pnl": -4798887.0,
+          "ledger_realized_pnl": -4665888.61,
+          "unrealized_pnl": -134352.0,
+          "gap_krw": 1353.61,
           "tolerance_krw": 1000.0
-        },
-        {
-          "type": "canonical_ledger_unavailable"
         }
       ],
-      "pnl_gap_krw": -1325144.67,
-      "note": "KIS 체결원장이 완전조회되지 않아 손익을 확정할 수 없다."
+      "pnl_gap_krw": 1353.61,
+      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
   "sleeves": [
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 7.21,
+      "used_pct": 4.95,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -70,7 +64,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 92.79,
+      "used_pct": 95.05,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -78,11 +72,11 @@
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
-      "qty": 428,
+      "qty": 294,
       "avg_price": 16491,
       "price": 16035,
-      "value": 6862980,
-      "pnl": -195587,
+      "value": 4714290,
+      "pnl": -134352,
       "pnl_pct": -2.77
     }
   ],
@@ -884,7 +878,7 @@
     },
     {
       "date": "2026-09-01",
-      "value": 95201468
+      "value": 95201113
     }
   ],
   "experiment": {
@@ -924,10 +918,10 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 88338488.0
+      "cash": 90486823.0
     },
     "contribution_pct": {
-      "long": -0.1,
+      "long": -0.09,
       "short": 0.01,
       "cash": 99.9
     }
