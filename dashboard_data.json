@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-01 09:10 KST",
+  "updated_at": "2026-09-01 09:20 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95203113,
+    "total": 95175123,
     "cash": 65055233,
-    "invested": 30147880,
-    "day_pnl": -263690,
-    "cum_pnl": -4796887,
-    "cum_return_pct": -4.7969,
+    "invested": 30119890,
+    "day_pnl": -27990,
+    "cum_pnl": -4824877,
+    "cum_return_pct": -4.8249,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 6.1173,
+    "mdd_pct": 6.1449,
     "mdd_confidence": "high",
     "win_rate": 0.44,
     "profit_factor": 0.17624396794169042,
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -4796887.0,
+          "account_cum_pnl": -4824877.0,
           "ledger_realized_pnl": -4123104.21,
-          "unrealized_pnl": -671176.0,
+          "unrealized_pnl": -699166.0,
           "gap_krw": -2606.79,
           "tolerance_krw": 1000.0
         }
@@ -53,7 +53,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 31.67,
+      "used_pct": 31.65,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -65,7 +65,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 68.33,
+      "used_pct": 68.35,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -75,20 +75,20 @@
       "name": "KIWOOM 미국달러선물",
       "qty": 584,
       "avg_price": 16491,
-      "price": 16045,
-      "value": 9370280,
-      "pnl": -261037,
-      "pnl_pct": -2.71
+      "price": 16010,
+      "value": 9349840,
+      "pnl": -281477,
+      "pnl_pct": -2.92
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 27520,
-      "value": 20777600,
-      "pnl": -410139,
-      "pnl_pct": -1.94
+      "price": 27510,
+      "value": 20770050,
+      "pnl": -417689,
+      "pnl_pct": -1.97
     }
   ],
   "trades": [
@@ -889,7 +889,7 @@
     },
     {
       "date": "2026-09-01",
-      "value": 95203113
+      "value": 95175123
     }
   ],
   "experiment": {
