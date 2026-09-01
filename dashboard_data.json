@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-09-01 10:20 KST",
+  "updated_at": "2026-09-01 10:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95195563,
+    "total": 95188013,
     "cash": 65055233,
-    "invested": 30140330,
-    "day_pnl": 0,
-    "cum_pnl": -4804437,
-    "cum_return_pct": -4.8044,
+    "invested": 30132780,
+    "day_pnl": -7550,
+    "cum_pnl": -4811987,
+    "cum_return_pct": -4.812,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 6.1248,
+    "mdd_pct": 6.1322,
     "mdd_confidence": "high",
     "win_rate": 0.44,
     "profit_factor": 0.17624396794169042,
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -4804437.0,
+          "account_cum_pnl": -4811987.0,
           "ledger_realized_pnl": -4123104.21,
-          "unrealized_pnl": -678726.0,
+          "unrealized_pnl": -686276.0,
           "gap_krw": -2606.79,
           "tolerance_krw": 1000.0
         }
@@ -85,10 +85,10 @@
       "name": "ACE KRX금현물",
       "qty": 755,
       "avg_price": 28063,
-      "price": 27510,
-      "value": 20770050,
-      "pnl": -417689,
-      "pnl_pct": -1.97
+      "price": 27500,
+      "value": 20762500,
+      "pnl": -425239,
+      "pnl_pct": -2.01
     }
   ],
   "trades": [
@@ -889,7 +889,7 @@
     },
     {
       "date": "2026-09-01",
-      "value": 95195563
+      "value": 95188013
     }
   ],
   "experiment": {
