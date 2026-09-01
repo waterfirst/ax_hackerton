@@ -1,33 +1,33 @@
 {
-  "updated_at": "2026-09-01 12:50 KST",
+  "updated_at": "2026-09-01 13:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95212438,
-    "cash": 87182438,
-    "invested": 8030000,
-    "day_pnl": 0,
-    "cum_pnl": -4787562,
+    "total": 95212408,
+    "cash": 87343008,
+    "invested": 7869400,
+    "day_pnl": -30,
+    "cum_pnl": -4787592,
     "cum_return_pct": -4.7876,
     "vs_kospi_pct": null
   },
   "metrics": {
-    "mdd_pct": 6.1081,
+    "mdd_pct": 6.1082,
     "mdd_confidence": "high",
     "win_rate": 0.36666666666666664,
-    "profit_factor": 0.16172629216038656,
+    "profit_factor": 0.1615968666699503,
     "trades": 75,
     "trading_days": 7,
     "closed_trades": 30,
-    "realized_pnl": -4572410.16,
-    "expectancy_per_trade": -152413.67,
-    "average_win_loss_ratio": 0.2793,
+    "realized_pnl": -4576778.8,
+    "expectancy_per_trade": -152559.29,
+    "average_win_loss_ratio": 0.2791,
     "gross_profit": 882144.98,
-    "gross_loss": 5454555.14,
+    "gross_loss": 5458923.77,
     "open_qty": {
-      "138230": 500
+      "138230": 490
     },
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 0,
@@ -35,7 +35,7 @@
     "reconciliation": {
       "ok": true,
       "mismatches": [],
-      "pnl_gap_krw": 838.16,
+      "pnl_gap_krw": 856.8,
       "note": ""
     }
   },
@@ -43,7 +43,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 8.43,
+      "used_pct": 8.27,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -55,7 +55,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 91.57,
+      "used_pct": 91.73,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -63,11 +63,11 @@
     {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
-      "qty": 500,
+      "qty": 490,
       "avg_price": 16491,
       "price": 16060,
-      "value": 8030000,
-      "pnl": -215990,
+      "value": 7869400,
+      "pnl": -211670,
       "pnl_pct": -2.62
     }
   ],
@@ -869,7 +869,7 @@
     },
     {
       "date": "2026-09-01",
-      "value": 95212438
+      "value": 95212408
     }
   ],
   "experiment": {
@@ -909,7 +909,7 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 87182438.0
+      "cash": 87343008.0
     },
     "contribution_pct": {
       "long": -0.1,
