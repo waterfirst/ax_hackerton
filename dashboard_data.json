@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02 15:20 KST",
+  "updated_at": "2026-09-02 15:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
@@ -8,7 +8,7 @@
     "total": 95414653,
     "cash": 43050243,
     "invested": 52364410,
-    "day_pnl": 68810,
+    "day_pnl": 0,
     "cum_pnl": -4585347,
     "cum_return_pct": -4.5853,
     "vs_kospi_pct": null
