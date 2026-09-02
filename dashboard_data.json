@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02 14:30 KST",
+  "updated_at": "2026-09-02 14:31 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
@@ -744,32 +744,6 @@
       "reason_text": "C1_claude_discretionary_forced_exit",
       "price_source": "limit_estimate",
       "fill_status": "estimated"
-    },
-    {
-      "date": "2026-09-02",
-      "time": "14:26:54",
-      "ts": "2026-09-02T14:26:54",
-      "symbol": "411060",
-      "qty": "1966",
-      "price": 26528,
-      "side": "buy",
-      "label": "진입",
-      "reason_text": "[exit_to_cash/d_sell=True] defensive_rotation_gold55_usd45(시장 -3.46% 급락, 예보 weak_drift conf0.51) · D_sell_on_foreign_and_institution_net_selling(외국인+기관 순매도) · backfill 12:33 defensive_gold 진입·체결 / sizing 위험2.5% / 약5234만원",
-      "confidence": "entry",
-      "price_source": "judgment_log"
-    },
-    {
-      "date": "2026-09-02",
-      "time": "14:26:54",
-      "ts": "2026-09-02T14:26:54",
-      "symbol": "138230",
-      "qty": "0",
-      "price": 16078,
-      "side": "buy",
-      "label": "실패",
-      "reason_text": "[exit_to_cash/d_sell=True] defensive_rotation_usd45 · order_failed:40030000(호가단위 오류) · backfill 달러 방어 진입 실패",
-      "confidence": "failed",
-      "price_source": "judgment_log"
     }
   ],
   "plan": {
