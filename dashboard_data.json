@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-02 14:20 KST",
+  "updated_at": "2026-09-02 14:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 95296693,
+    "total": 95375333,
     "cash": 43050243,
-    "invested": 52246450,
-    "day_pnl": 39320,
-    "cum_pnl": -4703307,
-    "cum_return_pct": -4.7033,
+    "invested": 52325090,
+    "day_pnl": 78640,
+    "cum_pnl": -4624667,
+    "cum_return_pct": -4.6247,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -37,9 +37,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -4703307.0,
+          "account_cum_pnl": -4624667.0,
           "ledger_realized_pnl": -4788447.5,
-          "unrealized_pnl": 90750.0,
+          "unrealized_pnl": 169390.0,
           "gap_krw": -5609.5,
           "tolerance_krw": 1000.0
         }
@@ -52,7 +52,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 54.83,
+      "used_pct": 54.86,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -64,7 +64,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 45.17,
+      "used_pct": 45.14,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -74,10 +74,10 @@
       "name": "ACE KRX금현물",
       "qty": 1966,
       "avg_price": 26528,
-      "price": 26575,
-      "value": 52246450,
-      "pnl": 90750,
-      "pnl_pct": 0.17
+      "price": 26615,
+      "value": 52325090,
+      "pnl": 169390,
+      "pnl_pct": 0.32
     }
   ],
   "trades": [
@@ -744,6 +744,32 @@
       "reason_text": "C1_claude_discretionary_forced_exit",
       "price_source": "limit_estimate",
       "fill_status": "estimated"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "14:26:54",
+      "ts": "2026-09-02T14:26:54",
+      "symbol": "411060",
+      "qty": "1966",
+      "price": 26528,
+      "side": "buy",
+      "label": "진입",
+      "reason_text": "[exit_to_cash/d_sell=True] defensive_rotation_gold55_usd45(시장 -3.46% 급락, 예보 weak_drift conf0.51) · D_sell_on_foreign_and_institution_net_selling(외국인+기관 순매도) · backfill 12:33 defensive_gold 진입·체결 / sizing 위험2.5% / 약5234만원",
+      "confidence": "entry",
+      "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-09-02",
+      "time": "14:26:54",
+      "ts": "2026-09-02T14:26:54",
+      "symbol": "138230",
+      "qty": "0",
+      "price": 16078,
+      "side": "buy",
+      "label": "실패",
+      "reason_text": "[exit_to_cash/d_sell=True] defensive_rotation_usd45 · order_failed:40030000(호가단위 오류) · backfill 달러 방어 진입 실패",
+      "confidence": "failed",
+      "price_source": "judgment_log"
     }
   ],
   "plan": {
@@ -882,7 +908,7 @@
     },
     {
       "date": "2026-09-02",
-      "value": 95296693
+      "value": 95375333
     }
   ],
   "experiment": {
