@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02 15:30 KST",
+  "updated_at": "2026-09-02 16:05 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
@@ -11,7 +11,7 @@
     "day_pnl": 0,
     "cum_pnl": -4585347,
     "cum_return_pct": -4.5853,
-    "vs_kospi_pct": null
+    "vs_kospi_pct": -0.8044
   },
   "metrics": {
     "mdd_pct": 6.1193,
