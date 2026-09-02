@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-02 09:20 KST",
-  "status": "T3 report live-paper",
+  "updated_at": "2026-09-02 09:30 KST",
+  "status": "T3 report live-paper · snapshot-fallback",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
@@ -8,7 +8,7 @@
     "total": 95213653,
     "cash": 95213653,
     "invested": 0,
-    "day_pnl": 12540,
+    "day_pnl": 0,
     "cum_pnl": -4786347,
     "cum_return_pct": -4.7863,
     "vs_kospi_pct": null
@@ -739,7 +739,7 @@
   },
   "report": {
     "date": "2026-09-02",
-    "text": "mode=report · trades=20 · signal=records/2026-09-02.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "text": "mode=report · trades=20 · signal=records/2026-09-02.json · etf_ref=fsc_auto_collector · selfcheck=ok · snapshot_fallback"
   },
   "etf_overlay": {
     "score": -193.1,
