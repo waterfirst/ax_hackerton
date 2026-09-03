@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-03 12:10 KST",
+  "updated_at": "2026-09-03 12:20 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96387823,
+    "total": 96476293,
     "cash": 43050243,
-    "invested": 53337580,
-    "day_pnl": 39320,
-    "cum_pnl": -3612177,
-    "cum_return_pct": -3.6122,
+    "invested": 53426050,
+    "day_pnl": 88470,
+    "cum_pnl": -3523707,
+    "cum_return_pct": -3.5237,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -37,9 +37,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3612177.0,
+          "account_cum_pnl": -3523707.0,
           "ledger_realized_pnl": -4788447.5,
-          "unrealized_pnl": 1181880.0,
+          "unrealized_pnl": 1270350.0,
           "gap_krw": -5609.5,
           "tolerance_krw": 1000.0
         }
@@ -52,7 +52,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 55.34,
+      "used_pct": 55.38,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -64,7 +64,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 44.66,
+      "used_pct": 44.62,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -74,10 +74,10 @@
       "name": "ACE KRX금현물",
       "qty": 1966,
       "avg_price": 26528,
-      "price": 27130,
-      "value": 53337580,
-      "pnl": 1181880,
-      "pnl_pct": 2.27
+      "price": 27175,
+      "value": 53426050,
+      "pnl": 1270350,
+      "pnl_pct": 2.44
     }
   ],
   "trades": [
@@ -914,7 +914,7 @@
     },
     {
       "date": "2026-09-03",
-      "value": 96387823
+      "value": 96476293
     }
   ],
   "experiment": {
