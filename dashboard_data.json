@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-02 17:55 KST",
+  "updated_at": "2026-09-03 09:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
@@ -11,7 +11,7 @@
     "day_pnl": 0,
     "cum_pnl": -4585347,
     "cum_return_pct": -4.5853,
-    "vs_kospi_pct": -0.8044
+    "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
@@ -773,12 +773,12 @@
     }
   ],
   "plan": {
-    "date": "2026-09-02",
-    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-09-02.json · etf_ref=fsc_auto_collector"
+    "date": "2026-09-03",
+    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-03.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-09-02",
-    "text": "mode=report · trades=20 · signal=records/2026-09-02.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-09-03",
+    "text": "mode=report · trades=20 · signal=records/2026-09-03.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -790,8 +790,10 @@
   "selfcheck": {
     "ok": true,
     "badge": "OK",
-    "action": "allow",
-    "findings": []
+    "action": "allow_with_warnings",
+    "findings": [
+      "trix_bearish_conflict"
+    ]
   },
   "equity_curve": [
     {
@@ -908,6 +910,10 @@
     },
     {
       "date": "2026-09-02",
+      "value": 95414653
+    },
+    {
+      "date": "2026-09-03",
       "value": 95414653
     }
   ],
