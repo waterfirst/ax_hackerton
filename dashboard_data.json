@@ -1,57 +1,51 @@
 {
-  "updated_at": "2026-09-03 10:20 KST",
+  "updated_at": "2026-09-03 10:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96083093,
+    "total": 96073263,
     "cash": 43050243,
-    "invested": 53032850,
-    "day_pnl": -49150,
-    "cum_pnl": -3916907,
-    "cum_return_pct": -3.9169,
+    "invested": 53023020,
+    "day_pnl": -9830,
+    "cum_pnl": -3926737,
+    "cum_return_pct": -3.9267,
     "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.4,
-    "profit_factor": 0.14500619290990072,
-    "trades": 20,
+    "win_rate": 0.3548387096774194,
+    "profit_factor": 0.15556486932431282,
+    "trades": 77,
     "trading_days": 7,
-    "closed_trades": 15,
-    "realized_pnl": -3277800.33,
-    "expectancy_per_trade": -218520.02,
-    "average_win_loss_ratio": 0.2175,
-    "gross_profit": 555912.04,
-    "gross_loss": 3833712.37,
-    "open_qty": {},
+    "closed_trades": 31,
+    "realized_pnl": -4788447.5,
+    "expectancy_per_trade": -154466.05,
+    "average_win_loss_ratio": 0.2828,
+    "gross_profit": 882144.98,
+    "gross_loss": 5670592.48,
+    "open_qty": {
+      "411060": 1966
+    },
     "unmatched_sell_qty": 0,
-    "estimated_price_rows": 18,
-    "verified_fill_rows": 2,
+    "estimated_price_rows": 0,
+    "verified_fill_rows": 77,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
-          "symbol": "411060",
-          "log_implied_qty": 0,
-          "account_qty": 1966
-        },
-        {
           "type": "pnl_gap",
-          "account_cum_pnl": -3916907.0,
-          "ledger_realized_pnl": -3277800.33,
-          "unrealized_pnl": 877150.0,
-          "gap_krw": -1516256.67,
+          "account_cum_pnl": -3926737.0,
+          "ledger_realized_pnl": -4788447.5,
+          "unrealized_pnl": 867320.0,
+          "gap_krw": -5609.5,
           "tolerance_krw": 1000.0
-        },
-        {
-          "type": "canonical_ledger_unavailable"
         }
       ],
-      "pnl_gap_krw": -1516256.67,
-      "note": "KIS 체결원장이 완전조회되지 않아 손익을 확정할 수 없다."
+      "pnl_gap_krw": -5609.5,
+      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
   "sleeves": [
@@ -80,10 +74,10 @@
       "name": "ACE KRX금현물",
       "qty": 1966,
       "avg_price": 26528,
-      "price": 26975,
-      "value": 53032850,
-      "pnl": 877150,
-      "pnl_pct": 1.68
+      "price": 26970,
+      "value": 53023020,
+      "pnl": 867320,
+      "pnl_pct": 1.66
     }
   ],
   "trades": [
@@ -920,7 +914,7 @@
     },
     {
       "date": "2026-09-03",
-      "value": 96083093
+      "value": 96073263
     }
   ],
   "experiment": {
