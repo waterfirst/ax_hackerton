@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-03 13:50 KST",
+  "updated_at": "2026-09-03 14:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96506328,
+    "total": 96453978,
     "cash": 363198,
-    "invested": 96143130,
-    "day_pnl": 23720,
-    "cum_pnl": -3493672,
-    "cum_return_pct": -3.4937,
+    "invested": 96090780,
+    "day_pnl": -52350,
+    "cum_pnl": -3546022,
+    "cum_return_pct": -3.546,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3493672.0,
+          "account_cum_pnl": -3546022.0,
           "ledger_realized_pnl": -4788447.5,
-          "unrealized_pnl": 1306695.0,
+          "unrealized_pnl": 1254345.0,
           "gap_krw": -11919.5,
           "tolerance_krw": 1000.0
         }
@@ -75,20 +75,20 @@
       "name": "KODEX 200",
       "qty": 406,
       "avg_price": 105124,
-      "price": 105045,
-      "value": 42648270,
-      "pnl": -32465,
-      "pnl_pct": -0.08
+      "price": 104795,
+      "value": 42546770,
+      "pnl": -133965,
+      "pnl_pct": -0.31
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 1966,
       "avg_price": 26528,
-      "price": 27210,
-      "value": 53494860,
-      "pnl": 1339160,
-      "pnl_pct": 2.57
+      "price": 27235,
+      "value": 53544010,
+      "pnl": 1388310,
+      "pnl_pct": 2.66
     }
   ],
   "trades": [
@@ -938,7 +938,7 @@
     },
     {
       "date": "2026-09-03",
-      "value": 96506328
+      "value": 96453978
     }
   ],
   "experiment": {
