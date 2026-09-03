@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-03 12:30 KST",
+  "updated_at": "2026-09-03 12:40 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96515613,
-    "cash": 43050243,
-    "invested": 53465370,
-    "day_pnl": 39320,
-    "cum_pnl": -3484387,
-    "cum_return_pct": -3.4844,
+    "total": 96539128,
+    "cash": 363198,
+    "invested": 96175930,
+    "day_pnl": 23515,
+    "cum_pnl": -3460872,
+    "cum_return_pct": -3.4609,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -18,7 +18,7 @@
     "mdd_confidence": "high",
     "win_rate": 0.3548387096774194,
     "profit_factor": 0.15556486932431282,
-    "trades": 77,
+    "trades": 78,
     "trading_days": 7,
     "closed_trades": 31,
     "realized_pnl": -4788447.5,
@@ -27,24 +27,25 @@
     "gross_profit": 882144.98,
     "gross_loss": 5670592.48,
     "open_qty": {
+      "069500": 406,
       "411060": 1966
     },
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 0,
-    "verified_fill_rows": 77,
+    "verified_fill_rows": 78,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3484387.0,
+          "account_cum_pnl": -3460872.0,
           "ledger_realized_pnl": -4788447.5,
-          "unrealized_pnl": 1309670.0,
-          "gap_krw": -5609.5,
+          "unrealized_pnl": 1339495.0,
+          "gap_krw": -11919.5,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -5609.5,
+      "pnl_gap_krw": -11919.5,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -52,7 +53,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 55.4,
+      "used_pct": 99.62,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -64,20 +65,30 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 44.6,
+      "used_pct": 0.38,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
   "positions": [
     {
+      "symbol": "069500",
+      "name": "KODEX 200",
+      "qty": 406,
+      "avg_price": 105124,
+      "price": 105150,
+      "value": 42690900,
+      "pnl": 10165,
+      "pnl_pct": 0.02
+    },
+    {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 1966,
       "avg_price": 26528,
-      "price": 27195,
-      "value": 53465370,
-      "pnl": 1309670,
-      "pnl_pct": 2.51
+      "price": 27205,
+      "value": 53485030,
+      "pnl": 1329330,
+      "pnl_pct": 2.55
     }
   ],
   "trades": [
@@ -770,6 +781,19 @@
       "reason_text": "[exit_to_cash/d_sell=True] defensive_rotation_usd45 · order_failed:40030000(호가단위 오류) · backfill 달러 방어 진입 실패",
       "confidence": "failed",
       "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-09-03",
+      "time": "12:35:47",
+      "ts": "2026-09-03T12:35:47",
+      "symbol": "069500",
+      "qty": "406",
+      "price": 105445,
+      "side": "buy",
+      "label": "진입",
+      "reason_text": "[long/d_sell=False] D_sell_off_institution_buying · D_sell_off_institution_net_buying_risk_on · sleeve=risk_on_kospi weight=0.55",
+      "confidence": "entry",
+      "price_source": "judgment_log"
     }
   ],
   "plan": {
@@ -914,7 +938,7 @@
     },
     {
       "date": "2026-09-03",
-      "value": 96515613
+      "value": 96539128
     }
   ],
   "experiment": {
@@ -954,12 +978,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 43050243.0
+      "cash": 363198.0
     },
     "contribution_pct": {
-      "long": -0.2,
-      "short": 0.01,
-      "cash": 99.79
+      "long": -18.94,
+      "short": 1.07,
+      "cash": 80.0
     }
   }
 }
