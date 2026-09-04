@@ -1,56 +1,51 @@
 {
-  "updated_at": "2026-09-04 13:20 KST",
+  "updated_at": "2026-09-04 13:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97038308,
-    "cash": 363198,
-    "invested": 96675110,
-    "day_pnl": 14210,
-    "cum_pnl": -2961692,
-    "cum_return_pct": -2.9617,
+    "total": 97151851,
+    "cash": 448111,
+    "invested": 96703740,
+    "day_pnl": 113543,
+    "cum_pnl": -2848149,
+    "cum_return_pct": -2.8481,
     "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
     "win_rate": 0.375,
-    "profit_factor": 0.15570649110239324,
-    "trades": 79,
+    "profit_factor": 0.4334287021029692,
+    "trades": 81,
     "trading_days": 7,
     "closed_trades": 32,
-    "realized_pnl": -4787644.42,
-    "expectancy_per_trade": -149613.89,
-    "average_win_loss_ratio": 0.2595,
-    "gross_profit": 882948.06,
+    "realized_pnl": -3212794.94,
+    "expectancy_per_trade": -100399.84,
+    "average_win_loss_ratio": 0.7224,
+    "gross_profit": 2457797.54,
     "gross_loss": 5670592.48,
     "open_qty": {
-      "069500": 406,
-      "411060": 1965
+      "069500": 504,
+      "133690": 244
     },
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 0,
-    "verified_fill_rows": 79,
+    "verified_fill_rows": 81,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
-          "symbol": "411060",
-          "log_implied_qty": 1965,
-          "account_qty": 1966
-        },
-        {
           "type": "pnl_gap",
-          "account_cum_pnl": -2961692.0,
-          "ledger_realized_pnl": -4787644.42,
-          "unrealized_pnl": 1838675.0,
-          "gap_krw": -12722.58,
+          "account_cum_pnl": -2848149.0,
+          "ledger_realized_pnl": -3212794.94,
+          "unrealized_pnl": 376560.0,
+          "gap_krw": -11914.06,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -12722.58,
+      "pnl_gap_krw": -11914.06,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -58,7 +53,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 99.63,
+      "used_pct": 99.54,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -70,7 +65,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 0.37,
+      "used_pct": 0.46,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -78,22 +73,22 @@
     {
       "symbol": "069500",
       "name": "KODEX 200",
-      "qty": 406,
-      "avg_price": 105124,
-      "price": 105750,
-      "value": 42934500,
-      "pnl": 253765,
-      "pnl_pct": 0.59
+      "qty": 504,
+      "avg_price": 105258,
+      "price": 106015,
+      "value": 53431560,
+      "pnl": 381375,
+      "pnl_pct": 0.72
     },
     {
-      "symbol": "411060",
-      "name": "ACE KRX금현물",
-      "qty": 1966,
-      "avg_price": 26528,
-      "price": 27335,
-      "value": 53740610,
-      "pnl": 1584910,
-      "pnl_pct": 3.04
+      "symbol": "133690",
+      "name": "TIGER 미국나스닥100",
+      "qty": 244,
+      "avg_price": 177364,
+      "price": 177345,
+      "value": 43272180,
+      "pnl": -4815,
+      "pnl_pct": -0.01
     }
   ],
   "trades": [
@@ -812,6 +807,32 @@
       "reason_text": "[long/d_sell=False] 069500+133690 · not_in_target_basket · regime flip -> free cash for risk_on_kospi/risk_on_nasdaq",
       "confidence": "rotate",
       "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-09-04",
+      "time": "13:25:02",
+      "ts": "2026-09-04T13:25:02",
+      "symbol": "069500",
+      "qty": "98",
+      "price": 106155,
+      "side": "buy",
+      "label": "진입",
+      "reason_text": "[long/d_sell=False] D_sell_off_institution_buying · D_sell_off_institution_net_buying_risk_on · sleeve=risk_on_kospi weight=0.55",
+      "confidence": "entry",
+      "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-09-04",
+      "time": "13:25:02",
+      "ts": "2026-09-04T13:25:02",
+      "symbol": "133690",
+      "qty": "244",
+      "price": 177885,
+      "side": "buy",
+      "label": "진입",
+      "reason_text": "[long/d_sell=False] D_sell_off_institution_buying · D_sell_off_institution_net_buying_risk_on · sleeve=risk_on_nasdaq weight=0.45",
+      "confidence": "entry",
+      "price_source": "judgment_log"
     }
   ],
   "plan": {
@@ -960,7 +981,7 @@
     },
     {
       "date": "2026-09-04",
-      "value": 97038308
+      "value": 97151851
     }
   ],
   "experiment": {
@@ -1000,12 +1021,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 363198.0
+      "cash": 448111.0
     },
     "contribution_pct": {
-      "long": -18.94,
-      "short": 1.07,
-      "cash": 80.0
+      "long": -15.95,
+      "short": 0.9,
+      "cash": 83.15
     }
   }
 }
