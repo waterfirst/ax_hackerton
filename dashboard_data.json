@@ -1,51 +1,56 @@
 {
-  "updated_at": "2026-09-04 13:10 KST",
+  "updated_at": "2026-09-04 13:20 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 97024098,
+    "total": 97038308,
     "cash": 363198,
-    "invested": 96660900,
-    "day_pnl": 74360,
-    "cum_pnl": -2975902,
-    "cum_return_pct": -2.9759,
+    "invested": 96675110,
+    "day_pnl": 14210,
+    "cum_pnl": -2961692,
+    "cum_return_pct": -2.9617,
     "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.3548387096774194,
-    "profit_factor": 0.15556486932431282,
-    "trades": 78,
+    "win_rate": 0.375,
+    "profit_factor": 0.15570649110239324,
+    "trades": 79,
     "trading_days": 7,
-    "closed_trades": 31,
-    "realized_pnl": -4788447.5,
-    "expectancy_per_trade": -154466.05,
-    "average_win_loss_ratio": 0.2828,
-    "gross_profit": 882144.98,
+    "closed_trades": 32,
+    "realized_pnl": -4787644.42,
+    "expectancy_per_trade": -149613.89,
+    "average_win_loss_ratio": 0.2595,
+    "gross_profit": 882948.06,
     "gross_loss": 5670592.48,
     "open_qty": {
       "069500": 406,
-      "411060": 1966
+      "411060": 1965
     },
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 0,
-    "verified_fill_rows": 78,
+    "verified_fill_rows": 79,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
+          "symbol": "411060",
+          "log_implied_qty": 1965,
+          "account_qty": 1966
+        },
+        {
           "type": "pnl_gap",
-          "account_cum_pnl": -2975902.0,
-          "ledger_realized_pnl": -4788447.5,
-          "unrealized_pnl": 1824465.0,
-          "gap_krw": -11919.5,
+          "account_cum_pnl": -2961692.0,
+          "ledger_realized_pnl": -4787644.42,
+          "unrealized_pnl": 1838675.0,
+          "gap_krw": -12722.58,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -11919.5,
+      "pnl_gap_krw": -12722.58,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -75,10 +80,10 @@
       "name": "KODEX 200",
       "qty": 406,
       "avg_price": 105124,
-      "price": 105715,
-      "value": 42920290,
-      "pnl": 239555,
-      "pnl_pct": 0.56
+      "price": 105750,
+      "value": 42934500,
+      "pnl": 253765,
+      "pnl_pct": 0.59
     },
     {
       "symbol": "411060",
@@ -794,6 +799,19 @@
       "reason_text": "[long/d_sell=False] D_sell_off_institution_buying · D_sell_off_institution_net_buying_risk_on · sleeve=risk_on_kospi weight=0.55",
       "confidence": "entry",
       "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-09-04",
+      "time": "13:20:19",
+      "ts": "2026-09-04T13:20:19",
+      "symbol": "411060",
+      "qty": "1966",
+      "price": 27335,
+      "side": "sell",
+      "label": "rotate",
+      "reason_text": "[long/d_sell=False] 069500+133690 · not_in_target_basket · regime flip -> free cash for risk_on_kospi/risk_on_nasdaq",
+      "confidence": "rotate",
+      "price_source": "judgment_log"
     }
   ],
   "plan": {
@@ -942,7 +960,7 @@
     },
     {
       "date": "2026-09-04",
-      "value": 97024098
+      "value": 97038308
     }
   ],
   "experiment": {
