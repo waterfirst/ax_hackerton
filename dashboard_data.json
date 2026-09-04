@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03 16:05 KST",
+  "updated_at": "2026-09-04 09:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
@@ -8,10 +8,10 @@
     "total": 95815588,
     "cash": 363198,
     "invested": 95452390,
-    "day_pnl": -121800,
+    "day_pnl": 0,
     "cum_pnl": -4184412,
     "cum_return_pct": -4.1844,
-    "vs_kospi_pct": -0.6492
+    "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
@@ -797,12 +797,12 @@
     }
   ],
   "plan": {
-    "date": "2026-09-03",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-03.json · etf_ref=fsc_auto_collector"
+    "date": "2026-09-04",
+    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-04.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-09-03",
-    "text": "mode=report · trades=20 · signal=records/2026-09-03.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-09-04",
+    "text": "mode=report · trades=20 · signal=records/2026-09-04.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -938,6 +938,10 @@
     },
     {
       "date": "2026-09-03",
+      "value": 95815588
+    },
+    {
+      "date": "2026-09-04",
       "value": 95815588
     }
   ],
