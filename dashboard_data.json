@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-04 11:40 KST",
+  "updated_at": "2026-09-04 11:50 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96832428,
+    "total": 96869928,
     "cash": 363198,
-    "invested": 96469230,
-    "day_pnl": -177360,
-    "cum_pnl": -3167572,
-    "cum_return_pct": -3.1676,
+    "invested": 96506730,
+    "day_pnl": 37500,
+    "cum_pnl": -3130072,
+    "cum_return_pct": -3.1301,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -3167572.0,
+          "account_cum_pnl": -3130072.0,
           "ledger_realized_pnl": -4788447.5,
-          "unrealized_pnl": 1632795.0,
+          "unrealized_pnl": 1670295.0,
           "gap_krw": -11919.5,
           "tolerance_krw": 1000.0
         }
@@ -53,7 +53,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 99.62,
+      "used_pct": 99.63,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -65,7 +65,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 0.38,
+      "used_pct": 0.37,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -75,20 +75,20 @@
       "name": "KODEX 200",
       "qty": 406,
       "avg_price": 105124,
-      "price": 105025,
-      "value": 42640150,
-      "pnl": -40585,
-      "pnl_pct": -0.1
+      "price": 105190,
+      "value": 42707140,
+      "pnl": 26405,
+      "pnl_pct": 0.06
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 1966,
       "avg_price": 26528,
-      "price": 27380,
-      "value": 53829080,
-      "pnl": 1673380,
-      "pnl_pct": 3.21
+      "price": 27365,
+      "value": 53799590,
+      "pnl": 1643890,
+      "pnl_pct": 3.15
     }
   ],
   "trades": [
@@ -942,7 +942,7 @@
     },
     {
       "date": "2026-09-04",
-      "value": 96832428
+      "value": 96869928
     }
   ],
   "experiment": {
