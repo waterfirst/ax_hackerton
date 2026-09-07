@@ -1,52 +1,62 @@
 {
-  "updated_at": "2026-09-07 15:10 KST",
+  "updated_at": "2026-09-07 15:20 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 99291671,
+    "total": 99209471,
     "cash": 448111,
-    "invested": 98843560,
-    "day_pnl": 32760,
-    "cum_pnl": -708329,
-    "cum_return_pct": -0.7083,
+    "invested": 98761360,
+    "day_pnl": -82200,
+    "cum_pnl": -790529,
+    "cum_return_pct": -0.7905,
     "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.375,
-    "profit_factor": 0.4334287021029692,
-    "trades": 81,
+    "win_rate": 0.4,
+    "profit_factor": 0.14500619290990072,
+    "trades": 20,
     "trading_days": 7,
-    "closed_trades": 32,
-    "realized_pnl": -3212794.94,
-    "expectancy_per_trade": -100399.84,
-    "average_win_loss_ratio": 0.7224,
-    "gross_profit": 2457797.54,
-    "gross_loss": 5670592.48,
-    "open_qty": {
-      "069500": 504,
-      "133690": 244
-    },
+    "closed_trades": 15,
+    "realized_pnl": -3277800.33,
+    "expectancy_per_trade": -218520.02,
+    "average_win_loss_ratio": 0.2175,
+    "gross_profit": 555912.04,
+    "gross_loss": 3833712.37,
+    "open_qty": {},
     "unmatched_sell_qty": 0,
-    "estimated_price_rows": 0,
-    "verified_fill_rows": 81,
+    "estimated_price_rows": 18,
+    "verified_fill_rows": 2,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
+          "symbol": "069500",
+          "log_implied_qty": 0,
+          "account_qty": 504
+        },
+        {
+          "symbol": "133690",
+          "log_implied_qty": 0,
+          "account_qty": 244
+        },
+        {
           "type": "pnl_gap",
-          "account_cum_pnl": -708329.0,
-          "ledger_realized_pnl": -3212794.94,
-          "unrealized_pnl": 2516380.0,
-          "gap_krw": -11914.06,
+          "account_cum_pnl": -790529.0,
+          "ledger_realized_pnl": -3277800.33,
+          "unrealized_pnl": 2434180.0,
+          "gap_krw": 53091.33,
           "tolerance_krw": 1000.0
+        },
+        {
+          "type": "canonical_ledger_unavailable"
         }
       ],
-      "pnl_gap_krw": -11914.06,
-      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
+      "pnl_gap_krw": 53091.33,
+      "note": "KIS 체결원장이 완전조회되지 않아 손익을 확정할 수 없다."
     }
   },
   "sleeves": [
@@ -75,20 +85,20 @@
       "name": "KODEX 200",
       "qty": 504,
       "avg_price": 105258,
-      "price": 110815,
-      "value": 55850760,
-      "pnl": 2800575,
-      "pnl_pct": 5.28
+      "price": 110710,
+      "value": 55797840,
+      "pnl": 2747655,
+      "pnl_pct": 5.18
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 244,
       "avg_price": 177364,
-      "price": 176200,
-      "value": 42992800,
-      "pnl": -284195,
-      "pnl_pct": -0.66
+      "price": 176080,
+      "value": 42963520,
+      "pnl": -313475,
+      "pnl_pct": -0.72
     }
   ],
   "trades": [
@@ -985,7 +995,7 @@
     },
     {
       "date": "2026-09-07",
-      "value": 99291671
+      "value": 99209471
     }
   ],
   "experiment": {
