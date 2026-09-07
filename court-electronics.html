@@ -24,15 +24,34 @@
     @media print{body{background:#fff;color:#111}main{max-width:none}.gate,.tabs,.actions,.summary,.section-label~article.card{display:none}.featured,.decision,.guide,.model,.formula,.spec,.step,.prep,.form-example,.fact{background:#fff;border-color:#bbb;color:#111;box-shadow:none}.meta,.label,.score-note,.step span,.guide-intro,.form-line{color:#444}a{color:#111;text-decoration:none}}
     .category-tabs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(250px,1fr);gap:10px;margin:4px 0 20px;overflow-x:auto;scrollbar-width:thin;scroll-snap-type:x proximity}.category-tab{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:68px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--txt);font:inherit;text-align:left;cursor:pointer;scroll-snap-align:start}.category-tab strong{display:block;font-size:14px}.category-tab small{display:block;margin-top:4px;color:var(--mut);font-size:11px}.category-tab[aria-selected="true"]{border-color:rgba(76,195,138,.75);background:rgba(76,195,138,.09)}.category-score{flex:0 0 auto;padding:6px 9px;border-radius:999px;background:#10151c;color:#b8f3d4;font-size:11px;font-weight:800}body[data-auction-category="electronics"] [data-auction-category]:not([data-auction-category="electronics"]),body[data-auction-category="lost"] [data-auction-category]:not([data-auction-category="lost"]),body[data-auction-category="cash"] [data-auction-category]:not([data-auction-category="cash"]){display:none!important}.score-chip{display:inline-flex;align-items:center;margin-bottom:6px;padding:4px 7px;border-radius:999px;background:rgba(76,195,138,.12);color:#b8f3d4;font-size:10px;font-weight:800}.score-chip.pending{background:rgba(156,167,181,.1);color:var(--mut)}.score-chip.reauction{background:rgba(245,166,35,.13);color:#ffd38a}
     .interest-panel{margin:0 0 20px;padding:20px;border:1px solid rgba(121,184,255,.55);border-radius:16px;background:#151b23}.interest-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:start}.interest-kicker{display:inline-block;margin-bottom:7px;color:var(--info);font-size:11px;font-weight:800}.interest-panel h2{margin:0 0 7px;font-size:20px}.interest-status{padding:7px 10px;border-radius:999px;background:rgba(121,184,255,.13);color:#b8d9ff;font-size:11px;font-weight:800}.interest-facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:13px;color:#cdd6df;font-size:12px}.interest-facts b{color:var(--txt)}.round-strip{display:grid;grid-template-columns:repeat(8,minmax(72px,1fr));gap:6px;margin-top:16px}.round{padding:9px 7px;border:1px solid var(--line);border-radius:9px;background:#10151c;text-align:center}.round span,.round small{display:block;color:var(--mut);font-size:10px}.round b{display:block;margin:3px 0;font-size:12px}.round.focus{border-color:rgba(121,184,255,.65);background:rgba(121,184,255,.08)}.interest-call{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px;padding-top:14px;border-top:1px solid var(--line)}.interest-call p{margin:0;color:var(--mut);font-size:12px;line-height:1.6}.police-candidates{border-color:rgba(245,166,35,.42)}@media(max-width:860px){.round-strip{grid-template-columns:repeat(4,1fr)}}@media(max-width:620px){.category-tabs{grid-auto-columns:minmax(250px,82vw)}}@media(max-width:560px){.interest-head{grid-template-columns:1fr}.interest-status{justify-self:start}.round-strip{grid-template-columns:repeat(2,1fr)}.interest-call{align-items:flex-start;flex-direction:column}}
-  </style>
+      .closed-badge{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:.72rem;font-weight:600;background:#3a3f47;color:#cfd6de;vertical-align:middle}
+    
+</style>
 </head>
 <body class="locked" data-auction-category="electronics"><section class="gate" id="access-gate" aria-labelledby="gate-title"><div class="gate-card"><div class="gate-mark" aria-hidden="true">SB</div><h1 id="gate-title">경매 매물 분석실</h1><p>보고서를 보려면 접근 비밀번호를 입력하세요.</p><form class="gate-form" id="gate-form"><label for="gate-password" class="label" style="position:absolute;left:-9999px">비밀번호</label><input id="gate-password" type="password" inputmode="numeric" autocomplete="current-password" placeholder="비밀번호" required><button type="submit">입장</button></form><div class="gate-error" id="gate-error" role="alert" aria-live="polite"></div><p class="gate-note">정적 GitHub Pages의 간이 접근 잠금입니다. 민감정보 보호 수단으로 사용할 수 없습니다.</p></div></section><main>
+    
+    
+    
+
   <header class="head"><div class="eyebrow">법원 공고 × 온비드 API × 당근·번개 중고시세</div><h1>온비드 경매 매물 분석실</h1><div class="sub">시세·상태·위험을 검증해 매력도가 높은 매물만 먼저 추천합니다. 기준 미달 물건도 버리지 않고 회차와 가격 하락을 계속 추적해, 유찰 뒤 경제성이 생기는 시점에 다시 평가합니다.</div></header>
+    <section class="api-candidates" aria-labelledby="api-candidates-title" data-auction-category="electronics">
+    <div class="api-candidates-head"><div><h2 id="api-candidates-title">전자기기 추천 매물</h2><div class="api-candidates-note">HBA-3 65점 이상이면서 경제성 검증을 통과한 매물만 표시합니다. 개인이 반출·보관·재판매하기 어려운 21점 이상 대량 일괄매각은 수집 단계에서 제외합니다.</div></div><span class="source-badge gap" id="api-candidate-count">불러오는 중</span></div>
+    <div class="api-candidate-list" id="api-candidate-list"><div class="api-candidates-note">후보 파일을 확인하고 있습니다.</div></div>
+  </section>
+    <section class="api-candidates" aria-labelledby="cash-candidates-title" data-auction-category="cash">
+    <div class="api-candidates-head"><div><h2 id="cash-candidates-title">현금성 자산 추천 매물</h2><div class="api-candidates-note">HBA-3 65점 이상이면서 진위·권리·즉시 매입가 검증을 통과한 상품권과 귀금속만 표시합니다. 상품권은 사용 가능 잔액과 제한, 귀금속은 순도·중량·당일 매입가에서 수수료를 차감해 평가합니다.</div></div><span class="source-badge gap" id="cash-candidate-count">불러오는 중</span></div>
+    <div class="api-candidate-list" id="cash-candidate-list"><div class="api-candidates-note">상품권·귀금속 후보를 확인하고 있습니다.</div></div>
+  </section>
+    <section class="api-candidates police-candidates" aria-labelledby="police-candidates-title" data-auction-category="lost">
+    <div class="api-candidates-head"><div><h2 id="police-candidates-title">분실·습득물 추천 매물</h2><div class="api-candidates-note">HBA-3 65점 이상이면서 경제성 검증을 통과한 매물만 표시합니다. 나머지 후보는 계속 수집하되 시세·진품·상태 검증 전에는 공개 추천하지 않습니다.</div></div><span class="source-badge gap" id="police-candidate-count">불러오는 중</span></div>
+    <div class="api-candidate-list" id="police-candidate-list"><div class="api-candidates-note">경찰 관련 후보를 확인하고 있습니다.</div></div>
+  </section>
+
   <section class="model" id="watch" aria-labelledby="watch-title">
 <h2 id="watch-title">입찰 감시 — 놓치면 안 되는 물건</h2>
 <p class="score-note">다회차 하향식 경매는 회차가 하루 만에 열리고 닫힌다. 일일 갱신만으로는 놓치므로 여기에 고정 표시한다. 아래 금액은 재판매 회수 추정에 근거한 상한이며, 초과 입찰하지 않는다.</p>
 
-<div class="formula"><b>3 · [오딘스] iMac 2대 + MacBook + 삼성노트북 + 와콤 &nbsp;5대 일괄</b>
+<div class="formula watch-entry" data-deadline="2026-09-01T23:00:00+09:00"><b>3 · [오딘스] iMac 2대 + MacBook + 삼성노트북 + 와콤 &nbsp;5대 일괄</b>
 <code class="formula-code">다음 입찰 &nbsp;<b>2026-08-31(월) 11:00~23:00</b> &nbsp;7회차 최저 1,000,000원<br>
 개찰 &nbsp;2026-09-01 10:00 &nbsp;/ &nbsp;최종 8회차 &nbsp;09-01 11:00~23:00 최저 500,000원<br><br>
 <b>7회차 1,000,000원 중단 &nbsp;· &nbsp;8회차 권장 597,300원 &nbsp;· &nbsp;절대상한 736,000원</b><br>
@@ -40,7 +59,7 @@ HBA-1 &nbsp;1,420,000 - 거래비 150,000 - 위험준비금 250,000 - 목표이�
 = 경제적 상한 736,000원 &nbsp;· &nbsp;VAT 별도 표기 없음</code>
 <div class="score-note">iMac A2439(24″ M1 2021) · iMac A2115(21.5″ Intel) · MacBook A1534(12″ Retina) · Samsung NT950XDX(2022) · Wacom PTH-660. <b>활성화 잠금 해제 확인(2026-08-29).</b> 7회차 최저가는 상한보다 높아 중단하고, 유찰 시 8회차에서만 검토한다. 현장공개 미참석으로 하자 이의제기 불가.</div></div>
 
-<div class="formula"><b>2 · 파산재단 iPad 일괄 &nbsp;— iPad Air 5세대 + iPad Pro 11 4세대</b>
+<div class="formula watch-entry" data-deadline="2026-09-04T17:00:00+09:00"><b>2 · 파산재단 iPad 일괄 &nbsp;— iPad Air 5세대 + iPad Pro 11 4세대</b>
 <code class="formula-code">다음 입찰 &nbsp;<b>2026-09-04(금) 10:00~17:00</b> &nbsp;5차 최저 400,000원<br>
 회차 &nbsp;1차 2,000,000 → 2차 1,600,000 → 3차 1,200,000 → 4차 800,000 → <b>5차 400,000</b><br><br>
 <b>잠금 확인 후 권장 547,300원 &nbsp;· &nbsp;표시입찰 절대상한 574,500원</b><br>
@@ -96,18 +115,9 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
     <div class="interest-facts"><span>3대 전체 최저가 <b>100,000원</b></span><span>권장 총액 <b>347,300원</b></span><span>절대상한 <b>356,000원</b></span><span>입찰마감 <b>9월 2일 17:00</b></span></div>
     <div class="interest-call"><p><b>입찰금액 347,300원은 1대 가격이 아니라 3대 전체 일괄 총액입니다.</b> 빠른 판매가 670,000원에서 거래비 60,000원, 상태 위험준비금 120,000원, 목표이익 134,000원을 뺀 상한입니다. FX707ZE 부팅·RTX 인식 또는 잠금이 가정을 벗어나면 중단하고 356,000원을 넘지 않습니다.</p><a class="button secondary" href="https://www.onbid.co.kr/op/cltrpbancinf/cltrdtl/CltrDtlController/mvmnCltrDtl.do?cltrPrptDivCd=0013&amp;cltrScrnGrpCd=0003&amp;onbidCltrno=2048378&amp;onbidPbancNo=901053&amp;pbctCdtnNo=6147934&amp;pbctNo=10090986" target="_blank" rel="noopener">공식 공고·사진</a></div>
   </section>
-  <section class="api-candidates police-candidates" aria-labelledby="police-candidates-title" data-auction-category="lost">
-    <div class="api-candidates-head"><div><h2 id="police-candidates-title">분실·습득물 추천 매물</h2><div class="api-candidates-note">HBA-3 65점 이상이면서 경제성 검증을 통과한 매물만 표시합니다. 나머지 후보는 계속 수집하되 시세·진품·상태 검증 전에는 공개 추천하지 않습니다.</div></div><span class="source-badge gap" id="police-candidate-count">불러오는 중</span></div>
-    <div class="api-candidate-list" id="police-candidate-list"><div class="api-candidates-note">경찰 관련 후보를 확인하고 있습니다.</div></div>
-  </section>
-  <section class="api-candidates" aria-labelledby="cash-candidates-title" data-auction-category="cash">
-    <div class="api-candidates-head"><div><h2 id="cash-candidates-title">현금성 자산 추천 매물</h2><div class="api-candidates-note">HBA-3 65점 이상이면서 진위·권리·즉시 매입가 검증을 통과한 상품권과 귀금속만 표시합니다. 상품권은 사용 가능 잔액과 제한, 귀금속은 순도·중량·당일 매입가에서 수수료를 차감해 평가합니다.</div></div><span class="source-badge gap" id="cash-candidate-count">불러오는 중</span></div>
-    <div class="api-candidate-list" id="cash-candidate-list"><div class="api-candidates-note">상품권·귀금속 후보를 확인하고 있습니다.</div></div>
-  </section>
-  <section class="api-candidates" aria-labelledby="api-candidates-title" data-auction-category="electronics">
-    <div class="api-candidates-head"><div><h2 id="api-candidates-title">전자기기 추천 매물</h2><div class="api-candidates-note">HBA-3 65점 이상이면서 경제성 검증을 통과한 매물만 표시합니다. 개인이 반출·보관·재판매하기 어려운 21점 이상 대량 일괄매각은 수집 단계에서 제외합니다.</div></div><span class="source-badge gap" id="api-candidate-count">불러오는 중</span></div>
-    <div class="api-candidate-list" id="api-candidate-list"><div class="api-candidates-note">후보 파일을 확인하고 있습니다.</div></div>
-  </section>
+  
+  
+  
   <nav class="tabs" aria-label="전자기기 공매 보고서 메뉴" role="tablist" data-auction-category="electronics">
     <button class="tab" id="tab-rankings" type="button" role="tab" aria-selected="true" aria-controls="view-rankings" data-tab="rankings">추천 매물 <span class="tab-count" id="active-tab-count">1</span></button>
     <button class="tab" id="tab-watch" type="button" role="tab" aria-selected="false" aria-controls="view-watch" data-tab="watch">추적관찰 <span class="tab-count" id="watch-tab-count">0</span></button>
@@ -296,6 +306,7 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
   <section class="view" id="view-archive" role="tabpanel" aria-labelledby="tab-archive" data-auction-category="electronics" hidden>
     <div class="view-head"><div><h2>마감 매물 아카이브</h2><p>표시된 입찰·공고 마감시각이 지나면 매물이 이곳으로 자동 이동합니다. 과거 가격과 판단 근거는 다음 입찰 분석에 재사용합니다.</p></div></div>
     <div class="archive-group"><h3>마감 매물 목록</h3><div class="listing-stack" id="archive-list"></div><div class="empty-state" id="archive-empty">아직 마감된 매물이 없습니다.</div></div>
+    <div class="archive-group" id="archive-panel-group" hidden><h3>개찰 완료 매물</h3><div id="archive-panels"></div></div>
     <div class="archive-group" id="archive-detail-group" hidden><h3>과거 입찰 상세 보고서</h3><div id="archive-detail"></div></div>
   </section>
   <div class="notice">이 페이지는 공개 공고의 탐색 편의를 위한 요약이며 매수 권유나 법률 자문이 아닙니다. 개인정보는 공개하지 않으며, 입찰 전 법원 원문·첨부파일·물품 상태·권리관계·비용을 직접 확인해야 합니다.</div>
@@ -590,6 +601,37 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
       const recommended=Number(item.dataset.score)>=65&&item.dataset.priority==='true';
       (expired?archiveList:recommended?activeList:watchList).appendChild(item);
     });
+    // 개찰(입찰마감)이 지난 관심매물 패널을 아카이브로 옮긴다. 기존에는 .listing 만
+    // 자동이동 대상이라, 손으로 붙인 .interest-panel 은 마감 뒤에도 페이지 최상단에
+    // 남아 있었다(2026-09-07). 마감시각이 있는 패널만 대상으로 한다.
+    const panelArchive=document.getElementById('archive-panels');
+    // 입찰 감시 섹션의 개찰 완료 항목도 같이 내린다. 손으로 붙인 블록이라
+    // data-deadline 을 직접 달아 두었다.
+    const watchSection=document.getElementById('watch');
+    [...document.querySelectorAll('.watch-entry')].forEach(entry=>{
+      if(now<=new Date(entry.dataset.deadline).getTime())return;
+      entry.classList.add('archive-item');
+      if(panelArchive)panelArchive.appendChild(entry);
+    });
+    if(watchSection&&!watchSection.querySelector('.watch-entry'))watchSection.hidden=true;
+    interestPanels.forEach(panel=>{
+      const dl=panel.dataset.deadline;
+      if(!dl||now<=new Date(dl).getTime())return;
+      panel.classList.add('archive-item');
+      const head=panel.querySelector('h2');
+      if(head&&!head.dataset.closedMarked){
+        head.dataset.closedMarked='1';
+        const b=document.createElement('span');
+        b.className='closed-badge';
+        b.textContent='개찰 완료';
+        head.appendChild(b);
+      }
+      if(panelArchive)panelArchive.appendChild(panel);
+    });
+    if(panelArchive){
+      const g=document.getElementById('archive-panel-group');
+      if(g)g.hidden=!panelArchive.children.length;
+    }
     const detailCases=[...document.querySelectorAll('.priority-case,.watch-case')];
     detailCases.forEach(item=>{
       if(now>new Date(item.dataset.deadline).getTime())archiveDetail.appendChild(item);
