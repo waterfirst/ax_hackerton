@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-07 15:06 KST",
+  "updated_at": "2026-09-07 15:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 99258911,
+    "total": 99291671,
     "cash": 448111,
-    "invested": 98810800,
-    "day_pnl": 46580,
-    "cum_pnl": -741089,
-    "cum_return_pct": -0.7411,
+    "invested": 98843560,
+    "day_pnl": 32760,
+    "cum_pnl": -708329,
+    "cum_return_pct": -0.7083,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -741089.0,
+          "account_cum_pnl": -708329.0,
           "ledger_realized_pnl": -3212794.94,
-          "unrealized_pnl": 2483620.0,
+          "unrealized_pnl": 2516380.0,
           "gap_krw": -11914.06,
           "tolerance_krw": 1000.0
         }
@@ -75,10 +75,10 @@
       "name": "KODEX 200",
       "qty": 504,
       "avg_price": 105258,
-      "price": 110750,
-      "value": 55818000,
-      "pnl": 2767815,
-      "pnl_pct": 5.22
+      "price": 110815,
+      "value": 55850760,
+      "pnl": 2800575,
+      "pnl_pct": 5.28
     },
     {
       "symbol": "133690",
@@ -985,7 +985,7 @@
     },
     {
       "date": "2026-09-07",
-      "value": 99258911
+      "value": 99291671
     }
   ],
   "experiment": {
