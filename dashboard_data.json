@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-07 11:20 KST",
+  "updated_at": "2026-09-07 11:30 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98367611,
+    "total": 98507111,
     "cash": 448111,
-    "invested": 97919500,
-    "day_pnl": -10080,
-    "cum_pnl": -1632389,
-    "cum_return_pct": -1.6324,
+    "invested": 98059000,
+    "day_pnl": 139500,
+    "cum_pnl": -1492889,
+    "cum_return_pct": -1.4929,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -1632389.0,
+          "account_cum_pnl": -1492889.0,
           "ledger_realized_pnl": -3212794.94,
-          "unrealized_pnl": 1592320.0,
+          "unrealized_pnl": 1731820.0,
           "gap_krw": -11914.06,
           "tolerance_krw": 1000.0
         }
@@ -53,7 +53,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 99.54,
+      "used_pct": 99.55,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -65,7 +65,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 0.46,
+      "used_pct": 0.45,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -75,20 +75,20 @@
       "name": "KODEX 200",
       "qty": 504,
       "avg_price": 105258,
-      "price": 109105,
-      "value": 54988920,
-      "pnl": 1938735,
-      "pnl_pct": 3.65
+      "price": 109360,
+      "value": 55117440,
+      "pnl": 2067255,
+      "pnl_pct": 3.9
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 244,
       "avg_price": 177364,
-      "price": 175945,
-      "value": 42930580,
-      "pnl": -346415,
-      "pnl_pct": -0.8
+      "price": 175990,
+      "value": 42941560,
+      "pnl": -335435,
+      "pnl_pct": -0.78
     }
   ],
   "trades": [
@@ -985,7 +985,7 @@
     },
     {
       "date": "2026-09-07",
-      "value": 98367611
+      "value": 98507111
     }
   ],
   "experiment": {
