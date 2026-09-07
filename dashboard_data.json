@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-07 09:10 KST",
+  "updated_at": "2026-09-07 09:20 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98777991,
+    "total": 98535511,
     "cash": 448111,
-    "invested": 98329880,
-    "day_pnl": 0,
-    "cum_pnl": -1222009,
-    "cum_return_pct": -1.222,
+    "invested": 98087400,
+    "day_pnl": -242480,
+    "cum_pnl": -1464489,
+    "cum_return_pct": -1.4645,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -1222009.0,
+          "account_cum_pnl": -1464489.0,
           "ledger_realized_pnl": -3212794.94,
-          "unrealized_pnl": 2002700.0,
+          "unrealized_pnl": 1760220.0,
           "gap_krw": -11914.06,
           "tolerance_krw": 1000.0
         }
@@ -75,20 +75,20 @@
       "name": "KODEX 200",
       "qty": 504,
       "avg_price": 105258,
-      "price": 109820,
-      "value": 55349280,
-      "pnl": 2299095,
-      "pnl_pct": 4.33
+      "price": 109610,
+      "value": 55243440,
+      "pnl": 2193255,
+      "pnl_pct": 4.13
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 244,
       "avg_price": 177364,
-      "price": 176150,
-      "value": 42980600,
-      "pnl": -296395,
-      "pnl_pct": -0.68
+      "price": 175590,
+      "value": 42843960,
+      "pnl": -433035,
+      "pnl_pct": -1.0
     }
   ],
   "trades": [
@@ -985,7 +985,7 @@
     },
     {
       "date": "2026-09-07",
-      "value": 98777991
+      "value": 98535511
     }
   ],
   "experiment": {
