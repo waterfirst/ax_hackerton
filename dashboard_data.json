@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-04 16:05 KST",
+  "updated_at": "2026-09-07 09:00 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96916551,
-    "cash": 448111,
-    "invested": 96468440,
-    "day_pnl": 20320,
-    "cum_pnl": -3083449,
-    "cum_return_pct": -3.0834,
-    "vs_kospi_pct": -1.1278
+    "total": 0,
+    "cash": 0,
+    "invested": 0,
+    "day_pnl": -96916551,
+    "cum_pnl": -100000000,
+    "cum_return_pct": -100.0,
+    "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
@@ -37,15 +37,25 @@
       "ok": false,
       "mismatches": [
         {
+          "symbol": "069500",
+          "log_implied_qty": 504,
+          "account_qty": 0
+        },
+        {
+          "symbol": "133690",
+          "log_implied_qty": 244,
+          "account_qty": 0
+        },
+        {
           "type": "pnl_gap",
-          "account_cum_pnl": -3083449.0,
+          "account_cum_pnl": -100000000.0,
           "ledger_realized_pnl": -3212794.94,
-          "unrealized_pnl": 141260.0,
-          "gap_krw": -11914.06,
+          "unrealized_pnl": 0.0,
+          "gap_krw": -96787205.06,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -11914.06,
+      "pnl_gap_krw": -96787205.06,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -53,7 +63,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 99.54,
+      "used_pct": 0.0,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -65,32 +75,11 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 0.46,
+      "used_pct": 0.0,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
-  "positions": [
-    {
-      "symbol": "069500",
-      "name": "KODEX 200",
-      "qty": 504,
-      "avg_price": 105258,
-      "price": 105720,
-      "value": 53282880,
-      "pnl": 232695,
-      "pnl_pct": 0.44
-    },
-    {
-      "symbol": "133690",
-      "name": "TIGER 미국나스닥100",
-      "qty": 244,
-      "avg_price": 177364,
-      "price": 176990,
-      "value": 43185560,
-      "pnl": -91435,
-      "pnl_pct": -0.21
-    }
-  ],
+  "positions": [],
   "trades": [
     {
       "ts": "2026-07-28T10:40:07",
@@ -836,12 +825,12 @@
     }
   ],
   "plan": {
-    "date": "2026-09-04",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-04.json · etf_ref=fsc_auto_collector"
+    "date": "2026-09-07",
+    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-07.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-09-04",
-    "text": "mode=report · trades=20 · signal=records/2026-09-04.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-09-07",
+    "text": "mode=report · trades=20 · signal=records/2026-09-07.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -1021,12 +1010,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 448111.0
+      "cash": 0.0
     },
     "contribution_pct": {
-      "long": -15.95,
-      "short": 0.9,
-      "cash": 83.15
+      "long": -94.67,
+      "short": 5.33,
+      "cash": 0.0
     }
   }
 }
