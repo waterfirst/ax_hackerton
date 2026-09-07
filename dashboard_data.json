@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-09-07 10:00 KST",
+  "updated_at": "2026-09-07 10:10 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98003571,
+    "total": 98084739,
     "cash": 448111,
-    "invested": 97555460,
-    "day_pnl": -208840,
-    "cum_pnl": -1996429,
-    "cum_return_pct": -1.9964,
+    "invested": 97636628,
+    "day_pnl": 81168,
+    "cum_pnl": -1915261,
+    "cum_return_pct": -1.9153,
     "vs_kospi_pct": null
   },
   "metrics": {
@@ -38,14 +38,14 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -1996429.0,
+          "account_cum_pnl": -1915261.0,
           "ledger_realized_pnl": -3212794.94,
-          "unrealized_pnl": 1230720.0,
-          "gap_krw": -14354.06,
+          "unrealized_pnl": 1309448.0,
+          "gap_krw": -11914.06,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -14354.06,
+      "pnl_gap_krw": -11914.06,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -75,20 +75,20 @@
       "name": "KODEX 200",
       "qty": 504,
       "avg_price": 105258,
-      "price": 109075,
-      "value": 54973800,
-      "pnl": 1923615,
-      "pnl_pct": 3.63
+      "price": 109085,
+      "value": 54978840,
+      "pnl": 1928655,
+      "pnl_pct": 3.64
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 244,
       "avg_price": 177364,
-      "price": 174525,
-      "value": 42584100,
-      "pnl": -692895,
-      "pnl_pct": -1.6
+      "price": 174827,
+      "value": 42657788,
+      "pnl": -619207,
+      "pnl_pct": -1.43
     }
   ],
   "trades": [
@@ -985,7 +985,7 @@
     },
     {
       "date": "2026-09-07",
-      "value": 98003571
+      "value": 98084739
     }
   ],
   "experiment": {
