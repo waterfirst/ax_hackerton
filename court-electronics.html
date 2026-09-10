@@ -511,7 +511,13 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
       policeList.replaceChildren();
       cashList.replaceChildren();
       reauctionList.replaceChildren();
-      const recommendedItems=items.filter(isHighAttractiveness);
+      // 내보내기 시점(매일 08:30)에는 만료분을 걸러 내지만, 그날 안에 마감되는
+      // 건은 하루 내내 목록에 남는다. 2026-09-11 기준 39건 중 12건이 그런 상태로
+      // 노출되고 있었다. 화면에서도 한 번 더 거른다.
+      const isLive=item=>deadlineOf(item)>Date.now();
+      const liveItems=items.filter(isLive);
+      const expiredCount=items.length-liveItems.length;
+      const recommendedItems=liveItems.filter(isHighAttractiveness);
       const isCashLike=item=>{
         const categories=Array.isArray(item.categories)?item.categories:[];
         return categories.some(value=>['jewelry','voucher'].includes(String(value)))||/상품권|기프트\s*카드|gift\s*card|모바일\s*쿠폰|교환권|귀금속|금반지|금목걸이|금팔찌|금\s*발찌|체인형\s*(?:발찌|팔찌)|14k|18k|24k|순금|골드바|은괴/i.test(String(item.title||''));
@@ -519,15 +525,39 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
       const cashItems=sortCandidates(recommendedItems.filter(isCashLike));
       const policeItems=sortCandidates(recommendedItems.filter(item=>!isCashLike(item)&&String(item.source_type||'').startsWith('police_')));
       const electronicsItems=sortCandidates(recommendedItems.filter(item=>!isCashLike(item)&&!String(item.source_type||'').startsWith('police_')));
-      const reauctionItems=[...items]
+      const reauctionItems=[...liveItems]
         .filter(item=>item.reauction_screening_status==='priority_validation'&&!isHighAttractiveness(item)&&!isCashLike(item))
         .sort((a,b)=>(Number(b.reauction_screening_score)||0)-(Number(a.reauction_screening_score)||0)||deadlineOf(a)-deadlineOf(b));
       count.textContent=`${electronicsItems.length}건`;
       count.className='source-badge ok';
+      // 점수는 state/market_evidence.json 의 제목 정확일치로만 붙는다. 그 파일이
+      // 2026-08-15 에 멈춰 있어 후보 39건 중 매칭이 0건이었고, 세 섹션이 모두
+      // 비어 있었다(2026-09-11). 근거가 없다고 매물이 없는 것은 아니므로,
+      // 미채점 후보는 '조사 대상'으로 내리되 추천과 시각적으로 구분한다.
+      const unscored=sortCandidates(
+        liveItems.filter(item=>!isHighAttractiveness(item)&&!isCashLike(item)
+          &&!String(item.source_type||'').startsWith('police_')
+          &&item.reauction_screening_status!=='priority_validation')
+      );
       if(!electronicsItems.length){
-        const empty=document.createElement('div');empty.className='api-candidates-note';empty.textContent='현재 65점 이상 검증 통과 전자기기 매물이 없습니다.';list.append(empty);
+        const empty=document.createElement('div');empty.className='api-candidates-note';
+        empty.textContent=unscored.length
+          ? `검증 통과(65점 이상) 매물은 아직 없습니다. 아래는 시세 근거가 미등록된 조사 대상 ${unscored.length}건입니다.`
+          : '현재 입찰 가능한 전자기기 매물이 없습니다.';
+        list.append(empty);
       }
       electronicsItems.slice(0,16).forEach(item=>appendCandidate(list,item));
+      if(!electronicsItems.length){
+        unscored.slice(0,16).forEach(item=>appendCandidate(list,item));
+        count.textContent=unscored.length?`조사 ${unscored.length}건`:'0건';
+        count.className=`source-badge ${unscored.length?'gap':'ok'}`;
+      }
+      if(expiredCount){
+        const note=document.createElement('div');note.className='api-candidates-note';
+        note.style.marginTop='8px';
+        note.textContent=`마감 지난 ${expiredCount}건은 목록에서 제외했습니다.`;
+        list.append(note);
+      }
       policeCount.textContent=`${policeItems.length}건`;
       policeCount.className=`source-badge ${policeItems.length?'ok':'gap'}`;
       if(policeItems.length)policeItems.slice(0,16).forEach(item=>appendCandidate(policeList,item));
