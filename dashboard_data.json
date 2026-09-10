@@ -1,51 +1,51 @@
 {
-  "updated_at": "2026-09-10 11:00 KST",
+  "updated_at": "2026-09-10 12:40 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98416541,
-    "cash": 2272486,
-    "invested": 96144055,
-    "day_pnl": -1247195,
-    "cum_pnl": -1583459,
-    "cum_return_pct": -1.5835,
+    "total": 98836256,
+    "cash": 20050656,
+    "invested": 78785600,
+    "day_pnl": 419715,
+    "cum_pnl": -1163744,
+    "cum_return_pct": -1.1637,
     "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.3939393939393939,
-    "profit_factor": 1.061988741649821,
-    "trades": 83,
+    "win_rate": 0.38235294117647056,
+    "profit_factor": 1.0213864471823229,
+    "trades": 84,
     "trading_days": 7,
-    "closed_trades": 33,
-    "realized_pnl": 351512.89,
-    "expectancy_per_trade": 10651.91,
-    "average_win_loss_ratio": 1.6338,
+    "closed_trades": 34,
+    "realized_pnl": 126094.72,
+    "expectancy_per_trade": 3708.67,
+    "average_win_loss_ratio": 1.6499,
     "gross_profit": 6022105.37,
-    "gross_loss": 5670592.48,
+    "gross_loss": 5896010.65,
     "open_qty": {
-      "069500": 487,
+      "069500": 327,
       "133690": 244
     },
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 0,
-    "verified_fill_rows": 83,
+    "verified_fill_rows": 84,
     "reconciliation": {
       "ok": false,
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -1583459.0,
-          "ledger_realized_pnl": 351512.89,
-          "unrealized_pnl": -1923030.0,
-          "gap_krw": -11941.89,
+          "account_cum_pnl": -1163744.0,
+          "ledger_realized_pnl": 126094.72,
+          "unrealized_pnl": -1280634.0,
+          "gap_krw": -9204.72,
           "tolerance_krw": 1000.0
         }
       ],
-      "pnl_gap_krw": -11941.89,
+      "pnl_gap_krw": -9204.72,
       "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
     }
   },
@@ -53,7 +53,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 97.69,
+      "used_pct": 79.71,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -65,7 +65,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 2.31,
+      "used_pct": 20.29,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -73,22 +73,22 @@
     {
       "symbol": "069500",
       "name": "KODEX 200",
-      "qty": 487,
+      "qty": 327,
       "avg_price": 112505,
-      "price": 110285,
-      "value": 53708795,
-      "pnl": -1081295,
-      "pnl_pct": -1.97
+      "price": 111040,
+      "value": 36310080,
+      "pnl": -479159,
+      "pnl_pct": -1.3
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 244,
       "avg_price": 177364,
-      "price": 173915,
-      "value": 42435260,
-      "pnl": -841735,
-      "pnl_pct": -1.94
+      "price": 174080,
+      "value": 42475520,
+      "pnl": -801475,
+      "pnl_pct": -1.85
     }
   ],
   "trades": [
@@ -859,6 +859,32 @@
       "reason_text": "[long/d_sell=False] D_sell_off_institution_buying · D_sell_off_institution_net_buying_risk_on · sleeve=risk_on_kospi weight=0.55",
       "confidence": "entry",
       "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-09-10",
+      "time": "12:35:20",
+      "ts": "2026-09-10T12:35:20",
+      "symbol": "069500",
+      "qty": "487",
+      "price": 111130,
+      "side": "sell",
+      "label": "rotate",
+      "reason_text": "[exit_to_cash/d_sell=True] 138230+411060 · not_in_target_basket · regime flip -> free cash for defensive_gold/defensive_usd",
+      "confidence": "rotate",
+      "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-09-10",
+      "time": "12:35:31",
+      "ts": "2026-09-10T12:35:31",
+      "symbol": "133690",
+      "qty": "244",
+      "price": 174140,
+      "side": "sell",
+      "label": "rotate",
+      "reason_text": "[exit_to_cash/d_sell=True] 138230+411060 · not_in_target_basket · regime flip -> free cash for defensive_gold/defensive_usd",
+      "confidence": "rotate",
+      "price_source": "judgment_log"
     }
   ],
   "plan": {
@@ -1021,7 +1047,7 @@
     },
     {
       "date": "2026-09-10",
-      "value": 98416541
+      "value": 98836256
     }
   ],
   "experiment": {
@@ -1061,12 +1087,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 2272486.0
+      "cash": 20050656.0
     },
     "contribution_pct": {
-      "long": -3.64,
-      "short": 0.21,
-      "cash": 96.16
+      "long": -0.43,
+      "short": 0.02,
+      "cash": 99.55
     }
   }
 }
