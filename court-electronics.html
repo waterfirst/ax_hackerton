@@ -485,7 +485,13 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
         const title=document.createElement('h3');title.textContent=item.title||'제목 미상';
         const meta=document.createElement('div');meta.className='api-candidate-meta';
         const categories=Array.isArray(item.categories)&&item.categories.length?` · ${item.categories.join(', ')}`:'';
-        const source=sourceLabels[item.source_type]?`${sourceLabels[item.source_type]} · `:'';
+        // source_type 라벨(공공 불용품 등)은 수집 경로일 뿐 재산 성격과 다르다.
+        // 2026-09-11 기준 압류재산 9건·공유재산 1건이 '공공 불용품'으로 표시돼
+        // 국세청 압류 금붙이가 사무용 폐PC처럼 보였다. 성격을 먼저 쓴다.
+        const propType=String(item.property_type||'').trim();
+        const srcLabel=sourceLabels[item.source_type]||'';
+        const source=propType?`${propType}${srcLabel&&srcLabel!==propType?` (${srcLabel})`:''} · `
+                             :(srcLabel?`${srcLabel} · `:'');
         const currentBid=Number(item.current_minimum_bid_krw)||(Array.isArray(item.price_candidates_krw)&&item.price_candidates_krw.length?Math.min(...item.price_candidates_krw):0);
         const price=currentBid?` · 현재 최저가 ${currentBid.toLocaleString('ko-KR')}원`:'';
         const scoreMeta=scored?` · 긴급도 ${Number(item.urgency_score)||0} · 우선순위 ${Number(item.priority_index)||0}`:'';
@@ -495,13 +501,17 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
         const prices=Array.isArray(item.price_history_krw)?item.price_history_krw:[];
         const rounds=Array.isArray(item.auction_rounds_seen)?item.auction_rounds_seen:[];
         const scheduled=Array.isArray(item.scheduled_price_options_krw)?item.scheduled_price_options_krw:prices;
+        const later=Array.isArray(item._laterRounds)?item._laterRounds:[];
+        const laterMeta=later.length
+          ? ` · 이후 회차 ${later.length}회(${later.map(x=>compactDate(x.expires_at).replace(/^\d{4}\./,'')).join(', ')})`
+          : '';
         const trackingMeta=` · ${observations||1}일 관찰${rounds.length?` · 예정 회차 ${rounds.join('·')}`:''}${scheduled.length>1?` · 예정가격 범위 ${Math.min(...scheduled).toLocaleString('ko-KR')}~${Math.max(...scheduled).toLocaleString('ko-KR')}원`:''}`;
         const marketPlatforms=Array.isArray(item.market_platforms)?item.market_platforms:[];
         const marketMeta=marketPlatforms.length?` · ${marketPlatforms.map(value=>value==='daangn'?'당근':value==='bunjang'?'번개':value).join('+')} ${Number(item.market_sample_count)||0}건 · 시세신뢰 ${Math.round((Number(item.market_confidence)||0)*100)}%`:'';
         const verifiedDrop=Math.round((Number(item.verified_price_drop_ratio)||0)*100);
         const failedMeta=reauction?` · 실제 유찰 ${Number(item.effective_failed_rounds)||0}회${verifiedDrop?` · 확인 하락률 ${verifiedDrop}%`:''}`:'';
         const evidence=reauction?' · 당근·번개 시세 검증 대기':scoring?` · ${scoring.evidence||item.score_reason||'시세 근거 확인'}`:' · 정확한 모델과 당근·중고 시세 비교 필요';
-        meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${price}${categories}${scoreMeta}${scoringQuality}${trackingMeta}${failedMeta}${marketMeta}${evidence}`;
+        meta.textContent=`${source}입찰 마감 ${compactDate(item.expires_at)}${price}${categories}${scoreMeta}${scoringQuality}${trackingMeta}${laterMeta}${failedMeta}${marketMeta}${evidence}`;
         if(highRecommendation){body.append(title,meta);article.append(score,body)}
         else {body.append(score,title,meta);article.append(body)}
         if(item.detail_url){const link=document.createElement('a');link.href=item.detail_url;link.target='_blank';link.rel='noopener';link.textContent='공식 공고 열기';article.append(link)}
@@ -514,9 +524,29 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
       // 내보내기 시점(매일 08:30)에는 만료분을 걸러 내지만, 그날 안에 마감되는
       // 건은 하루 내내 목록에 남는다. 2026-09-11 기준 39건 중 12건이 그런 상태로
       // 노출되고 있었다. 화면에서도 한 번 더 거른다.
+      // 같은 물건이 회차마다 별도 행으로 들어온다. 2026-09-11 기준 23건 중
+      // 8건이 두 물건의 4회차 중복이었고 목록의 3분의 1을 차지했다. 가장 이른
+      // 다음 회차를 대표로 남기고 나머지 회차는 그 카드 안에 접어 넣는다.
+      const lotKeyOf=item=>[String(item.title||'').trim(),
+        String((item.source_record_id||{}).cltr_mng_no||'')].join('|');
+      const mergeRounds=values=>{
+        const byLot=new Map();
+        [...values].sort((a,b)=>deadlineOf(a)-deadlineOf(b)).forEach(item=>{
+          const key=lotKeyOf(item);
+          if(byLot.has(key)){byLot.get(key)._laterRounds.push(item);return}
+          byLot.set(key,Object.assign({},item,{_laterRounds:[]}));
+        });
+        return [...byLot.values()];
+      };
       const isLive=item=>deadlineOf(item)>Date.now();
-      const liveItems=items.filter(isLive);
-      const expiredCount=items.length-liveItems.length;
+      // 공공기관 불용품은 노후 사무용 PC 대량 일괄이 대부분이라 개인이 반출·보관·
+      // 재판매하기 어렵다. 2026-09-11 기준 진행 33건 중 10건이 여기 해당했고,
+      // 화면을 채우기만 할 뿐 실제 응찰 대상이 아니었다. 수집은 계속하되 표시에서 뺀다.
+      const EXCLUDED_PROPERTY_TYPES=new Set(['불용품']);
+      const isExcludedType=item=>EXCLUDED_PROPERTY_TYPES.has(String(item.property_type||'').trim());
+      const liveItems=mergeRounds(items.filter(item=>isLive(item)&&!isExcludedType(item)));
+      const expiredCount=items.filter(item=>!isLive(item)).length;
+      const excludedCount=items.filter(item=>isLive(item)&&isExcludedType(item)).length;
       const recommendedItems=liveItems.filter(isHighAttractiveness);
       const isCashLike=item=>{
         const categories=Array.isArray(item.categories)?item.categories:[];
@@ -552,10 +582,13 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
         count.textContent=unscored.length?`조사 ${unscored.length}건`:'0건';
         count.className=`source-badge ${unscored.length?'gap':'ok'}`;
       }
-      if(expiredCount){
+      const excludeMsgs=[];
+      if(expiredCount)excludeMsgs.push(`마감 지난 ${expiredCount}건`);
+      if(excludedCount)excludeMsgs.push(`공공 불용품 ${excludedCount}건`);
+      if(excludeMsgs.length){
         const note=document.createElement('div');note.className='api-candidates-note';
         note.style.marginTop='8px';
-        note.textContent=`마감 지난 ${expiredCount}건은 목록에서 제외했습니다.`;
+        note.textContent=`${excludeMsgs.join(' · ')}은 목록에서 제외했습니다.`;
         list.append(note);
       }
       policeCount.textContent=`${policeItems.length}건`;
