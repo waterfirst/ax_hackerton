@@ -1,39 +1,39 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-10T08:30:02+09:00",
+  "updated_at": "2026-09-11T08:30:01+09:00",
   "sources": [
     {
-      "source": "court_notice_seoul",
       "status": "ok",
-      "checked_at": "2026-09-10T08:30:02+09:00",
-      "scanned": 200
+      "scanned": 200,
+      "checked_at": "2026-09-11T08:30:01+09:00",
+      "source": "court_notice_seoul"
     },
     {
-      "source": "court_notice_national_secondary",
       "status": "ok",
-      "checked_at": "2026-09-10T08:30:02+09:00",
-      "scanned": 150
+      "scanned": 150,
+      "checked_at": "2026-09-11T08:30:01+09:00",
+      "source": "court_notice_national_secondary"
     },
     {
-      "source": "onbid_code",
       "status": "ok",
-      "checked_at": "2026-09-10T08:30:02+09:00",
+      "scanned": 0,
       "available_codes": 420,
-      "scanned": 0
+      "checked_at": "2026-09-11T08:30:01+09:00",
+      "source": "onbid_code"
     },
     {
-      "source": "onbid_announcement",
       "status": "ok",
-      "checked_at": "2026-09-10T08:30:02+09:00",
-      "candidates": 68,
-      "scanned": 696
+      "scanned": 699,
+      "checked_at": "2026-09-11T08:30:01+09:00",
+      "candidates": 65,
+      "source": "onbid_announcement"
     },
     {
-      "source": "onbid_movable",
       "status": "ok",
-      "checked_at": "2026-09-10T08:30:02+09:00",
-      "candidates": 94,
-      "scanned": 1215
+      "scanned": 1237,
+      "checked_at": "2026-09-11T08:30:01+09:00",
+      "candidates": 91,
+      "source": "onbid_movable"
     }
   ]
 }
