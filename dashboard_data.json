@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-10 16:05 KST",
+  "updated_at": "2026-09-11 16:05 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 99227022,
+    "total": 98616422,
     "cash": 41162147,
-    "invested": 58064875,
-    "day_pnl": 0,
-    "cum_pnl": -772978,
-    "cum_return_pct": -0.773,
-    "vs_kospi_pct": -3.9006
+    "invested": 57454275,
+    "day_pnl": -610600,
+    "cum_pnl": -1383578,
+    "cum_return_pct": -1.3836,
+    "vs_kospi_pct": -2.693
   },
   "metrics": {
     "mdd_pct": 6.1193,
@@ -38,22 +38,22 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -772978.0,
+          "account_cum_pnl": -1383578.0,
           "ledger_realized_pnl": -1130914.25,
-          "unrealized_pnl": 363496.0,
+          "unrealized_pnl": -247104.0,
           "gap_krw": -5559.75,
-          "tolerance_krw": 1000.0
+          "tolerance_krw": 2000.0
         }
       ],
       "pnl_gap_krw": -5559.75,
-      "note": "매매로그 기준 보유수량과 계좌 스냅샷이 다르다. dry-run 구간의 실체결이 로그에 없으면 실현손익이 과소계상된다."
+      "note": "보유수량은 일치한다. 누적손익이 원장 대비 -5,560원 차이나며, 통상 수수료·세금처럼 원장에 없는 비용에서 생긴다."
     }
   },
   "sleeves": [
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 58.52,
+      "used_pct": 58.26,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -65,7 +65,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 41.48,
+      "used_pct": 41.74,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -75,20 +75,20 @@
       "name": "KIWOOM 미국달러선물",
       "qty": 225,
       "avg_price": 15678,
-      "price": 15675,
-      "value": 3526875,
-      "pnl": -745,
-      "pnl_pct": -0.02
+      "price": 15765,
+      "value": 3547125,
+      "pnl": 19505,
+      "pnl_pct": 0.55
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 2035,
       "avg_price": 26621,
-      "price": 26800,
-      "value": 54538000,
-      "pnl": 364241,
-      "pnl_pct": 0.67
+      "price": 26490,
+      "value": 53907150,
+      "pnl": -266609,
+      "pnl_pct": -0.49
     }
   ],
   "trades": [
@@ -914,12 +914,12 @@
     }
   ],
   "plan": {
-    "date": "2026-09-10",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-10.json · etf_ref=fsc_auto_collector"
+    "date": "2026-09-11",
+    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-09-11.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-09-10",
-    "text": "mode=report · trades=20 · signal=records/2026-09-10.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-09-11",
+    "text": "mode=report · trades=20 · signal=records/2026-09-11.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -1074,6 +1074,10 @@
     {
       "date": "2026-09-10",
       "value": 99227022
+    },
+    {
+      "date": "2026-09-11",
+      "value": 98616422
     }
   ],
   "experiment": {
