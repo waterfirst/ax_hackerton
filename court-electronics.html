@@ -372,10 +372,17 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
 
     const sourceNames={court_notice:'대한민국 법원 공고',onbid_code:'온비드 코드·주소 API',onbid_announcement:'온비드 공고목록 API',onbid_movable:'차세대 온비드 동산 API'};
     const healthUrl=`court-electronics-source-health.json?v=${Date.now()}`;
-    fetch(healthUrl,{cache:'no-store'}).then(response=>{
-      if(!response.ok)throw new Error('source health unavailable');
-      return response.json();
-    }).then(health=>{
+    // GitHub Pages 는 배포 중 몇 초간 빈 응답을 줄 수 있다. 2026-09-11 08:31,
+    // 크론 배포가 도는 3초 사이에 접속하면 '데이터 파일을 읽지 못했습니다'가 떴다.
+    // 일시적 실패는 조용히 재시도하고, 그래도 안 되면 그때 경고한다.
+    const fetchJson=(url,tries=3,delay=1200)=>fetch(url,{cache:'no-store'})
+      .then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()})
+      .catch(err=>{
+        if(tries<=1)throw err;
+        return new Promise(resolve=>setTimeout(resolve,delay))
+          .then(()=>fetchJson(url,tries-1,Math.round(delay*1.6)));
+      });
+    fetchJson(healthUrl).then(health=>{
       const sources=Array.isArray(health.sources)?health.sources:[];
       let scanned=0;
       const gaps=[];
@@ -438,10 +445,7 @@ HBA-1 총취득 상한 &nbsp;1,040,000 - 거래비 50,000 - 위험준비금 150,
       const status=item.score_status||fallback?.status||'pending';
       return score!==null&&score>=65&&status==='scored';
     };
-    fetch(`court-electronics-onbid-candidates.json?v=${Date.now()}`,{cache:'no-store'}).then(response=>{
-      if(!response.ok)throw new Error('candidate feed unavailable');
-      return response.json();
-    }).then(payload=>{
+    fetchJson(`court-electronics-onbid-candidates.json?v=${Date.now()}`).then(payload=>{
       const rawItems=Array.isArray(payload.items)?payload.items:[];
       const pbctNoOf=item=>String(item.detail_url||'').match(/[?&]pbctNo=(\d+)/i)?.[1]||String(item.seq_id||'').match(/^onbid-pbanc:[^:]+:(\d+)$/)?.[1]||null;
       const movablePbctNumbers=new Set(rawItems.filter(item=>String(item.seq_id||'').startsWith('onbid:')).map(pbctNoOf).filter(Boolean));
