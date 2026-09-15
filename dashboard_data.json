@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-15 16:05 KST",
-  "status": "T3 report live-paper",
-  "regime": "open_only",
+  "updated_at": "2026-09-16 06:45 KST",
+  "status": "T3 report dry-run · selfcheck-blocked",
+  "regime": "hold:no_record",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
     "total": 98178697,
     "cash": 41162147,
     "invested": 57016550,
-    "day_pnl": 7725,
+    "day_pnl": 0,
     "cum_pnl": -1821303,
     "cum_return_pct": -1.8213,
-    "vs_kospi_pct": 1.0133
+    "vs_kospi_pct": null
   },
   "metrics": {
     "mdd_pct": 6.1193,
@@ -34,19 +34,10 @@
     "estimated_price_rows": 0,
     "verified_fill_rows": 87,
     "reconciliation": {
-      "ok": false,
-      "mismatches": [
-        {
-          "type": "pnl_gap",
-          "account_cum_pnl": -1821303.0,
-          "ledger_realized_pnl": -1130914.25,
-          "unrealized_pnl": -684829.0,
-          "gap_krw": -5559.75,
-          "tolerance_krw": 2000.0
-        }
-      ],
+      "ok": true,
+      "mismatches": [],
       "pnl_gap_krw": -5559.75,
-      "note": "보유수량은 일치한다. 누적손익이 원장 대비 -5,560원 차이나며, 통상 수수료·세금처럼 원장에 없는 비용에서 생긴다."
+      "note": ""
     }
   },
   "sleeves": [
@@ -914,12 +905,12 @@
     }
   ],
   "plan": {
-    "date": "2026-09-15",
-    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-09-15.json · etf_ref=fsc_auto_collector"
+    "date": "2026-09-16",
+    "text": "flat/weak · dry_run=True · quote=10000 · signal=hold:no_record · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-09-15",
-    "text": "mode=report · trades=20 · signal=records/2026-09-15.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-09-16",
+    "text": "mode=report · trades=20 · signal=hold:no_record · etf_ref=fsc_auto_collector · selfcheck=blocked"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -929,10 +920,12 @@
     "preferred_short": "114800"
   },
   "selfcheck": {
-    "ok": true,
-    "badge": "OK",
-    "action": "allow",
-    "findings": []
+    "ok": false,
+    "badge": "BLOCKED",
+    "action": "block",
+    "findings": [
+      "missing_required_fields"
+    ]
   },
   "equity_curve": [
     {
@@ -1085,6 +1078,10 @@
     },
     {
       "date": "2026-09-15",
+      "value": 98178697
+    },
+    {
+      "date": "2026-09-16",
       "value": 98178697
     }
   ],
