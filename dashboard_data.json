@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-14 16:05 KST",
+  "updated_at": "2026-09-15 16:05 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98170972,
+    "total": 98178697,
     "cash": 41162147,
-    "invested": 57008825,
-    "day_pnl": -445450,
-    "cum_pnl": -1829028,
-    "cum_return_pct": -1.829,
-    "vs_kospi_pct": 0.1683
+    "invested": 57016550,
+    "day_pnl": 7725,
+    "cum_pnl": -1821303,
+    "cum_return_pct": -1.8213,
+    "vs_kospi_pct": 1.0133
   },
   "metrics": {
     "mdd_pct": 6.1193,
@@ -38,9 +38,9 @@
       "mismatches": [
         {
           "type": "pnl_gap",
-          "account_cum_pnl": -1829028.0,
+          "account_cum_pnl": -1821303.0,
           "ledger_realized_pnl": -1130914.25,
-          "unrealized_pnl": -692554.0,
+          "unrealized_pnl": -684829.0,
           "gap_krw": -5559.75,
           "tolerance_krw": 2000.0
         }
@@ -75,20 +75,20 @@
       "name": "KIWOOM 미국달러선물",
       "qty": 225,
       "avg_price": 15678,
-      "price": 15775,
-      "value": 3549375,
-      "pnl": 21755,
-      "pnl_pct": 0.62
+      "price": 15945,
+      "value": 3587625,
+      "pnl": 60005,
+      "pnl_pct": 1.7
     },
     {
       "symbol": "411060",
       "name": "ACE KRX금현물",
       "qty": 2035,
       "avg_price": 26621,
-      "price": 26270,
-      "value": 53459450,
-      "pnl": -714309,
-      "pnl_pct": -1.32
+      "price": 26255,
+      "value": 53428925,
+      "pnl": -744834,
+      "pnl_pct": -1.37
     }
   ],
   "trades": [
@@ -914,12 +914,12 @@
     }
   ],
   "plan": {
-    "date": "2026-09-14",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-14.json · etf_ref=fsc_auto_collector"
+    "date": "2026-09-15",
+    "text": "short/weak · dry_run=False · quote=10000 · signal=records/2026-09-15.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-09-14",
-    "text": "mode=report · trades=20 · signal=records/2026-09-14.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-09-15",
+    "text": "mode=report · trades=20 · signal=records/2026-09-15.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -1082,6 +1082,10 @@
     {
       "date": "2026-09-14",
       "value": 98170972
+    },
+    {
+      "date": "2026-09-15",
+      "value": 98178697
     }
   ],
   "experiment": {
