@@ -1,64 +1,51 @@
 {
-  "updated_at": "2026-09-18 16:30 KST",
+  "updated_at": "2026-10-02 16:05 KST",
   "status": "T3 report live-paper",
   "regime": "open_only",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 99280264,
-    "cash": 75937864,
-    "invested": 23342400,
-    "day_pnl": 0,
-    "cum_pnl": -719736,
-    "cum_return_pct": -0.7197,
-    "vs_kospi_pct": -1.7993
+    "total": 99035105,
+    "cash": 53489370,
+    "invested": 45545735,
+    "day_pnl": 143641,
+    "cum_pnl": -964895,
+    "cum_return_pct": -0.9649,
+    "vs_kospi_pct": -3.65
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.4,
-    "profit_factor": 0.14500619290990072,
-    "trades": 20,
+    "win_rate": 0.4318181818181818,
+    "profit_factor": 0.8926799736387444,
+    "trades": 109,
     "trading_days": 7,
-    "closed_trades": 15,
-    "realized_pnl": -3277800.33,
-    "expectancy_per_trade": -218520.02,
-    "average_win_loss_ratio": 0.2175,
-    "gross_profit": 555912.04,
-    "gross_loss": 3833712.37,
-    "open_qty": {},
+    "closed_trades": 44,
+    "realized_pnl": -802376.63,
+    "expectancy_per_trade": -18235.83,
+    "average_win_loss_ratio": 1.1746,
+    "gross_profit": 6674108.96,
+    "gross_loss": 7476485.59,
+    "open_qty": {
+      "069500": 222,
+      "133690": 7,
+      "138230": 1222
+    },
     "unmatched_sell_qty": 0,
-    "estimated_price_rows": 18,
-    "verified_fill_rows": 2,
+    "estimated_price_rows": 0,
+    "verified_fill_rows": 109,
     "reconciliation": {
-      "ok": false,
-      "mismatches": [
-        {
-          "symbol": "138230",
-          "log_implied_qty": 0,
-          "account_qty": 1440
-        },
-        {
-          "type": "pnl_gap",
-          "account_cum_pnl": -719736.0,
-          "ledger_realized_pnl": -3277800.33,
-          "unrealized_pnl": 19344.0,
-          "gap_krw": 2538720.33,
-          "tolerance_krw": 2000.0
-        },
-        {
-          "type": "canonical_ledger_unavailable"
-        }
-      ],
-      "pnl_gap_krw": 2538720.33,
-      "note": "KIS 체결원장이 완전조회되지 않아 손익을 확정할 수 없다."
+      "ok": true,
+      "mismatches": [],
+      "pnl_gap_krw": -3815.37,
+      "note": ""
     }
   },
   "sleeves": [
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 23.51,
+      "used_pct": 45.99,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -70,20 +57,40 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 76.49,
+      "used_pct": 54.01,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
   "positions": [
     {
+      "symbol": "069500",
+      "name": "KODEX 200",
+      "qty": 222,
+      "avg_price": 111011,
+      "price": 112060,
+      "value": 24877320,
+      "pnl": 232785,
+      "pnl_pct": 0.94
+    },
+    {
+      "symbol": "133690",
+      "name": "TIGER 미국나스닥100",
+      "qty": 7,
+      "avg_price": 184437,
+      "price": 183055,
+      "value": 1281385,
+      "pnl": -9674,
+      "pnl_pct": -0.75
+    },
+    {
       "symbol": "138230",
       "name": "KIWOOM 미국달러선물",
-      "qty": 1440,
-      "avg_price": 16196,
-      "price": 16210,
-      "value": 23342400,
-      "pnl": 19344,
-      "pnl_pct": 0.08
+      "qty": 1222,
+      "avg_price": 16177,
+      "price": 15865,
+      "value": 19387030,
+      "pnl": -381814,
+      "pnl_pct": -1.93
     }
   ],
   "trades": [
@@ -1036,15 +1043,54 @@
       "reason_text": "[long/d_sell=False] 069500+133690 · not_in_target_basket · regime flip -> free cash for risk_on_kospi/risk_on_nasdaq",
       "confidence": "rotate",
       "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "09:00:06",
+      "ts": "2026-10-02T09:00:06",
+      "symbol": "138230",
+      "qty": "1440",
+      "price": 15940,
+      "side": "sell",
+      "label": "청산",
+      "reason_text": "[/d_sell=]  · regime_rotation · partial_reorder",
+      "confidence": "exit",
+      "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "12:35:23",
+      "ts": "2026-10-02T12:35:23",
+      "symbol": "232080",
+      "qty": "77",
+      "price": 15495,
+      "side": "sell",
+      "label": "rotate",
+      "reason_text": "[long/d_sell=False] 069500+133690 · not_in_target_basket · regime flip -> free cash for risk_on_kospi/risk_on_nasdaq",
+      "confidence": "rotate",
+      "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-10-02",
+      "time": "12:35:34",
+      "ts": "2026-10-02T12:35:34",
+      "symbol": "411060",
+      "qty": "52",
+      "price": 25545,
+      "side": "sell",
+      "label": "rotate",
+      "reason_text": "[long/d_sell=False] 069500+133690 · not_in_target_basket · regime flip -> free cash for risk_on_kospi/risk_on_nasdaq",
+      "confidence": "rotate",
+      "price_source": "judgment_log"
     }
   ],
   "plan": {
-    "date": "2026-09-18",
-    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-09-18.json · etf_ref=fsc_auto_collector"
+    "date": "2026-10-02",
+    "text": "long/weak · dry_run=False · quote=10000 · signal=records/2026-10-02.json · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-09-18",
-    "text": "mode=report · trades=20 · signal=records/2026-09-18.json · etf_ref=fsc_auto_collector · selfcheck=ok"
+    "date": "2026-10-02",
+    "text": "mode=report · trades=20 · signal=records/2026-10-02.json · etf_ref=fsc_auto_collector · selfcheck=ok"
   },
   "etf_overlay": {
     "score": -193.1,
@@ -1056,10 +1102,8 @@
   "selfcheck": {
     "ok": true,
     "badge": "OK",
-    "action": "allow_with_warnings",
-    "findings": [
-      "trix_bearish_conflict"
-    ]
+    "action": "allow",
+    "findings": []
   },
   "equity_curve": [
     {
@@ -1225,6 +1269,34 @@
     {
       "date": "2026-09-18",
       "value": 99280264
+    },
+    {
+      "date": "2026-09-21",
+      "value": 99287464
+    },
+    {
+      "date": "2026-09-22",
+      "value": 98941864
+    },
+    {
+      "date": "2026-09-23",
+      "value": 98819464
+    },
+    {
+      "date": "2026-09-29",
+      "value": 98833864
+    },
+    {
+      "date": "2026-09-30",
+      "value": 98819464
+    },
+    {
+      "date": "2026-10-01",
+      "value": 98891464
+    },
+    {
+      "date": "2026-10-02",
+      "value": 99035105
     }
   ],
   "experiment": {
@@ -1264,12 +1336,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 75937864.0
+      "cash": 53489370.0
     },
     "contribution_pct": {
-      "long": -0.11,
+      "long": -0.16,
       "short": 0.01,
-      "cash": 99.88
+      "cash": 99.83
     }
   }
 }
