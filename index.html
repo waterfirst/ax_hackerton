@@ -454,6 +454,11 @@
     </aside>
   </section>
 
+  <section class="section" id="benchmarks">
+    <div class="section-head"><div><h2>기준선 비교 · 돈을 버는가</h2><p>KOSPI보다 덜 빠진 것은 수익이 아닙니다. 아무것도 안 한 현금(0%)과 KODEX200 단순 보유를 넘어야 모델이 돈을 법니다.</p></div><span class="section-index">00 / BENCHMARK</span></div>
+    <article class="panel"><div id="benchWrap">기준선 계산 대기</div><p class="hero-note" id="benchRule"></p></article>
+  </section>
+
   <section class="section" id="trajectory">
     <div class="section-head"><div><h2>자산 궤적과 위험 배분</h2><p>초기 원금 1억원을 기준으로 계좌 경로와 전략별 사용 비중을 함께 읽습니다.</p></div><span class="section-index">01 / TRAJECTORY</span></div>
     <div class="overview-grid">
@@ -608,6 +613,21 @@
     $('accountType').textContent = data.account?.type || '모의투자';
   }
 
+  function renderBench(data) {
+    const b = data.benchmarks, wrap = $('benchWrap');
+    if (!b || !Array.isArray(b.windows) || !b.windows.length) { wrap.textContent = '기준선 데이터 없음'; $('benchRule').textContent = ''; return; }
+    const cell = v => v === null || v === undefined ? '—' : `<span class="${tone(v)}">${pct(v)}</span>`;
+    const rows = b.windows.map(w => {
+      const bars = [w.cash, w.kodex200_hold].filter(v => v !== null && v !== undefined);
+      const beat = w.model !== null && bars.length && w.model > Math.max(...bars);
+      return {w, verdict: beat ? '<span class="side-pill up">기준선 상회</span>' : '<span class="side-pill down">기준선 미달</span>'};
+    });
+    const desktop = `<div class="table-wrap desktop-table"><table class="trade-table"><thead><tr><th>구간</th><th>모델</th><th>현금</th><th>KODEX200 보유</th><th>KOSPI</th><th>판정</th></tr></thead><tbody>${rows.map(({w, verdict}) => `<tr><td>${esc(w.label)}<span class="symbol-code">${esc(w.from)} ~ ${esc(w.to)}</span></td><td>${cell(w.model)}</td><td>${cell(w.cash)}</td><td>${cell(w.kodex200_hold)}</td><td>${cell(w.kospi)}</td><td>${verdict}</td></tr>`).join('')}</tbody></table></div>`;
+    const mobile = `<div class="trade-mobile">${rows.map(({w, verdict}) => `<article class="trade-card"><div class="trade-card-head"><div><strong>${esc(w.label)}</strong><div class="trade-card-meta">${esc(w.from)} ~ ${esc(w.to)}</div></div>${verdict}</div><div class="trade-card-grid"><div><span>모델</span><strong>${cell(w.model)}</strong></div><div><span>현금</span><strong>${cell(w.cash)}</strong></div><div><span>KODEX200</span><strong>${cell(w.kodex200_hold)}</strong></div></div><p class="trade-reason">KOSPI ${pct(w.kospi)}</p></article>`).join('')}</div>`;
+    wrap.innerHTML = desktop + mobile;
+    const exp = num(b.expectancy_per_trade);
+    $('benchRule').textContent = `청산 ${b.closed_trades ?? '—'}건 · 거래당 기대값 ${exp === null ? '—' : won(Math.round(exp))} · ${b.rule || ''}`;
+  }
   function renderHero(data) {
     const a = data.account || {}, m = data.metrics || {};
     $('totalAsset').textContent = shortWon(a.total);
@@ -741,7 +761,7 @@
 
   function render(data, changed = false) {
     dashboard = data;
-    setFreshness(data.updated_at, changed); renderTrust(data); renderHero(data); renderChart(data);
+    setFreshness(data.updated_at, changed); renderTrust(data); renderHero(data); renderBench(data); renderChart(data);
     renderSleeves(data); renderMetrics(data); renderPositions(data); renderTrades(); renderBriefing(data); renderEvidence(data);
   }
 
