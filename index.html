@@ -49,6 +49,7 @@
     --grid: #d7dde0;
     --table-head: #f0f3f5;
     --row-hover: #f3f6f7;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
     --inverse: #ffffff;
     --focus: rgba(37, 101, 179, .36);
     --safe-halo: rgba(24, 116, 88, .11);
@@ -141,7 +142,7 @@
     font-weight: 760;
   }
   .theme-button[aria-pressed="true"] { background: var(--ink); color: var(--inverse); }
-  .theme-button:hover:not([aria-pressed="true"]) { color: var(--ink); background: var(--row-hover); }
+  @media (hover: hover) and (pointer: fine) { .theme-button:hover:not([aria-pressed="true"]) { color: var(--ink); background: var(--row-hover); } }
   .refresh {
     min-height: 40px;
     padding: 8px 13px;
@@ -156,7 +157,9 @@
     font-weight: 720;
     font-size: 13px;
   }
-  .refresh:hover { border-color: var(--ink); }
+  @media (hover: hover) and (pointer: fine) { .refresh:hover { border-color: var(--ink); } }
+  .refresh { transition: transform 120ms var(--ease-out); }
+  .refresh:active { transform: scale(0.97); }
   .refresh svg { width: 15px; height: 15px; }
   .refresh[aria-busy="true"] svg { animation: spin .8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -271,7 +274,7 @@
   th { color: var(--muted); background: var(--table-head); font-size: 10px; letter-spacing: .055em; text-transform: uppercase; font-weight: 800; white-space: nowrap; }
   th:first-child, td:first-child { text-align: left; }
   tbody tr:last-child td { border-bottom: 0; }
-  tbody tr:hover { background: var(--row-hover); }
+  @media (hover: hover) and (pointer: fine) { tbody tr:hover { background: var(--row-hover); } }
   .symbol { display: block; font-weight: 780; }
   .symbol-code { display: block; color: var(--faint); font-size: 10px; }
   .position-empty { min-height: 190px; display: grid; place-items: center; padding: 30px; text-align: center; }
@@ -316,8 +319,8 @@
   .foot-links { display: flex; gap: 16px; white-space: nowrap; }
   .foot-links a { text-underline-offset: 3px; }
 
-  .toast { position: fixed; right: 20px; bottom: 20px; z-index: 20; max-width: min(360px, calc(100vw - 40px)); padding: 11px 14px; background: var(--ink); color: var(--inverse); box-shadow: var(--shadow); font-size: 12px; transform: translateY(16px); opacity: 0; pointer-events: none; transition: .2s ease; }
-  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast { position: fixed; right: 20px; bottom: 20px; z-index: 20; max-width: min(360px, calc(100vw - 40px)); padding: 11px 14px; background: var(--ink); color: var(--inverse); box-shadow: var(--shadow); font-size: 12px; transform: translateY(16px); opacity: 0; pointer-events: none; transition: transform 150ms var(--ease-out), opacity 150ms var(--ease-out); }
+  .toast.show { transform: translateY(0); opacity: 1; transition-duration: 220ms; }
 
   @media (max-width: 920px) {
     .trust-strip { grid-template-columns: 1fr 1fr; }
@@ -381,7 +384,9 @@
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    .toast, .toast.show { transform: none; transition: opacity 150ms ease; }
+    .refresh:active { transform: none; }
   }
 </style>
 </head>
