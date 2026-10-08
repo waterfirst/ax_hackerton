@@ -557,14 +557,42 @@
     const el = $('toast'); el.textContent = message; el.classList.add('show');
     window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => el.classList.remove('show'), 2600);
   }
+  // Source is rebuilt once per KRX trading day at 16:05 KST, so judge freshness against
+  // the latest expected build, not wall-clock minutes (red "과거 스냅샷" every evening was misleading).
+  const KRX_HOLIDAYS = new Set(['2026-10-05','2026-10-09','2026-12-25','2026-12-31','2027-01-01']);
+  function kstDateStr(d) { return new Date(d.getTime() + 9*3600000).toISOString().slice(0,10); }
+  function isTradingDay(ymd) {
+    const wd = new Date(ymd + 'T00:00:00Z').getUTCDay();
+    return wd !== 0 && wd !== 6 && !KRX_HOLIDAYS.has(ymd);
+  }
+  function expectedBuild(now) {
+    // latest trading-day 16:05 KST that is not in the future (+20 min grace for the relay)
+    let d = new Date(now.getTime());
+    for (let i = 0; i < 15; i++) {
+      const ymd = kstDateStr(d);
+      const build = new Date(ymd + 'T16:25:00+09:00');
+      if (isTradingDay(ymd) && build <= now) return ymd;
+      d = new Date(d.getTime() - 86400000);
+    }
+    return null;
+  }
+  function tradingDaysBetween(fromYmd, toYmd) {
+    let n = 0, d = new Date(fromYmd + 'T00:00:00Z');
+    const end = new Date(toYmd + 'T00:00:00Z');
+    while (d < end) { d = new Date(d.getTime() + 86400000); if (isTradingDay(d.toISOString().slice(0,10))) n++; }
+    return n;
+  }
   function setFreshness(updatedAt, changed) {
     const date = parseKst(updatedAt);
-    const mins = date ? (Date.now() - date.getTime()) / 60000 : Infinity;
+    const now = new Date();
+    const mins = date ? (now.getTime() - date.getTime()) / 60000 : Infinity;
     const signal = $('freshSignal'); signal.className = 'signal';
     let label = '원천 시각 없음';
-    if (mins <= 15) { label = '최근 원천 데이터'; signal.classList.add('good'); }
-    else if (mins <= 60) { label = '원천 갱신 지연'; signal.classList.add('warn'); }
-    else { label = '과거 스냅샷'; signal.classList.add('bad'); }
+    const expect = expectedBuild(now);
+    const lag = (date && expect) ? tradingDaysBetween(kstDateStr(date), expect) : Infinity;
+    if (lag <= 0) { label = '최신 (장 마감 기준)'; signal.classList.add('good'); }
+    else if (lag === 1) { label = '갱신 1거래일 지연'; signal.classList.add('warn'); }
+    else { label = `갱신 ${Number.isFinite(lag) ? lag + '거래일 ' : ''}지연`; signal.classList.add('bad'); }
     if (changed) signal.classList.add('pulse');
     $('freshState').textContent = label;
     $('sourceUpdated').textContent = updatedAt ? `${updatedAt} · ${ageLabel(mins)}` : '원천 갱신 시각 없음';
