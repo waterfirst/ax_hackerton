@@ -1447,6 +1447,6 @@
     "expectancy_per_trade": -29740.7,
     "closed_trades": 48,
     "rule": "판정 2026-12-31: 거래당 기대값 ≤ 0 이거나 인버스 중단 후 수익률이 현금(0%)·KODEX200 보유를 못 이기면 해당 전략 중단",
-    "computed_at": "2026-10-08 18:28 KST"
+    "computed_at": "2026-10-09 16:15 KST"
   }
 }
