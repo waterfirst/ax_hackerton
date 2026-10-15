@@ -1,42 +1,42 @@
 {
-  "updated_at": "2026-10-14 16:05 KST",
+  "updated_at": "2026-10-15 16:05 KST",
   "status": "T3 report dry-run · selfcheck-blocked",
   "regime": "hold:no_record",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 98476490,
-    "cash": 39627180,
-    "invested": 58849310,
-    "day_pnl": -165906,
-    "cum_pnl": -1523510,
-    "cum_return_pct": -1.5235,
-    "vs_kospi_pct": 10.3785
+    "total": 96131565,
+    "cash": 38683275,
+    "invested": 57448290,
+    "day_pnl": -2344925,
+    "cum_pnl": -3868435,
+    "cum_return_pct": -3.8684,
+    "vs_kospi_pct": 14.6986
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.4,
-    "profit_factor": 0.8094082183382918,
-    "trades": 134,
+    "win_rate": 0.39285714285714285,
+    "profit_factor": 0.6696817153926804,
+    "trades": 136,
     "trading_days": 7,
-    "closed_trades": 55,
-    "realized_pnl": -1584267.73,
-    "expectancy_per_trade": -28804.87,
-    "average_win_loss_ratio": 1.2141,
+    "closed_trades": 56,
+    "realized_pnl": -3318609.79,
+    "expectancy_per_trade": -59260.89,
+    "average_win_loss_ratio": 1.035,
     "gross_profit": 6728093.47,
-    "gross_loss": 8312361.2,
+    "gross_loss": 10046703.26,
     "open_qty": {
-      "069500": 342,
+      "069500": 364,
       "133690": 146
     },
     "unmatched_sell_qty": 0,
     "estimated_price_rows": 0,
-    "verified_fill_rows": 134,
+    "verified_fill_rows": 136,
     "reconciliation": {
       "ok": true,
       "mismatches": [],
-      "pnl_gap_krw": -5403.27,
+      "pnl_gap_krw": -5156.21,
       "note": ""
     }
   },
@@ -64,22 +64,22 @@
     {
       "symbol": "069500",
       "name": "KODEX 200",
-      "qty": 342,
-      "avg_price": 94598,
-      "price": 94805,
-      "value": 32423310,
-      "pnl": 70680,
-      "pnl_pct": 0.22
+      "qty": 364,
+      "avg_price": 86710,
+      "price": 87025,
+      "value": 31677100,
+      "pnl": 114660,
+      "pnl_pct": 0.36
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 146,
       "avg_price": 181030,
-      "price": 181000,
-      "value": 26426000,
-      "pnl": -4519,
-      "pnl_pct": -0.02
+      "price": 176515,
+      "value": 25771190,
+      "pnl": -659329,
+      "pnl_pct": -2.49
     }
   ],
   "trades": [
@@ -748,32 +748,6 @@
       "fill_status": "estimated"
     },
     {
-      "date": "2026-09-02",
-      "time": "14:26:54",
-      "ts": "2026-09-02T14:26:54",
-      "symbol": "411060",
-      "qty": "1966",
-      "price": 26528,
-      "side": "buy",
-      "label": "진입",
-      "reason_text": "[exit_to_cash/d_sell=True] defensive_rotation_gold55_usd45(시장 -3.46% 급락, 예보 weak_drift conf0.51) · D_sell_on_foreign_and_institution_net_selling(외국인+기관 순매도) · backfill 12:33 defensive_gold 진입·체결 / sizing 위험2.5% / 약5234만원",
-      "confidence": "entry",
-      "price_source": "judgment_log"
-    },
-    {
-      "date": "2026-09-02",
-      "time": "14:26:54",
-      "ts": "2026-09-02T14:26:54",
-      "symbol": "138230",
-      "qty": "0",
-      "price": 16078,
-      "side": "buy",
-      "label": "실패",
-      "reason_text": "[exit_to_cash/d_sell=True] defensive_rotation_usd45 · order_failed:40030000(호가단위 오류) · backfill 달러 방어 진입 실패",
-      "confidence": "failed",
-      "price_source": "judgment_log"
-    },
-    {
       "date": "2026-09-03",
       "time": "12:35:47",
       "ts": "2026-09-03T12:35:47",
@@ -1266,14 +1240,40 @@
       "reason_text": "[long/d_sell=False] 069500+133690 · not_in_target_basket · regime flip -> free cash for risk_on_kospi/risk_on_nasdaq",
       "confidence": "rotate",
       "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-10-15",
+      "time": "09:00:11",
+      "ts": "2026-10-15T09:00:11",
+      "symbol": "069500",
+      "qty": "342",
+      "price": 89550,
+      "side": "sell",
+      "label": "청산",
+      "reason_text": "[/d_sell=]  · hard_stop_-1R · entry=94598 hw=97760",
+      "confidence": "exit",
+      "price_source": "judgment_log"
+    },
+    {
+      "date": "2026-10-15",
+      "time": "12:35:19",
+      "ts": "2026-10-15T12:35:19",
+      "symbol": "069500",
+      "qty": "364",
+      "price": 86980,
+      "side": "buy",
+      "label": "진입",
+      "reason_text": "[long/d_sell=False] D_sell_off_institution_buying · D_sell_off_institution_net_buying_risk_on · sleeve=risk_on_kospi weight=0.33",
+      "confidence": "entry",
+      "price_source": "judgment_log"
     }
   ],
   "plan": {
-    "date": "2026-10-14",
+    "date": "2026-10-15",
     "text": "flat/weak · dry_run=True · quote=10000 · signal=hold:no_record · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-10-14",
+    "date": "2026-10-15",
     "text": "mode=report · trades=20 · signal=hold:no_record · etf_ref=fsc_auto_collector · selfcheck=blocked"
   },
   "etf_overlay": {
@@ -1507,6 +1507,10 @@
     {
       "date": "2026-10-14",
       "value": 98476490
+    },
+    {
+      "date": "2026-10-15",
+      "value": 96131565
     }
   ],
   "experiment": {
@@ -1546,7 +1550,7 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 39627180.0
+      "cash": 38683275.0
     },
     "contribution_pct": {
       "long": -0.22,
@@ -1559,25 +1563,25 @@
       {
         "label": "전체 기간",
         "from": "2026-07-17",
-        "to": "2026-10-14",
-        "model": -1.52,
+        "to": "2026-10-15",
+        "model": -3.87,
         "cash": 0.0,
-        "kodex200_hold": -13.02,
-        "kospi": -11.9
+        "kodex200_hold": -20.16,
+        "kospi": -18.57
       },
       {
         "label": "인버스 중단 후",
         "from": "2026-08-04",
-        "to": "2026-10-14",
-        "model": 0.2,
+        "to": "2026-10-15",
+        "model": -2.18,
         "cash": 0.0,
-        "kodex200_hold": -5.51,
-        "kospi": -5.51
+        "kodex200_hold": -13.26,
+        "kospi": -12.66
       }
     ],
-    "expectancy_per_trade": -28804.87,
-    "closed_trades": 55,
+    "expectancy_per_trade": -59260.89,
+    "closed_trades": 56,
     "rule": "판정 2026-12-31: 거래당 기대값 ≤ 0 이거나 인버스 중단 후 수익률이 현금(0%)·KODEX200 보유를 못 이기면 해당 전략 중단",
-    "computed_at": "2026-10-14 16:15 KST"
+    "computed_at": "2026-10-15 16:15 KST"
   }
 }
