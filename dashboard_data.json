@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-10-15 16:05 KST",
+  "updated_at": "2026-10-16 16:05 KST",
   "status": "T3 report dry-run · selfcheck-blocked",
   "regime": "hold:no_record",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96131565,
+    "total": 96797425,
     "cash": 38683275,
-    "invested": 57448290,
-    "day_pnl": -2344925,
-    "cum_pnl": -3868435,
-    "cum_return_pct": -3.8684,
-    "vs_kospi_pct": 14.6986
+    "invested": 58114150,
+    "day_pnl": 665860,
+    "cum_pnl": -3202575,
+    "cum_return_pct": -3.2026,
+    "vs_kospi_pct": 13.6955
   },
   "metrics": {
     "mdd_pct": 6.1193,
@@ -44,7 +44,7 @@
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 59.76,
+      "used_pct": 60.04,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -56,7 +56,7 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 40.24,
+      "used_pct": 39.96,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
@@ -66,20 +66,20 @@
       "name": "KODEX 200",
       "qty": 364,
       "avg_price": 86710,
-      "price": 87025,
-      "value": 31677100,
-      "pnl": 114660,
-      "pnl_pct": 0.36
+      "price": 88750,
+      "value": 32305000,
+      "pnl": 742560,
+      "pnl_pct": 2.35
     },
     {
       "symbol": "133690",
       "name": "TIGER 미국나스닥100",
       "qty": 146,
       "avg_price": 181030,
-      "price": 176515,
-      "value": 25771190,
-      "pnl": -659329,
-      "pnl_pct": -2.49
+      "price": 176775,
+      "value": 25809150,
+      "pnl": -621369,
+      "pnl_pct": -2.35
     }
   ],
   "trades": [
@@ -1269,11 +1269,11 @@
     }
   ],
   "plan": {
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "text": "flat/weak · dry_run=True · quote=10000 · signal=hold:no_record · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-10-15",
+    "date": "2026-10-16",
     "text": "mode=report · trades=20 · signal=hold:no_record · etf_ref=fsc_auto_collector · selfcheck=blocked"
   },
   "etf_overlay": {
@@ -1511,6 +1511,10 @@
     {
       "date": "2026-10-15",
       "value": 96131565
+    },
+    {
+      "date": "2026-10-16",
+      "value": 96797425
     }
   ],
   "experiment": {
@@ -1563,25 +1567,25 @@
       {
         "label": "전체 기간",
         "from": "2026-07-17",
-        "to": "2026-10-15",
-        "model": -3.87,
+        "to": "2026-10-16",
+        "model": -3.2,
         "cash": 0.0,
-        "kodex200_hold": -20.16,
-        "kospi": -18.57
+        "kodex200_hold": -18.58,
+        "kospi": -16.9
       },
       {
         "label": "인버스 중단 후",
         "from": "2026-08-04",
-        "to": "2026-10-15",
-        "model": -2.18,
+        "to": "2026-10-16",
+        "model": -1.5,
         "cash": 0.0,
-        "kodex200_hold": -13.26,
-        "kospi": -12.66
+        "kodex200_hold": -11.54,
+        "kospi": -10.87
       }
     ],
     "expectancy_per_trade": -59260.89,
     "closed_trades": 56,
     "rule": "판정 2026-12-31: 거래당 기대값 ≤ 0 이거나 인버스 중단 후 수익률이 현금(0%)·KODEX200 보유를 못 이기면 해당 전략 중단",
-    "computed_at": "2026-10-15 16:15 KST"
+    "computed_at": "2026-10-16 16:15 KST"
   }
 }
