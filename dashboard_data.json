@@ -1,50 +1,59 @@
 {
-  "updated_at": "2026-10-19 16:05 KST",
+  "updated_at": "2026-10-20 16:05 KST",
   "status": "T3 report dry-run · selfcheck-blocked",
   "regime": "hold:no_record",
   "account": {
     "type": "모의(paper)",
     "number_masked": "50XXXXXX",
-    "total": 96887495,
-    "cash": 38683275,
-    "invested": 58204220,
-    "day_pnl": 90070,
-    "cum_pnl": -3112505,
-    "cum_return_pct": -3.1125,
-    "vs_kospi_pct": 12.32
+    "total": 100000000,
+    "cash": 100000000,
+    "invested": 0,
+    "day_pnl": 3112505,
+    "cum_pnl": 0,
+    "cum_return_pct": 0.0,
+    "vs_kospi_pct": 18.5887
   },
   "metrics": {
     "mdd_pct": 6.1193,
     "mdd_confidence": "high",
-    "win_rate": 0.39285714285714285,
-    "profit_factor": 0.6696817153926804,
-    "trades": 136,
+    "win_rate": 0.4,
+    "profit_factor": 0.14500619290990072,
+    "trades": 20,
     "trading_days": 7,
-    "closed_trades": 56,
-    "realized_pnl": -3318609.79,
-    "expectancy_per_trade": -59260.89,
-    "average_win_loss_ratio": 1.035,
-    "gross_profit": 6728093.47,
-    "gross_loss": 10046703.26,
-    "open_qty": {
-      "069500": 364,
-      "133690": 146
-    },
+    "closed_trades": 15,
+    "realized_pnl": -3277800.33,
+    "expectancy_per_trade": -218520.02,
+    "average_win_loss_ratio": 0.2175,
+    "gross_profit": 555912.04,
+    "gross_loss": 3833712.37,
+    "open_qty": {},
     "unmatched_sell_qty": 0,
-    "estimated_price_rows": 0,
-    "verified_fill_rows": 136,
+    "estimated_price_rows": 18,
+    "verified_fill_rows": 2,
     "reconciliation": {
-      "ok": true,
-      "mismatches": [],
-      "pnl_gap_krw": -5156.21,
-      "note": ""
+      "ok": false,
+      "mismatches": [
+        {
+          "type": "pnl_gap",
+          "account_cum_pnl": 0.0,
+          "ledger_realized_pnl": -3277800.33,
+          "unrealized_pnl": 0.0,
+          "gap_krw": 3277800.33,
+          "tolerance_krw": 2000.0
+        },
+        {
+          "type": "canonical_ledger_unavailable"
+        }
+      ],
+      "pnl_gap_krw": 3277800.33,
+      "note": "KIS 체결원장이 완전조회되지 않아 손익을 확정할 수 없다."
     }
   },
   "sleeves": [
     {
       "name": "S1 지수모델",
       "target_pct": 60,
-      "used_pct": 60.07,
+      "used_pct": 0.0,
       "desc": "KODEX200 롱 / 레버리지 / 인버스 / 2X 인버스 · 변동성장 공격 실험"
     },
     {
@@ -56,32 +65,11 @@
     {
       "name": "S3 현금",
       "target_pct": 20,
-      "used_pct": 39.93,
+      "used_pct": 100.0,
       "desc": "킬스위치 이후 재진입용 드라이파우더"
     }
   ],
-  "positions": [
-    {
-      "symbol": "069500",
-      "name": "KODEX 200",
-      "qty": 364,
-      "avg_price": 86710,
-      "price": 89930,
-      "value": 32734520,
-      "pnl": 1172080,
-      "pnl_pct": 3.71
-    },
-    {
-      "symbol": "133690",
-      "name": "TIGER 미국나스닥100",
-      "qty": 146,
-      "avg_price": 181030,
-      "price": 174450,
-      "value": 25469700,
-      "pnl": -960819,
-      "pnl_pct": -3.64
-    }
-  ],
+  "positions": [],
   "trades": [
     {
       "ts": "2026-07-28T10:40:07",
@@ -1269,11 +1257,11 @@
     }
   ],
   "plan": {
-    "date": "2026-10-19",
+    "date": "2026-10-20",
     "text": "flat/weak · dry_run=True · quote=10000 · signal=hold:no_record · etf_ref=fsc_auto_collector"
   },
   "report": {
-    "date": "2026-10-19",
+    "date": "2026-10-20",
     "text": "mode=report · trades=20 · signal=hold:no_record · etf_ref=fsc_auto_collector · selfcheck=blocked"
   },
   "etf_overlay": {
@@ -1519,6 +1507,10 @@
     {
       "date": "2026-10-19",
       "value": 96887495
+    },
+    {
+      "date": "2026-10-20",
+      "value": 100000000
     }
   ],
   "experiment": {
@@ -1558,12 +1550,12 @@
     "contribution": {
       "long": -85975.0,
       "short": 4845.0,
-      "cash": 38683275.0
+      "cash": 100000000.0
     },
     "contribution_pct": {
-      "long": -0.22,
-      "short": 0.01,
-      "cash": 99.77
+      "long": -0.09,
+      "short": 0.0,
+      "cash": 99.91
     }
   },
   "benchmarks": {
@@ -1571,25 +1563,25 @@
       {
         "label": "전체 기간",
         "from": "2026-07-17",
-        "to": "2026-10-19",
-        "model": -3.11,
+        "to": "2026-10-20",
+        "model": 0.0,
         "cash": 0.0,
-        "kodex200_hold": -17.5,
-        "kospi": -15.43
+        "kodex200_hold": -20.41,
+        "kospi": -18.59
       },
       {
         "label": "인버스 중단 후",
         "from": "2026-08-04",
-        "to": "2026-10-19",
-        "model": -1.41,
+        "to": "2026-10-20",
+        "model": 1.75,
         "cash": 0.0,
-        "kodex200_hold": -10.37,
-        "kospi": -9.29
+        "kodex200_hold": -13.53,
+        "kospi": -12.68
       }
     ],
-    "expectancy_per_trade": -59260.89,
-    "closed_trades": 56,
+    "expectancy_per_trade": -218520.02,
+    "closed_trades": 15,
     "rule": "판정 2026-12-31: 거래당 기대값 ≤ 0 이거나 인버스 중단 후 수익률이 현금(0%)·KODEX200 보유를 못 이기면 해당 전략 중단",
-    "computed_at": "2026-10-19 16:15 KST"
+    "computed_at": "2026-10-20 16:15 KST"
   }
 }
